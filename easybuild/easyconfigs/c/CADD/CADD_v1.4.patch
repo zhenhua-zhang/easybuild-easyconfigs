@@ -1,7 +1,5 @@
-diff --git a/CADD.sh b/CADD_modified.sh
-index b568f59..e5c7176 100755
---- a/CADD.sh
-+++ b/CADD_modified.sh
+--- CADD.sh_bk	2018-12-03 17:00:24.000000000 +0100
++++ CADD.sh	2019-02-15 17:53:18.754172855 +0100
 @@ -1,13 +1,16 @@
  #!/bin/bash
  
@@ -14,13 +12,13 @@ index b568f59..e5c7176 100755
      -o  out tsv.gz file (generated from input file name if not set)
      -g  genome build (supported are GRCh37 and GRCh38 [default: GRCh38])
      -a  include annotation in output
-+	-t  temporary dir (please use a tmp-dir if /tmp not enough [default: /tmp])
++    -t  temporary dir (please use a tmp-dir if /tmp not enough [default: /tmp])
          input vcf of vcf.gz file (required)"
 +# TAIL::Add -t help
  
  unset OPTARG
  unset OPTIND
-@@ -15,7 +18,7 @@ unset OPTIND
+@@ -15,7 +18,7 @@
  GENOMEBUILD="GRCh38"
  ANNOTATION=false
  OUTFILE=""
@@ -29,18 +27,18 @@ index b568f59..e5c7176 100755
    case "$option" in
      h) echo "$usage"
         exit
-@@ -26,6 +29,10 @@ while getopts ':ho:g:a' option; do
+@@ -26,6 +29,10 @@
         ;;
      a) ANNOTATION=true
         ;;
 +# HEAD::Add -t option
-+	t) TMP_DIR=$OPTARG
++    t) TMP_DIR=$OPTARG
 +       ;;
 +# TAIL::Add -t option
     \?) printf "illegal option: -%s\n" "$OPTARG" >&2
         echo "$usage" >&2
         exit 1
-@@ -82,7 +89,9 @@ MODEL=$CADD/data/models/$GENOMEBUILD/CADD1.4-$GENOMEBUILD.mod
+@@ -82,7 +89,9 @@
  CONVERSION_TABLE=$CADD/data/models/$GENOMEBUILD/conversionTable_CADD1.4-$GENOMEBUILD.txt
  
  # Temp files
@@ -51,7 +49,7 @@ index b568f59..e5c7176 100755
  TMP_PRE=$TMP_FOLDER/$NAME.pre.tsv.gz
  TMP_VCF=$TMP_FOLDER/$NAME.vcf
  TMP_ANNO=$TMP_FOLDER/$NAME.anno.tsv.gz
-@@ -94,7 +103,10 @@ mkdir -p $TMP_FOLDER
+@@ -94,7 +103,10 @@
  ### Pipeline
  
  # Loading the environment
@@ -63,15 +61,15 @@ index b568f59..e5c7176 100755
  
  # File preparation
  if [ "$FILEFORMAT" == "vcf" ]
-@@ -127,6 +139,12 @@ then
+@@ -127,6 +139,12 @@
  fi
  
  # Variant annotation
-+# <<< HEAD::Add vep to PATH
++# HEAD::Add vep to PATH
 +if [[ ! ${PATH} =~ ${EBROOTVEP} ]]; then
 +    export PATH=${EBROOTVEP}:${PATH}
 +fi
-+# <<< TAIL::Add vep to PATH
++# TAIL::Add vep to PATH
 +
  cat $TMP_VCF \
  | vep --quiet --cache --buffer 1000 --no_stats --offline --vcf \
