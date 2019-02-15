@@ -1,27 +1,77 @@
---- CADD.sh	2018-12-03 17:00:24.000000000 +0100
-+++ /groups/umcg-gcc/tmp04/CADD/software/CADD/v1.4/bin/CADD.sh	2018-11-24 21:27:27.000000000 +0100
-@@ -94,7 +94,11 @@
+diff --git a/CADD.sh b/CADD_modified.sh
+index b568f59..e5c7176 100755
+--- a/CADD.sh
++++ b/CADD_modified.sh
+@@ -1,13 +1,16 @@
+ #!/bin/bash
+ 
+-usage="$(basename "$0") [-o <outfile>] [-g <genomebuild>] [-a] <infile>  -- CADD version 1.4
++# HEAD::Add -t help
++usage="$(basename "$0") [-o <outfile>] [-g <genomebuild>] [-a] [-t <tmp-dir>] <infile>  -- CADD version 1.4
+ 
+ where:
+     -h  show this help text
+     -o  out tsv.gz file (generated from input file name if not set)
+     -g  genome build (supported are GRCh37 and GRCh38 [default: GRCh38])
+     -a  include annotation in output
++	-t  temporary dir (please use a tmp-dir if /tmp not enough [default: /tmp])
+         input vcf of vcf.gz file (required)"
++# TAIL::Add -t help
+ 
+ unset OPTARG
+ unset OPTIND
+@@ -15,7 +18,7 @@ unset OPTIND
+ GENOMEBUILD="GRCh38"
+ ANNOTATION=false
+ OUTFILE=""
+-while getopts ':ho:g:a' option; do
++while getopts ':ho:g:at:' option; do
+   case "$option" in
+     h) echo "$usage"
+        exit
+@@ -26,6 +29,10 @@ while getopts ':ho:g:a' option; do
+        ;;
+     a) ANNOTATION=true
+        ;;
++# HEAD::Add -t option
++	t) TMP_DIR=$OPTARG
++       ;;
++# TAIL::Add -t option
+    \?) printf "illegal option: -%s\n" "$OPTARG" >&2
+        echo "$usage" >&2
+        exit 1
+@@ -82,7 +89,9 @@ MODEL=$CADD/data/models/$GENOMEBUILD/CADD1.4-$GENOMEBUILD.mod
+ CONVERSION_TABLE=$CADD/data/models/$GENOMEBUILD/conversionTable_CADD1.4-$GENOMEBUILD.txt
+ 
+ # Temp files
+-TMP_FOLDER=$CADD/data/tmp
++# HEAD::Set default temporary directory
++TMP_FOLDER=${TMP_DIR:=/tmp}
++# TAIL::Set default temporary directory
+ TMP_PRE=$TMP_FOLDER/$NAME.pre.tsv.gz
+ TMP_VCF=$TMP_FOLDER/$NAME.vcf
+ TMP_ANNO=$TMP_FOLDER/$NAME.anno.tsv.gz
+@@ -94,7 +103,10 @@ mkdir -p $TMP_FOLDER
  ### Pipeline
  
  # Loading the environment
 -source activate cadd-env
 +
-+# <<< START Replace Conda by EasyBuild
++# HEAD::Replace Conda by EasyBuild
 +# source activate cadd-env 
-+# <<< END   Replace Conda by EasyBuild
-+
++# TAIL::Replace Conda by EasyBuild
  
  # File preparation
  if [ "$FILEFORMAT" == "vcf" ]
-@@ -127,6 +131,12 @@
+@@ -127,6 +139,12 @@ then
  fi
  
  # Variant annotation
-+# <<< START Add vep to PATH
++# <<< HEAD::Add vep to PATH
 +if [[ ! ${PATH} =~ ${EBROOTVEP} ]]; then
 +    export PATH=${EBROOTVEP}:${PATH}
 +fi
-+# <<< END   Add vep to PATH
++# <<< TAIL::Add vep to PATH
 +
  cat $TMP_VCF \
  | vep --quiet --cache --buffer 1000 --no_stats --offline --vcf \
