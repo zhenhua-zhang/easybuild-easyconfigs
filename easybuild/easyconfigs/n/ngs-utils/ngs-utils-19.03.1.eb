@@ -13,7 +13,7 @@ easyblock = 'PackedBinary'
 source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (version))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['44d3f84e81ebaf3b6fb61408a2f178d74fc4325e00a39ca1cce11e16502aabbf']
+checksums = ['0b9ad28d85152e5436d2445243b2223052e07ba2538d8b68a7672cee55e7cd46']
 
 dependencies = [ 
     ('Text-CSV', '1.33', '', ('foss', '2015b')),
