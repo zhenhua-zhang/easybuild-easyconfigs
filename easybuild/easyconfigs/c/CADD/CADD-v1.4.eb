@@ -129,9 +129,10 @@ postinstallcmds = [
     # Deal with the prescored file
     
     'mkdir -p %(installdir)s/data/prescored/GRCh37/no_anno',
+    'mv -v  %(builddir)s/gnomad.genomes.r2.0.1.sites.tsv.gz* '
+        + ' %(installdir)s/data/prescored/GRCh37/no_anno/',
     'mkdir -p %(installdir)s/data/prescored/GRCh37/incl_anno',
     'mv -v  %(builddir)s/InDels_inclAnno.tsv.gz* '
-        + ' %(builddir)s/gnomad.genomes.r2.0.1.sites.tsv.gz* '
         + ' %(builddir)s/whole_genome_SNVs_inclAnno.tsv.gz* '
         + ' %(installdir)s/data/prescored/GRCh37/incl_anno/',
 ]
