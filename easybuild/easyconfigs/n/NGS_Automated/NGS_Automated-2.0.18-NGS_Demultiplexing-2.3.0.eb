@@ -1,5 +1,5 @@
 name = 'NGS_Automated'
-version = '2.0.19'
+version = '2.0.18'
 namelower = name.lower()
 versionsuffix = "-NGS_Demultiplexing-2.3.0"
 
@@ -10,7 +10,7 @@ toolchain = {'name': 'dummy', 'version': ''}
 easyblock = 'Bundle'
 
 dependencies = [
-    ('NGS_Automated', '2.0.19','-bare'),
+    ('NGS_Automated', '2.0.18','-bare'),
     ('NGS_Demultiplexing', '2.3.0'),
 ]
 
