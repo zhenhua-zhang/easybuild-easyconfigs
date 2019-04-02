@@ -14,7 +14,7 @@ easyblock = 'Tarball'
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['157c4ae9b533f208dc6f68ff6df6e78e9d4ddc7ed79df5474f56dfcccd303a54']
+checksums = ['e0ae7bd96e1c88dbc567a8ff330f01057ce3904d5e0caa8279ede54af3646896']
 
 sanity_check_paths = {
     'files': [
@@ -24,6 +24,7 @@ sanity_check_paths = {
         'bin/notifications.sh',
         'bin/startPipeline.sh',
         'bin/processGsRawData.sh',
+	'bin/demultiplexingTiming.sh',
         'bin/createInhouseSamplesheetFromGS.py',
         'etc/sharedConfig.cfg',
         'etc/chaperone.cfg',
