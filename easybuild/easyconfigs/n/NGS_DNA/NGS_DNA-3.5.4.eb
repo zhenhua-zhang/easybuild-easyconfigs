@@ -24,7 +24,7 @@ dependencies = [
     ('BEDTools', '2.25.0', '', ('foss', '2015b')),
     ('BCFtools', '1.6', '', ('foss', '2015b')),
     ('CoNVaDING', '1.1.6', '', ('dummy', '')),
-    ('Molgenis-Compute', 'v17.08.1', '-Java-1.8.0_74'),
+    ('Molgenis-Compute', 'v19.01.1', '-Java-11.0.2'),
     ('FastQC', '0.11.5', '-Java-1.8.0_74'),
     ('GATK', '3.7', '-Java-1.8.0_74'),
     ('gavin-plus', '1.5.0', '-Java-1.8.0_74'),
