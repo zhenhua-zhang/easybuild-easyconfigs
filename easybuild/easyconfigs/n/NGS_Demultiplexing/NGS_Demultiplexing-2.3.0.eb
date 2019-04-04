@@ -22,7 +22,7 @@ dependencies = [
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['8ccf1fe13ce313c6098026189d64915e40b99f537525133179251d13c82cd76f']
+checksums = ['538b0565191ef04334169539e64eb40faefc8382b99cbdc1afacb624c746bf9b']
 
 sanity_check_paths = {
     'files': ['workflow.csv', 'parameters.csv'],
