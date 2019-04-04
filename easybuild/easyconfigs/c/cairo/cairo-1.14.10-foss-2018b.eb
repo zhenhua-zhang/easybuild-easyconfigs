@@ -15,7 +15,7 @@ sources = [SOURCE_TAR_XZ]
 checksums = ['146f5f4d0b4439fc3792fd3452b7b12a']
 
 dependencies = [
-    ('bzip2', '1.0.6'),
+    ('bzip2', '1.0.6','', ('foss','2018b')),
     ('zlib', '1.2.8'),
     ('libpng', '1.6.29'),
     ('freetype', '2.8'),

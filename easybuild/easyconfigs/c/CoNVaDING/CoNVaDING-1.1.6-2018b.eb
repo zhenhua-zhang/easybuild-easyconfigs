@@ -1,0 +1,37 @@
+name = 'CoNVaDING'
+version = '1.1.6'
+versionsuffix = "-2018b"
+
+homepage = 'https://github.com/molgenis/CoNVaDING/releases/tag/1.1.6'
+description = """CNV detection in targeted gene panels."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'PackedBinary'
+
+#
+# Example URL: https://github.com/molgenis/CoNVaDING/archive/1.1.6.zip
+#  
+#
+
+source_urls = [('https://github.com/molgenis/CoNVaDING/archive/')]
+sources = [('%s.zip' % (version))]
+
+# Let's store the checksum in order to be sure it doesn't suddenly change
+checksums = ['5d0057c1b964b1f79347883375c15ca3']
+
+dependencies = [ 
+    ('SAMtools', '1.3.1', '', ('foss', '2018b')),
+    ('PerlPlus', '5.22.0', '-v17.01.1', ('foss', '2018b'))
+]
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/*.pl', 
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*'
+]
+
+sanity_check_paths = {
+    'files': ['CoNVaDING.pl'],
+    'dirs': []
+}
+
+moduleclass = 'bio'

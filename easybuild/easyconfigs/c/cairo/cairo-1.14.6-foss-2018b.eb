@@ -14,13 +14,14 @@ source_urls = ['http://cairographics.org/releases/']
 sources = [SOURCE_TAR_XZ]
 
 dependencies = [
-    ('bzip2', '1.0.6'),
-    ('zlib', '1.2.8'),
-    ('libpng', '1.6.21'),
-    ('freetype', '2.6.1'),
-    ('pixman', '0.32.8'),
-    ('fontconfig', '2.11.94'),
-    ('expat', '2.1.0'),
+    ('bzip2', '1.0.6', '', ('foss','2018b')),
+    ('zlib', '1.2.8', '', ('foss','2018b')),
+    ('libpng', '1.6.29', '', ('foss','2018b')),
+    ('freetype', '2.8', '', ('foss','2018b')),
+    ('pixman', '0.32.8', '', ('foss','2018b')),
+    ('fontconfig', '2.12.3', '', ('foss','2018b')),
+    ('expat', '2.2.1', '', ('foss','2018b')),
+    ('GLib', '2.52.3', '', ('foss','2018b')),
 ]
 
 # disable symbol lookup, which requires -lbfd, to avoid link issues with (non-PIC) libiberty.a provided by GCC
