@@ -1,0 +1,42 @@
+name = 'tcoffee'
+version = '12.00'
+
+homepage = 'http://www.tcoffee.org/'
+description = """A multiple sequence alignment package. 
+You can use T-Coffee to align sequences or to combine the output of your favorite alignment methods 
+(Clustal, Mafft, Probcons, Muscle...) into one unique alignment (M-Coffee). 
+T-Coffee can align Protein, DNA and RNA sequences. 
+It is also able to combine sequence information with protein structural information (3D-Coffee/Expresso), 
+profile information (PSI-Coffee) or RNA secondary structures (R-Coffee)."""
+
+toolchain = {'name': 'foss', 'version': '2015b'}
+easyblock = 'MakeCp'
+
+dependencies = [('PerlPlus', '5.22.0-foss-2015b-v18.03.2')]
+
+#
+# Example URL:
+# https://github.com/samtools/bcftools/releases/download/1.2/bcftools-1.2.tar.bz2
+#
+source_urls = [('https://github.com/cbcrg/tcoffee/archive/')]
+sources = ['v%(version)s.tar.gz']
+checksums = [
+    'efb1fedb61188cc6e9d13c9b811620d004a3bf189c7675fe7e26f2e40508f77b',  # tcoffee-12.00.tar.gz
+]
+
+executables = [name]
+files_to_copy = [(executables, 'bin')]
+#executables2 = ['misc/plot-vcfstats', 'misc/vcfutils.pl']
+#files_to_copy = [(executables, 'bin'), 
+#                 (executables2,'misc'),
+#                (['doc/bcftools.1'], 'share/man/man1/'),
+#                 (['plugins/*so'], 'plugins/')]
+
+#modextrapaths = {'BCFTOOLS_PLUGINS': 'plugins/'}
+
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in executables],
+    'dirs': []
+}
+
+moduleclass = 'bio'
