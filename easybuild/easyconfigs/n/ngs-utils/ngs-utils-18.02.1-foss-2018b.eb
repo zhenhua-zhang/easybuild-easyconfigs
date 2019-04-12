@@ -1,11 +1,10 @@
 name = 'ngs-utils'
 version = '18.02.1'
-versionsuffix = "-2018b"
 
 homepage = 'https://github.com/molgenis/ngs-utils'
 description = """Collection of notes and scripts related to NGS """
 
-toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchain = {'name': 'foss', 'version': '2018b'}
 easyblock = 'PackedBinary'
 
 #
@@ -17,8 +16,8 @@ sources = [('%s.tar.gz' % (version))]
 checksums = ['4444d95fd16be6cbb50e53a894bda112']
 
 dependencies = [ 
-    ('Text-CSV', '1.33', '', ('foss', '2018b')),
-    ('Log-Log4perl', '1.46', '', ('foss', '2018b')),
+    ('Text-CSV', '1.33'),
+    ('Log-Log4perl', '1.46'),
 ]
 
 postinstallcmds = [

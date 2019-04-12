@@ -47,7 +47,7 @@ configopts += ' --with-recommended-packages=no'
 dependencies = [
     ('libreadline', '6.3'),
     ('ncurses', '6.0'),
-    ('bzip2', '1.0.6','',('foss', '2018b')),
+    ('bzip2', '1.0.6'),
     ('XZ', '5.2.4'),
     ('libpng', '1.6.29'),            # For plotting in R
     ('libjpeg-turbo', '1.4.2'),      # For plotting in R

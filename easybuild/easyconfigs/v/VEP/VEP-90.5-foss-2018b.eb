@@ -6,7 +6,6 @@ easyblock = 'Tarball'
 
 name = 'VEP'
 version = '90.5'
-versionsuffix = "-2018b"
 
 homepage = 'http://www.ensembl.org/vep'
 description = """Tool for analysis, annotation, and prioritization of genomic variants
@@ -17,16 +16,15 @@ using (cached) Ensembl databases."""
 # both at build as well as at runtime. With 'dummy' as toolchain version,
 # dependencies will only be loaded at runtime.
 #
-#toolchain = {'name': 'dummy', 'version': 'dummy'}
-toolchain = {'name': 'dummy', 'version': ''}
+toolchain = {'name': 'foss', 'version': '2018b'}
 
 osdependencies = [
     ('mysql-devel', 'mariadb-devel')
 ]
 
 dependencies = [
-    ('PerlPlus', '5.22.0', '-v17.01.1', ('foss', '2018b')),
-    ('HTSlib', '1.3.2', '', ('foss', '2018b')),
+    ('PerlPlus', '5.22.0', '-v17.01.1'),
+    ('HTSlib', '1.3.2'),
 ]
 
 source_urls = ['https://github.com/Ensembl/ensembl-vep/archive/release/']

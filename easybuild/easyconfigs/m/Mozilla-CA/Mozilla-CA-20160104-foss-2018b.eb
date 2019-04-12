@@ -2,7 +2,6 @@ easyblock = 'Bundle'
 
 name = 'Mozilla-CA'
 version = '20160104'
-versionsuffix = "-2018b"
 
 homepage = 'https://github.com/gisle/mozilla-ca'
 description = """Mozilla's CA cert bundle in PEM format."""
