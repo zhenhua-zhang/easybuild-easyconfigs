@@ -7,11 +7,11 @@ versionsuffix = "-2018b"
 homepage = 'https://github.com/gisle/mozilla-ca'
 description = """Mozilla's CA cert bundle in PEM format."""
 
-toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchain = {'name': 'foss', 'version': '2018b'}
 
 perlver = '5.22.0'
 dependencies = [
-    ('PerlPlus', perlver, '-v17.01.1', ('foss', '2018b')),
+    ('PerlPlus', perlver, '-v17.01.1'),
 ]
 
 exts_defaultclass = 'PerlModule'

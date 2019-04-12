@@ -6,7 +6,6 @@ easyblock = 'Tarball'
 
 name = 'CADD'
 version = 'v1.3'
-versionsuffix = "-2018b"
 
 homepage = 'http://cadd.gs.washington.edu/home'
 description = """Tool for scoring the deleteriousness of variants in the human genome."""
@@ -16,15 +15,14 @@ description = """Tool for scoring the deleteriousness of variants in the human g
 # both at build as well as at runtime. With 'dummy' as toolchain version,
 # dependencies will only be loaded at runtime.
 #
-#toolchain = {'name': 'dummy', 'version': 'dummy'}
-toolchain = {'name': 'dummy', 'version': ''}
+#toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
-    ('PerlPlus', '5.22.0', '-v17.01.1', ('foss', '2018b')),
-    ('Mozilla-CA', '20160104', '', ('dummy', 'dummy')),
-    ('PythonPlus', '2.7.11', '-v16.11.1', ('foss', '2018b')),
-    ('HTSlib', '1.3.2', '', ('foss', '2018b')),
-    ('SAMtools', '1.3.1', '', ('foss', '2018b')),
+    ('PerlPlus', '5.22.0', '-v17.01.1'),
+    ('Mozilla-CA', '20160104', '', ('dummy', '')),
+    ('PythonPlus', '2.7.11', '-v16.11.1'),
+    ('HTSlib', '1.3.2'),
+    ('SAMtools', '1.3.1'),
     ('VEP', '76', '', ('dummy', '')),
 ]
 
