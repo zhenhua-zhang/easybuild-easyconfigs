@@ -35,7 +35,7 @@ checksums = [
 configopts = ' --without-ncursesw --with-ncurses '
 
 dependencies = [
-    ('ncurses', '5.9'),
+    ('ncurses', '6.0'),
     ('zlib', '1.2.8'),
 ]
 
