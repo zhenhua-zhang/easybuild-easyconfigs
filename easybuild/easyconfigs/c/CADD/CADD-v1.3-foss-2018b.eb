@@ -15,7 +15,7 @@ description = """Tool for scoring the deleteriousness of variants in the human g
 # both at build as well as at runtime. With 'dummy' as toolchain version,
 # dependencies will only be loaded at runtime.
 #
-#toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
     ('PerlPlus', '5.22.0', '-v17.01.1'),
