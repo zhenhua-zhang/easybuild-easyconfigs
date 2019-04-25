@@ -7,8 +7,10 @@ description = """PLINK is a free, open-source whole genome association analysis 
 toolchain = {'name': 'foss', 'version': '2015b'}
 easyblock = 'PackedBinary'
 
-source_urls = [('https://www.cog-genomics.org/static/bin/plink160224//')]
-sources = [('%s_linux_x86_64.zip' % (name))]
+source_urls = [('http://s3.amazonaws.com/plink1-assets/')]
+sources = [('%s_linux_x86_64_20190304.zip' % (name))]
+
+checksums = ['68022f4484e77bc7cd0243a67106a798ca0adcf6202672a07c465a9a97b92d52']
 
 sanity_check_paths = {
     'files': ['plink'],
