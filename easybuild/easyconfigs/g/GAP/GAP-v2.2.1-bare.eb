@@ -1,6 +1,7 @@
 name = 'GAP'
 version = 'v2.2.1'
 namelower = name.lower()
+versionsuffix='-bare'
 
 homepage = 'https://github.com/molgenis/GAP'
 description = """Genotyping Array pipeline used in the UMCG"""
@@ -16,21 +17,6 @@ sources = [('%s.tar.gz' % (version))]
 
 checksums = ['72ad06355a676d1f6312bb9519cfe22b6f2422d80288dfc1f8677a48c42b8eb6']
 
-#
-# Dependencies.
-#
-dependencies = [
-    ('Perl', '5.22.0', '-bare', ('foss','2015b')),
-    ('BeadArrayFiles', '1.3.1', '-Python-2.7.11', ('foss','2015b')),
-    ('Python', '2.7.11', '', ('foss','2015b')),
-    ('Molgenis-Compute', 'v17.08.1', '-Java-1.8.0_74'),
-    ('GTCtoVCF', '1.1.1', '-Python-2.7.11', ('foss','2015b')),
-    ('HTSlib', '1.3.2', '', ('foss', '2015b')),
-    ('PennCNV', '1.0.4', '', ('foss', '2015b')),
-    ('opticall', '0.7.0', '', ('foss', '2015b')),
-    ('RPlus', '3.4.4', '-v18.10.1', ('foss', '2015b')),
-    ('plink', '1.9', '', ('foss', '2015b')),
-]
 
 modextrapaths = {
 
