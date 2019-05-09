@@ -23,7 +23,6 @@ versionsuffix = '-%s-%s' % (python, pyver)
 
 dependencies = [
     (python, pyver),
-    ('Cython','0.24.1', versionsuffix),
     ('BCFtools','1.7'),
     ('SAMtools','1.7'),
     ('cURL', '7.47.1'),
