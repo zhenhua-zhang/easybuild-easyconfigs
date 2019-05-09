@@ -2,6 +2,7 @@ easyblock = 'PythonPackage'
 
 name = 'Pysam'
 version = '0.15.2'
+shortver = '.'.join(version.split('.')[:2])
 
 homepage = 'https://github.com/pysam-developers/pysam'
 description = """Pysam is a python module for reading and manipulating Samfiles. 
