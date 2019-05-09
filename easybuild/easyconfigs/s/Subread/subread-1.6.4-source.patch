@@ -1,0 +1,16 @@
+diff -ru subread-1.6.4-source.original/src/Makefile.Linux subread-1.6.4-source.patched/src/Makefile.Linux
+--- subread-1.6.4-source.original/src/Makefile.Linux	2019-03-11 02:26:02.000000000 +0100
++++ subread-1.6.4-source.patched/src/Makefile.Linux	2019-05-09 16:57:39.000000000 +0200
+@@ -8,8 +8,10 @@
+ -include ~/.R/DBPZ_debug_makefile
+ 
+ CCFLAGS = -mtune=core2 ${MACOS} -O${OPT_LEVEL} -DMAKE_FOR_EXON  -D MAKE_STANDALONE -D SUBREAD_VERSION=\"${SUBREAD_VERSION}\"  -D_FILE_OFFSET_BITS=64 ${WARNING_LEVEL} 
+-LDFLAGS = ${STATIC_MAKE} -pthread -lz ${MACOS} -O${OPT_LEVEL} -DMAKE_FOR_EXON -D MAKE_STANDALONE -lm
+-CC = ${CC_EXEC}  ${CCFLAGS}  -fmessage-length=0  -ggdb 
++#LDFLAGS = ${STATIC_MAKE} -pthread -lz ${MACOS} -O${OPT_LEVEL} -DMAKE_FOR_EXON -D MAKE_STANDALONE -lm
++#CC = ${CC_EXEC}  ${CCFLAGS}  -fmessage-length=0  -ggdb 
++LDFLAGS = ${STATIC_MAKE} -pthread $(shell pkg-config --libs --cflags zlib) ${MACOS} -O${OPT_LEVEL} -DMAKE_FOR_EXON -D MAKE_STANDALONE -lm
++CC = ${CC_EXEC}  ${CCFLAGS}  -fmessage-length=0
+ 
+ 
+ ALL_LIBS= core core-junction core-indel sambam-file sublog gene-algorithms hashtable input-files sorted-hashtable gene-value-index exon-algorithms HelperFunctions interval_merge long-hashtable core-bigtable seek-zlib

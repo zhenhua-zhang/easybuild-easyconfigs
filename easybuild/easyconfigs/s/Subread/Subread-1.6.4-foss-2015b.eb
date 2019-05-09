@@ -1,0 +1,33 @@
+easyblock = 'MakeCp'
+
+name = 'Subread'
+version = '1.6.4'
+
+homepage = 'http://%(namelower)s.sourceforge.net/'
+description = """High performance read alignment, quantification and mutation discovery"""
+
+toolchain = {'name': 'foss', 'version': '2015b'}
+
+sources = ['%(namelower)s-%(version)s-source.tar.gz']
+source_urls = [('https://sourceforge.net/projects/%(namelower)s/files/%(namelower)s-%(version)s', 'download')]
+
+checksums = [
+    'b7bd0ee3b0942d791aecce6454d2f3271c95a010beeeff2daf1ff71162e43969', # subread-1.6.4-source.tar.gz
+    '272717dd10e9ac8109ed83676fc2a8c001ef6228f48263e131a7dff85e234605', # subread-1.6.4-source.patch
+]
+
+start_dir = 'src'
+buildopts = '-f Makefile.Linux'
+
+dependencies = [
+    ('zlib', '1.2.11'),
+]
+
+files_to_copy = ['bin', 'annotation', 'doc', 'LICENSE', 'README.txt', 'test']
+
+sanity_check_paths = {
+    'files': ['LICENSE', 'README.txt', 'bin/subread-align'],
+    'dirs': ['bin/utilities', 'annotation', 'doc', 'test']
+}
+
+moduleclass = 'bio'
