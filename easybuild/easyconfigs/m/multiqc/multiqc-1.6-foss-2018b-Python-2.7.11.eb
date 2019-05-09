@@ -21,7 +21,7 @@ dependencies = [
     ('libyaml', '0.1.6'),
     ('libpng', '1.6.29'),
     ('freetype', '2.8'),
-    ('cairo', '1.14.6'),
+    ('cairo', '1.14.10'),
     ('Python', '2.7.11'),
 ]
 
