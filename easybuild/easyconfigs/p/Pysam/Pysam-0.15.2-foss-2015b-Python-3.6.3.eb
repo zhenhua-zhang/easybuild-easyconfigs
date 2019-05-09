@@ -30,7 +30,7 @@ dependencies = [
 
 sanity_check_paths = {
     'files': [],
-    'dirs': ['lib/python%s/site-packages/pysam-%s-py%s-linux-x86_64.egg' % (pyshortver, shortver, pyshortver)]
+    'dirs': ['lib/python%s/site-packages/pysam-%s-py%s-linux-x86_64.egg' % (pyshortver, version, pyshortver)]
 }
 
 moduleclass = 'bio'
