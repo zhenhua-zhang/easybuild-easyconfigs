@@ -28,9 +28,6 @@ dependencies = [
     ('cURL', '7.47.1'),
 ]
 
-sources = ['v%(version)s.tar.gz']
-source_urls = ['https://github.com/pysam-developers/pysam/archive/']
-
 sanity_check_paths = {
     'files': [],
     'dirs': ['lib/python%s/site-packages/pysam-%s-py%s-linux-x86_64.egg' % (pyshortver, shortver, pyshortver)]
