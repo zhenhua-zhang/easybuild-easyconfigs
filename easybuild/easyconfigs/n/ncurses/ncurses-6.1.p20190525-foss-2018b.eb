@@ -17,7 +17,7 @@ toolchainopts = {'pic': True}
 
 sources = [{
     'source_urls': ['https://github.com/mirror/%(name)s/archive/'],
-    'filename': '%(name)-%(version)s.tar.gz',
+    'filename': '%(name)s-%(version)s.tar.gz',
     'download_filename': '296420e1ec091e6dbd354cc13748638637690776.tar.gz',
 }]
 
