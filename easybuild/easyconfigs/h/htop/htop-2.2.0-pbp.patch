@@ -1,4 +1,4 @@
-diff -W 146 -ru htop-2.2.0.org/Process.c htop-2.2.0.patched/Process.c
+diff -W 150 -ru htop-2.2.0.org/Process.c htop-2.2.0.patched/Process.c
 --- htop-2.2.0.org/Process.c	2018-04-10 15:42:59.000000000 +0200
 +++ htop-2.2.0.patched/Process.c	2019-05-30 12:51:15.000000000 +0200
 @@ -378,21 +378,21 @@
@@ -61,7 +61,7 @@ diff -W 146 -ru htop-2.2.0.org/Process.c htop-2.2.0.patched/Process.c
        }
        break;
     }
-diff -W 146 -ru htop-2.2.0.org/configure.ac htop-2.2.0.patched/configure.ac
+diff -W 150 -ru htop-2.2.0.org/configure.ac htop-2.2.0.patched/configure.ac
 --- htop-2.2.0.org/configure.ac	2018-04-10 15:42:59.000000000 +0200
 +++ htop-2.2.0.patched/configure.ac	2019-05-30 13:11:34.000000000 +0200
 @@ -214,7 +214,9 @@
@@ -84,9 +84,18 @@ diff -W 146 -ru htop-2.2.0.org/configure.ac htop-2.2.0.patched/configure.ac
     AC_CHECK_HEADERS([curses.h],[:],
        [AC_CHECK_HEADERS([ncurses/curses.h],[:],
           [AC_CHECK_HEADERS([ncurses/ncurses.h],[:],
-diff -W 146 -ru htop-2.2.0.org/linux/LinuxProcess.c htop-2.2.0.patched/linux/LinuxProcess.c
+diff -W 150 -ru htop-2.2.0.org/linux/LinuxProcess.c htop-2.2.0.patched/linux/LinuxProcess.c
 --- htop-2.2.0.org/linux/LinuxProcess.c	2018-04-10 15:42:59.000000000 +0200
-+++ htop-2.2.0.patched/linux/LinuxProcess.c	2019-05-30 13:16:26.000000000 +0200
++++ htop-2.2.0.patched/linux/LinuxProcess.c	2019-05-31 11:03:46.000000000 +0200
+@@ -143,7 +143,7 @@
+ } LinuxProcess;
+ 
+ #ifndef Process_isKernelThread
+-#define Process_isKernelThread(_process) ((LinuxProcess*)(_process)->isKernelThread)
++#define Process_isKernelThread(_process) (((LinuxProcess*)(_process))->isKernelThread)
+ #endif
+ 
+ #ifndef Process_isUserlandThread
 @@ -200,9 +200,15 @@
     [M_LRS] = { .name = "M_LRS", .title = " LIB ", .description = "The library size of the process", .flags = 0, },
     [M_DT] = { .name = "M_DT", .title = " DIRTY ", .description = "Size of the dirty pages of the process", .flags = 0, },

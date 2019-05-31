@@ -22,7 +22,7 @@ patches = ['%(name)s-%(version)s%(versionsuffix)s.patch']
 
 checksums = [
     'fb23275090ee5fb19266384c39c69519c8b3844b8f6444730094949c621197c0',  # htop-2.2.0.tar.gz
-    'a23ed40f3bc74ed83d25c9917824f70357824e516294cfe158c8bc26c34f450a',  # htop-2.2.0.patch
+    'e6600ec9f5c1c63b7ca911f9a2a491243f0e0a6e0dac2ecc42d81ac592927519',  # htop-2.2.0.patch
 ]
 
 dependencies = [
