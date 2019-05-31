@@ -16,8 +16,8 @@ toolchain = {'name': 'foss', 'version': '2018b'}
 #  * Improved formatting of CPU, Mem and User fields.
 #  * Add missing tinfo dependency in configure.ac
 #
-source_urls = ['https://github.com/hishamhm/htop/archive/']
-sources = ['%s.tar.gz' % version]
+source_urls = ['https://github.com/hishamhm/%(name)s/archive/']
+sources = ['%(version)s.tar.gz']
 patches = ['%(name)s-%(version)s%(versionsuffix)s.patch']
 
 checksums = [
@@ -26,7 +26,7 @@ checksums = [
 ]
 
 dependencies = [
-    ('ncurses', '6.1'),
+    ('ncurses', '6.1.p20190525'),
 ]
 
 builddependencies = [
