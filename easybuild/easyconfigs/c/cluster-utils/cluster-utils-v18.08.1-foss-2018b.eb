@@ -23,6 +23,7 @@ checksums = ['884960da6c1322c32572a7c5b97ce693683c384142b5ea88fe0a7dbd53dc9e1b']
 #
 dependencies = [
     ('htop', '2.2.0', '-pbp'),
+    ('nano', '4.2', ''),
 ]
 
 keepsymlinks = True
