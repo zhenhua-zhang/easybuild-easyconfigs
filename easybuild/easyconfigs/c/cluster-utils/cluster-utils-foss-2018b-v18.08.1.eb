@@ -4,7 +4,7 @@ version = 'v18.08.1'
 homepage = 'https://github.com/molgenis/cluster-utils/'
 description = """Utilities for cluster users."""
 
-toolchain = {'name': 'dummy', 'version': ''}
+toolchain = {'name': 'foss', 'version': '2018b'}
 easyblock = 'CmdCp'
 
 #
@@ -22,7 +22,7 @@ checksums = ['884960da6c1322c32572a7c5b97ce693683c384142b5ea88fe0a7dbd53dc9e1b']
 # * Technically nano is not a dependency, but we'd like to have it as part of the cluster-utils module.
 #
 dependencies = [
-    ('htop', '2.2.0', '-pbp', ('foss', '2018b')),
+    ('htop', '2.2.0', '-pbp'),
 ]
 
 keepsymlinks = True
