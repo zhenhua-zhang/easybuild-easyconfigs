@@ -1,0 +1,405 @@
+diff -W 202 -ru htop-2.2.0.org/Action.c htop-2.2.0.patched/Action.c
+--- htop-2.2.0.org/Action.c	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/Action.c	2019-05-31 16:24:25.000000000 +0200
+@@ -474,7 +474,7 @@
+       addattrstr(CRT_colors[CPU_NICE_TEXT], "low-priority"); addstr("/");
+       addattrstr(CRT_colors[CPU_NORMAL], "normal"); addstr("/");
+       addattrstr(CRT_colors[CPU_KERNEL], "kernel"); addstr("/");
+-      addattrstr(CRT_colors[CPU_STEAL], "virtualiz");
++      addattrstr(CRT_colors[CPU_GUEST], "virtualiz");
+       addattrstr(CRT_colors[BAR_SHADOW], "               used%");
+    }
+    addattrstr(CRT_colors[BAR_BORDER], "]");
+diff -W 202 -ru htop-2.2.0.org/Process.c htop-2.2.0.patched/Process.c
+--- htop-2.2.0.org/Process.c	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/Process.c	2019-05-31 16:31:11.000000000 +0200
+@@ -228,7 +228,7 @@
+    if(number >= (10 * ONE_DECIMAL_M)) {
+       #ifdef __LP64__
+       if(number >= (100 * ONE_DECIMAL_G)) {
+-         len = snprintf(buffer, 10, "%4ldT ", number / ONE_G);
++         len = snprintf(buffer, 10, "%4luT ", number / ONE_G);
+          RichString_appendn(str, largeNumberColor, buffer, len);
+          return;
+       } else if (number >= (1000 * ONE_DECIMAL_M)) {
+@@ -238,7 +238,7 @@
+       }
+       #endif
+       if(number >= (100 * ONE_DECIMAL_M)) {
+-         len = snprintf(buffer, 10, "%4ldG ", number / ONE_M);
++         len = snprintf(buffer, 10, "%4luG ", number / ONE_M);
+          RichString_appendn(str, largeNumberColor, buffer, len);
+          return;
+       }
+@@ -246,11 +246,11 @@
+       RichString_appendn(str, largeNumberColor, buffer, len);
+       return;
+    } else if (number >= 100000) {
+-      len = snprintf(buffer, 10, "%4ldM ", number / ONE_K);
++      len = snprintf(buffer, 10, "%4luM ", number / ONE_K);
+       RichString_appendn(str, processMegabytesColor, buffer, len);
+       return;
+    } else if (number >= 1000) {
+-      len = snprintf(buffer, 10, "%2ld", number/1000);
++      len = snprintf(buffer, 10, "%2lu", number/1000);
+       RichString_appendn(str, processMegabytesColor, buffer, len);
+       number %= 1000;
+       len = snprintf(buffer, 10, "%03lu ", number);
+@@ -278,7 +278,7 @@
+       int len = snprintf(buffer, 13, "    no perm ");
+       RichString_appendn(str, CRT_colors[PROCESS_SHADOW], buffer, len);
+    } else if (number > 10000000000) {
+-      xSnprintf(buffer, 13, "%11lld ", number / 1000);
++      xSnprintf(buffer, 13, "%11llu ", number / 1000);
+       RichString_appendn(str, largeNumberColor, buffer, 5);
+       RichString_appendn(str, processMegabytesColor, buffer+5, 3);
+       RichString_appendn(str, processColor, buffer+8, 4);
+@@ -378,21 +378,21 @@
+    bool coloring = this->settings->highlightMegabytes;
+ 
+    switch (field) {
++   /*
++   #
++   # Patched PERCENT_CPU and PERCENT_MEM formatting.
++   # When changed here: make sure to also patch the column headers in linux/LinuxProces.c
++   #
++   */
+    case PERCENT_CPU: {
+-      if (this->percent_cpu > 999.9) {
+-         xSnprintf(buffer, n, "%4d ", (unsigned int)this->percent_cpu); 
+-      } else if (this->percent_cpu > 99.9) {
+-         xSnprintf(buffer, n, "%3d. ", (unsigned int)this->percent_cpu); 
+-      } else {
+-         xSnprintf(buffer, n, "%4.1f ", this->percent_cpu);
+-      }
++      xSnprintf(buffer, n, "%6.1f ", this->percent_cpu);
+       break;
+    }
+    case PERCENT_MEM: {
+       if (this->percent_mem > 99.9) {
+-         xSnprintf(buffer, n, "100. "); 
++         xSnprintf(buffer, n, "100.0 "); 
+       } else {
+-         xSnprintf(buffer, n, "%4.1f ", this->percent_mem);
++         xSnprintf(buffer, n, "%5.1f ", this->percent_mem);
+       }
+       break;
+    }
+@@ -414,11 +414,16 @@
+             if (indent & (1U << i))
+                maxIndent = i+1;
+           for (int i = 0; i < maxIndent - 1; i++) {
+-            int written;
++            int written, ret;
+             if (indent & (1 << i))
+-               written = snprintf(buf, n, "%s  ", CRT_treeStr[TREE_STR_VERT]);
++               ret = snprintf(buf, n, "%s  ", CRT_treeStr[TREE_STR_VERT]);
+             else
+-               written = snprintf(buf, n, "   ");
++               ret = snprintf(buf, n, "   ");
++            if (ret < 0 || ret >= n) {
++               written = n;
++            } else {
++               written = ret;
++            }
+             buf += written;
+             n -= written;
+          }
+@@ -471,17 +476,23 @@
+    case TGID: xSnprintf(buffer, n, Process_pidFormat, this->tgid); break;
+    case TPGID: xSnprintf(buffer, n, Process_pidFormat, this->tpgid); break;
+    case TTY_NR: xSnprintf(buffer, n, "%3u:%3u ", major(this->tty_nr), minor(this->tty_nr)); break;
++   /*
++   #
++   # Patched USER formatting: doubled field size to accomodate long prefixed accounts from IDVault.
++   # When changed here: make sure to also patch the column headers in linux/LinuxProces.c
++   #
++   */
+    case USER: {
+       if (Process_getuid != (int) this->st_uid)
+          attr = CRT_colors[PROCESS_SHADOW];
+       if (this->user) {
+-         xSnprintf(buffer, n, "%-9s ", this->user);
++         xSnprintf(buffer, n, "%-18s ", this->user);
+       } else {
+-         xSnprintf(buffer, n, "%-9d ", this->st_uid);
++         xSnprintf(buffer, n, "%-18d ", this->st_uid);
+       }
+-      if (buffer[9] != '\0') {
+-         buffer[9] = ' ';
+-         buffer[10] = '\0';
++      if (buffer[18] != '\0') {
++         buffer[18] = ' ';
++         buffer[19] = '\0';
+       }
+       break;
+    }
+diff -W 202 -ru htop-2.2.0.org/configure.ac htop-2.2.0.patched/configure.ac
+--- htop-2.2.0.org/configure.ac	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/configure.ac	2019-05-31 17:18:13.000000000 +0200
+@@ -214,7 +214,7 @@
+        missing_libraries="$missing_libraries libncursesw"
+        AC_MSG_ERROR([You may want to use --disable-unicode or install libncursesw.])
+    )))))))
+-
++   
+    AC_CHECK_HEADERS([ncursesw/curses.h],[:],
+       [AC_CHECK_HEADERS([ncurses/ncurses.h],[:],
+          [AC_CHECK_HEADERS([ncurses/curses.h],[:],
+diff -W 202 -ru htop-2.2.0.org/linux/LinuxProcess.c htop-2.2.0.patched/linux/LinuxProcess.c
+--- htop-2.2.0.org/linux/LinuxProcess.c	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/linux/LinuxProcess.c	2019-05-31 16:39:25.000000000 +0200
+@@ -15,6 +15,7 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/syscall.h>
++#include <time.h>
+ 
+ /*{
+ 
+@@ -106,6 +107,7 @@
+    long m_drs;
+    long m_lrs;
+    long m_dt;
++   unsigned long long starttime;
+    #ifdef HAVE_TASKSTATS
+    unsigned long long io_rchar;
+    unsigned long long io_wchar;
+@@ -143,7 +145,7 @@
+ } LinuxProcess;
+ 
+ #ifndef Process_isKernelThread
+-#define Process_isKernelThread(_process) ((LinuxProcess*)(_process)->isKernelThread)
++#define Process_isKernelThread(_process) (((LinuxProcess*)(_process))->isKernelThread)
+ #endif
+ 
+ #ifndef Process_isUserlandThread
+@@ -152,6 +154,8 @@
+ 
+ }*/
+ 
++long long btime; /* semi-global */
++
+ ProcessFieldData Process_fields[] = {
+    [0] = { .name = "", .title = NULL, .description = NULL, .flags = 0, },
+    [PID] = { .name = "PID", .title = "    PID ", .description = "Process/thread ID", .flags = 0, },
+@@ -200,9 +204,15 @@
+    [M_LRS] = { .name = "M_LRS", .title = " LIB ", .description = "The library size of the process", .flags = 0, },
+    [M_DT] = { .name = "M_DT", .title = " DIRTY ", .description = "Size of the dirty pages of the process", .flags = 0, },
+    [ST_UID] = { .name = "ST_UID", .title = " UID ", .description = "User ID of the process owner", .flags = 0, },
+-   [PERCENT_CPU] = { .name = "PERCENT_CPU", .title = "CPU% ", .description = "Percentage of the CPU time the process used in the last sampling", .flags = 0, },
+-   [PERCENT_MEM] = { .name = "PERCENT_MEM", .title = "MEM% ", .description = "Percentage of the memory the process is using, based on resident memory size", .flags = 0, },
+-   [USER] = { .name = "USER", .title = "USER      ", .description = "Username of the process owner (or user ID if name cannot be determined)", .flags = 0, },
++   /*
++   #
++   # Patched PERCENT_CPU, PERCENT_MEM and USER formatting.
++   # When changing the column headers here: make sure to also patch the field values in ../Proces.c
++   #
++   */
++   [PERCENT_CPU] = { .name = "PERCENT_CPU", .title = "  CPU% ", .description = "Percentage of the CPU time the process used in the last sampling", .flags = 0, },
++   [PERCENT_MEM] = { .name = "PERCENT_MEM", .title = " MEM% ", .description = "Percentage of the memory the process is using, based on resident memory size", .flags = 0, },
++   [USER] = { .name = "USER", .title = "USER               ", .description = "Username of the process owner (or user ID if name cannot be determined)", .flags = 0, },
+    [TIME] = { .name = "TIME", .title = "  TIME+  ", .description = "Total time the process has spent in user and system time", .flags = 0, },
+    [NLWP] = { .name = "NLWP", .title = "NLWP ", .description = "Number of threads in the process", .flags = 0, },
+    [TGID] = { .name = "TGID", .title = "   TGID ", .description = "Thread group ID (i.e. process ID)", .flags = 0, },
+@@ -344,6 +354,13 @@
+    case STIME: Process_printTime(str, lp->stime); return;
+    case CUTIME: Process_printTime(str, lp->cutime); return;
+    case CSTIME: Process_printTime(str, lp->cstime); return;
++   case STARTTIME: {
++     struct tm date;
++     time_t starttimewall = btime + (lp->starttime / sysconf(_SC_CLK_TCK));
++     (void) localtime_r(&starttimewall, &date);
++     strftime(buffer, n, ((starttimewall > time(NULL) - 86400) ? "%R " : "%b%d "), &date);
++     break;
++   }
+    #ifdef HAVE_TASKSTATS
+    case RCHAR:  Process_colorNumber(str, lp->io_rchar, coloring); return;
+    case WCHAR:  Process_colorNumber(str, lp->io_wchar, coloring); return;
+@@ -428,6 +445,12 @@
+    case CUTIME: diff = p2->cutime - p1->cutime; goto test_diff;
+    case STIME:  diff = p2->stime - p1->stime; goto test_diff;
+    case CSTIME: diff = p2->cstime - p1->cstime; goto test_diff;
++   case STARTTIME: {
++      if (p1->starttime == p2->starttime)
++         return (p1->super.pid - p2->super.pid);
++      else
++         return (p1->starttime - p2->starttime);
++   }
+    #ifdef HAVE_TASKSTATS
+    case RCHAR:  diff = p2->io_rchar - p1->io_rchar; goto test_diff;
+    case WCHAR:  diff = p2->io_wchar - p1->io_wchar; goto test_diff;
+diff -W 202 -ru htop-2.2.0.org/linux/LinuxProcess.h htop-2.2.0.patched/linux/LinuxProcess.h
+--- htop-2.2.0.org/linux/LinuxProcess.h	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/linux/LinuxProcess.h	2019-05-31 16:40:55.000000000 +0200
+@@ -98,6 +98,7 @@
+    long m_drs;
+    long m_lrs;
+    long m_dt;
++   unsigned long long starttime;
+    #ifdef HAVE_TASKSTATS
+    unsigned long long io_rchar;
+    unsigned long long io_wchar;
+@@ -142,6 +143,7 @@
+ #define Process_isUserlandThread(_process) (_process->pid != _process->tgid)
+ #endif
+ 
++long long btime; /* semi-global */
+ 
+ extern ProcessFieldData Process_fields[];
+ 
+diff -W 202 -ru htop-2.2.0.org/linux/LinuxProcessList.c htop-2.2.0.patched/linux/LinuxProcessList.c
+--- htop-2.2.0.org/linux/LinuxProcessList.c	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/linux/LinuxProcessList.c	2019-05-31 17:08:43.000000000 +0200
+@@ -47,6 +47,8 @@
+ 
+ #include "ProcessList.h"
+ 
++extern long long btime;
++
+ typedef struct CPUData_ {
+    unsigned long long int totalTime;
+    unsigned long long int userTime;
+@@ -111,7 +113,7 @@
+ #endif
+ 
+ #ifndef PROC_LINE_LENGTH
+-#define PROC_LINE_LENGTH 512
++#define PROC_LINE_LENGTH 4096
+ #endif
+ 
+ }*/
+@@ -243,13 +245,19 @@
+    if (file == NULL) {
+       CRT_fatalError("Cannot open " PROCSTATFILE);
+    }
+-   char buffer[PROC_LINE_LENGTH + 1];
+-   int cpus = -1;
++   int cpus = 0;
+    do {
+-      cpus++;
+-      char * s = fgets(buffer, PROC_LINE_LENGTH, file);
+-      (void) s;
+-   } while (String_startsWith(buffer, "cpu"));
++      char buffer[PROC_LINE_LENGTH + 1];
++      if (fgets(buffer, PROC_LINE_LENGTH + 1, file) == NULL) {
++         CRT_fatalError("No btime in " PROCSTATFILE);
++      } else if (String_startsWith(buffer, "cpu")) {
++         cpus++;
++      } else if (String_startsWith(buffer, "btime ")) {
++         sscanf(buffer, "btime %lld\n", &btime);
++         break;
++      }
++   } while(true);
++
+    fclose(file);
+ 
+    pl->cpuCount = MAX(cpus - 1, 1);
+@@ -355,7 +363,10 @@
+    location += 1;
+    process->nlwp = strtol(location, &location, 10);
+    location += 1;
+-   for (int i=0; i<17; i++) location = strchr(location, ' ')+1;
++   location = strchr(location, ' ')+1;
++   lp->starttime = strtoll(location, &location, 10);
++   location += 1;
++   for (int i=0; i<15; i++) location = strchr(location, ' ')+1;
+    process->exit_signal = strtol(location, &location, 10);
+    location += 1;
+    assert(location != NULL);
+@@ -378,12 +389,6 @@
+       return false;
+    process->st_uid = sstat.st_uid;
+   
+-   struct tm date;
+-   time_t ctime = sstat.st_ctime;
+-   process->starttime_ctime = ctime;
+-   (void) localtime_r((time_t*) &ctime, &date);
+-   strftime(process->starttime_show, 7, ((ctime > curTime - 86400) ? "%R " : "%b%d "), &date);
+-   
+    return true;
+ }
+ 
+@@ -709,7 +714,7 @@
+    }
+    command[lastChar + 1] = '\0';
+    process->basenameOffset = tokenEnd;
+-   setCommand(process, command, lastChar);
++   setCommand(process, command, lastChar + 1);
+ 
+    return true;
+ }
+@@ -925,30 +930,30 @@
+    char buffer[128];
+    while (fgets(buffer, 128, file)) {
+ 
+-      #define tryRead(label, variable) (String_startsWith(buffer, label) && sscanf(buffer + strlen(label), " %32llu kB", variable))
++      #define tryRead(label, variable) do { if (String_startsWith(buffer, label) && sscanf(buffer + strlen(label), " %32llu kB", variable)) { break; } } while(0)
+       switch (buffer[0]) {
+       case 'M':
+-         if (tryRead("MemTotal:", &this->totalMem)) {}
+-         else if (tryRead("MemFree:", &this->freeMem)) {}
+-         else if (tryRead("MemShared:", &this->sharedMem)) {}
++         tryRead("MemTotal:", &this->totalMem);
++         tryRead("MemFree:", &this->freeMem);
++         tryRead("MemShared:", &this->sharedMem);
+          break;
+       case 'B':
+-         if (tryRead("Buffers:", &this->buffersMem)) {}
++         tryRead("Buffers:", &this->buffersMem);
+          break;
+       case 'C':
+-         if (tryRead("Cached:", &this->cachedMem)) {}
++         tryRead("Cached:", &this->cachedMem);
+          break;
+       case 'S':
+          switch (buffer[1]) {
+          case 'w':
+-            if (tryRead("SwapTotal:", &this->totalSwap)) {}
+-            else if (tryRead("SwapFree:", &swapFree)) {}
++            tryRead("SwapTotal:", &this->totalSwap);
++            tryRead("SwapFree:", &swapFree);
+             break;
+          case 'h':
+-            if (tryRead("Shmem:", &shmem)) {}
++            tryRead("Shmem:", &shmem);
+             break;
+          case 'R':
+-            if (tryRead("SReclaimable:", &sreclaimable)) {}
++            tryRead("SReclaimable:", &sreclaimable);
+             break;
+          }
+          break;
+diff -W 202 -ru htop-2.2.0.org/linux/LinuxProcessList.h htop-2.2.0.patched/linux/LinuxProcessList.h
+--- htop-2.2.0.org/linux/LinuxProcessList.h	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/linux/LinuxProcessList.h	2019-05-31 16:49:53.000000000 +0200
+@@ -20,6 +20,8 @@
+ 
+ #include "ProcessList.h"
+ 
++extern long long btime;
++
+ typedef struct CPUData_ {
+    unsigned long long int totalTime;
+    unsigned long long int userTime;
+@@ -84,7 +86,7 @@
+ #endif
+ 
+ #ifndef PROC_LINE_LENGTH
+-#define PROC_LINE_LENGTH 512
++#define PROC_LINE_LENGTH 4096
+ #endif
+ 
+ 
+diff -W 202 -ru htop-2.2.0.org/scripts/MakeHeader.py htop-2.2.0.patched/scripts/MakeHeader.py
+--- htop-2.2.0.org/scripts/MakeHeader.py	2018-04-10 15:42:59.000000000 +0200
++++ htop-2.2.0.patched/scripts/MakeHeader.py	2019-05-31 17:02:24.000000000 +0200
+@@ -3,7 +3,7 @@
+ try:
+    from StringIO import StringIO
+ except ImportError:
+-   from io import StringIO
++   StringIO = io.StringIO
+ 
+ ANY=1
+ COPY=2
