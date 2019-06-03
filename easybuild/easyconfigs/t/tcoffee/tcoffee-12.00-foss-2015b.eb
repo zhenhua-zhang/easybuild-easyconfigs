@@ -27,11 +27,13 @@ binaries = ['mocca', 't_coffee', 't_coffee_dpa', 't_coffee_dpa2']
 scripts = ['any_file2unix_file.pl', 'blast_aln2fasta_aln.pl', 'blastpgp.pl', 'blast_xml2fasta_aln.pl', 
            'clean_cache.pl', 'clustalo.pl', 'clustalw_aln2fasta_aln.pl', 'count.pl', 'dalilite.pl', 
            'dca.pl', 'excel2fasta.pl', 'fasta_aln2fasta_aln_unique_name.pl', 'fasta_seq2consan_aln.pl', 
-           'fasta_seq2hmmtop_fasta.pl', 'fasta_seq2RN.pl', 'fold_te.pl', 'atefile.pl', 'make_license.pl', 
-           'msa2bootstrap.pl', 'msa.pl', 'msf_aln2fasta_aln.pl', 'nameseq2fasta.pl', 
-           'nature_protocol.pl', 'ncbiblast_lwp.pl', 'newick2name_list.pl', 'process_list.pl', 
-           'rec_sum.pl', 'rnapdb2protpdb.pl', 'RN.pl', 'fold2tclib.pl', 'seq2intersection.pl', 
-           'seq2name_seq.pl', 'tc_generic_method.pl', 'upp.pl', 'wublast_lwp.pl', 'wublast.pl']
+           'fasta_seq2hmmtop_fasta.pl', 'fasta_seq2RNAplfold_templatefile.pl', 'make_license.pl', 
+           'msa2bootstrap.pl', 'msa.pl', 'msf_aln2fasta_aln.pl', 'nameseq2fasta.pl', 'nature_protocol.pl', 
+           'ncbiblast_lwp.pl', 'newick2name_list.pl', 'process_list.pl', 'rec_sum.pl', 'rnapdb2protpdb.pl', 
+           'RNAplfold2tclib.pl', 'seq2intersection.pl', 'seq2name_seq.pl', 'tc_generic_method.pl', 
+           'upp.pl', 'wublast_lwp.pl', 'wublast.pl'
+]
+
 files_to_copy = [
     (binaries, 'bin/'),
     (scripts, 'bin/'),
