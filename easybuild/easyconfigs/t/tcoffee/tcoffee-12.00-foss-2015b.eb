@@ -21,7 +21,7 @@ checksums = [
 ]
 
 start_dir = 'compile'
-buildopts = 'CFLAGS="-O2 -Wno-write-strings" VERSION=%s && make all && ' % (version)
+buildopts = 'CFLAGS="-O2 -Wno-write-strings" VERSION=%s all' % (version)
 
 binaries = ['mocca', 't_coffee', 't_coffee_dpa', 't_coffee_dpa2']
 scripts = ['any_file2unix_file.pl', 'blast_aln2fasta_aln.pl', 'blastpgp.pl', 'blast_xml2fasta_aln.pl', 
