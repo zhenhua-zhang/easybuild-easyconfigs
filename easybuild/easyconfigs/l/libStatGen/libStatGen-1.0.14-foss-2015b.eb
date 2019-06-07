@@ -24,7 +24,7 @@ dependencies = [
 buildopts = 'all'
 
 files_to_copy = [
-    (['libStatGen.a', 'libStatGen.a_debug', 'libStatGen.a_profile'], 'lib/'),
+    (['libStatGen.a', 'libStatGen_debug.a', 'libStatGen_profile.a'], 'lib/'),
     'include',
     'copyrights',
 ]
