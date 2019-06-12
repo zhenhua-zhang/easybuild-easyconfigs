@@ -7,7 +7,7 @@ description = """Classes for creating statistical genetic programs."""
 
 toolchain = {'name': 'foss', 'version': '2015b'}
 
-source_urls = ['https://github.com/Santy-8128/%(name)s/archive/']
+source_urls = ['https://github.com/statgen/%(name)s/archive/']
 sources = [{
     'filename': '%(name)s-%(version)s.tar.gz',
     'download_filename': 'v%(version)s.tar.gz',
