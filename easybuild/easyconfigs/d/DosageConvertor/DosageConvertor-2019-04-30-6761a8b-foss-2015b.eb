@@ -23,6 +23,8 @@ builddependencies = [
     ('libStatGen', '1.0.14', '')
 ]
 
+prebuildopts = 'cmake ./ && '
+
 files_to_copy = [
     ('%(name)s', 'bin/'),
     'README.md',
