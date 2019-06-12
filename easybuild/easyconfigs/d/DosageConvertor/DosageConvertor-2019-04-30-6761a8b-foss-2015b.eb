@@ -26,7 +26,7 @@ builddependencies = [
 prebuildopts = 'cmake ./ && '
 
 files_to_copy = [
-    ('%(name)s', 'bin/'),
+    (['%(name)s'], 'bin/'),
     'README.md',
     'test',
 ]
