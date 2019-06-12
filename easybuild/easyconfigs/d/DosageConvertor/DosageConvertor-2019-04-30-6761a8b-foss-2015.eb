@@ -1,0 +1,52 @@
+easyblock = 'MakeCp'
+name = 'DosageConvertor'
+version = '2019-04-30-6761a8b'
+
+homepage = 'https://github.com/Santy-8128/DosageConvertor/'
+description = """Tool to convert dosage files (in VCF format) from Minimac3/4 to other formats such as MaCH or PLINK."""
+
+toolchain = {'name': 'foss', 'version': '2015b'}
+
+source_urls = ['https://github.com/Santy-8128/%(name)s/archive/']
+sources = [{
+    'filename': '%(name)s-%(version)s.tar.gz',
+    'download_filename': '6761a8b1c6df073e6812828d8c47d4bde5aabc6c.tar.gz',
+}]
+checksums = [
+    'bacee5c0d8c61ad9dba58ea6a215def789cf0243b3d9cd44d65f98a6eadbab04', #  DosageConvertor-6761a8b1c6df073e6812828d8c47d4bde5aabc6c.tar.gz
+]
+
+dependencies = [
+    ('libStatGen', '1.0.14', '')
+]
+
+builddependencies = [
+    ('CMake', '3.7.2', ''),
+]
+
+start_dir = 'compile'
+buildopts = 'CFLAGS="-O2 -Wno-write-strings" VERSION=%s all' % (version)
+
+binaries = ['mocca', 't_coffee', 't_coffee_dpa', 't_coffee_dpa2']
+scripts = ['any_file2unix_file.pl', 'blast_aln2fasta_aln.pl', 'blastpgp.pl', 'blast_xml2fasta_aln.pl', 
+           'clean_cache.pl', 'clustalo.pl', 'clustalw_aln2fasta_aln.pl', 'count.pl', 'dalilite.pl', 
+           'dca.pl', 'excel2fasta.pl', 'fasta_aln2fasta_aln_unique_name.pl', 'fasta_seq2consan_aln.pl', 
+           'fasta_seq2hmmtop_fasta.pl', 'fasta_seq2RNAplfold_templatefile.pl', 'make_license.pl', 
+           'msa2bootstrap.pl', 'msa.pl', 'msf_aln2fasta_aln.pl', 'nameseq2fasta.pl', 'nature_protocol.pl', 
+           'ncbiblast_lwp.pl', 'newick2name_list.pl', 'process_list.pl', 'rec_sum.pl', 'rnapdb2protpdb.pl', 
+           'RNAplfold2tclib.pl', 'seq2intersection.pl', 'seq2name_seq.pl', 'tc_generic_method.pl', 
+           'upp.pl', 'wublast_lwp.pl', 'wublast.pl'
+]
+
+files_to_copy = [
+    (binaries, 'bin/'),
+    (scripts, 'bin/'),
+    'examples',
+]
+
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in binaries],
+    'dirs': ['bin', 'examples']
+}
+
+moduleclass = 'bio'
