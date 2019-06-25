@@ -16,6 +16,13 @@ sources = [{
 }]
 checksums = ['f12dfdbd4203875f46da46f818b1b33334a3489f16567703bacd14b5a78f5f80']
 
+#
+# The source distro does not contain a configure script out of the box:
+# Use tools from the Autotools module to create the configure script.
+#
+builddependencies = [('Autotools', '20150215')]
+preconfigopts = 'autoreconf -f -i && chmod a+x configure && '
+
 sanity_check_paths = {
     'files': ['bin/file', 'include/magic.h', 'lib/libmagic.%s' % SHLIB_EXT],
     'dirs': ['share']
