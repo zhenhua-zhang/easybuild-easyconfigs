@@ -2,7 +2,7 @@ easyblock = 'Tarball'
 
 name = 'GATK'
 version = '4.1.2.0'
-versionsuffix = '-Java-11.0.2'
+versionsuffix = '-Java-1.8.0-unlimited_JCE'
 
 homepage = 'http://www.broadinstitute.org/gatk/'
 description = """The Genome Analysis Toolkit or GATK is a software package
@@ -19,10 +19,12 @@ sources = ['gatk-%(version)s.zip']
 checksums = ['ffc5f9b3d4b35772ee5dac3060b59dc657f30e830745160671d84d732c30dc65']
 
 dependencies = [
-        ('Java', '11.0.2')
+        ('Java', '1.8.0', '-unlimited_JCE')
         ]
 
 modextrapaths = {'PATH': ''}
+
+modloadmsg = "To execute GATK run: java -jar $EBROOTGATK/GenomeAnalysisTK.jar\n"
 
 sanity_check_paths = {
         'files': ['gatk'],
