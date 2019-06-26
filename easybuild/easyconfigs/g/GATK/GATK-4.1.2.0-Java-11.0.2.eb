@@ -13,14 +13,13 @@ assurance. Its robust architecture, powerful processing engine and
 high-performance computing features make it capable of taking on projects
 of any size."""
 
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'dummy', 'version': ''}
 source_urls = ['https://github.com/broadinstitute/gatk/releases/download/%(version)s/']
 sources = ['gatk-%(version)s.zip']
 checksums = ['ffc5f9b3d4b35772ee5dac3060b59dc657f30e830745160671d84d732c30dc65']
 
 dependencies = [
-        ('Java', '11.0.2, '', True),
-        # ('Python', '3.6.3')
+        ('Java', '11.0.2')
         ]
 
 modextrapaths = {'PATH': ''}
