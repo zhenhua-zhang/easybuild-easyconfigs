@@ -1,22 +1,3 @@
-##
-# EasyBuild Easyconfig
-#
-# Copyright:: Copyright 2012-2013 Cyprus Institute /
-# CaSToRC, University of Luxembourg / LCSB
-# Authors::   George Tsouloupas <g.tsouloupas@cyi.ac.cy>,
-#             Fotis Georgatos <fotis.georgatos@uni.lu>,
-#             Kenneth Hoste (UGent)
-# License::   MIT/GPL
-# $Id$
-#
-# This work implements a part of the HPCBIOS project and is a component
-# of the policy: http://hpcbios.readthedocs.org/en/latest/HPCBIOS_2012-94.html
-# Modified by: Adam Huffman, Jonas Demeulemeester
-# The Francis Crick Institute
-# Modified for version 4.0.5.1 by: Ruben van Dijk, University of Groningen
-# Modifed for version 4.1.2.0 by: T. Medina, UMC Groningen
-##
-
 easyblock = 'Tarball'
 
 name = 'GATK'
@@ -38,7 +19,7 @@ sources = ['gatk-%(version)s.zip']
 checksums = ['ffc5f9b3d4b35772ee5dac3060b59dc657f30e830745160671d84d732c30dc65']
 
 dependencies = [
-        ('Java', '1.8', '', True),
+        ('Java', '11.0.2, '', True),
         # ('Python', '3.6.3')
         ]
 
