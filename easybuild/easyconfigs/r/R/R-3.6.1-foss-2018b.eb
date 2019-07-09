@@ -23,7 +23,7 @@ dependencies = [
     ('zlib', '1.2.11'),             # For handling compressed data formats.
     ('SQLite', '3.27.2'),
     ('PCRE', '8.43'),               # For advanced Perl Compatible Regular Expression support.
-    ('Java', '11', '', True),       # Java bindings are built if Java is found, might as well provide it.
+    ('Java', '11.0.2', '', True),   # Java bindings are built if Java is found, might as well provide it.
     ('cURL', '7.63.0'),             # for RCurl.
     ('libxml2', '2.9.8'),           # for XML parsing.
     ('libpng', '1.6.36'),           # For plotting in R.
