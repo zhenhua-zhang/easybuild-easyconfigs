@@ -23,7 +23,7 @@ dependencies = [
     ('gettext', '0.20.1'),
     ('libxml2', '2.9.8'),
     ('PCRE', '8.43'),
-    ('util-linux', '2.33'),
+    ('util-linux', '2.34'),
 ]
 
 # avoid using hardcoded path to Python binary in build step
