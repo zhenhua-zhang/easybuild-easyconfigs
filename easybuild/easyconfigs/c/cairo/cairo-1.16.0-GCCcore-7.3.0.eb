@@ -8,7 +8,7 @@ description = """Cairo is a 2D graphics library with support for multiple output
  Currently supported output targets include the X Window System (via both Xlib and XCB), Quartz, Win32, image buffers,
  PostScript, PDF, and SVG file output. Experimental backends include OpenGL, BeOS, OS/2, and DirectFB"""
 
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 source_urls = ['http://cairographics.org/releases/']
 sources = [SOURCE_TAR_XZ]
@@ -16,13 +16,16 @@ checksums = [
     'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', #  cairo-1.16.0.tar.xz
 ]
 
-builddependencies = [('pkg-config', '0.29.2')]
+builddependencies = [
+    ('binutils', '2.30'),
+    ('pkg-config', '0.29.2')
+]
 
 dependencies = [
     ('bzip2', '1.0.6'),
     ('zlib', '1.2.11'),
     ('libpng', '1.6.37'),
-    ('freetype', '2.9.1'),
+    ('freetype', '2.10.1'),
     ('pixman', '0.38.4'),
     ('expat', '2.2.6'),
     ('GLib', '2.60.1'),
