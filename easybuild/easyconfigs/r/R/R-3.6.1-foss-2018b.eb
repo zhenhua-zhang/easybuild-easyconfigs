@@ -26,7 +26,7 @@ dependencies = [
     ('Java', '11.0.2', '', True),   # Java bindings are built if Java is found, might as well provide it.
     ('cURL', '7.63.0'),             # for RCurl.
     ('libxml2', '2.9.8'),           # for XML parsing.
-    ('libpng', '1.6.36'),           # For plotting in R.
+    ('libpng', '1.6.37'),           # For plotting in R.
     ('libjpeg-turbo', '2.0.2'),     # For plotting in R.
     ('LibTIFF', '4.0.10'),          # For plotting in R.
     ('cairo', '1.16.0'),            # For plotting in R.
