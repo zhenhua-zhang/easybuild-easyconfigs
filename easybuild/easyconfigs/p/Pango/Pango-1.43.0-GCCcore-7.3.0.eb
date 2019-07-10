@@ -14,6 +14,11 @@ source_urls = [FTPGNOME_SOURCE]
 sources = [SOURCELOWER_TAR_XZ]
 checksums = ['d2c0c253a5328a0eccb00cdd66ce2c8713fabd2c9836000b6e22a8b06ba3ddd2']
 
+#
+# Specify that at least EasyBuild v3.9.0 is required for MesonNinja EasyBlock.
+#
+easybuild_version = '3.9.0'
+
 builddependencies = [
     ('binutils', '2.30'),
     ('Meson', '0.50.0', '-Python-3.7.4-bare'),
@@ -24,7 +29,7 @@ builddependencies = [
 
 dependencies = [
     # No dependencies on X11 stuff; use Cairo instead!
-    ('GLib', '2.60.1'),
+    ('GLib', '2.61.1'),
     ('HarfBuzz', '2.5.3'),
     ('FriBidi', '1.0.5'),
     ('freetype', '2.10.1'),

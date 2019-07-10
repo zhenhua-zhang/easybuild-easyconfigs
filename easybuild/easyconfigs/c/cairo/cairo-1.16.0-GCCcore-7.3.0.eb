@@ -28,7 +28,7 @@ dependencies = [
     ('freetype', '2.10.1'),
     ('pixman', '0.38.4'),
     ('expat', '2.2.6'),
-    ('GLib', '2.60.1'),
+    ('GLib', '2.61.1'),
 ]
 
 # disable symbol lookup, which requires -lbfd, to avoid link issues with (non-PIC) libiberty.a provided by GCC

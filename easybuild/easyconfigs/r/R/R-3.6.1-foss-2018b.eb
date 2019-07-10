@@ -12,6 +12,12 @@ checksums = [
     '5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389', #  R-3.6.1.tar.gz
 ]
 
+#
+# Specify that at least EasyBuild v3.5.0 is required,
+# since we rely on the updated easyblock for R to configure correctly w.r.t. BLAS/LAPACK.
+#
+easybuild_version = '3.5.0'
+
 builddependencies = [
     ('pkg-config', '0.29.2'),
 ]
@@ -43,9 +49,7 @@ configopts = "--with-pic --enable-threads --enable-R-shlib"
 # some recommended packages may fail in a parallel build (e.g. Matrix), and we're installing them anyway below
 configopts += " --with-recommended-packages=no"
 
-# specify that at least EasyBuild v3.5.0 is required,
-# since we rely on the updated easyblock for R to configure correctly w.r.t. BLAS/LAPACK
-easybuild_version = '3.5.0'
+
 
 exts_default_options = {
     'source_urls': [

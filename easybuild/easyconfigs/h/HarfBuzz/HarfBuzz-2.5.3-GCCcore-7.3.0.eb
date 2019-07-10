@@ -13,7 +13,7 @@ sources = [SOURCELOWER_TAR_XZ]
 checksums = ['fed00dc797b7ba3ca943225f0a854baaed4c1640fff8a31d455cd3b5caec855c']
 
 dependencies = [
-    ('GLib', '2.60.1'),
+    ('GLib', '2.61.1'),
     ('cairo', '1.16.0'),
     ('freetype', '2.10.1'),
 ]
