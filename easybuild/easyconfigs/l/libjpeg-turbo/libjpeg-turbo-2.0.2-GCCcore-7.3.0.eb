@@ -1,4 +1,4 @@
-asyblock = 'CMakeMake'
+easyblock = 'CMakeMake'
 
 name = 'libjpeg-turbo'
 version = '2.0.2'
