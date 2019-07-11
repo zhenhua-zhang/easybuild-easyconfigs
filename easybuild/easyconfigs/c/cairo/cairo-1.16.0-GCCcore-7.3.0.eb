@@ -32,7 +32,9 @@ dependencies = [
 ]
 
 # disable symbol lookup, which requires -lbfd, to avoid link issues with (non-PIC) libiberty.a provided by GCC
-configopts = "--enable-symbol-lookup=no --enable-gobject=yes --enable-svg=yes --enable-tee=yes"
+configopts = "--enable-symbol-lookup=no --enable-gobject=yes"
+configopts += " --enable-pdf=yes --enable-png=yes --enable-ps=yes --enable-svg=yes --enable-tee=yes"
+configopts += " --enable-ft=yes --enable-fc=yes"
 
 sanity_check_paths = {
     'files': ['bin/cairo-trace', 'lib/cairo/libcairo-trace.so', 'lib/cairo/libcairo-trace.a',
