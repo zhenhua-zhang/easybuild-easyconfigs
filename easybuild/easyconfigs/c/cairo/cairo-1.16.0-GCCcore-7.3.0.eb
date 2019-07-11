@@ -26,6 +26,7 @@ dependencies = [
     ('zlib', '1.2.11'),
     ('libpng', '1.6.37'),
     ('freetype', '2.10.1'),
+    ('fontconfig', '2.13.1'),
     ('pixman', '0.38.4'),
     ('expat', '2.2.7'),
     ('GLib', '2.61.1'),
