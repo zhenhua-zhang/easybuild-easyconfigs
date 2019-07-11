@@ -1,7 +1,7 @@
 easyblock = 'ConfigureMake'
 
 name = 'SQLite'
-version = '3.27.2'
+version = '3.29.0'
 
 homepage = 'http://www.sqlite.org/'
 
@@ -10,7 +10,7 @@ description = 'SQLite: SQL Database Engine in a C Library'
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 toolchainopts = {'pic': True}
 
-source_urls = ['http://www.sqlite.org/2018/']
+source_urls = ['http://www.sqlite.org/2019/']
 version_str = '%%(version_major)s%s00' % ''.join('%02d' % int(x) for x in version.split('.')[1:])
 sources = ['sqlite-autoconf-%s.tar.gz' % version_str]
 checksums = ['50c39e85ea28b5ecfdb3f9e860afe9ba606381e21836b2849efca6a0bfe6ef6e']

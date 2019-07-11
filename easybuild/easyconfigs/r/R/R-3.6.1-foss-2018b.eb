@@ -27,7 +27,7 @@ dependencies = [
     ('bzip2', '1.0.6'),             # For handling compressed data formats.
     ('XZ', '5.2.4'),                # For handling compressed data formats.
     ('zlib', '1.2.11'),             # For handling compressed data formats.
-    ('SQLite', '3.27.2'),
+    ('SQLite', '3.29.0'),
     ('PCRE', '8.43'),               # For advanced Perl Compatible Regular Expression support.
     ('Java', '11.0.2', '', True),   # Java bindings are built if Java is found, might as well provide it.
     ('cURL', '7.63.0'),             # for RCurl.
