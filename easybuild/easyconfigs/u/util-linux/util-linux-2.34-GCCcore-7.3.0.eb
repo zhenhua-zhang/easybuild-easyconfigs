@@ -12,7 +12,7 @@ toolchainopts = {'pic': True}
 
 source_urls = ['%s/v%%(version_major_minor)s' % homepage]
 sources = [SOURCELOWER_TAR_GZ]
-checksums = ['1d0c1a38f8c14a2c251681907203cccc78704f5702f2ef4b438bed08344242f7']
+checksums = ['b62c92e5e1629642113cd41cec1ee86d1ee7e36b8ffe8ec3ac89c11797e9ac25']
 
 # disable account related utilities (they need OS dependent pam-devel files)
 # disable wall and friends (requires group changing permissions for install user)
