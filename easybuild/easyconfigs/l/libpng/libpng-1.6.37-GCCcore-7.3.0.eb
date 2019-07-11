@@ -11,7 +11,6 @@ toolchainopts = {'pic': True}
 
 source_urls = [SOURCEFORGE_SOURCE]
 sources = [SOURCELOWER_TAR_GZ]
-patches = ['%(name)s-%(version)s.patch']
 checksums = ['daeb2620d829575513e35fecc83f0d3791a620b9b93d800b763542ece9390fb4']
 
 dependencies = [('zlib', '1.2.11')]
