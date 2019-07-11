@@ -40,7 +40,7 @@ dependencies = [
 configopts = "--buildtype=release --default-library=both "
 
 sanity_check_paths = {
-    'files': ['bin/pango-view', 'bin/pango-list'
+    'files': ['bin/pango-view', 'bin/pango-list',
               'lib/libpango-1.0.%s' % SHLIB_EXT,
               'lib/libpangocairo-1.0.%s' % SHLIB_EXT,
               'lib/libpangoft2-1.0.%s' % SHLIB_EXT],
