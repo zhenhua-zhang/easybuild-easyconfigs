@@ -1,4 +1,4 @@
-easyblock = 'CMakeMake'
+easyblock = 'ConfigureMake'
 
 name = 'UDUNITS'
 version = '2.2.27.6'
@@ -16,10 +16,12 @@ checksums = ['74fd7fb3764ce2821870fa93e66671b7069a0c971513bf1904c6b053a4a55ed1']
 
 builddependencies = [
     ('binutils', '2.30'),
-    ('CMake', '3.12.1'),
+    ('Autotools', '20180311'),
 ]
 
 dependencies = [('expat', '2.2.7')]
+
+parallel = 1
 
 sanity_check_paths = {
     'files': ['bin/udunits2', 'include/converter.h', 'include/udunits2.h', 'include/udunits.h',
