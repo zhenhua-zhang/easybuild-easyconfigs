@@ -10,7 +10,7 @@ description = """UDUNITS supports conversion of unit specifications between form
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 toolchainopts = {'pic': True}
 
-source_urls = ['https://github.com/Unidata/%{name}s-2/archive/']
+source_urls = ['https://github.com/Unidata/%(name)s-2/archive/']
 sources = ['v%(version)s.tar.gz']
 checksums = ['74fd7fb3764ce2821870fa93e66671b7069a0c971513bf1904c6b053a4a55ed1']
 
