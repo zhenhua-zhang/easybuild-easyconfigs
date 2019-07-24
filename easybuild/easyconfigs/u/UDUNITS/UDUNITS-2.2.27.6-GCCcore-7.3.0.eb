@@ -21,7 +21,13 @@ builddependencies = [
 
 dependencies = [('expat', '2.2.7')]
 
-preconfigopts = "autoreconf -ivf  && "
+#
+# Unfortunately there is no proper configure option to disable building info pages 
+# and the build will fail if the texinfo command is not installed.
+# Therefore we use a silly hack for the generated Makefiles: to silly to write a patch.
+# 
+preconfigopts  = "perl -pi -e 's|info_TEXINFOS|#info_TEXINFOS|' lib/Makefile.am prog/Makefile.am Makefile.am && "
+preconfigopts += "autoreconf -ivf  && "
 parallel = 1
 
 sanity_check_paths = {
