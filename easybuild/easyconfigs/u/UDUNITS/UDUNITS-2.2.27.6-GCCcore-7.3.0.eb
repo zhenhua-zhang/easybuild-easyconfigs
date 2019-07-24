@@ -1,0 +1,30 @@
+easyblock = 'CMakeMake'
+
+name = 'UDUNITS'
+version = '2.2.27.6'
+
+homepage = 'http://www.unidata.ucar.edu/software/udunits/'
+description = """UDUNITS supports conversion of unit specifications between formatted and binary forms,
+ arithmetic manipulation of units, and conversion of values between compatible scales of measurement."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'pic': True}
+
+source_urls = ['https://github.com/Unidata/%{name}s-2/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = ['74fd7fb3764ce2821870fa93e66671b7069a0c971513bf1904c6b053a4a55ed1']
+
+builddependencies = [
+    ('binutils', '2.30.0'),
+    ('CMake', '3.12.1'),
+]
+
+dependencies = [('expat', '2.2.7')]
+
+sanity_check_paths = {
+    'files': ['bin/udunits2', 'include/converter.h', 'include/udunits2.h', 'include/udunits.h',
+              'lib/libudunits2.a', 'lib/libudunits2.%s' % SHLIB_EXT],
+    'dirs': ['share'],
+}
+
+moduleclass = 'phys'
