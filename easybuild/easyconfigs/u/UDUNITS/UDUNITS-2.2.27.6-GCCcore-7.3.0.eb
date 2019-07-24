@@ -21,7 +21,7 @@ builddependencies = [
 
 dependencies = [('expat', '2.2.7')]
 
-preconfigopts = " autoconf configure.ac > configure && "
+preconfigopts = "autoreconf -ivf  && "
 parallel = 1
 
 sanity_check_paths = {
