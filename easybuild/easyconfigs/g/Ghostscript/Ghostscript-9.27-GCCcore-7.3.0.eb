@@ -14,7 +14,7 @@ source_urls = [
     'https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs%(version_major)s%(version_minor)s/',
 ]
 sources = [SOURCELOWER_TAR_GZ]
-checksums = ['f65964807a3c97a2c0810d4b9806585367e73129e57ae33378cea18e07a1ed9b']
+checksums = ['33fff02ad8555e9881bc655a130a1347d629a38ef64cc749561315158c2cecd6']
 
 dependencies = [
     ('zlib', '1.2.11'),
