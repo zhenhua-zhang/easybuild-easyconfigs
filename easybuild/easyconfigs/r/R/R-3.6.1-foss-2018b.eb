@@ -45,11 +45,17 @@ dependencies = [
 
 osdependencies = [('openssl-devel', 'libssl-dev', 'libopenssl-devel')]
 
-configopts = "--with-pic --enable-threads --enable-R-shlib"
-# some recommended packages may fail in a parallel build (e.g. Matrix), and we're installing them anyway below
-configopts += " --with-recommended-packages=no"
-
-
+configopts = '--with-pic --enable-threads --enable-R-shlib'
+#
+# Bare R version. Additional packages go into RPlus.\
+#
+configopts += ' --with-recommended-packages=no'
+#
+# Disable X11: prevent picking this up automagically:
+# it may be present on the build server, but don't rely on X11 related stuff being available on compute nodes!
+# Compiling with X11 support may result in an R that crashes on compute nodes.
+#
+configopts += ' --with-x=no'
 
 exts_default_options = {
     'source_urls': [
