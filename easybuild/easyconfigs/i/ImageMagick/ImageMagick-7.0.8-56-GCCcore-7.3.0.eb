@@ -16,7 +16,7 @@ dependencies = [
     ('bzip2', '1.0.6'),
     #('X11', '20180604'),
     ('Ghostscript', '9.27'),
-    ('JasPer', '2.0.14'),
+    ('JasPer', '2.0.16'),
     ('libjpeg-turbo', '2.0.2'),
     ('LibTIFF', '4.0.10'),
     ('LittleCMS', '2.9'),
