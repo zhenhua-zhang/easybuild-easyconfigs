@@ -43,7 +43,7 @@ sanity_check_paths = {
               'lib/libcairo.a', 'lib/libcairo-gobject.a', 'lib/libcairo-script-interpreter.a',
               'lib/libcairo-gobject.so', 'lib/libcairo-script-interpreter.so', 'lib/libcairo.so'] +
              ['include/cairo/cairo%s.h' % x for x in ['', '-deprecated', '-features', '-ft', '-gobject', '-pdf', '-ps',
-                                                      '-script', '-script-interpreter', '-svg', '-tee', '-version', '-xlib']],
+                                                      '-script', '-script-interpreter', '-svg', '-tee', '-version']],
     'dirs': ['lib/pkgconfig'],
 }
 
