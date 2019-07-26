@@ -37,10 +37,16 @@ dependencies = [
     ('LibTIFF', '4.0.10'),          # For plotting in R.
     ('cairo', '1.16.0'),            # For plotting in R.
     ('Pango', '1.43.0'),            # For plotting in R.
-    ('Tk', '8.6.9', '-no-X11'),     # For Tcl/Tk
+    #
+    # Disabled TK, because the -no-X11 option does not work and still requires X11,
+    # which does not exist on headless compute nodes.
+    #
+    #('Tk', '8.6.9', '-no-X11'),     # For Tcl/Tk
+    #
     # OS dependency should be preferred if the os version is more recent then this version,
-    # it's nice to have an up to date openssl for security reasons
-    # ('OpenSSL', '1.0.2h'),
+    # it's nice to have an up to date openssl for security reasons.
+    #
+    #('OpenSSL', '1.0.2h'),
 ]
 
 osdependencies = [('openssl-devel', 'libssl-dev', 'libopenssl-devel')]
