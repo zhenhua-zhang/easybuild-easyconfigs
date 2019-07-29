@@ -19,9 +19,10 @@ builddependencies = [
 
 dependencies = [
     ('zlib', '1.2.11'),
+    ('cURL', '7.63.0'),
 ]
 
-configopts  = "-DWITH_MYSQLCOMPAT=yes -DWITH_EXTERNAL_ZLIB=yes -DWITH_CURL=yes -DWITH_SSL=yes "
+configopts  = "-DWITH_MYSQLCOMPAT=yes -DWITH_EXTERNAL_ZLIB=yes -DWITH_CURL=yes "
 configopts += "-DCMAKE_SHARED_LINKER_FLAGS='-fuse-ld=bfd' "
 
 sanity_check_paths = {
