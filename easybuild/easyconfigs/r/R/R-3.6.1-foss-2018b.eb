@@ -24,19 +24,20 @@ builddependencies = [
 dependencies = [
     ('libreadline', '8.0'),
     ('ncurses', '6.1'),
-    ('bzip2', '1.0.6'),             # For handling compressed data formats.
-    ('XZ', '5.2.4'),                # For handling compressed data formats.
-    ('zlib', '1.2.11'),             # For handling compressed data formats.
+    ('bzip2', '1.0.6'),               # For handling compressed data formats.
+    ('XZ', '5.2.4'),                  # For handling compressed data formats.
+    ('zlib', '1.2.11'),               # For handling compressed data formats.
     ('SQLite', '3.29.0'),
-    ('PCRE', '8.43'),               # For advanced Perl Compatible Regular Expression support.
-    ('Java', '11.0.2', '', True),   # Java bindings are built if Java is found, might as well provide it.
-    ('cURL', '7.63.0'),             # for RCurl.
-    ('libxml2', '2.9.8'),           # for XML parsing.
-    ('libpng', '1.6.37'),           # For plotting in R.
-    ('libjpeg-turbo', '2.0.2'),     # For plotting in R.
-    ('LibTIFF', '4.0.10'),          # For plotting in R.
-    ('cairo', '1.16.0'),            # For plotting in R.
-    ('Pango', '1.43.0'),            # For plotting in R.
+    ('MariaDB-connector-c', '3.1.2')  # MariaDb / MySQL client for packages that require DB interface.
+    ('PCRE', '8.43'),                 # For advanced Perl Compatible Regular Expression support.
+    ('Java', '11.0.2', '', True),     # Java bindings are built if Java is found, might as well provide it.
+    ('cURL', '7.63.0'),               # for RCurl.
+    ('libxml2', '2.9.8'),             # for XML parsing.
+    ('libpng', '1.6.37'),             # For plotting in R.
+    ('libjpeg-turbo', '2.0.2'),       # For plotting in R.
+    ('LibTIFF', '4.0.10'),            # For plotting in R.
+    ('cairo', '1.16.0'),              # For plotting in R.
+    ('Pango', '1.43.0'),              # For plotting in R.
     #
     # Disabled TK, because the -no-X11 option does not work and still requires X11,
     # which does not exist on headless compute nodes.
