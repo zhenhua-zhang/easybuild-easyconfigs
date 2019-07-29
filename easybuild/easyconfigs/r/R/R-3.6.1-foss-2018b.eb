@@ -61,7 +61,7 @@ configopts += ' --with-recommended-packages=no'
 # it may be present on the build server, but don't rely on X11 related stuff being available on compute nodes!
 # Compiling with X11 support may result in an R that crashes on compute nodes.
 #
-configopts += ' --with-x=no'
+configopts += ' --with-x=no --with-tcltk=no'
 
 exts_default_options = {
     'source_urls': [
