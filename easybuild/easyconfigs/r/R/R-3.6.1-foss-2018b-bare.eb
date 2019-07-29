@@ -1,16 +1,18 @@
+
+#
+# This EasyBuild config file for R was generated with generateEasyConfig.R
+#
+
 name = 'R'
 version = '3.6.1'
-
+versionsuffix = '-bare'
 homepage = 'http://www.r-project.org/'
 description = """R is a free software environment for statistical computing and graphics."""
-
+moduleclass = 'lang'
 toolchain = {'name': 'foss', 'version': '2018b'}
 
-source_urls = ['https://cloud.r-project.org/src/base/R-%(version_major)s']
 sources = [SOURCE_TAR_GZ]
-checksums = [
-    '5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389', #  R-3.6.1.tar.gz
-]
+source_urls = ['http://cran.us.r-project.org/src/base/R-%(version_major)s']
 
 #
 # Specify that at least EasyBuild v3.5.0 is required,
@@ -46,7 +48,7 @@ dependencies = [
     # OS dependency should be preferred if the os version is more recent then this version,
     # it's nice to have an up to date openssl for security reasons.
     #
-    #('OpenSSL', '1.0.2h'),
+    #('OpenSSL', '1.0.2k'),
 ]
 
 osdependencies = [('openssl-devel', 'libssl-dev', 'libopenssl-devel')]
@@ -63,32 +65,26 @@ configopts += ' --with-recommended-packages=no'
 #
 configopts += ' --with-x=no'
 
-exts_default_options = {
-    'source_urls': [
-        'http://cran.r-project.org/src/contrib/Archive/%(name)s',  # package archive
-        'http://cran.r-project.org/src/contrib/',  # current version of packages
-        'http://cran.freestatistics.org/src/contrib',  # mirror alternative for current packages
-    ],
-    'source_tmpl': '%(name)s_%(version)s.tar.gz',
-}
-
 #
-# Bare R version.
-# Only default packages are listed here just for sanity checking.
-# Additional packages go into RPlus module.
+# R package list.
+#   * Only default packages as this is a bare version.
 #
 exts_list = [
+    # 
+    # Default libraries; only here to sanity check their presence.
+    #
     'base',
+    'compiler',
     'datasets',
     'graphics',
     'grDevices',
     'grid',
     'methods',
+    'parallel',
     'splines',
     'stats',
     'stats4',
+    'tcltk',
     'tools',
     'utils',
 ]
-
-moduleclass = 'lang'
