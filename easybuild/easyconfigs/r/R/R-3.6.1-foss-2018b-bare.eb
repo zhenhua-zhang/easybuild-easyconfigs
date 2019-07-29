@@ -63,16 +63,14 @@ configopts += ' --with-recommended-packages=no'
 # it may be present on the build server, but don't rely on X11 related stuff being available on compute nodes!
 # Compiling with X11 support may result in an R that crashes on compute nodes.
 #
-configopts += ' --with-x=no'
+configopts += ' --with-x=no --with-tcltk=no'
 
 #
 # R package list.
-#   * Only default packages as this is a bare version.
+# Only default a.k.a. base packages are listed here just for sanity checking.
+# Additional packages go into RPlus module.
 #
 exts_list = [
-    # 
-    # Default libraries; only here to sanity check their presence.
-    #
     'base',
     'compiler',
     'datasets',
@@ -84,7 +82,6 @@ exts_list = [
     'splines',
     'stats',
     'stats4',
-    'tcltk',
     'tools',
     'utils',
 ]

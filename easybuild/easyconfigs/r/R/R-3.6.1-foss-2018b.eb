@@ -63,27 +63,20 @@ configopts += ' --with-recommended-packages=no'
 #
 configopts += ' --with-x=no --with-tcltk=no'
 
-exts_default_options = {
-    'source_urls': [
-        'http://cran.r-project.org/src/contrib/Archive/%(name)s',  # package archive
-        'http://cran.r-project.org/src/contrib/',  # current version of packages
-        'http://cran.freestatistics.org/src/contrib',  # mirror alternative for current packages
-    ],
-    'source_tmpl': '%(name)s_%(version)s.tar.gz',
-}
-
 #
-# Bare R version.
-# Only default packages are listed here just for sanity checking.
+# R package list.
+# Only default a.k.a. base packages are listed here just for sanity checking.
 # Additional packages go into RPlus module.
 #
 exts_list = [
     'base',
+    'compiler',
     'datasets',
     'graphics',
     'grDevices',
     'grid',
     'methods',
+    'parallel',
     'splines',
     'stats',
     'stats4',
