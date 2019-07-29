@@ -17,6 +17,9 @@ builddependencies = [
     ('CMake', '3.12.1'),
 ]
 
+configopts  = "-DWITH_MYSQLCOMPAT=yes -DWITH_EXTERNAL_ZLIB=yes -DWITH_CURL=yes -DWITH_SSL=yes "
+configopts += "-DCMAKE_SHARED_LINKER_FLAGS='-fuse-ld=bfd' "
+
 sanity_check_paths = {
     'files': ['lib/mariadb/libmariadbclient.a', 'lib/mariadb/libmariadb.%s' % SHLIB_EXT],
     'dirs': ['include/mariadb'],
