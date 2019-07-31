@@ -1,6 +1,8 @@
+
 #
-# This EasyBuild config file for R 'bare' was generated with generateEasyConfig.R
+# This EasyBuild config file for R was generated with generateEasyConfig.R
 #
+
 name = 'R'
 version = '3.6.1'
 versionsuffix = '-bare'
@@ -8,8 +10,10 @@ homepage = 'http://www.r-project.org/'
 description = """R is a free software environment for statistical computing and graphics."""
 moduleclass = 'lang'
 toolchain = {'name': 'foss', 'version': '2018b'}
-sources = [SOURCE_TAR_GZ]
+
 source_urls = ['http://cran.us.r-project.org/src/base/R-%(version_major)s']
+sources = [SOURCE_TAR_GZ]
+checksums = ['5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389']
 
 #
 # Specify that at least EasyBuild v3.5.0 is required,
@@ -20,28 +24,27 @@ easybuild_version = '3.5.0'
 builddependencies = [
     ('pkg-config', '0.29.2'),
 ]
-
 dependencies = [
     ('libreadline', '8.0'),
     ('ncurses', '6.1'),
-    ('bzip2', '1.0.6'),
-    ('XZ', '5.2.4'),
-    ('zlib', '1.2.11'),
+    ('bzip2', '1.0.6'),               # For handling compressed data formats.
+    ('XZ', '5.2.4'),                  # For handling compressed data formats.
+    ('zlib', '1.2.11'),               # For handling compressed data formats.
     ('SQLite', '3.29.0'),
-    ('PCRE', '8.43'),
-    ('Java', '11.0.2', '', True),
-    ('cURL', '7.63.0'),
-    ('libxml2', '2.9.8'),
-    ('libpng', '1.6.37'),
-    ('libjpeg-turbo', '2.0.2'),
-    ('LibTIFF', '4.0.10'),
-    ('cairo', '1.16.0'),
-    ('Pango', '1.43.0'),
+    ('PCRE', '8.43'),                 # For advanced Perl Compatible Regular Expression support.
+    ('Java', '11.0.2', '', True),     # Java bindings are built if Java is found, might as well provide it.
+    ('cURL', '7.63.0'),               # for RCurl.
+    ('libxml2', '2.9.8'),             # for XML parsing.
+    ('libpng', '1.6.37'),             # For plotting in R.
+    ('libjpeg-turbo', '2.0.2'),       # For plotting in R.
+    ('LibTIFF', '4.0.10'),            # For plotting in R.
+    ('cairo', '1.16.0'),              # For plotting in R.
+    ('Pango', '1.43.0'),              # For plotting in R.
     #
     # Disabled TK, because the -no-X11 option does not work and still requires X11,
     # which does not exist on headless compute nodes.
     #
-    #('Tk', '8.6.9', '-no-X11'),
+    #('Tk', '8.6.9', '-no-X11'),     # For Tcl/Tk
     #
     # OS dependency should be preferred if the os version is more recent then this version,
     # it's nice to have an up to date openssl for security reasons.
@@ -80,8 +83,6 @@ exts_list = [
     'splines',
     'stats',
     'stats4',
-    'tcltk',
     'tools',
     'utils',
 ]
-
