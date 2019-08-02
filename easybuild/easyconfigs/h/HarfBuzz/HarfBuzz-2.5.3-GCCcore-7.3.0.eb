@@ -1,0 +1,38 @@
+easyblock = 'ConfigureMake'
+
+name = 'HarfBuzz'
+version = '2.5.3'
+
+homepage = 'http://www.freedesktop.org/wiki/Software/HarfBuzz'
+description = """HarfBuzz is an OpenType text shaping engine."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['http://www.freedesktop.org/software/harfbuzz/release/']
+sources = [SOURCELOWER_TAR_XZ]
+checksums = ['fed00dc797b7ba3ca943225f0a854baaed4c1640fff8a31d455cd3b5caec855c']
+
+dependencies = [
+    ('GLib', '2.61.1'),
+    ('cairo', '1.16.0'),
+    ('freetype', '2.10.1'),
+]
+
+builddependencies = [
+    ('GObject-Introspection', '1.60.1'),
+    ('pkg-config', '0.29.2'),
+]
+
+configopts = "--enable-introspection=yes --with-gobject=yes --enable-static --enable-shared --with-cairo "
+
+modextrapaths = {
+    'GI_TYPELIB_PATH': 'share',
+    'XDG_DATA_DIRS': 'share',
+}
+
+sanity_check_paths = {
+    'files': ['lib/libharfbuzz.%s' % SHLIB_EXT, 'bin/hb-view'],
+    'dirs': []
+}
+
+moduleclass = 'vis'

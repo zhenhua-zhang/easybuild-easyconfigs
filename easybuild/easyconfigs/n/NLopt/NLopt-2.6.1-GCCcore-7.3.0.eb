@@ -1,0 +1,33 @@
+easyblock = 'CMakeMake'
+
+name = 'NLopt'
+version = '2.6.1'
+
+homepage = 'http://ab-initio.mit.edu/wiki/index.php/NLopt'
+description = """ NLopt is a free/open-source library for nonlinear optimization, 
+ providing a common interface for a number of different free optimization routines 
+ available online as well as original implementations of various other algorithms. """
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'pic': True}
+
+source_urls = ['https://github.com/stevengj/nlopt/archive']
+sources = ['v%(version)s.tar.gz']
+checksums = ['66d63a505187fb6f98642703bd0ef006fedcae2f9a6d1efa4f362ea919a02650']
+
+builddependencies = [
+    ('binutils', '2.30'),
+    ('CMake', '3.12.1'),
+]
+
+configopts = [
+    '-DBUILD_SHARED_LIBS=ON',
+    '-DBUILD_SHARED_LIBS=OFF'
+]
+
+sanity_check_paths = {
+    'files': ['lib/libnlopt.a', 'lib/libnlopt.%s' % SHLIB_EXT, 'include/nlopt.h'],
+    'dirs': ['lib/pkgconfig'],
+}
+
+moduleclass = 'numlib'
