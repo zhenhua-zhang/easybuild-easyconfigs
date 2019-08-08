@@ -72,20 +72,6 @@ bioconductor_options = {
 #   * Packages should be specified with fixed versions!
 #
 exts_list = [
-    'base',
-    'compiler',
-    'datasets',
-    'graphics',
-    'grDevices',
-    'grid',
-    'methods',
-    'parallel',
-    'splines',
-    'stats',
-    'stats4',
-    'tcltk',
-    'tools',
-    'utils',
     ('abind', '1.4-5', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': ['http://cran.r-project.org/src/contrib/', 'http://cran.r-project.org/src/contrib/Archive/%(name)s'],
@@ -3664,7 +3650,11 @@ exts_list = [
     ('xlsx', '0.6.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': ['http://cran.r-project.org/src/contrib/', 'http://cran.r-project.org/src/contrib/Archive/%(name)s'],
-        'checksums': ['a580bd16b5477c1c185bf681c12c1ffff4088089f97b6a37997913d93ec5a8b4'],
+        'patches': ['%(name)s_%(version)s.patch'],
+        'checksums': [
+            'a580bd16b5477c1c185bf681c12c1ffff4088089f97b6a37997913d93ec5a8b4', #  xlsx_0.6.1.tar.gz
+            'd763b274088ca8a0e93b4c270c18dfe727af8d6a6e277ca2a90ca3f7730848e5', #  xlsx_0.6.1.patch
+        ],
     }),
     ('zipcode', '1.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
