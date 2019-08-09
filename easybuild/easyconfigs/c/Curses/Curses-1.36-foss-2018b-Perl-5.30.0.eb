@@ -1,0 +1,22 @@
+easyblock = 'PerlModule'
+
+name = 'Curses'
+version = '1.36'
+versionsuffix = '-Perl-%(perlver)s'
+
+homepage = 'http://www.perl.org/'
+description = """The Perl Curses module provides the interface between Perl and a curses library."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'optarch': True, 'pic': True}
+
+source_urls = ['https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED']
+sources = [SOURCE_TAR_GZ]
+checksums = ['a414795ba031c5918c70279fe534fee594a96ec4b0c78f44ce453090796add64']
+
+dependencies = [
+    ('Perl', '5.30.0', '-bare'),
+    ('ncurses', '6.1'),
+]
+
+moduleclass = 'lang'
