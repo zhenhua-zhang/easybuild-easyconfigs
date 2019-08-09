@@ -19,4 +19,9 @@ dependencies = [
     ('ncurses', '6.1'),
 ]
 
+sanity_check_paths = {
+    'files': ['lib/perl5/site_perl/%(perlver)s/x86_64-linux-thread-multi/%(name)s.pm'],
+    'dirs': [],
+}
+
 moduleclass = 'lang'
