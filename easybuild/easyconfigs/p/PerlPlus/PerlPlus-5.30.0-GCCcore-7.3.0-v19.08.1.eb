@@ -40,1649 +40,2061 @@ exts_list = [
     ('strictures', '2.000006', {
         'source_tmpl': 'strictures-2.000006.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['09d57974a6d1b2380c802870fed471108f51170da81458e2751859f2714f8d57'],
     }),
     ('Dist::CheckConflicts', '0.11', {
         'source_tmpl': 'Dist-CheckConflicts-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DO/DOY'],
+        'checksums': ['ea844b9686c94d666d9d444321d764490b2cde2f985c4165b4c2c77665caedc4'],
     }),
     ('Package::Stash', '0.38', {
         'source_tmpl': 'Package-Stash-0.38.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['c58ee8844df2dda38e3bf66fdf443439aaefaef1a33940edf2055f0afd223a7f'],
     }),
     ('Sub::Exporter::Progressive', '0.001013', {
         'source_tmpl': 'Sub-Exporter-Progressive-0.001013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/F/FR/FREW'],
+        'checksums': ['d535b7954d64da1ac1305b1fadf98202769e3599376854b2ced90c382beac056'],
     }),
     ('Test::Requires', '0.10', {
         'source_tmpl': 'Test-Requires-0.10.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TOKUHIROM'],
+        'checksums': ['2768a391d50ab94b95cefe540b9232d7046c13ee86d01859e04c044903222eb5'],
     }),
     ('Try::Tiny', '0.30', {
         'source_tmpl': 'Try-Tiny-0.30.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b'],
     }),
     ('Test::Fatal', '0.014', {
         'source_tmpl': 'Test-Fatal-0.014.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['bcdcef5c7b2790a187ebca810b0a08221a63256062cfab3c3b98685d91d1cbb0'],
     }),
     ('Module::Build', '0.4229', {
         'source_tmpl': 'Module-Build-0.4229.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['1fe491a6cda914b01bc8e592faa2b5404e9f35915ca15322f8f2a8d8f9008c18'],
     }),
     ('Module::Runtime', '0.016', {
         'source_tmpl': 'Module-Runtime-0.016.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM'],
+        'checksums': ['68302ec646833547d410be28e09676db75006f4aa58a11f3bdb44ffe99f0f024'],
     }),
     ('Module::Implementation', '0.09', {
         'source_tmpl': 'Module-Implementation-0.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['c15f1a12f0c2130c9efff3c2e1afe5887b08ccd033bd132186d1e7d5087fd66d'],
     }),
     ('B::Hooks::EndOfScope', '0.24', {
         'source_tmpl': 'B-Hooks-EndOfScope-0.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['03aa3dfe5d0aa6471a96f43fe8318179d19794d4a640708f0288f9216ec7acc6'],
     }),
     ('namespace::clean', '0.27', {
         'source_tmpl': 'namespace-clean-0.27.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RI/RIBASUSHI'],
+        'checksums': ['8a10a83c3e183dc78f9e7b7aa4d09b47c11fb4e7d3a33b9a12912fd22e31af9d'],
     }),
     ('Sub::Identify', '0.14', {
         'source_tmpl': 'Sub-Identify-0.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RG/RGARCIA'],
+        'checksums': ['068d272086514dd1e842b6a40b1bedbafee63900e5b08890ef6700039defad6f'],
     }),
     ('namespace::autoclean', '0.28', {
         'source_tmpl': 'namespace-autoclean-0.28.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['cd410a1681add521a28805da2e138d44f0d542407b50999252a147e553c26c39'],
     }),
     ('common::sense', '3.74', {
         'source_tmpl': 'common-sense-3.74.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN'],
+        'checksums': ['771f7d02abd1ded94d9e37d3f66e795c8d2026d04defbeb5b679ca058116bbf3'],
     }),
     ('boolean', '0.46', {
         'source_tmpl': 'boolean-0.46.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IN/INGY'],
+        'checksums': ['95c088085c3e83bf680fe6ce16d8264ec26310490f7d1680e416ea7a118f156a'],
     }),
     ('aliased', '0.34', {
         'source_tmpl': 'aliased-0.34.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['c350524507cd827fab864e5d4c2cc350b1babaa12fa95aec0ca00843fcc7deeb'],
     }),
     ('YAML::Tiny', '1.73', {
         'source_tmpl': 'YAML-Tiny-1.73.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['bc315fa12e8f1e3ee5e2f430d90b708a5dc7e47c867dba8dce3a6b8fbe257744'],
     }),
     ('Text::Diff', '1.45', {
         'source_tmpl': 'Text-Diff-1.45.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEILB'],
+        'checksums': ['e8baa07b1b3f53e00af3636898bbf73aec9a0ff38f94536ede1dbe96ef086f04'],
     }),
     ('Spiffy', '0.46', {
         'source_tmpl': 'Spiffy-0.46.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IN/INGY'],
+        'checksums': ['8f58620a8420255c49b6c43c5ff5802bd25e4f09240c51e5bf2b022833d41da3'],
     }),
     ('Algorithm::Diff', '1.1903', {
         'source_tmpl': 'Algorithm-Diff-1.1903.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TY/TYEMQ'],
+        'checksums': ['30e84ac4b31d40b66293f7b1221331c5a50561a39d580d85004d9c1fff991751'],
     }),
     ('Test::Base', '0.89', {
         'source_tmpl': 'Test-Base-0.89.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IN/INGY'],
+        'checksums': ['2794a1aaaeb1d3a287dd2c7286258663796562f7db9ccc6b424bc4f1de8ad014'],
     }),
     ('Test::YAML', '1.07', {
         'source_tmpl': 'Test-YAML-1.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TI/TINITA'],
+        'checksums': ['1f300d034f46298cb92960912cc04bac33fb27f05b8852d8f051e110b9cd995f'],
     }),
     ('Test::Deep', '1.128', {
         'source_tmpl': 'Test-Deep-1.128.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['852d7e836fba8269b0b755082051a24a1a309d015a8b76838790af9e3760092f'],
     }),
     ('YAML', '1.29', {
         'source_tmpl': 'YAML-1.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TI/TINITA'],
+        'checksums': ['9c5c57389c31fa1d863ae9235ca6d694b364c741df7856105b54aa96b7d6853e'],
     }),
     ('WWW::RobotRules', '6.02', {
         'source_tmpl': 'WWW-RobotRules-6.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['46b502e7a288d559429891eeb5d979461dd3ecc6a5c491ead85d165b6e03a51e'],
     }),
     ('Test::RequiresInternet', '0.05', {
         'source_tmpl': 'Test-RequiresInternet-0.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MALLEN'],
+        'checksums': ['bba7b32a1cc0d58ce2ec20b200a7347c69631641e8cae8ff4567ad24ef1e833e'],
     }),
     ('Net::HTTP', '6.19', {
         'source_tmpl': 'Net-HTTP-6.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['52b76ec13959522cae64d965f15da3d99dcb445eddd85d2ce4e4f4df385b2fc4'],
     }),
     ('HTTP::Negotiate', '6.01', {
         'source_tmpl': 'HTTP-Negotiate-6.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['1c729c1ea63100e878405cda7d66f9adfd3ed4f1d6cacaca0ee9152df728e016'],
     }),
     ('HTTP::Daemon', '6.05', {
         'source_tmpl': 'HTTP-Daemon-6.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['b47fa46688bfd8a6e99eccf449dc5705e5530022b2fc8a873a9d07921345c72d'],
     }),
     ('Test::Needs', '0.002006', {
         'source_tmpl': 'Test-Needs-0.002006.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['77f9fff0c96c5e09f34d0416b3533c3319f7cd0bb1f7fe8f8072ad59f433f0e5'],
     }),
     ('URI', '1.76', {
         'source_tmpl': 'URI-1.76.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['b2c98e1d50d6f572483ee538a6f4ccc8d9185f91f0073fd8af7390898254413e'],
     }),
     ('LWP::MediaTypes', '6.04', {
         'source_tmpl': 'LWP-MediaTypes-6.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['8f1bca12dab16a1c2a7c03a49c5e58cce41a6fec9519f0aadfba8dad997919d9'],
     }),
     ('IO::HTML', '1.001', {
         'source_tmpl': 'IO-HTML-1.001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CJ/CJM'],
+        'checksums': ['ea78d2d743794adc028bc9589538eb867174b4e165d7d8b5f63486e6b828e7e0'],
     }),
     ('HTTP::Headers::Util', '6.18', {
         'source_tmpl': 'HTTP-Message-6.18.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['d060d170d388b694c58c14f4d13ed908a2807f0e581146cef45726641d809112'],
     }),
     ('HTTP::Cookies', '6.04', {
         'source_tmpl': 'HTTP-Cookies-6.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['0cc7f079079dcad8293fea36875ef58dd1bfd75ce1a6c244cd73ed9523eb13d4'],
     }),
     ('HTML::Tagset', '3.20', {
         'source_tmpl': 'HTML-Tagset-3.20.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PETDANCE'],
+        'checksums': ['adb17dac9e36cd011f5243881c9739417fd102fce760f8de4e9be4c7131108e2'],
     }),
     ('HTML::Entities', '3.72', {
         'source_tmpl': 'HTML-Parser-3.72.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['ec28c7e1d9e67c45eca197077f7cdc41ead1bb4c538c7f02a3296a4bb92f608b'],
     }),
     ('HTTP::Date', '6.02', {
         'source_tmpl': 'HTTP-Date-6.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['e8b9941da0f9f0c9c01068401a5e81341f0e3707d1c754f8e11f42a7e629e333'],
     }),
     ('File::Listing', '6.04', {
         'source_tmpl': 'File-Listing-6.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['1e0050fcd6789a2179ec0db282bf1e90fb92be35d1171588bd9c47d52d959cf5'],
     }),
     ('Encode::Locale', '1.05', {
         'source_tmpl': 'Encode-Locale-1.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['176fa02771f542a4efb1dbc2a4c928e8f4391bf4078473bd6040d8f11adb0ec1'],
     }),
     ('LWP::UserAgent', '6.39', {
         'source_tmpl': 'libwww-perl-6.39.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['9a8d7747938aa75d7d524c71574ae7f99ca66a5dac8255a7f7759f373e7774d5'],
     }),
     ('XML::Parser', '2.44', {
         'source_tmpl': 'XML-Parser-2.44.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TODDR'],
+        'checksums': ['1ae9d07ee9c35326b3d9aad56eae71a6730a73a116b9fe9e8a4758b7cc033216'],
     }),
     ('Scalar::Util', '1.51', {
         'source_tmpl': 'Scalar-List-Utils-1.51.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PEVANS'],
+        'checksums': ['d9c8eab1ac5a6fc75a7e836304626e2cb7b13cf8c9b10d491a144e1ef6760a76'],
     }),
     ('Path::Tiny', '0.108', {
         'source_tmpl': 'Path-Tiny-0.108.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['3c49482be2b3eb7ddd7e73a5b90cff648393f5d5de334ff126ce7a3632723ff5'],
     }),
     ('XML::XPath', '1.44', {
         'source_tmpl': 'XML-XPath-1.44.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MANWAR'],
+        'checksums': ['1cc9110705165dc09dd09974dd7c0b6709c9351d6b6b1cef5a711055f891dd0f'],
     }),
     ('XML::Twig', '3.52', {
         'source_tmpl': 'XML-Twig-3.52.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIROD'],
+        'checksums': ['fef75826c24f2b877d0a0d2645212fc4fb9756ed4d2711614ac15c497e8680ad'],
     }),
     ('XML::Tiny', '2.07', {
         'source_tmpl': 'XML-Tiny-2.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
+        'checksums': ['ce39fcb53e0fe9f1cbcd86ddf152e1db48566266b70ec0769ef364eeabdd8941'],
     }),
     ('XML::SAX::Expat', '0.51', {
         'source_tmpl': 'XML-SAX-Expat-0.51.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BJ/BJOERN'],
+        'checksums': ['4c016213d0ce7db2c494e30086b59917b302db8c292dcd21f39deebd9780c83f'],
     }),
     ('XML::SAX::Base', '1.09', {
         'source_tmpl': 'XML-SAX-Base-1.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
+        'checksums': ['66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0'],
     }),
     ('XML::SAX', '1.02', {
         'source_tmpl': 'XML-SAX-1.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
+        'checksums': ['4506c387043aa6a77b455f00f57409f3720aa7e553495ab2535263b4ed1ea12a'],
     }),
     ('XML::NamespaceSupport', '1.12', {
         'source_tmpl': 'XML-NamespaceSupport-1.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN'],
+        'checksums': ['47e995859f8dd0413aa3f22d350c4a62da652e854267aa0586ae544ae2bae5ef'],
     }),
     ('XML::Simple', '2.25', {
         'source_tmpl': 'XML-Simple-2.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
+        'checksums': ['531fddaebea2416743eb5c4fdfab028f502123d9a220405a4100e68fc480dbf8'],
     }),
     ('XML::SAX::Exception', '1.09', {
         'source_tmpl': 'XML-SAX-Base-1.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
+        'checksums': ['66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0'],
     }),
     ('XML::Filter::BufferText', '1.01', {
         'source_tmpl': 'XML-Filter-BufferText-1.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RB/RBERJON'],
+        'checksums': ['8fd2126d3beec554df852919f4739e689202cbba6a17506e9b66ea165841a75c'],
     }),
     ('XML::SAX::Writer', '0.57', {
         'source_tmpl': 'XML-SAX-Writer-0.57.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN'],
+        'checksums': ['3d61d07ef43b0126f5b4de4f415a256fa859fa88dc4fdabaad70b7be7c682cf0'],
     }),
     ('XML::RegExp', '0.04', {
         'source_tmpl': 'XML-RegExp-0.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TJ/TJMATHER'],
+        'checksums': ['df1990096036085c8e2d45904fe180f82bfed40f1a7e05243f334ea10090fc54'],
     }),
     ('XML::LibXML', '2.0201', {
         'source_tmpl': 'XML-LibXML-2.0201.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['e008700732502b3f1f0890696ec6e2dc70abf526cd710efd9ab7675cae199bc2'],
     }),
     ('XML::LibXML::Simple', '0.99', {
         'source_tmpl': 'XML-LibXML-Simple-0.99.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['14fe45c9fcb36c1cf14ac922da4439f1f83d451a5e70aa7177cb6edb705c9e44'],
     }),
     ('XML::Parser::PerlSAX', '0.08', {
         'source_tmpl': 'libxml-perl-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KM/KMACLEOD'],
+        'checksums': ['4571059b7b5d48b7ce52b01389e95d798bf5cf2020523c153ff27b498153c9cb'],
     }),
     ('XML::DOM', '1.46', {
         'source_tmpl': 'XML-DOM-1.46.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TJ/TJMATHER'],
+        'checksums': ['8ba24b0b459b01d6c5e5b0408829c7d5dfe47ff79b3548c813759048099b175e'],
     }),
     ('LWP', '6.39', {
         'source_tmpl': 'libwww-perl-6.39.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['9a8d7747938aa75d7d524c71574ae7f99ca66a5dac8255a7f7759f373e7774d5'],
     }),
     ('File::Slurp::Tiny', '0.004', {
         'source_tmpl': 'File-Slurp-Tiny-0.004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['452995beeabf0e923e65fdc627a725dbb12c9e10c00d8018c16d10ba62757f1e'],
     }),
     ('XML::Compile::SOAP11', '3.24', {
         'source_tmpl': 'XML-Compile-SOAP-3.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['a1b90e3cee51c06bb1f8eabae697c6c2006f362a75534ef3915150610abc6c5e'],
     }),
     ('XML::Compile::Cache', '1.06', {
         'source_tmpl': 'XML-Compile-Cache-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['591b136bd92842c81a5176082503f47df6d5cc4d8e0d78953ef1557f747038a0'],
     }),
     ('XML::Compile::Tester', '0.91', {
         'source_tmpl': 'XML-Compile-Tester-0.91.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['e5ccc6f965543391a43d25087a2f9a8bd5220425fc6244e074d9a4c8e3e73fb7'],
     }),
     ('Types::Serialiser', '1.0', {
         'source_tmpl': 'Types-Serialiser-1.0.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN'],
+        'checksums': ['7ad3347849d8a3da6470135018d6af5fd8e58b4057cd568c3813695f2a04730d'],
     }),
     ('XML::Compile', '1.63', {
         'source_tmpl': 'XML-Compile-1.63.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['4b0871ef4a70bff37266d531bebcd1d065b109e8f5c5e996f87189a9f92d595f'],
     }),
     ('MIME::Charset', '1.012.2', {
         'source_tmpl': 'MIME-Charset-1.012.2.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEZUMI'],
+        'checksums': ['878c779c0256c591666bd06c0cde4c0d7820eeeb98fd1183082aee9a1e7b1d13'],
     }),
     ('Unicode::GCString', '2019.001', {
         'source_tmpl': 'Unicode-LineBreak-2019.001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEZUMI'],
+        'checksums': ['486762e4cacddcc77b13989f979a029f84630b8175e7fef17989e157d4b6318a'],
     }),
     ('Date::Parse', '2.30', {
         'source_tmpl': 'TimeDate-2.30.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GB/GBARR'],
+        'checksums': ['75bd254871cb5853a6aa0403ac0be270cdd75c9d1b6639f18ecba63c15298e86'],
     }),
     ('String::Print', '0.93', {
         'source_tmpl': 'String-Print-0.93.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['a245dd2d526a3a600b233db3b397719ad2c5dadf9f043affddb39d1f0fe3fac5'],
     }),
     ('Log::Report::Optional', '1.06', {
         'source_tmpl': 'Log-Report-Optional-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['0fa846bfc4f6867704999b2e3ec2c5e9a2c8996517c95f4f3528f88db08a9185'],
     }),
     ('Devel::GlobalDestruction', '0.14', {
         'source_tmpl': 'Devel-GlobalDestruction-0.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['34b8a5f29991311468fe6913cadaba75fd5d2b0b3ee3bb41fe5b53efab9154ab'],
     }),
     ('Log::Report', '1.28', {
         'source_tmpl': 'Log-Report-1.28.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['90199aaec7ff9b44c064ce7270d1d22d6d8de58d0ce11795aedb922e2addf817'],
     }),
     ('XML::Compile::WSDL11', '3.07', {
         'source_tmpl': 'XML-Compile-WSDL11-3.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['6a9da87dc23dc12416ec112643074fb50994c9cfc5c247f049767f2808a15e25'],
     }),
     ('XML::Compile::SOAP', '3.24', {
         'source_tmpl': 'XML-Compile-SOAP-3.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['a1b90e3cee51c06bb1f8eabae697c6c2006f362a75534ef3915150610abc6c5e'],
     }),
     ('XML::Bare', '0.53', {
         'source_tmpl': 'XML-Bare-0.53.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CO/CODECHILD'],
+        'checksums': ['865e198e98d904be1683ef5a53a4948f02dabdacde59fc554a082ffbcc5baefd'],
     }),
     ('Want', '0.29', {
         'source_tmpl': 'Want-0.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RO/ROBIN'],
+        'checksums': ['b4e4740b8d4cb783591273c636bd68304892e28d89e88abf9273b1de17f552f7'],
     }),
     ('Test::Warn', '0.36', {
         'source_tmpl': 'Test-Warn-0.36.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BIGJ'],
+        'checksums': ['ecbca346d379cef8d3c0e4ac0c8eb3b2613d737ffaaeae52271c38d7bf3c6cda'],
     }),
     ('Test::More', '1.302164', {
         'source_tmpl': 'Test-Simple-1.302164.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['50277b613f09cd52eb87b02c69ce0517b80080be8a8d80e1eda609479b0d6615'],
     }),
     ('Sub::Uplevel', '0.2800', {
         'source_tmpl': 'Sub-Uplevel-0.2800.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['b4f3f63b80f680a421332d8851ddbe5a8e72fcaa74d5d1d98f3c8cc4a3ece293'],
     }),
     ('Test::Exception', '0.43', {
         'source_tmpl': 'Test-Exception-0.43.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['156b13f07764f766d8b45a43728f2439af81a3512625438deab783b7883eb533'],
     }),
     ('Capture::Tiny', '0.48', {
         'source_tmpl': 'Capture-Tiny-0.48.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19'],
     }),
     ('Test::Differences', '0.67', {
         'source_tmpl': 'Test-Differences-0.67.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
+        'checksums': ['c88dbbb48b934b069284874f33abbaaa438aa31204aa3fa73bfc2f4aeac878da'],
     }),
     ('Devel::StackTrace', '2.04', {
         'source_tmpl': 'Devel-StackTrace-2.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855'],
     }),
     ('Class::Data::Inheritable', '0.08', {
         'source_tmpl': 'Class-Data-Inheritable-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TM/TMTM'],
+        'checksums': ['9967feceea15227e442ec818723163eb6d73b8947e31f16ab806f6e2391af14a'],
     }),
     ('Exception::Class', '1.44', {
         'source_tmpl': 'Exception-Class-1.44.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['33f3fbf8b138d3b04ea4ec0ba83fb0df6ba898806bcf4ef393d4cafc1a23ee0d'],
     }),
     ('Test::Most', '0.35', {
         'source_tmpl': 'Test-Most-0.35.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OV/OVID'],
+        'checksums': ['9897a6f4d751598d2ed1047e01c1554b01d0f8c96c45e7e845229782bf6f657f'],
     }),
     ('VCF', '1.003', {
         'source_tmpl': 'VCF-1.003.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SN/SNKWATT'],
+        'checksums': ['2f5030485d790c52f405ba4779aabf40392024264bb651cf530bc32d6873acb0'],
     }),
     ('Unicode::LineBreak', '2019.001', {
         'source_tmpl': 'Unicode-LineBreak-2019.001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEZUMI'],
+        'checksums': ['486762e4cacddcc77b13989f979a029f84630b8175e7fef17989e157d4b6318a'],
     }),
     ('UNIVERSAL::moniker', '0.08', {
         'source_tmpl': 'UNIVERSAL-moniker-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KASEI'],
+        'checksums': ['94ce27a546cd57cb52e080a8f2533a7cc2350028388582485bd1039a37871f9c'],
     }),
     ('Exporter::Tiny', '1.002001', {
         'source_tmpl': 'Exporter-Tiny-1.002001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TOBYINK'],
+        'checksums': ['a82c334c02ce4b0f9ea77c67bf77738f76a9b8aa4bae5c7209d1c76453d3c48d'],
     }),
     ('Type::Tiny', '1.004004', {
         'source_tmpl': 'Type-Tiny-1.004004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TOBYINK'],
+        'checksums': ['081281ea004cdd89003d938aa52c1398e24411dd8f7163b14d0977a13f7062be'],
     }),
     ('Tree::DAG_Node', '1.31', {
         'source_tmpl': 'Tree-DAG_Node-1.31.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['1c8ba69772568b3758054247097512c550efe31517c329fb65eef7afccc9d304'],
     }),
     ('Time::Piece::MySQL', '0.06', {
         'source_tmpl': 'Time-Piece-MySQL-0.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KASEI'],
+        'checksums': ['319601feec17fae344988a5ee91cfc6a0bcfe742af77dba254724c3268b2a60f'],
     }),
     ('Tie::IxHash', '1.23', {
         'source_tmpl': 'Tie-IxHash-1.23.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHORNY'],
+        'checksums': ['fabb0b8c97e67c9b34b6cc18ed66f6c5e01c55b257dcf007555e0b027d4caf56'],
     }),
     ('Tie::Function', '0.02', {
         'source_tmpl': 'Tie-Function-0.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAVIDNICO/handy_tied_functions'],
+        'checksums': ['0b1617af218dfab911ba0fbd72210529a246efe140332da77fe3e03d11000117'],
     }),
     ('Sub::Defer', '2.006003', {
         'source_tmpl': 'Sub-Quote-2.006003.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['be1f3a6f773f351f203cdc8f614803ac492b77d15fd68d5b1f0cd3884be18176'],
     }),
     ('Role::Tiny', '2.000008', {
         'source_tmpl': 'Role-Tiny-2.000008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['b1541fc5e3e0eb2dbd55b25c432293c197e0153c2c9f7747deba4df72c27146a'],
     }),
     ('Class::Method::Modifiers', '2.12', {
         'source_tmpl': 'Class-Method-Modifiers-2.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['e44c1073020bf55b8c97975ed77235fd7e2a6a56f29b5c702301721184e27ac8'],
     }),
     ('Moo', '2.003004', {
         'source_tmpl': 'Moo-2.003004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['f8bbb625f8e963eabe05cff9048fdd72bdd26777404ff2c40bc690f558be91e1'],
     }),
     ('Throwable', '0.200013', {
         'source_tmpl': 'Throwable-0.200013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['9987d0deb5bddd352a6330cefbe932f882e36dd8c8a4564bcfd372dc396b8fa0'],
     }),
     ('Test::Warnings', '0.026', {
         'source_tmpl': 'Test-Warnings-0.026.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['ae2b68b1b5616704598ce07f5118efe42dc4605834453b7b2be14e26f9cc9a08'],
     }),
     ('Test::More::UTF8', '0.05', {
         'source_tmpl': 'Test-More-UTF8-0.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MO/MONS'],
+        'checksums': ['b9f1c4b36a97cdfefaa53ed1115dd38f4b483037775f6559ee1df14acfd1ce04'],
     }),
     ('Text::Template', '1.56', {
         'source_tmpl': 'Text-Template-1.56.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MS/MSCHOUT'],
+        'checksums': ['09aaa095c562d22824daf849378a58632446093f397d8c7acb37c25a7f37e646'],
     }),
     ('Text::Aligner', '0.13', {
         'source_tmpl': 'Text-Aligner-0.13.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['e61c1c93cdefd9cc2a40f12fa8bfb12e64bb06d2375ba9e61534249865103eef'],
     }),
     ('Text::Table', '1.133', {
         'source_tmpl': 'Text-Table-1.133.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['cd9ee04860d09a19a9d6bd2254a4bf3144ac14a63c08f15a1e28601b4b2f7012'],
     }),
     ('Text::Soundex', '3.05', {
         'source_tmpl': 'Text-Soundex-3.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed'],
     }),
     ('Text::Iconv', '1.7', {
         'source_tmpl': 'Text-Iconv-1.7.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MP/MPIOTR'],
+        'checksums': ['5b80b7d5e709d34393bcba88971864a17b44a5bf0f9e4bcee383d029e7d2d5c3'],
     }),
     ('Text::Glob', '0.11', {
         'source_tmpl': 'Text-Glob-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RC/RCLAMP'],
+        'checksums': ['069ccd49d3f0a2dedb115f4bdc9fbac07a83592840953d1fcdfc39eb9d305287'],
     }),
     ('Text::Format', '0.61', {
         'source_tmpl': 'Text-Format-0.61.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['bb8a3b8ff515c85101baf553a769337f944a05cde81f111ae78aff416bf4ae2b'],
     }),
     ('Text::CSV', '2.00', {
         'source_tmpl': 'Text-CSV-2.00.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI'],
+        'checksums': ['8ccbd9195805222d995844114d0e595bb24ce188f85284dbf256080311cbb2c2'],
     }),
     ('Test::utf8', '1.01', {
         'source_tmpl': 'Test-utf8-1.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKF'],
+        'checksums': ['ef371b1769cd8d36d2d657e8321723d94c8f8d89e7fd7437c6648c5dc6711b7a'],
     }),
     ('Params::Util', '1.07', {
         'source_tmpl': 'Params-Util-1.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AD/ADAMK'],
+        'checksums': ['30f1ec3f2cf9ff66ae96f973333f23c5f558915bb6266881eac7423f52d7c76c'],
     }),
     ('Number::Compare', '0.03', {
         'source_tmpl': 'Number-Compare-0.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RC/RCLAMP'],
+        'checksums': ['83293737e803b43112830443fb5208ec5208a2e6ea512ed54ef8e4dd2b880827'],
     }),
     ('File::Find::Rule', '0.34', {
         'source_tmpl': 'File-Find-Rule-0.34.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RC/RCLAMP'],
+        'checksums': ['7e6f16cc33eb1f29ff25bee51d513f4b8a84947bbfa18edb2d3cc40a2d64cafe'],
     }),
     ('File::Find::Rule::Perl', '1.15', {
         'source_tmpl': 'File-Find-Rule-Perl-1.15.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['9a48433f86e08ce18e03526e2982de52162eb909d19735460f07eefcaf463ea6'],
     }),
     ('Test::Version', '2.09', {
         'source_tmpl': 'Test-Version-2.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['9ce1dd2897a5f30e1b7f8966ec66f57d8d8f280f605f28c7ca221fa79aca38e0'],
     }),
     ('Data::Dump', '1.23', {
         'source_tmpl': 'Data-Dump-1.23.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['af53b05ef1387b4cab4427e6789179283e4f0da8cf036e8db516ddb344512b65'],
     }),
     ('Test::Trap', 'v0.3.4', {
         'source_tmpl': 'Test-Trap-v0.3.4.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN'],
+        'checksums': ['0b04656f33b6c96da8eec4cffe5286150b4e4b5e2991d3883686b10910105ae2'],
     }),
     ('Hook::LexWrap', '0.26', {
         'source_tmpl': 'Hook-LexWrap-0.26.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['b60bdc5f98f94f9294b06adef82b1d996da192d5f183f9f434b610fd1137ec2d'],
     }),
     ('Test::SubCalls', '1.10', {
         'source_tmpl': 'Test-SubCalls-1.10.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['cbc1e9b35a05e71febc13e5ef547a31c8249899bb6011dbdc9d9ff366ddab6c2'],
     }),
     ('Test::Simple', '1.302164', {
         'source_tmpl': 'Test-Simple-1.302164.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['50277b613f09cd52eb87b02c69ce0517b80080be8a8d80e1eda609479b0d6615'],
     }),
     ('Test::Pod', '1.52', {
         'source_tmpl': 'Test-Pod-1.52.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['60a8dbcc60168bf1daa5cc2350236df9343e9878f4ab9830970a5dde6fe8e5fc'],
     }),
     ('Test::Output', '1.031', {
         'source_tmpl': 'Test-Output-1.031.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BD/BDFOY'],
+        'checksums': ['f8b8f37185717872727d06f6c078fa77db794410faf2f6da4d37b0b7650f7ea4'],
     }),
     ('Test::Object', '0.08', {
         'source_tmpl': 'Test-Object-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['65278964147837313f4108e55b59676e8a364d6edf01b3dc198aee894ab1d0bb'],
     }),
     ('Test::NoWarnings', '1.04', {
         'source_tmpl': 'Test-NoWarnings-1.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AD/ADAMK'],
+        'checksums': ['638a57658cb119af1fe5b15e73d47c2544dcfef84af0c6b1b2e97f08202b686c'],
     }),
     ('SUPER', '1.20190531', {
         'source_tmpl': 'SUPER-1.20190531.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC'],
+        'checksums': ['685d1ee76e7f0e9006942923bf7df8b11c107132992917593dcf7397d417d39a'],
     }),
     ('Test::MockModule', 'v0.170.0', {
         'source_tmpl': 'Test-MockModule-v0.170.0.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GF/GFRANKS'],
+        'checksums': ['9f79ba975cb049e1e807c36de1a31126079fffc4f22ee81526641a8969e6ef5d'],
     }),
     ('Test::LeakTrace', '0.16', {
         'source_tmpl': 'Test-LeakTrace-0.16.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEEJO'],
+        'checksums': ['5f089eed915f1ec8c743f6d2777c3ecd0ca01df2f7b9e10038d316952583e403'],
     }),
     ('Test::InDistDir', '1.112071', {
         'source_tmpl': 'Test-InDistDir-1.112071.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MITHALDU'],
+        'checksums': ['922c5c63314f406f4cbb35ec423ac2154d2c2b71a65addb7732c9d240a83fefb'],
     }),
     ('Test::Fork', '0.02', {
         'source_tmpl': 'Test-Fork-0.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MS/MSCHWERN'],
+        'checksums': ['fcfefbfb24f885abe827c2ad07ac3d4e1fecf213a14717fcaf3c37175045d03e'],
     }),
     ('Test::File', '1.443', {
         'source_tmpl': 'Test-File-1.443.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BD/BDFOY'],
+        'checksums': ['61b4a6ab8f617c8c7b5975164cf619468dc304b6baaaea3527829286fa58bcd5'],
     }),
     ('Meta::Builder', '0.004', {
         'source_tmpl': 'Meta-Builder-0.004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['acb499aa7206eb9db21eb85357a74521bfe3bdae4a6416d50a7c75b939cf56fe'],
     }),
     ('Fennec::Lite', '0.004', {
         'source_tmpl': 'Fennec-Lite-0.004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['dce28e3932762c2ff92aa52d90405c06e898e81cb7b164ccae8966ae77f1dcab'],
     }),
     ('Exporter::Declare', '0.114', {
         'source_tmpl': 'Exporter-Declare-0.114.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['4bd70d6ca76f6f6ba7e4c618d4ac93b8593a58f1233ccbe18b10f5f204f1d4e4'],
     }),
     ('Mock::Quick', '1.111', {
         'source_tmpl': 'Mock-Quick-1.111.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['ff786008bf8c022064ececd3b7ed89c76b35e8d1eac6cf472a9f51771c1c9f2c'],
     }),
     ('Test::Exception::LessClever', '0.009', {
         'source_tmpl': 'Test-Exception-LessClever-0.009.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['3b2731a44956a11f74b46b3ecf0734fab651e1c0bcf120f8b407aa1b4d43ac34'],
     }),
     ('Sub::Install', '0.928', {
         'source_tmpl': 'Sub-Install-0.928.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['61e567a7679588887b7b86d427bc476ea6d77fffe7e0d17d640f89007d98ef0f'],
     }),
     ('Data::OptList', '0.110', {
         'source_tmpl': 'Data-OptList-0.110.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['366117cb2966473f2559f2f4575ff6ae69e84c69a0f30a0773e1b51a457ef5c3'],
     }),
     ('Sub::Exporter', '0.987', {
         'source_tmpl': 'Sub-Exporter-0.987.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['543cb2e803ab913d44272c7da6a70bb62c19e467f3b12aaac4c9523259b083d6'],
     }),
     ('File::pushd', '1.016', {
         'source_tmpl': 'File-pushd-1.016.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['d73a7f09442983b098260df3df7a832a5f660773a313ca273fa8b56665f97cdc'],
     }),
     ('Test::CleanNamespaces', '0.24', {
         'source_tmpl': 'Test-CleanNamespaces-0.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['338d5569e8e89a654935f843ec0bc84aaa486fe8dd1898fb9cab3eccecd5327a'],
     }),
     ('Config::Tiny', '2.24', {
         'source_tmpl': 'Config-Tiny-2.24.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['1064948e4bc57e86e318dbc8791c53ca5b9d95b958cc474367c3277981135232'],
     }),
     ('Class::Inspector', '1.36', {
         'source_tmpl': 'Class-Inspector-1.36.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e'],
     }),
     ('Test::ClassAPI', '1.07', {
         'source_tmpl': 'Test-ClassAPI-1.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['30e9dbfc5e0cc2ee14eae8f3465a908a710daecbd0a3ebdb2888fc4504fa18aa'],
     }),
     ('Log::Message', '0.08', {
         'source_tmpl': 'Log-Message-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['bd697dd62aaf26d118e9f0a0813429deb1c544e4501559879b61fcbdfe99fe46'],
     }),
     ('Log::Message::Simple', '0.10', {
         'source_tmpl': 'Log-Message-Simple-0.10.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['aa12d1a4c0ac260b94d448fa01feba242a8a85cb6cbfdc66432e3b5b468add96'],
     }),
     ('Term::UI', '0.46', {
         'source_tmpl': 'Term-UI-0.46.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['91946c80d7f4aab0ca4bfedc3bbe0a75b37cab1a29bd7bca3b3b7456d417e9a6'],
     }),
     ('Term::ReadKey', '2.38', {
         'source_tmpl': 'TermReadKey-2.38.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JS/JSTOWE'],
+        'checksums': ['5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290'],
     }),
     ('Class::MethodMaker', '2.24', {
         'source_tmpl': 'Class-MethodMaker-2.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SC/SCHWIGON/class-methodmaker'],
+        'checksums': ['5eef58ccb27ebd01bcde5b14bcc553b5347a0699e5c3e921c7780c3526890328'],
     }),
     ('Term::ProgressBar', '2.22', {
         'source_tmpl': 'Term-ProgressBar-2.22.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MANWAR'],
+        'checksums': ['2642ecca5b0b038c14812bcad3a9611ff7911dc59c9104d220797f837a880c49'],
     }),
     ('Term::Encoding', '0.03', {
         'source_tmpl': 'Term-Encoding-0.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA'],
+        'checksums': ['95ba9687d735d25a3cbe64508d7894f009c7fa2a1726c3e786e9e21da2251d0b'],
     }),
     ('CGI', '4.44', {
         'source_tmpl': 'CGI-4.44.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEEJO'],
+        'checksums': ['12435fb7ebd3585c47b6d60ee4f5c7d6a7c114a2827d2b5acf3d62aa9fcf1208'],
     }),
     ('AppConfig', '1.71', {
         'source_tmpl': 'AppConfig-1.71.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEILB'],
+        'checksums': ['1177027025ecb09ee64d9f9f255615c04db5e14f7536c344af632032eb887b0f'],
     }),
     ('Template::Toolkit', '2.29', {
         'source_tmpl': 'Template-Toolkit-2.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC'],
+        'checksums': ['2bddd71cf41fb805fd5234780daf53226b8e7004c623e1647ba2658113614779'],
     }),
     ('Template', '2.29', {
         'source_tmpl': 'Template-Toolkit-2.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC'],
+        'checksums': ['2bddd71cf41fb805fd5234780daf53226b8e7004c623e1647ba2658113614779'],
     }),
     ('Number::Format', '1.75', {
         'source_tmpl': 'Number-Format-1.75.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/W/WR/WRW'],
+        'checksums': ['82d659cb16461764fd44d11a9ce9e6a4f5e8767dc1069eb03467c6e55de257f3'],
     }),
     ('Template::Plugin::Number::Format', '1.06', {
         'source_tmpl': 'Template-Plugin-Number-Format-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DARREN'],
+        'checksums': ['0865836a1bcbc34d4a0ee34b5ccc14d7b511f1fd300bf390f002dac349539843'],
     }),
     ('Task::Weaken', '1.06', {
         'source_tmpl': 'Task-Weaken-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['2383fedb9dbaef646468ea824afbf7c801076720cfba0df2a7a074726dcd66be'],
     }),
     ('Switch', '2.17', {
         'source_tmpl': 'Switch-2.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHORNY'],
+        'checksums': ['31354975140fe6235ac130a109496491ad33dd42f9c62189e23f49f75f936d75'],
     }),
     ('Sub::Quote', '2.006003', {
         'source_tmpl': 'Sub-Quote-2.006003.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['be1f3a6f773f351f203cdc8f614803ac492b77d15fd68d5b1f0cd3884be18176'],
     }),
     ('Sub::Name', '0.21', {
         'source_tmpl': 'Sub-Name-0.21.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['bd32e9dee07047c10ae474c9f17d458b6e9885a6db69474c7a494ccc34c27117'],
     }),
     ('Sub::Exporter::ForMethods', '0.100052', {
         'source_tmpl': 'Sub-Exporter-ForMethods-0.100052.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['421fbba4f6ffcf13c4335f2c20630d709e6fa659c07545d094dbc5a558ad3006'],
     }),
     ('String::Truncate', '1.100602', {
         'source_tmpl': 'String-Truncate-1.100602.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['aaa3d4eec01136921484139133eb75d5c571fe51b0ad329f089e6d469a235f6e'],
     }),
     ('String::RewritePrefix', '0.007', {
         'source_tmpl': 'String-RewritePrefix-0.007.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['5cbbccd5636315a90ddec3610c718411b971ae4b74d5e9e2c9a0b3f976a0dda2'],
     }),
     ('JSON::MaybeXS', '1.004000', {
         'source_tmpl': 'JSON-MaybeXS-1.004000.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['59bda02e8f4474c73913723c608b539e2452e16c54ed7f0150c01aad06e0a126'],
     }),
     ('String::Flogger', '1.101245', {
         'source_tmpl': 'String-Flogger-1.101245.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['aa03c08e01f802a358c175c6093c02adf9688659a087a8ddefdc3e9cef72640b'],
     }),
     ('Regexp::Common', '2017060201', {
         'source_tmpl': 'Regexp-Common-2017060201.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL'],
+        'checksums': ['ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b'],
     }),
     ('Readonly', '2.05', {
         'source_tmpl': 'Readonly-2.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SA/SANKO'],
+        'checksums': ['4b23542491af010d44a5c7c861244738acc74ababae6b8838d354dfb19462b5e'],
     }),
     ('IO::Pty', '1.12', {
         'source_tmpl': 'IO-Tty-1.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TODDR'],
+        'checksums': ['a2ef8770d3309178203f8c8ac25e623e63cf76e97830fd3be280ade1a555290d'],
     }),
     ('IPC::Run', '20180523.0', {
         'source_tmpl': 'IPC-Run-20180523.0.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TODDR'],
+        'checksums': ['3850d7edf8a4671391c6e99bb770698e1c45da55b323b31c76310913349b6c2f'],
     }),
     ('Statistics::R', '0.34', {
         'source_tmpl': 'Statistics-R-0.34.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/F/FA/FANGLY'],
+        'checksums': ['782dd064876ac94680d97899f24fb0e727df42c05ba474ec096a9116438fbed4'],
     }),
     ('Statistics::Normality', '0.01', {
         'source_tmpl': 'Statistics-Normality-0.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MW/MWENDL'],
+        'checksums': ['78283c792b738c8b17a056da928e366954659d8206109e7c05d26ec45b2df15c'],
     }),
     ('Statistics::Distributions', '1.02', {
         'source_tmpl': 'Statistics-Distributions-1.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIKEK'],
+        'checksums': ['f99f396abf84ca37aa2cea31ad45d73aaee48752c999136c4b91389428d733c8'],
     }),
     ('List::MoreUtils::XS', '0.428', {
         'source_tmpl': 'List-MoreUtils-XS-0.428.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['9d9fe621429dfe7cf2eb1299c192699ddebf060953e5ebdc1b4e293c6d6dd62d'],
     }),
     ('List::MoreUtils', '0.428', {
         'source_tmpl': 'List-MoreUtils-0.428.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['713e0945d5f16e62d81d5f3da2b6a7b14a4ce439f6d3a7de74df1fd166476cc2'],
     }),
     ('Statistics::Descriptive', '3.0702', {
         'source_tmpl': 'Statistics-Descriptive-3.0702.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['f98a10c625640170cdda408cccc72bdd7f66f8ebe5f59dec1b96185171ef11d0'],
     }),
     ('Statistics::Basic', '1.6611', {
         'source_tmpl': 'Statistics-Basic-1.6611.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JE/JETTERO'],
+        'checksums': ['6855ce5615fd3e1af4cfc451a9bf44ff29a3140b4e7130034f1f0af2511a94fb'],
     }),
     ('OLE::Storage_Lite', '0.19', {
         'source_tmpl': 'OLE-Storage_Lite-0.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JM/JMCNAMARA'],
+        'checksums': ['e72e055c35bd85ad7c20cf2adb6c89bdbf5725df969484fa6dc981d531ef2c9d'],
     }),
     ('IO::Scalar', '2.111', {
         'source_tmpl': 'IO-stringy-2.111.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DS/DSKOLL'],
+        'checksums': ['8c67fd6608c3c4e74f7324f1404a856c331dbf48d9deda6aaa8296ea41bf199d'],
     }),
     ('Digest::Perl::MD5', '1.9', {
         'source_tmpl': 'Digest-Perl-MD5-1.9.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DE/DELTA'],
+        'checksums': ['7100cba1710f45fb0e907d8b1a7bd8caef35c64acd31d7f225aff5affeecd9b1'],
     }),
     ('Crypt::RC4', '2.02', {
         'source_tmpl': 'Crypt-RC4-2.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SI/SIFUKURT'],
+        'checksums': ['5ec4425c6bc22207889630be7350d99686e62a44c6136960110203cd594ae0ea'],
     }),
     ('Spreadsheet::ParseExcel', '0.65', {
         'source_tmpl': 'Spreadsheet-ParseExcel-0.65.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DO/DOUGW'],
+        'checksums': ['6ec4cb429bd58d81640fe12116f435c46f51ff1040c68f09cc8b7681c1675bec'],
     }),
     ('MRO::Compat', '0.13', {
         'source_tmpl': 'MRO-Compat-0.13.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['8a2c3b6ccc19328d5579d02a7d91285e2afd85d801f49d423a8eb16f323da4f8'],
     }),
     ('Eval::Closure', '0.14', {
         'source_tmpl': 'Eval-Closure-0.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DO/DOY'],
+        'checksums': ['ea0944f2f5ec98d895bef6d503e6e4a376fea6383a6bc64c7670d46ff2218cad'],
     }),
     ('Specio', '0.43', {
         'source_tmpl': 'Specio-0.43.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['3cd0debf7b6404127d5e0bb7fb78cfef9df5e2519d3d6ad7113b59ad1da9fa1d'],
     }),
     ('Test::FailWarnings', '0.008', {
         'source_tmpl': 'Test-FailWarnings-0.008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['da34ef9029f6849d6026201d49127d054ee6ac4b979c82210315f5721964a96f'],
     }),
     ('Data::Section', '0.200007', {
         'source_tmpl': 'Data-Section-0.200007.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['cd937e5b70e34aab885ff414e2a6d19e4783b7c28fc3cda5145b230514ebb4de'],
     }),
     ('Software::License', '0.103014', {
         'source_tmpl': 'Software-License-0.103014.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['eb45ea602d75006683789fbba57a01c0a1f7037371de95ea54b91577535d1789'],
     }),
     ('Shell', '0.73', {
         'source_tmpl': 'Shell-0.73.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/F/FE/FERREIRA'],
+        'checksums': ['f7dbebf65261ed0e5abd0f57052b64d665a1a830bab4c8bbc220f235bd39caf5'],
     }),
     ('Set::Scalar', '1.29', {
         'source_tmpl': 'Set-Scalar-1.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAVIDO'],
+        'checksums': ['a3dc1526f3dde72d3c64ea00007b86ce608cdcd93567cf6e6e42dc10fdc4511d'],
     }),
     ('Data::Types', '0.17', {
         'source_tmpl': 'Data-Types-0.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MANWAR'],
+        'checksums': ['860751feb79b7dfc1af71c4b7fe920220ec6d31c4ab9402b8f178f7f4b8293c1'],
     }),
     ('Set::IntSpan::Fast', '1.15', {
         'source_tmpl': 'Set-IntSpan-Fast-1.15.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AN/ANDYA'],
+        'checksums': ['cfb1768c24f55208e87405b17f537f0f303fa141891d0b22d509a941aa57e24e'],
     }),
     ('Set::IntSpan', '1.19', {
         'source_tmpl': 'Set-IntSpan-1.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SW/SWMCD'],
+        'checksums': ['11b7549b13ec5d87cc695dd4c777cd02983dd5fe9866012877fb530f48b3dfd0'],
     }),
     ('Set::Array', '0.30', {
         'source_tmpl': 'Set-Array-0.30.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['d9f024c8e3637feccdebcf6479b6754b6c92f1209f567feaf0c23818af31ee3c'],
     }),
     ('SVG', '2.84', {
         'source_tmpl': 'SVG-2.84.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MANWAR'],
+        'checksums': ['ec3d6ddde7a46fa507eaa616b94d217296fdc0d8fbf88741367a9821206f28af'],
     }),
     ('Math::Base::Convert', '0.11', {
         'source_tmpl': 'Math-Base-Convert-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIKER'],
+        'checksums': ['8c0971355f24c93b79e77ad54a4570090a1a598fcb9b86f5c17eba42f38b40e0'],
     }),
     ('B::COW', '0.001', {
         'source_tmpl': 'B-COW-0.001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC'],
+        'checksums': ['8d5c3dfe09bbc9100cc56635816d0758c1b32777122246ef652661712a74b0d8'],
     }),
     ('Clone', '0.43', {
         'source_tmpl': 'Clone-0.43.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC'],
+        'checksums': ['99025344686535c1ded464fe126df900b645b858e6d8873635ba81b4882eeeda'],
     }),
     ('SQL::Statement', '1.412', {
         'source_tmpl': 'SQL-Statement-1.412.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['65c870883379c11b53f19ead10aaac241ccc86a90bbab77f6376fe750720e5c8'],
     }),
     ('Test::Without::Module', '0.20', {
         'source_tmpl': 'Test-Without-Module-0.20.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CO/CORION'],
+        'checksums': ['8e9aeb7c32a6c6d0b8a93114db2a8c072721273a9d9a2dd4f9ca86cfd28aa524'],
     }),
     ('Clone::Choose', '0.010', {
         'source_tmpl': 'Clone-Choose-0.010.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HE/HERMES'],
+        'checksums': ['5623481f58cee8edb96cd202aad0df5622d427e5f748b253851dfd62e5123632'],
     }),
     ('Hash::Merge', '0.300', {
         'source_tmpl': 'Hash-Merge-0.300.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['402fd52191d51415bb7163b7673fb4a108e3156493d7df931b8db4b2af757c40'],
     }),
     ('SQL::Abstract', '1.86', {
         'source_tmpl': 'SQL-Abstract-1.86.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IL/ILMARI'],
+        'checksums': ['e7a7f7da5e6fa42f495860e92e9138b8a0964ca7674c95bd6ff1b1ce21aa8cdf'],
     }),
     ('String::Formatter', '0.102084', {
         'source_tmpl': 'String-Formatter-0.102084.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['83354112fd0c66df1e12e022df75efbf30ebdb43581c00897c86ec1c33a89c56'],
     }),
     ('Date::Format', '2.30', {
         'source_tmpl': 'TimeDate-2.30.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GB/GBARR'],
+        'checksums': ['75bd254871cb5853a6aa0403ac0be270cdd75c9d1b6639f18ecba63c15298e86'],
     }),
     ('String::Errf', '0.008', {
         'source_tmpl': 'String-Errf-0.008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['ae136f783dac6587aea2d22d64ec205272153a83f954b075766e3d298a4ed6db'],
     }),
     ('MooseX::Role::Parameterized', '1.11', {
         'source_tmpl': 'MooseX-Role-Parameterized-1.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['1cfe766c5d7f0ecab57f733dcca430a2a2acd6b995757141b940ade3692bec9e'],
     }),
     ('Package::Stash::XS', '0.29', {
         'source_tmpl': 'Package-Stash-XS-0.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['d3676ba94641e03d6a30e951f09266c4c3ca3f5b58aa7b314a67f28e419878aa'],
     }),
     ('Package::DeprecationManager', '0.17', {
         'source_tmpl': 'Package-DeprecationManager-0.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['1d743ada482b5c9871d894966e87d4c20edc96931bb949fb2638b000ddd6684b'],
     }),
     ('Module::Runtime::Conflicts', '0.003', {
         'source_tmpl': 'Module-Runtime-Conflicts-0.003.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['707cdc75038c70fe91779b888ac050f128565d3967ba96680e1b1c7cc9733875'],
     }),
     ('List::Util', '1.51', {
         'source_tmpl': 'Scalar-List-Utils-1.51.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PEVANS'],
+        'checksums': ['d9c8eab1ac5a6fc75a7e836304626e2cb7b13cf8c9b10d491a144e1ef6760a76'],
     }),
     ('Devel::OverloadInfo', '0.005', {
         'source_tmpl': 'Devel-OverloadInfo-0.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IL/ILMARI'],
+        'checksums': ['8bfde2ffa47c9946f8adc8cfc445c2f97b8d1cdd678111bee9f444e82f7aa6e7'],
     }),
     ('Class::Load::XS', '0.10', {
         'source_tmpl': 'Class-Load-XS-0.10.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['5bc22cf536ebfd2564c5bdaf42f0d8a4cee3d1930fc8b44b7d4a42038622add1'],
     }),
     ('Class::Load', '0.25', {
         'source_tmpl': 'Class-Load-0.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['2a48fa779b5297e56156380e8b32637c6c58decb4f4a7f3c7350523e11275f8f'],
     }),
     ('CPAN::Meta::Check', '0.014', {
         'source_tmpl': 'CPAN-Meta-Check-0.014.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['28a0572bfc1c0678d9ce7da48cf521097ada230f96eb3d063fcbae1cfe6a351f'],
     }),
     ('Moose', '2.2011', {
         'source_tmpl': 'Moose-2.2011.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['973d0a35d9f39bf93bbc5206c25f5ec3651f96356f082d31873c0ac9a5c1cd82'],
     }),
     ('Role::HasMessage', '0.006', {
         'source_tmpl': 'Role-HasMessage-0.006.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['f6a6dbe0476ff95ee1ffbef825eb18d9b02b0618deba4686e7c63b99d576d4d3'],
     }),
     ('Software::License::Artistic_1_0', '0.103014', {
         'source_tmpl': 'Software-License-0.103014.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['eb45ea602d75006683789fbba57a01c0a1f7037371de95ea54b91577535d1789'],
     }),
     ('Pod::Eventual::Simple', '0.094001', {
         'source_tmpl': 'Pod-Eventual-0.094001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['be9fb8910b108e5d1a66f002b659ad22576e88d779b703dff9d15122c3f80834'],
     }),
     ('Carp::Clan', '6.07', {
         'source_tmpl': 'Carp-Clan-6.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['0a08560737d8c5caab36f2684c8512e9771e633d3ab5629db814e1d49e274a3d'],
     }),
     ('MooseX::Types', '0.50', {
         'source_tmpl': 'MooseX-Types-0.50.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['9cd87b3492cbf0be9d2df9317b2adf9fc30663770e69906654bea3f41b17cb08'],
     }),
     ('Pod::Elemental', '0.103004', {
         'source_tmpl': 'Pod-Elemental-0.103004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['43625cde7241fb174ad9c7eb45387fba410dc141d7de2323855eeab3590072c9'],
     }),
     ('IO::String', '1.08', {
         'source_tmpl': 'IO-String-1.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['2a3f4ad8442d9070780e58ef43722d19d1ee21a803bf7c8206877a10482de5a0'],
     }),
     ('PPI', '1.270', {
         'source_tmpl': 'PPI-1.270.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MITHALDU'],
+        'checksums': ['622a698c781bb85d2bdf7bbfe040fe70d33b79774c9ae01fce2375dc73faf457'],
     }),
     ('Sub::Exporter::GlobExporter', '0.005', {
         'source_tmpl': 'Sub-Exporter-GlobExporter-0.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['2fc45eefe6de07cd3fd8af9e799c697fbd35a02ecd5bf9bcd8c94cefb6db7a63'],
     }),
     ('Log::Dispatch::Array', '1.003', {
         'source_tmpl': 'Log-Dispatch-Array-1.003.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['0c20931c2f7bf26a76ba01370b9582215fe5216b161822c0c3f204a81fb87f37'],
     }),
     ('Log::Dispatch', '2.68', {
         'source_tmpl': 'Log-Dispatch-2.68.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['d07a3039997a6df2fa02849ed5a6a0560c154018bf988c5cc202069be11aadaf'],
     }),
     ('Log::Dispatchouli', '2.019', {
         'source_tmpl': 'Log-Dispatchouli-2.019.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['fe8890c553c8f72b8b55633067270862c34db2ab8ff1cf8db0855f0427c23442'],
     }),
     ('Class::Singleton', '1.5', {
         'source_tmpl': 'Class-Singleton-1.5.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHAY'],
+        'checksums': ['38220d04f02e3a803193c2575a1644cce0b95ad4b95c19eb932b94e2647ef678'],
     }),
     ('DateTime::TimeZone', '2.36', {
         'source_tmpl': 'DateTime-TimeZone-2.36.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['7e033a3cae17a62a0a4011b9e3dd900acf8b7614e05dc6595d1f55406ec6f6a7'],
     }),
     ('File::Copy::Recursive', '0.45', {
         'source_tmpl': 'File-Copy-Recursive-0.45.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DM/DMUEY'],
+        'checksums': ['d3971cf78a8345e38042b208bb7b39cb695080386af629f4a04ffd6549df1157'],
     }),
     ('Class::Tiny', '1.006', {
         'source_tmpl': 'Class-Tiny-1.006.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['2efcbd31528be51d3022c616768558b78c6172df5f03c5dc698939f65488cb4e'],
     }),
     ('Test::File::ShareDir::Dist', '1.001002', {
         'source_tmpl': 'Test-File-ShareDir-1.001002.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KE/KENTNL'],
+        'checksums': ['b33647cbb4b2f2fcfbde4f8bb4383d0ac95c2f89c4c5770eb691f1643a337aad'],
     }),
     ('Term::Table', '0.013', {
         'source_tmpl': 'Term-Table-0.013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['ffeb36dcb25c575b9f63657d1591a14af22cd10ba23cc76de9d976b426f4fc40'],
     }),
     ('Sub::Info', '0.002', {
         'source_tmpl': 'Sub-Info-0.002.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['ea3056d696bdeff21a99d340d5570887d39a8cc47bff23adfc82df6758cdd0ea'],
     }),
     ('Scope::Guard', '0.21', {
         'source_tmpl': 'Scope-Guard-0.21.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHOCOLATE'],
+        'checksums': ['8c9b1bea5c56448e2c3fadc65d05be9e4690a3823a80f39d2f10fdd8f777d278'],
     }),
     ('Importer', '0.025', {
         'source_tmpl': 'Importer-0.025.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['0745138c487d74033d0cbeb36f06595036dc7e688f1a5dbec9cc2fa799e13946'],
     }),
     ('Test2::Require::Module', '0.000122', {
         'source_tmpl': 'Test2-Suite-0.000122.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['83828cf440ce2a7bfc2fe48f535931e44328e39810370b04c9e947db888a7442'],
     }),
     ('Test2', '1.302164', {
         'source_tmpl': 'Test-Simple-1.302164.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['50277b613f09cd52eb87b02c69ce0517b80080be8a8d80e1eda609479b0d6615'],
     }),
     ('IPC::Run3', '0.048', {
         'source_tmpl': 'IPC-Run3-0.048.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565'],
     }),
     ('Test2::Plugin::NoWarnings', '0.07', {
         'source_tmpl': 'Test2-Plugin-NoWarnings-0.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['ff1da75c24e0635f7f4343b9add5ae880d7b8ede71f181b59fb7df4ae762b8eb'],
     }),
     ('Params::ValidationCompiler', '0.30', {
         'source_tmpl': 'Params-ValidationCompiler-0.30.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['dc5bee23383be42765073db284bed9fbd819d4705ad649c20b644452090d16cb'],
     }),
     ('IPC::System::Simple', '1.25', {
         'source_tmpl': 'IPC-System-Simple-1.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PJ/PJF'],
+        'checksums': ['f1b6aa1dfab886e8e4ea825f46a1cbb26038ef3e727fef5d84444aa8035a4d3b'],
     }),
     ('File::ShareDir::Install', '0.13', {
         'source_tmpl': 'File-ShareDir-Install-0.13.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['45befdf0d95cbefe7c25a1daf293d85f780d6d2576146546e6828aad26e580f9'],
     }),
     ('File::ShareDir', '1.116', {
         'source_tmpl': 'File-ShareDir-1.116.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['59d90bfdf98c4656ff4173e62954ea8cf0de66565e35d108ecd7050596cb8328'],
     }),
     ('DateTime::Locale', '1.24', {
         'source_tmpl': 'DateTime-Locale-1.24.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['d03aaa33126a13b1fe6591b9838f0a07395f1fea12b6e304566d7e39a5e5fb82'],
     }),
     ('DateTime', '1.51', {
         'source_tmpl': 'DateTime-1.51.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['de22da0de57a43a976322636d3a7474de4b1d6f37e044337123086cf94c16ec5'],
     }),
     ('PerlIO::utf8_strict', '0.007', {
         'source_tmpl': 'PerlIO-utf8_strict-0.007.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['83a33f2fe046cb3ad6afc80790635a423e2c7c6854afacc6998cd46951cc81cb'],
     }),
     ('Mixin::Linewise::Readers', '0.108', {
         'source_tmpl': 'Mixin-Linewise-0.108.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['7df20678474c0973930a472b0c55e3f8e85b7790b68ab18ef618f9c453c8aef2'],
     }),
     ('Config::INI::Reader', '0.025', {
         'source_tmpl': 'Config-INI-0.025.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['628bf76d5b91f89dde22d4813ec033026ebf71b772bb61ccda909da00c869732'],
     }),
     ('Config::MVP::Reader::INI', '2.101463', {
         'source_tmpl': 'Config-MVP-Reader-INI-2.101463.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['69a916bf3711ebc9e7d4caaa70f3c695e918b93a5923958773303e0da0b6d445'],
     }),
     ('StackTrace::Auto', '0.200013', {
         'source_tmpl': 'Throwable-0.200013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['9987d0deb5bddd352a6330cefbe932f882e36dd8c8a4564bcfd372dc396b8fa0'],
     }),
     ('Role::Identifiable::HasIdent', '0.007', {
         'source_tmpl': 'Role-Identifiable-0.007.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['561346d1a1a07a45bd851d859a825a7f67925a7a3ba5ba58e0cdad8bb99073ad'],
     }),
     ('MooseX::OneArgNew', '0.005', {
         'source_tmpl': 'MooseX-OneArgNew-0.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['7e4fcf474ea6c4244f0885f1066729cfdc472fbd7190dd41b4b55bcd67c3103f'],
     }),
     ('Module::Pluggable::Object', '5.2', {
         'source_tmpl': 'Module-Pluggable-5.2.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SI/SIMONW'],
+        'checksums': ['b3f2ad45e4fd10b3fb90d912d78d8b795ab295480db56dc64e86b9fa75c5a6df'],
     }),
     ('Config::MVP', '2.200011', {
         'source_tmpl': 'Config-MVP-2.200011.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['23c95666fc43c4adaebcc093b1b56091efc2a6aa2d75366a216d18eda96ad716'],
     }),
     ('Pod::Weaver', '4.015', {
         'source_tmpl': 'Pod-Weaver-4.015.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['5af25b29a55783e495a9df5ef6293240e2c9ab02764613d79f1ed50b12dec5ae'],
     }),
     ('Pod::Plainer', '1.04', {
         'source_tmpl': 'Pod-Plainer-1.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RM/RMBARKER'],
+        'checksums': ['1bbfbf7d1d4871e5a83bab2137e22d089078206815190eb1d5c1260a3499456f'],
     }),
     ('File::Slurper', '0.012', {
         'source_tmpl': 'File-Slurper-0.012.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['4efb2ea416b110a1bda6f8133549cc6ea3676402e3caf7529fce0313250aa578'],
     }),
     ('Pod::POM', '2.01', {
         'source_tmpl': 'Pod-POM-2.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEILB'],
+        'checksums': ['1b50fba9bbdde3ead192beeba0eaddd0c614e3afb1743fa6fff805f57c56f7f4'],
     }),
     ('Pod::LaTeX', '0.61', {
         'source_tmpl': 'Pod-LaTeX-0.61.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TJ/TJENNESS'],
+        'checksums': ['15a840ea1c8a76cd3c865fbbf2fec33b03615c0daa50f9c800c54e0cf0659d46'],
     }),
     ('Pod::Eventual', '0.094001', {
         'source_tmpl': 'Pod-Eventual-0.094001.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['be9fb8910b108e5d1a66f002b659ad22576e88d779b703dff9d15122c3f80834'],
     }),
     ('Path::Class', '0.37', {
         'source_tmpl': 'Path-Class-0.37.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS'],
+        'checksums': ['654781948602386f2cb2e4473a739f17dc6953d92aabc2498a4ca2561bc248ce'],
     }),
     ('Parse::RecDescent', '1.967015', {
         'source_tmpl': 'Parse-RecDescent-1.967015.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN'],
+        'checksums': ['1943336a4cb54f1788a733f0827c0c55db4310d5eae15e542639c9dd85656e37'],
     }),
     ('Type::Utils', '1.004004', {
         'source_tmpl': 'Type-Tiny-1.004004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TOBYINK'],
+        'checksums': ['081281ea004cdd89003d938aa52c1398e24411dd8f7163b14d0977a13f7062be'],
     }),
     ('File::Slurp', '9999.27', {
         'source_tmpl': 'File-Slurp-9999.27.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB'],
+        'checksums': ['3a9d884f664c37946adb58f76b7708bf48c8b3fa9c34244f8cdb451ce41c43f4'],
     }),
     ('CPAN::DistnameInfo', '0.12', {
         'source_tmpl': 'CPAN-DistnameInfo-0.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GB/GBARR'],
+        'checksums': ['2f24fbe9f7eeacbc269d35fc61618322fc17be499ee0cd9018f370934a9f2435'],
     }),
     ('MooseX::Types::Path::Class', '0.09', {
         'source_tmpl': 'MooseX-Types-Path-Class-0.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['e784bab53698ae95a709a8663306145ffec55668df6cf31615333523fbe7ef7e'],
     }),
     ('Archive::Zip', '1.64', {
         'source_tmpl': 'Archive-Zip-1.64.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PH/PHRED'],
+        'checksums': ['de5f84f2148038363d557b1fa33f58edc208111f789f7299fe3d8f6e11b4d17d'],
     }),
     ('Archive::Peek', '0.35', {
         'source_tmpl': 'Archive-Peek-0.35.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LB/LBROCARD'],
+        'checksums': ['a63c16e8d67a99a9d486f286f62ae26c98886f1e03071304db88ca36fb25aca4'],
     }),
     ('Parse::CPAN::Packages', '2.40', {
         'source_tmpl': 'Parse-CPAN-Packages-2.40.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MITHALDU'],
+        'checksums': ['59e76792e48058040d6a9217cad9e1a83301576d3e14955abe40841611ebe4e0'],
     }),
     ('Module::Pluggable', '5.2', {
         'source_tmpl': 'Module-Pluggable-5.2.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SI/SIMONW'],
+        'checksums': ['b3f2ad45e4fd10b3fb90d912d78d8b795ab295480db56dc64e86b9fa75c5a6df'],
     }),
     ('Params::Validate', '1.29', {
         'source_tmpl': 'Params-Validate-1.29.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['49a68dfb430bea028042479111d19068e08095e5a467e320b7ab7bde3d729733'],
     }),
     ('Package::Constants', '0.06', {
         'source_tmpl': 'Package-Constants-0.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['0b58be78706ccc4e4bd9bbad41767470427fd7b2cfad749489de101f85bc5df5'],
     }),
     ('PadWalker', '2.3', {
         'source_tmpl': 'PadWalker-2.3.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RO/ROBIN'],
+        'checksums': ['2a6c44fb600861e54568e74081a8d1f121f0060076069ceab34b1ae89d6588cf'],
     }),
     ('Devel::Cycle', '1.12', {
         'source_tmpl': 'Devel-Cycle-1.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LD/LDS'],
+        'checksums': ['fd3365c4d898b2b2bddbb78a46d507a18cca8490a290199547dab7f1e7390bc2'],
     }),
     ('Test::Memory::Cycle', '1.06', {
         'source_tmpl': 'Test-Memory-Cycle-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PETDANCE'],
+        'checksums': ['9d53ddfdc964cd8454cb0da4c695b6a3ae47b45839291c34cb9d8d1cfaab3202'],
     }),
     ('Font::TTF', '1.06', {
         'source_tmpl': 'Font-TTF-1.06.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BH/BHALLISSY'],
+        'checksums': ['4b697d444259759ea02d2c442c9bffe5ffe14c9214084a01f743693a944cc293'],
     }),
     ('PDF::API2', '2.034', {
         'source_tmpl': 'PDF-API2-2.034.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SS/SSIMMS'],
+        'checksums': ['8aa98818fb6e4bebd6f9096e222989dcdd5fd4c5fa2ad1c7f0149053fc68f1cc'],
     }),
     ('Object::Accessor', '0.48', {
         'source_tmpl': 'Object-Accessor-0.48.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['76cb824a27b6b4e560409fcf6fd5b3bfbbd38b72f1f3d37ed0b54bd9c0baeade'],
     }),
     ('Net::SSLeay', '1.88', {
         'source_tmpl': 'Net-SSLeay-1.88.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHRISN'],
+        'checksums': ['2000da483c8471a0b61e06959e92a6fca7b9e40586d5c828de977d3d2081cfdd'],
     }),
     ('Net::SNMP', 'v6.0.1', {
         'source_tmpl': 'Net-SNMP-v6.0.1.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DT/DTOWN'],
+        'checksums': ['14c37bc1cbb3f3cdc7d6c13e0f27a859f14cdcfd5ea54a0467a88bc259b0b741'],
     }),
     ('Mozilla::CA', '20180117', {
         'source_tmpl': 'Mozilla-CA-20180117.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AB/ABH'],
+        'checksums': ['f2cc9fbe119f756313f321e0d9f1fac0859f8f154ac9d75b1a264c1afdf4e406'],
     }),
     ('IO::Socket::SSL', '2.066', {
         'source_tmpl': 'IO-Socket-SSL-2.066.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SU/SULLR'],
+        'checksums': ['0d47064781a545304d5dcea5dfcee3acc2e95a32e1b4884d80505cde8ee6ebcd'],
     }),
     ('Net::SMTP::SSL', '1.04', {
         'source_tmpl': 'Net-SMTP-SSL-1.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['7b29c45add19d3d5084b751f7ba89a8e40479a446ce21cfd9cc741e558332a00'],
     }),
     ('Mouse', 'v2.5.6', {
         'source_tmpl': 'Mouse-v2.5.6.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SK/SKAJI'],
+        'checksums': ['14002e682e65d8f344bce5d7fe35fc4d92681ecddcbcd87248322473232260c8'],
     }),
     ('MooseX::Types::Perl', '0.101343', {
         'source_tmpl': 'MooseX-Types-Perl-0.101343.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['f084beaf3c33209c68d05d4dbc24c25d604a6458b9738d96dceb086c8ef1325a'],
     }),
     ('MooseX::SetOnce', '0.200002', {
         'source_tmpl': 'MooseX-SetOnce-0.200002.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['cbed06b7fcd353f0d99bf80a87c1c0b581160697231b3ad9a608da231ba2b659'],
     }),
     ('MooseX::Role::WithOverloading', '0.17', {
         'source_tmpl': 'MooseX-Role-WithOverloading-0.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['92b095d73f1220f9c2ed2d3aaa5ba072eb5aa2de209b7c455da5a8701b986865'],
     }),
     ('MooseX::LazyRequire', '0.11', {
         'source_tmpl': 'MooseX-LazyRequire-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['ef620c1e019daf9cf3f23a943d25a94c91e93ab312bcd63be2e9740ec0b94288'],
     }),
     ('Getopt::Long::Descriptive', '0.104', {
         'source_tmpl': 'Getopt-Long-Descriptive-0.104.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['878bc1782c5e196a08a52fa252bbfce1aeb0546d073eac164fc6b80b4cea1e28'],
     }),
     ('MooseX::Getopt', '0.74', {
         'source_tmpl': 'MooseX-Getopt-0.74.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['1de0df3b431ebe9f3563bdf4569eacd7e07e865a8397f2a990d0cb57d4cb2c24'],
     }),
     ('Module::ScanDeps', '1.27', {
         'source_tmpl': 'Module-ScanDeps-1.27.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP'],
+        'checksums': ['ee4ce19c04485e5caf71384e599518b2cbad2f27241ab09d89e0969e524ed948'],
     }),
     ('File::Remove', '1.58', {
         'source_tmpl': 'File-Remove-1.58.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['81f6ec83acab8ba042afe904334a26eb3a56c217bdb9981d237a89ab072fd0d8'],
     }),
     ('Module::Install', '1.19', {
         'source_tmpl': 'Module-Install-1.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['1a53a78ddf3ab9e3c03fc5e354b436319a944cba4281baf0b904fa932a13011b'],
     }),
     ('File::Copy::Recursive::Reduced', '0.006', {
         'source_tmpl': 'File-Copy-Recursive-Reduced-0.006.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JK/JKEENAN'],
+        'checksums': ['e618f993a69f4355205c58fffff6982609f28b47f646ec6e244e41b5c6707e2c'],
     }),
     ('Devel::CheckCompiler', '0.07', {
         'source_tmpl': 'Devel-CheckCompiler-0.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SY/SYOHEX'],
+        'checksums': ['768b7697b4b8d4d372c7507b65e9dd26aa4223f7100183bbb4d3af46d43869b5'],
     }),
     ('Cwd::Guard', '0.05', {
         'source_tmpl': 'Cwd-Guard-0.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO'],
+        'checksums': ['7afc7ca2b9502e440241938ad97a3e7ebd550180ebd6142e1db394186b268e77'],
     }),
     ('Module::Build::XSUtil', '0.19', {
         'source_tmpl': 'Module-Build-XSUtil-0.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO'],
+        'checksums': ['9063b3c346edeb422807ffe49ffb23038c4f900d4a77b845ce4b53d97bf29400'],
     }),
     ('ExtUtils::InstallPaths', '0.012', {
         'source_tmpl': 'ExtUtils-InstallPaths-0.012.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['84735e3037bab1fdffa3c2508567ad412a785c91599db3c12593a50a1dd434ed'],
     }),
     ('ExtUtils::Helpers', '0.026', {
         'source_tmpl': 'ExtUtils-Helpers-0.026.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['de901b6790a4557cf4ec908149e035783b125bf115eb9640feb1bc1c24c33416'],
     }),
     ('ExtUtils::Config', '0.008', {
         'source_tmpl': 'ExtUtils-Config-0.008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['ae5104f634650dce8a79b7ed13fb59d67a39c213a6776cfdaa3ee749e62f1a8c'],
     }),
     ('Module::Build::Tiny', '0.039', {
         'source_tmpl': 'Module-Build-Tiny-0.039.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['7d580ff6ace0cbe555bf36b86dc8ea232581530cbeaaea09bccb57b55797f11c'],
     }),
     ('Mixin::Linewise', '0.108', {
         'source_tmpl': 'Mixin-Linewise-0.108.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['7df20678474c0973930a472b0c55e3f8e85b7790b68ab18ef618f9c453c8aef2'],
     }),
     ('Math::VecStat', '0.08', {
         'source_tmpl': 'Math-VecStat-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AS/ASPINELLI'],
+        'checksums': ['409a8e0e4b1025c8e80f628f65a9778aa77ab285161406ca4a6c097b13656d0d'],
     }),
     ('Math::Round', '0.07', {
         'source_tmpl': 'Math-Round-0.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GROMMEL'],
+        'checksums': ['73a7329a86e54a5c29a440382e5803095b58f33129e61a1df0093b4824de9327'],
     }),
     ('Math::CDF', '0.1', {
         'source_tmpl': 'Math-CDF-0.1.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CA/CALLAHAN'],
+        'checksums': ['7896bf250835ce47dcc813cb8cf9dc576c5455de42e822dcd7d8d3fef2125565'],
     }),
     ('Math::Bezier', '0.01', {
         'source_tmpl': 'Math-Bezier-0.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AB/ABW'],
+        'checksums': ['11a815fc45fdf0efabb1822ab77faad8b9eea162572c5f0940c8ed7d56e6b8b8'],
     }),
     ('MailTools', '2.21', {
         'source_tmpl': 'MailTools-2.21.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['4ad9bd6826b6f03a2727332466b1b7d29890c8d99a32b4b3b0a8d926ee1a44cb'],
     }),
     ('MIME::Types', '2.17', {
         'source_tmpl': 'MIME-Types-2.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKOV'],
+        'checksums': ['e04ed7d42f1ff3150a303805f2689c28f80b92c511784d4641cb7f040d3e8ff6'],
     }),
     ('Email::Date::Format', '1.005', {
         'source_tmpl': 'Email-Date-Format-1.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['579c617e303b9d874411c7b61b46b59d36f815718625074ae6832e7bb9db5104'],
     }),
     ('MIME::Lite', '3.030', {
         'source_tmpl': 'MIME-Lite-3.030.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['8f39901bc580bc3dce69e10415305e4435ff90264c63d29f707b4566460be962'],
     }),
     ('Log::Log4perl', '1.49', {
         'source_tmpl': 'Log-Log4perl-1.49.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MS/MSCHILLI'],
+        'checksums': ['b739187f519146cb6bebcfc427c64b1f4138b35c5f4c96f46a21ed4a43872e16'],
     }),
     ('Log::Handler', '0.88', {
         'source_tmpl': 'Log-Handler-0.88.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BL/BLOONIX'],
+        'checksums': ['45bf540ab2138ed3ff93afc205b0516dc75755b86acdcc5e75c41347833c293d'],
     }),
     ('List::UtilsBy', '0.11', {
         'source_tmpl': 'List-UtilsBy-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PEVANS'],
+        'checksums': ['faddf43b4bc21db8e4c0e89a26e5f23fe626cde3491ec651b6aa338627f5775a'],
     }),
     ('List::SomeUtils', '0.56', {
         'source_tmpl': 'List-SomeUtils-0.56.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['eaa7d99ce86380c0389876474c8eb84acc0a6bfeef1b0fc23a292592de6f89f7'],
     }),
     ('List::AllUtils', '0.15', {
         'source_tmpl': 'List-AllUtils-0.15.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DR/DROLSKY'],
+        'checksums': ['3711fac729321d3aad8356a756fd9272094f227aa048866a3751f9d8ea6cc95d'],
     }),
     ('Lingua::EN::PluralToSingular', '0.21', {
         'source_tmpl': 'Lingua-EN-PluralToSingular-0.21.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BK/BKB'],
+        'checksums': ['f8a8b7de28c25c96190d7f48c90b5ad9b9bf517f3835c77641f0e8fa546c0d1d'],
     }),
     ('LWP::Protocol::https', '6.07', {
         'source_tmpl': 'LWP-Protocol-https-6.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['522cc946cf84a1776304a5737a54b8822ec9e79b264d0ba0722a70473dbfb9e7'],
     }),
     ('JSON', '4.02', {
         'source_tmpl': 'JSON-4.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI'],
+        'checksums': ['444a88755a89ffa2a5424ab4ed1d11dca61808ebef57e81243424619a9e8627c'],
     }),
     ('Iterator::Simple', '0.07', {
         'source_tmpl': 'Iterator-Simple-0.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MICHAEL'],
+        'checksums': ['cb574d063bb481c8fb9cb5781a4645896aa0e1ee715ba947cf766f1ff4e9eb44'],
     }),
     ('Import::Into', '1.002005', {
         'source_tmpl': 'Import-Into-1.002005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HA/HAARG'],
+        'checksums': ['bd9e77a3fb662b40b43b18d3280cd352edf9fad8d94283e518181cc1ce9f0567'],
     }),
     ('DBIx::ContextualFetch', '1.03', {
         'source_tmpl': 'DBIx-ContextualFetch-1.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TM/TMTM'],
+        'checksums': ['85e2f805bfc81cd738c294316b27a515397036f397a0ff1c6c8d754c38530306'],
     }),
     ('DBI', '1.642', {
         'source_tmpl': 'DBI-1.642.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TI/TIMB'],
+        'checksums': ['3f2025023a56286cebd15cb495e36ccd9b456c3cc229bf2ce1f69e9ebfc27f5d'],
     }),
     ('Ima::DBI', '0.35', {
         'source_tmpl': 'Ima-DBI-0.35.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PERRIN'],
+        'checksums': ['8b481ceedbf0ae4a83effb80581550008bfdd3885ef01145e3733c7097c00a08'],
     }),
     ('IO::Tty', '1.12', {
         'source_tmpl': 'IO-Tty-1.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TODDR'],
+        'checksums': ['a2ef8770d3309178203f8c8ac25e623e63cf76e97830fd3be280ade1a555290d'],
     }),
     ('HTTP::Headers', '6.18', {
         'source_tmpl': 'HTTP-Message-6.18.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['d060d170d388b694c58c14f4d13ed908a2807f0e581146cef45726641d809112'],
     }),
     ('HTTP::Message', '6.18', {
         'source_tmpl': 'HTTP-Message-6.18.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['d060d170d388b694c58c14f4d13ed908a2807f0e581146cef45726641d809112'],
     }),
     ('HTTP::Request', '6.18', {
         'source_tmpl': 'HTTP-Message-6.18.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['d060d170d388b694c58c14f4d13ed908a2807f0e581146cef45726641d809112'],
     }),
     ('HTML::Tree', '5.07', {
         'source_tmpl': 'HTML-Tree-5.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KE/KENTNL'],
+        'checksums': ['f0374db84731c204b86c1d5b90975fef0d30a86bd9def919343e554e31a9dbbf'],
     }),
     ('HTML::Template', '2.97', {
         'source_tmpl': 'HTML-Template-2.97.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SA/SAMTREGAR'],
+        'checksums': ['6547af61f3aa85793f8616190938d677d7995fb3b720c16258040bc935e2129f'],
     }),
     ('HTML::Parser', '3.72', {
         'source_tmpl': 'HTML-Parser-3.72.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['ec28c7e1d9e67c45eca197077f7cdc41ead1bb4c538c7f02a3296a4bb92f608b'],
     }),
     ('HTML::TokeParser', '3.72', {
         'source_tmpl': 'HTML-Parser-3.72.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['ec28c7e1d9e67c45eca197077f7cdc41ead1bb4c538c7f02a3296a4bb92f608b'],
     }),
     ('HTML::Form', '6.04', {
         'source_tmpl': 'HTML-Form-6.04.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['9cd557a8b61b9a98deceff259c4fb1d82df729ff9d0388f655b364dd16480080'],
     }),
     ('HTML::Entities::Interpolate', '1.10', {
         'source_tmpl': 'HTML-Entities-Interpolate-1.10.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['f15a9df92c282419f7010964aca1ada844ddfae7afc735cd2ba1bb20883e955c'],
     }),
     ('XML::Writer', '0.625', {
         'source_tmpl': 'XML-Writer-0.625.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JO/JOSEPHW'],
+        'checksums': ['e080522c6ce050397af482665f3965a93c5d16f5e81d93f6e2fe98084ed15fbe'],
     }),
     ('Parse::Yapp::Driver', '1.21', {
         'source_tmpl': 'Parse-Yapp-1.21.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL'],
+        'checksums': ['3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5'],
     }),
     ('Graph', '0.9704', {
         'source_tmpl': 'Graph-0.9704.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JH/JHI'],
+        'checksums': ['325e8eb07be2d09a909e450c13d3a42dcb2a2e96cc3ac780fe4572a0d80b2a25'],
     }),
     ('Graph::ReadWrite', '2.09', {
         'source_tmpl': 'Graph-ReadWrite-2.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEILB'],
+        'checksums': ['b01ef06ce922eea12d5ce614d63ddc5f3ee7ad0d05f9577051d3f87a89799a4a'],
     }),
     ('Error', '0.17027', {
         'source_tmpl': 'Error-0.17027.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['07b2ac8275dfa04144745a6c1900a596280f862b97d22bab0c5ce02682ebd3be'],
     }),
     ('Git', '0.42', {
         'source_tmpl': 'Git-0.42.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MS/MSOUTH'],
+        'checksums': ['9469a9f398f3a2bf2b0500566ee41d3ff6fae460412a137185767a1cc4783a6d'],
     }),
     ('GD', '2.71', {
         'source_tmpl': 'GD-2.71.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RU/RURBAN'],
+        'checksums': ['451be4873b2ad7261cc5679698cd9d2e84dbdde4309971869fc7734b569b7ac7'],
     }),
     ('File::Which', '1.23', {
         'source_tmpl': 'File-Which-1.23.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['b79dc2244b2d97b6f27167fc3b7799ef61a179040f3abd76ce1e0a3b0bc4e078'],
     }),
     ('File::Next', '1.16', {
         'source_tmpl': 'File-Next-1.16.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PE/PETDANCE'],
+        'checksums': ['6965f25c2c132d0ba7a6f72b57b8bc6d25cf8c1b7032caa3a9bda8612e41d759'],
     }),
     ('File::HomeDir', '1.004', {
         'source_tmpl': 'File-HomeDir-1.004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['45f67e2bb5e60a7970d080e8f02079732e5a8dfc0c7c3cbdb29abfb3f9f791ad'],
     }),
     ('File::Grep', '0.02', {
         'source_tmpl': 'File-Grep-0.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MN/MNEYLON'],
+        'checksums': ['462e15274eb6278521407ea302d9eea7252cd44cab2382871f7de833d5f85632'],
     }),
     ('File::CheckTree', '4.42', {
         'source_tmpl': 'File-CheckTree-4.42.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['66fb417f8ff8a5e5b7ea25606156e70e204861c59fa8c3831925b4dd3f155f8a'],
     }),
     ('Expect', '1.35', {
         'source_tmpl': 'Expect-1.35.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JA/JACOBY'],
+        'checksums': ['09d92761421decd495853103379165a99efbf452c720f30277602cf23679fd06'],
     }),
     ('Excel::Writer::XLSX', '1.00', {
         'source_tmpl': 'Excel-Writer-XLSX-1.00.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JM/JMCNAMARA'],
+        'checksums': ['3484aa8a74e2c79b789a0483e222dda01d9c8212d645545edd1e4f6e51e26e0c'],
     }),
     ('Devel::FindPerl', '0.015', {
         'source_tmpl': 'Devel-FindPerl-0.015.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['5275b7dc226fe7f16cb69fc6f99f5e29a852c6a4d3b786ab1886a31386743dfc'],
     }),
     ('Module::Path', '0.19', {
         'source_tmpl': 'Module-Path-0.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/N/NE/NEILB'],
+        'checksums': ['b33179ce4dd73dfcde7d46808804b9ffbb11db0245fe455a7d001747562feaca'],
     }),
     ('Perl::PrereqScanner', '1.023', {
         'source_tmpl': 'Perl-PrereqScanner-1.023.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['280a1c4710390865fb9f310a861a34720b28b4cbe50609c841af5cf2d3a2bced'],
     }),
     ('PPI::Document', '1.270', {
         'source_tmpl': 'PPI-1.270.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MITHALDU'],
+        'checksums': ['622a698c781bb85d2bdf7bbfe040fe70d33b79774c9ae01fce2375dc73faf457'],
     }),
     ('HTTP::Request::Common', '6.18', {
         'source_tmpl': 'HTTP-Message-6.18.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/O/OA/OALDERS'],
+        'checksums': ['d060d170d388b694c58c14f4d13ed908a2807f0e581146cef45726641d809112'],
     }),
     ('CPAN::Uploader', '0.103013', {
         'source_tmpl': 'CPAN-Uploader-0.103013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['f81647d287b391430a5af9d141b2834acbbe477b9351a1cecf35c9fd908a681e'],
     }),
     ('IO::TieCombine', '1.005', {
         'source_tmpl': 'IO-TieCombine-1.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['402d4db8300b3d271632f4995e0ade329d89280a7e47f2badf8b38af6e5569af'],
     }),
     ('App::Cmd::Command::version', '0.331', {
         'source_tmpl': 'App-Cmd-0.331.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['4a5d3df0006bd278880d01f4957aaa652a8f91fe8f66e93adf70fba0c3ecb680'],
     }),
     ('Dist::Zilla', '6.012', {
         'source_tmpl': 'Dist-Zilla-6.012.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['67583075f6d62b78aaa956389f113df789ddd41911394092a5a2b8c6fa863070'],
     }),
     ('Digest::SHA1', '2.13', {
         'source_tmpl': 'Digest-SHA1-2.13.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['68c1dac2187421f0eb7abf71452a06f190181b8fc4b28ededf5b90296fb943cc'],
     }),
     ('Digest::MD5::File', '0.08', {
         'source_tmpl': 'Digest-MD5-File-0.08.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DM/DMUEY'],
+        'checksums': ['adb43a54e32627b4f7e57c9640e6eb06d0bb79d8ea54cd0bd79ed35688fb1218'],
     }),
     ('Digest::HMAC', '1.03', {
         'source_tmpl': 'Digest-HMAC-1.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['3bc72c6d3ff144d73aefb90e9a78d33612d58cf1cd1631ecfb8985ba96da4a59'],
     }),
     ('Data::Compare', '1.25', {
         'source_tmpl': 'Data-Compare-1.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
+        'checksums': ['1d4b36db545fa9fbacd8c012618f6a7846238ee12ab627a2764cfaf45ad4ea73'],
     }),
     ('Devel::CheckOS', '1.81', {
         'source_tmpl': 'Devel-CheckOS-1.81.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
+        'checksums': ['f3c17b56b79283b62616f938d36c57adc9df06bfaa295ff98be21e9014a23b10'],
     }),
     ('Mock::Config', '0.03', {
         'source_tmpl': 'Mock-Config-0.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RU/RURBAN'],
+        'checksums': ['a5b8345757ca4f2b9335f5be14e93ebbb502865233a755bf53bc7156deec001b'],
     }),
     ('IO::CaptureOutput', '1.1104', {
         'source_tmpl': 'IO-CaptureOutput-1.1104.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['fcc732fcb438f97a72b30e8c7796484bef2562e374553b207028e2fbf73f8330'],
     }),
     ('Devel::CheckLib', '1.13', {
         'source_tmpl': 'Devel-CheckLib-1.13.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MATTN'],
+        'checksums': ['24adfd908705dfac4bb320711763f37126b75cf54b3566c2c27c7cdef9c429a8'],
     }),
     ('DateTime::Tiny', '1.07', {
         'source_tmpl': 'DateTime-Tiny-1.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['83568a22838cb518fbeb9e060460ec7f59d5a0b0a1cc06562954c3674d7cf7e4'],
     }),
     ('Date::Handler', '1.2', {
         'source_tmpl': 'Date-Handler-1.2.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BB/BBEAUSEJ'],
+        'checksums': ['c36fd2b68d48c2e17417bf2873c78820f3ae02460fdf5976b8eeab887d59e16c'],
     }),
     ('Data::UUID', '1.224', {
         'source_tmpl': 'Data-UUID-1.224.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['c958c17502bbef5eccf40c040874895747f7f9b9f9e5192c18688370981bf47c'],
     }),
     ('Data::Stag', '0.14', {
         'source_tmpl': 'Data-Stag-0.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CM/CMUNGALL'],
+        'checksums': ['4ab122508d2fb86d171a15f4006e5cf896d5facfa65219c0b243a89906258e59'],
     }),
     ('Data::Section::Simple', '0.07', {
         'source_tmpl': 'Data-Section-Simple-0.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA'],
+        'checksums': ['0b3035ffdb909aa1f7ded6b608fa9d894421c82c097d51e7171170d67579a9cb'],
     }),
     ('Data::Dumper::Concise', '2.023', {
         'source_tmpl': 'Data-Dumper-Concise-2.023.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['a6c22f113caf31137590def1b7028a7e718eface3228272d0672c25e035d5853'],
     }),
     ('DBIx::Simple', '1.37', {
         'source_tmpl': 'DBIx-Simple-1.37.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/J/JU/JUERD'],
+        'checksums': ['46d311aa2ce08907401c56119658426dbb044c5a40de73d9a7b79bf50390cae3'],
     }),
     ('Types::Standard', '1.004004', {
         'source_tmpl': 'Type-Tiny-1.004004.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TO/TOBYINK'],
+        'checksums': ['081281ea004cdd89003d938aa52c1398e24411dd8f7163b14d0977a13f7062be'],
     }),
     ('Ref::Util', '0.204', {
         'source_tmpl': 'Ref-Util-0.204.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AR/ARC'],
+        'checksums': ['415fa73dbacf44f3d5d79c14888cc994562720ab468e6f71f91cd1f769f105e1'],
     }),
     ('Class::XSAccessor', '1.19', {
         'source_tmpl': 'Class-XSAccessor-1.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SM/SMUELLER'],
+        'checksums': ['99c56b395f1239af19901f2feeb125d9ecb4e351a0d80daa9529211a4700a6f2'],
     }),
     ('Hash::Objectify', '0.008', {
         'source_tmpl': 'Hash-Objectify-0.008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['236d5829cdebf3ba648d34e1295cd9099a20506d8d0284668e617e0058cebeed'],
     }),
     ('Const::Fast', '0.014', {
         'source_tmpl': 'Const-Fast-0.014.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['f805953a08c57846a16a4d85d7b766398afaf7c36c1465fcb1dea09e5fa394db'],
     }),
     ('Const::Exporter', 'v0.4.1', {
         'source_tmpl': 'Const-Exporter-v0.4.1.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RR/RRWO'],
+        'checksums': ['5f3d1c9cb5d86aaac0f5ad0479070e4fd2b32aadc79404557276af80cd186630'],
     }),
     ('Text::Table::Manifold', '1.01', {
         'source_tmpl': 'Text-Table-Manifold-1.01.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['0d7d8f612ea7c3608e4babb6626964cc7094c153c8421467129fe4632ff51d98'],
     }),
     ('DBIx::Admin::DSNManager', '2.01', {
         'source_tmpl': 'DBIx-Admin-DSNManager-2.01.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['e8c8a99ab82e6decbfec3523771f4a16de1005146f19164c47294e1f5d3aac6a'],
     }),
     ('DBIx::Admin::CreateTable', '2.10', {
         'source_tmpl': 'DBIx-Admin-CreateTable-2.10.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['e9ce9e4581ab7dbfaa57ca36bd5437b9cdf50a51e11df40d9c15bbf095addc24'],
     }),
     ('DBIx::Admin::TableInfo', '3.03', {
         'source_tmpl': 'DBIx-Admin-TableInfo-3.03.tgz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE'],
+        'checksums': ['a852530f95957a43aa794f2edf5f3fe4ecec35bd20150c38136d4c23d85328b6'],
     }),
     ('DBD::mysql', '4.050', {
         'source_tmpl': 'DBD-mysql-4.050.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN'],
+        'checksums': ['4f48541ff15a0a7405f76adc10f81627c33996fbf56c95c26c094444c0928d78'],
     }),
     ('DBD::SQLite', '1.62', {
         'source_tmpl': 'DBD-SQLite-1.62.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI'],
+        'checksums': ['bd82ef322a9e5469a7a62d845c32fad1188b76ccb49a88520cec768343cce85c'],
     }),
     ('AnyData', '0.12', {
         'source_tmpl': 'AnyData-0.12.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['be6a957f04a2feba9b305536b132deceba1f455db295b221a63e75567fadbcfc'],
     }),
     ('DBD::AnyData', '0.110', {
         'source_tmpl': 'DBD-AnyData-0.110.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RE/REHSACK'],
+        'checksums': ['247f0d88e55076fd3f6c7bf3fd527989d62fcc1ef9bde9bf2ee11c280adcaeab'],
     }),
     ('Curses', '1.36', {
         'source_tmpl': 'Curses-1.36.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED'],
+        'checksums': ['a414795ba031c5918c70279fe534fee594a96ec4b0c78f44ce453090796add64'],
     }),
     ('Crypt::Rijndael', '1.14', {
         'source_tmpl': 'Crypt-Rijndael-1.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['6451c3dffe8703523be2bb08d1adca97e77df2a8a4dd46944d18a99330b7850e'],
     }),
     ('Crypt::DES', '2.07', {
         'source_tmpl': 'Crypt-DES-2.07.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DP/DPARIS'],
+        'checksums': ['2db1ebb5837b4cb20051c0ee5b733b4453e3137df0a92306034c867621edd7e7'],
     }),
     ('Config::INI', '0.025', {
         'source_tmpl': 'Config-INI-0.025.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['628bf76d5b91f89dde22d4813ec033026ebf71b772bb61ccda909da00c869732'],
     }),
     ('Config::General', '2.63', {
         'source_tmpl': 'Config-General-2.63.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TL/TLINDEN'],
+        'checksums': ['0a9bf977b8aabe76343e88095d2296c8a422410fd2a05a1901f2b20e2e1f6fad'],
     }),
     ('Class::Trigger', '0.14', {
         'source_tmpl': 'Class-Trigger-0.14.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA'],
+        'checksums': ['6b1e45acc561e0708e00a2fcf16e157cad8b8963d1bf73726f77dd809b8aebc4'],
     }),
     ('Class::ISA', '0.36', {
         'source_tmpl': 'Class-ISA-0.36.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SM/SMUELLER'],
+        'checksums': ['8816f34e9a38e849a10df756030dccf9fe061a196c11ac3faafd7113c929b964'],
     }),
     ('Class::Accessor', '0.51', {
         'source_tmpl': 'Class-Accessor-0.51.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KASEI'],
+        'checksums': ['bf12a3e5de5a2c6e8a447b364f4f5a050bf74624c56e315022ae7992ff2f411c'],
     }),
     ('Class::DBI', 'v3.0.17', {
         'source_tmpl': 'Class-DBI-v3.0.17.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TM/TMTM'],
+        'checksums': ['541354fe361c56850cb11261f6ca089a14573fa764792447444ff736ae626206'],
     }),
     ('Class::DBI::SQLite', '0.11', {
         'source_tmpl': 'Class-DBI-SQLite-0.11.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA'],
+        'checksums': ['c4661b00afb7e53c97ac36e13f34dde43c1a93540a2f4ff97e6182b0c731e4e7'],
     }),
     ('Canary::Stability', '2013', {
         'source_tmpl': 'Canary-Stability-2013.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN'],
+        'checksums': ['a5c91c62cf95fcb868f60eab5c832908f6905221013fea2bce3ff57046d7b6ea'],
     }),
     ('CPANPLUS', '0.9178', {
         'source_tmpl': 'CPANPLUS-0.9178.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['d5f62b7be8f48b687166de0eb38d3f75ed35e1bd818515fe19c60ddeed2d59f4'],
     }),
     ('CPAN::FindDependencies', '2.48', {
         'source_tmpl': 'CPAN-FindDependencies-2.48.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
+        'checksums': ['05d5f2a0710138cf9832cbe53d1d5d51fcb9a7396f8657e7031633d8c55f870c'],
     }),
     ('Bundle::BioPerl', '2.1.9', {
         'source_tmpl': 'Bundle-BioPerl-2.1.9.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS'],
+        'checksums': ['c343ba97f49d86e7fb14aef4cfe3124992e2a5c3168e53a54606dd611d73e5c7'],
     }),
     ('B::Lint', '1.20', {
         'source_tmpl': 'B-Lint-1.20.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['dc49408964fd8b7963859c92e013f0b9f92f74be5a7c2a78e3996279827c10b3'],
     }),
     ('Digest::HMAC_MD5', '1.03', {
         'source_tmpl': 'Digest-HMAC-1.03.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GA/GAAS'],
+        'checksums': ['3bc72c6d3ff144d73aefb90e9a78d33612d58cf1cd1631ecfb8985ba96da4a59'],
     }),
     ('Authen::SASL', '2.16', {
         'source_tmpl': 'Authen-SASL-2.16.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GB/GBARR'],
+        'checksums': ['6614fa7518f094f853741b63c73f3627168c5d3aca89b1d02b1016dc32854e09'],
     }),
     ('Array::Utils', '0.5', {
         'source_tmpl': 'Array-Utils-0.5.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/Z/ZM/ZMIJ/Array'],
+        'checksums': ['89dd1b7fcd9b4379492a3a77496e39fe6cd379b773fd03a6b160dd26ede63770'],
     }),
     ('Archive::Extract', '0.80', {
         'source_tmpl': 'Archive-Extract-0.80.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/B/BI/BINGOS'],
+        'checksums': ['25cbc2d5626c14d39a0b5e4fe8383941e085c9a7e0aa873d86e81b6e709025f4'],
     }),
     ('App::Cmd', '0.331', {
         'source_tmpl': 'App-Cmd-0.331.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
+        'checksums': ['4a5d3df0006bd278880d01f4957aaa652a8f91fe8f66e93adf70fba0c3ecb680'],
     }),
     ('AnyEvent', '7.16', {
         'source_tmpl': 'AnyEvent-7.16.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN'],
+        'checksums': ['149fe8c3082dfb015fd15ad2b8fea5fb75e012238c790aa0398dcfaabfa0546c'],
     }),
     ('Algorithm::Dependency', '1.111', {
         'source_tmpl': 'Algorithm-Dependency-1.111.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+        'checksums': ['a06cedc60411a9d07127f94616597acfa1895908c85770235f77185b1f359ebe'],
     }),
 ]
