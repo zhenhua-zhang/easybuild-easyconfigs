@@ -278,6 +278,11 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL'],
         'checksums': ['ce39fcb53e0fe9f1cbcd86ddf152e1db48566266b70ec0769ef364eeabdd8941'],
     }),
+    ('XML::SAX::Exception', '1.09', {
+        'source_tmpl': 'XML-SAX-Base-1.09.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
+        'checksums': ['66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0'],
+    }),
     ('XML::SAX', '1.02', {
         'source_tmpl': 'XML-SAX-1.02.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
@@ -302,11 +307,6 @@ exts_list = [
         'source_tmpl': 'XML-Simple-2.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
         'checksums': ['531fddaebea2416743eb5c4fdfab028f502123d9a220405a4100e68fc480dbf8'],
-    }),
-    ('XML::SAX::Exception', '1.09', {
-        'source_tmpl': 'XML-SAX-Base-1.09.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/G/GR/GRANTM'],
-        'checksums': ['66cb355ba4ef47c10ca738bd35999723644386ac853abbeb5132841f5e8a2ad0'],
     }),
     ('XML::Filter::BufferText', '1.01', {
         'source_tmpl': 'XML-Filter-BufferText-1.01.tar.gz',
