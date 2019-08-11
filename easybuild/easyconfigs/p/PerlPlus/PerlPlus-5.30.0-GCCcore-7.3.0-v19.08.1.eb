@@ -1554,6 +1554,26 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
         'checksums': ['7b29c45add19d3d5084b751f7ba89a8e40479a446ce21cfd9cc741e558332a00'],
     }),
+    ('File::Copy::Recursive::Reduced', '0.006', {
+        'source_tmpl': 'File-Copy-Recursive-Reduced-0.006.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/J/JK/JKEENAN'],
+        'checksums': ['e618f993a69f4355205c58fffff6982609f28b47f646ec6e244e41b5c6707e2c'],
+    }),
+    ('Devel::CheckCompiler', '0.07', {
+        'source_tmpl': 'Devel-CheckCompiler-0.07.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SY/SYOHEX'],
+        'checksums': ['768b7697b4b8d4d372c7507b65e9dd26aa4223f7100183bbb4d3af46d43869b5'],
+    }),
+    ('Cwd::Guard', '0.05', {
+        'source_tmpl': 'Cwd-Guard-0.05.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO'],
+        'checksums': ['7afc7ca2b9502e440241938ad97a3e7ebd550180ebd6142e1db394186b268e77'],
+    }),
+    ('Module::Build::XSUtil', '0.19', {
+        'source_tmpl': 'Module-Build-XSUtil-0.19.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO'],
+        'checksums': ['9063b3c346edeb422807ffe49ffb23038c4f900d4a77b845ce4b53d97bf29400'],
+    }),
     ('Mouse', 'v2.5.6', {
         'source_tmpl': 'Mouse-v2.5.6.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SK/SKAJI'],
@@ -1593,26 +1613,6 @@ exts_list = [
         'source_tmpl': 'Module-Install-1.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
         'checksums': ['1a53a78ddf3ab9e3c03fc5e354b436319a944cba4281baf0b904fa932a13011b'],
-    }),
-    ('File::Copy::Recursive::Reduced', '0.006', {
-        'source_tmpl': 'File-Copy-Recursive-Reduced-0.006.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/J/JK/JKEENAN'],
-        'checksums': ['e618f993a69f4355205c58fffff6982609f28b47f646ec6e244e41b5c6707e2c'],
-    }),
-    ('Devel::CheckCompiler', '0.07', {
-        'source_tmpl': 'Devel-CheckCompiler-0.07.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SY/SYOHEX'],
-        'checksums': ['768b7697b4b8d4d372c7507b65e9dd26aa4223f7100183bbb4d3af46d43869b5'],
-    }),
-    ('Cwd::Guard', '0.05', {
-        'source_tmpl': 'Cwd-Guard-0.05.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO'],
-        'checksums': ['7afc7ca2b9502e440241938ad97a3e7ebd550180ebd6142e1db394186b268e77'],
-    }),
-    ('Module::Build::XSUtil', '0.19', {
-        'source_tmpl': 'Module-Build-XSUtil-0.19.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO'],
-        'checksums': ['9063b3c346edeb422807ffe49ffb23038c4f900d4a77b845ce4b53d97bf29400'],
     }),
     ('Mixin::Linewise', '0.108', {
         'source_tmpl': 'Mixin-Linewise-0.108.tar.gz',
