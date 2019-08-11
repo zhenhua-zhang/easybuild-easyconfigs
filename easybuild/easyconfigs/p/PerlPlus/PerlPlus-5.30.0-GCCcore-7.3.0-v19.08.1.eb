@@ -326,6 +326,7 @@ exts_list = [
     ('File::chdir', '0.1010', {
         'source_tmpl': 'File-chdir-0.1010.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['efc121f40bd7a0f62f8ec9b8bc70f7f5409d81cd705e37008596c8efc4452b01'],
     }),
     ('File::Which', '1.23', {
         'source_tmpl': 'File-Which-1.23.tar.gz',
@@ -360,18 +361,22 @@ exts_list = [
     ('Test2::Mock', '0.000122', {
         'source_tmpl': 'Test2-Suite-0.000122.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['83828cf440ce2a7bfc2fe48f535931e44328e39810370b04c9e947db888a7442'],
     }),
     ('Test2::API', '1.302164', {
         'source_tmpl': 'Test-Simple-1.302164.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['50277b613f09cd52eb87b02c69ce0517b80080be8a8d80e1eda609479b0d6615'],
     }),
     ('FFI::CheckLib', '0.25', {
         'source_tmpl': 'FFI-CheckLib-0.25.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['eb36b9a7cff1764a65b1b77e01e92c26207c558a3f986d0d17d2b110fa366ba4'],
     }),
     ('ExtUtils::ParseXS', '3.35', {
         'source_tmpl': 'ExtUtils-ParseXS-3.35.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SM/SMUELLER'],
+        'checksums': ['41def0511278a2a8ba9afa25ccab45b0453f75e7fd774e8644b5f9a57cc4ee1c'],
     }),
     ('Capture::Tiny', '0.48', {
         'source_tmpl': 'Capture-Tiny-0.48.tar.gz',
@@ -381,10 +386,12 @@ exts_list = [
     ('Alien::Base', '1.79', {
         'source_tmpl': 'Alien-Build-1.79.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['7122932d72618cd5001bdbb1e7075231160b9dc346cf9078b78d1ea3fa8f14a3'],
     }),
     ('Alien::Libxml2', '0.09', {
         'source_tmpl': 'Alien-Libxml2-0.09.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['926e43bfcdd70bc111795b78bc41dd3a5c80f466eec5841d32aa6a497228dcba'],
     }),
     ('XML::LibXML', '2.0201', {
         'source_tmpl': 'XML-LibXML-2.0201.tar.gz',
