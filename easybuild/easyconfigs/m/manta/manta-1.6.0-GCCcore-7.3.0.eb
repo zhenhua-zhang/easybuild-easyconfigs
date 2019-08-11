@@ -40,7 +40,7 @@ dependencies = [
 # Patch the bundled samtools and htslib for known issues with regard to zlib and ncurses in the Makefile.
 # Cannot use EasyBuild's patch option as we need to decompress the included sources, patch and recompress :(.
 #
-configure_cmd_prefix = 'tar -xvjf redist/samtools-1.6.tar.bz2  && perl -i.bak -wpe  \'s!lz$!lz -L\'$EBROOTZLIB\'\/lib -I\'$EBROOTZLIB\'\/include!\' samtools-1.6/Makefile && tar -cvjf redist/samtools-1.6.tar.bz2  samtools-1.6/ && rm -r samtools-1.6/ && perl -i.bak -wpe \'if(m!\$\{SAMTOOLS_DIR\}\/\$\{HTSLIB_PREFIX\}!){print $_ ;warn $_;};s!\$\{SAMTOOLS_DIR\}\/\$\{HTSLIB_PREFIX\}!\$\{SAMTOOLS_DIR\}\/htslib-1.7-6-g6d2bfb7!\' redist/CMakeLists.txt && mkdir build && cd build && ../'
+configure_cmd_prefix = 'tar -xvjf redist/samtools-1.9.tar.bz2  && perl -i.bak -wpe  \'s!lz $!lz -L\'$EBROOTZLIB\'\/lib -I\'$EBROOTZLIB\'\/include !\' samtools-1.9/Makefile && tar -cvjf redist/samtools-1.9.tar.bz2  samtools-1.9/ && rm -r samtools-1.9/ && mkdir build && cd build && ../'
 
 prebuildopts = 'cd build && '
 preinstallopts = 'cd build && '
