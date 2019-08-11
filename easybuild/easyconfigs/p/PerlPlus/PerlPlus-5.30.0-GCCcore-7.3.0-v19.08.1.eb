@@ -968,6 +968,21 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL'],
         'checksums': ['ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b'],
     }),
+    ('ExtUtils::InstallPaths', '0.012', {
+        'source_tmpl': 'ExtUtils-InstallPaths-0.012.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['84735e3037bab1fdffa3c2508567ad412a785c91599db3c12593a50a1dd434ed'],
+    }),
+    ('ExtUtils::Helpers', '0.026', {
+        'source_tmpl': 'ExtUtils-Helpers-0.026.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['de901b6790a4557cf4ec908149e035783b125bf115eb9640feb1bc1c24c33416'],
+    }),
+    ('ExtUtils::Config', '0.008', {
+        'source_tmpl': 'ExtUtils-Config-0.008.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['ae5104f634650dce8a79b7ed13fb59d67a39c213a6776cfdaa3ee749e62f1a8c'],
+    }),
     ('Module::Build::Tiny', '0.039', {
         'source_tmpl': 'Module-Build-Tiny-0.039.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
@@ -1597,21 +1612,6 @@ exts_list = [
         'source_tmpl': 'Module-Build-XSUtil-0.19.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO'],
         'checksums': ['9063b3c346edeb422807ffe49ffb23038c4f900d4a77b845ce4b53d97bf29400'],
-    }),
-    ('ExtUtils::InstallPaths', '0.012', {
-        'source_tmpl': 'ExtUtils-InstallPaths-0.012.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
-        'checksums': ['84735e3037bab1fdffa3c2508567ad412a785c91599db3c12593a50a1dd434ed'],
-    }),
-    ('ExtUtils::Helpers', '0.026', {
-        'source_tmpl': 'ExtUtils-Helpers-0.026.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
-        'checksums': ['de901b6790a4557cf4ec908149e035783b125bf115eb9640feb1bc1c24c33416'],
-    }),
-    ('ExtUtils::Config', '0.008', {
-        'source_tmpl': 'ExtUtils-Config-0.008.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
-        'checksums': ['ae5104f634650dce8a79b7ed13fb59d67a39c213a6776cfdaa3ee749e62f1a8c'],
     }),
     ('Mixin::Linewise', '0.108', {
         'source_tmpl': 'Mixin-Linewise-0.108.tar.gz',
