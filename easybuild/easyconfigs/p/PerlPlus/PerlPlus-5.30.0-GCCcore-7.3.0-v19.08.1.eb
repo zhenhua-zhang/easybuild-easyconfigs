@@ -968,6 +968,11 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL'],
         'checksums': ['ee07853aee06f310e040b6bf1a0199a18d81896d3219b9b35c9630d0eb69089b'],
     }),
+    ('Module::Build::Tiny', '0.039', {
+        'source_tmpl': 'Module-Build-Tiny-0.039.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
+        'checksums': ['7d580ff6ace0cbe555bf36b86dc8ea232581530cbeaaea09bccb57b55797f11c'],
+    }),
     ('Readonly', '2.05', {
         'source_tmpl': 'Readonly-2.05.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SA/SANKO'],
@@ -1607,11 +1612,6 @@ exts_list = [
         'source_tmpl': 'ExtUtils-Config-0.008.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
         'checksums': ['ae5104f634650dce8a79b7ed13fb59d67a39c213a6776cfdaa3ee749e62f1a8c'],
-    }),
-    ('Module::Build::Tiny', '0.039', {
-        'source_tmpl': 'Module-Build-Tiny-0.039.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/L/LE/LEONT'],
-        'checksums': ['7d580ff6ace0cbe555bf36b86dc8ea232581530cbeaaea09bccb57b55797f11c'],
     }),
     ('Mixin::Linewise', '0.108', {
         'source_tmpl': 'Mixin-Linewise-0.108.tar.gz',
