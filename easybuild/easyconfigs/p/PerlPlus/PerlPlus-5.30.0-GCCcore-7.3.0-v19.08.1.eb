@@ -323,6 +323,69 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/T/TJ/TJMATHER'],
         'checksums': ['df1990096036085c8e2d45904fe180f82bfed40f1a7e05243f334ea10090fc54'],
     }),
+    ('File::chdir', '0.1010', {
+        'source_tmpl': 'File-chdir-0.1010.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+    }),
+    ('File::Which', '1.23', {
+        'source_tmpl': 'File-Which-1.23.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+        'checksums': ['b79dc2244b2d97b6f27167fc3b7799ef61a179040f3abd76ce1e0a3b0bc4e078'],
+    }),
+    ('Term::Table', '0.013', {
+        'source_tmpl': 'Term-Table-0.013.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['ffeb36dcb25c575b9f63657d1591a14af22cd10ba23cc76de9d976b426f4fc40'],
+    }),
+    ('Sub::Info', '0.002', {
+        'source_tmpl': 'Sub-Info-0.002.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['ea3056d696bdeff21a99d340d5570887d39a8cc47bff23adfc82df6758cdd0ea'],
+    }),
+    ('Scope::Guard', '0.21', {
+        'source_tmpl': 'Scope-Guard-0.21.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHOCOLATE'],
+        'checksums': ['8c9b1bea5c56448e2c3fadc65d05be9e4690a3823a80f39d2f10fdd8f777d278'],
+    }),
+    ('Module::Pluggable::Object', '5.2', {
+        'source_tmpl': 'Module-Pluggable-5.2.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SI/SIMONW'],
+        'checksums': ['b3f2ad45e4fd10b3fb90d912d78d8b795ab295480db56dc64e86b9fa75c5a6df'],
+    }),
+    ('Importer', '0.025', {
+        'source_tmpl': 'Importer-0.025.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+        'checksums': ['0745138c487d74033d0cbeb36f06595036dc7e688f1a5dbec9cc2fa799e13946'],
+    }),
+    ('Test2::Mock', '0.000122', {
+        'source_tmpl': 'Test2-Suite-0.000122.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+    }),
+    ('Test2::API', '1.302164', {
+        'source_tmpl': 'Test-Simple-1.302164.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
+    }),
+    ('FFI::CheckLib', '0.25', {
+        'source_tmpl': 'FFI-CheckLib-0.25.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+    }),
+    ('ExtUtils::ParseXS', '3.35', {
+        'source_tmpl': 'ExtUtils-ParseXS-3.35.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SM/SMUELLER'],
+    }),
+    ('Capture::Tiny', '0.48', {
+        'source_tmpl': 'Capture-Tiny-0.48.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
+        'checksums': ['6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19'],
+    }),
+    ('Alien::Base', '1.79', {
+        'source_tmpl': 'Alien-Build-1.79.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+    }),
+    ('Alien::Libxml2', '0.09', {
+        'source_tmpl': 'Alien-Libxml2-0.09.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
+    }),
     ('XML::LibXML', '2.0201', {
         'source_tmpl': 'XML-LibXML-2.0201.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
@@ -452,11 +515,6 @@ exts_list = [
         'source_tmpl': 'Test-Exception-0.43.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
         'checksums': ['156b13f07764f766d8b45a43728f2439af81a3512625438deab783b7883eb533'],
-    }),
-    ('Capture::Tiny', '0.48', {
-        'source_tmpl': 'Capture-Tiny-0.48.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN'],
-        'checksums': ['6c23113e87bad393308c90a207013e505f659274736638d8c79bac9c67cc3e19'],
     }),
     ('Test::Differences', '0.67', {
         'source_tmpl': 'Test-Differences-0.67.tar.gz',
@@ -1218,26 +1276,6 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/K/KE/KENTNL'],
         'checksums': ['b33647cbb4b2f2fcfbde4f8bb4383d0ac95c2f89c4c5770eb691f1643a337aad'],
     }),
-    ('Term::Table', '0.013', {
-        'source_tmpl': 'Term-Table-0.013.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
-        'checksums': ['ffeb36dcb25c575b9f63657d1591a14af22cd10ba23cc76de9d976b426f4fc40'],
-    }),
-    ('Sub::Info', '0.002', {
-        'source_tmpl': 'Sub-Info-0.002.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
-        'checksums': ['ea3056d696bdeff21a99d340d5570887d39a8cc47bff23adfc82df6758cdd0ea'],
-    }),
-    ('Scope::Guard', '0.21', {
-        'source_tmpl': 'Scope-Guard-0.21.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/C/CH/CHOCOLATE'],
-        'checksums': ['8c9b1bea5c56448e2c3fadc65d05be9e4690a3823a80f39d2f10fdd8f777d278'],
-    }),
-    ('Importer', '0.025', {
-        'source_tmpl': 'Importer-0.025.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
-        'checksums': ['0745138c487d74033d0cbeb36f06595036dc7e688f1a5dbec9cc2fa799e13946'],
-    }),
     ('Test2::Require::Module', '0.000122', {
         'source_tmpl': 'Test2-Suite-0.000122.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/EX/EXODIST'],
@@ -1322,11 +1360,6 @@ exts_list = [
         'source_tmpl': 'MooseX-OneArgNew-0.005.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RJ/RJBS'],
         'checksums': ['7e4fcf474ea6c4244f0885f1066729cfdc472fbd7190dd41b4b55bcd67c3103f'],
-    }),
-    ('Module::Pluggable::Object', '5.2', {
-        'source_tmpl': 'Module-Pluggable-5.2.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SI/SIMONW'],
-        'checksums': ['b3f2ad45e4fd10b3fb90d912d78d8b795ab295480db56dc64e86b9fa75c5a6df'],
     }),
     ('Config::MVP', '2.200011', {
         'source_tmpl': 'Config-MVP-2.200011.tar.gz',
@@ -1762,11 +1795,6 @@ exts_list = [
         'source_tmpl': 'GD-2.71.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/R/RU/RURBAN'],
         'checksums': ['451be4873b2ad7261cc5679698cd9d2e84dbdde4309971869fc7734b569b7ac7'],
-    }),
-    ('File::Which', '1.23', {
-        'source_tmpl': 'File-Which-1.23.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/P/PL/PLICEASE'],
-        'checksums': ['b79dc2244b2d97b6f27167fc3b7799ef61a179040f3abd76ce1e0a3b0bc4e078'],
     }),
     ('File::Next', '1.16', {
         'source_tmpl': 'File-Next-1.16.tar.gz',
