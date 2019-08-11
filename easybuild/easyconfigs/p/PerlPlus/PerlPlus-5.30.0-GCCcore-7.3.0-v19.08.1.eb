@@ -668,6 +668,20 @@ exts_list = [
         'source_urls': ['https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI'],
         'checksums': ['8ccbd9195805222d995844114d0e595bb24ce188f85284dbf256080311cbb2c2'],
     }),
+    ('Module::ScanDeps', '1.27', {
+        'source_tmpl': 'Module-ScanDeps-1.27.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP'],
+        'checksums': ['ee4ce19c04485e5caf71384e599518b2cbad2f27241ab09d89e0969e524ed948'],
+    }),
+    ('File::Remove', '1.58', {
+        'source_tmpl': 'File-Remove-1.58.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
+        'checksums': ['81f6ec83acab8ba042afe904334a26eb3a56c217bdb9981d237a89ab072fd0d8'],
+    }),
+    ('inc::Module::Install', '1.19', {
+        'source_tmpl': 'Module-Install-1.19.tar.gz',
+        'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
+    }),
     ('Test::utf8', '1.01', {
         'source_tmpl': 'Test-utf8-1.01.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/M/MA/MARKF'],
@@ -1552,16 +1566,6 @@ exts_list = [
         'source_tmpl': 'MooseX-Getopt-0.74.tar.gz',
         'source_urls': ['https://cpan.metacpan.org/authors/id/E/ET/ETHER'],
         'checksums': ['1de0df3b431ebe9f3563bdf4569eacd7e07e865a8397f2a990d0cb57d4cb2c24'],
-    }),
-    ('Module::ScanDeps', '1.27', {
-        'source_tmpl': 'Module-ScanDeps-1.27.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP'],
-        'checksums': ['ee4ce19c04485e5caf71384e599518b2cbad2f27241ab09d89e0969e524ed948'],
-    }),
-    ('File::Remove', '1.58', {
-        'source_tmpl': 'File-Remove-1.58.tar.gz',
-        'source_urls': ['https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF'],
-        'checksums': ['81f6ec83acab8ba042afe904334a26eb3a56c217bdb9981d237a89ab072fd0d8'],
     }),
     ('Module::Install', '1.19', {
         'source_tmpl': 'Module-Install-1.19.tar.gz',
