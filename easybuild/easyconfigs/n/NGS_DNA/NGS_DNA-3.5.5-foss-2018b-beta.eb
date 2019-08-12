@@ -1,0 +1,62 @@
+easyblock = 'Tarball'
+
+name = 'NGS_DNA'
+version = '3.5.5'
+versionsuffix = '-beta'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/NGS_DNA'
+description = """NGS_DNA pipeline used in the UMCG"""
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+java = 'Java'
+javaver = '11.0.2'
+versionsuffix = '-%s-%s' % (java, javaver)
+
+#
+# Example URL: https://github.com/molgenis/NGS_DNA/archive/3.2.3.tar.gz
+#
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = ['adf515e12823061a11f9017cca6eb386e6a6e0ba28c9964a941ea56dcda1351a']
+
+#
+# Dependencies.
+#
+dependencies = [
+    ('BWA', '0.7.17'),
+    ('BEDTools', '2.28.0'),
+    ('BCFtools', '1.9'),
+    ('CoNVaDING', '1.2.1'),
+    ('Molgenis-Compute', 'v19.01.1', '-%s-%s' % (java, javaver)),
+    ('FastQC', '0.11.8', '-%s-%s' % (java, javaver)),
+    #('GATK', '3.7', '-Java-1.8.0_74'),
+    #('gavin-plus', '1.5.0', '-%s-%s' % (java, javaver)),
+    #('io_lib', '1.14.9'),
+    #('manta','1.2.1'),
+    #('snpEff', '4.3t', '-%s-%s' % (java, javaver)),
+    #('ngs-utils', '18.02.1', '', ('dummy', '')),
+    ('PerlPlus', '5.30.0', '-v19.08.1'),
+    ('pigz', '2.4'),
+    ('picard', '2.20.5', '-%s-%s' % (java, javaver)),
+    #('sambamba', 'v0.6.6'),
+    #('seqtk', '1.2'),
+    ('SAMtools', '1.9'),
+    ('HTSlib', '1.9'),
+    #('xhmm', '2016-01-04-cc14e528d909'),
+    #('CADD', 'v1.3', '', ('dummy', '')),
+    #('multiqc', '1.6','-Python-2.7.11'),
+    #('VEP', '90.5', '', ('dummy', '')),
+    #('vcfanno', 'v0.3.1', '', ('dummy', '')),
+    #('VCFped','20180527_d1bbdf5','-Python-2.7.11'),  
+]
+
+
+sanity_check_paths = {
+    'files': ['workflow.csv', 'parameters.csv'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': ['scripts/']}
