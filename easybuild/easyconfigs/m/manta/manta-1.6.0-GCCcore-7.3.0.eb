@@ -32,7 +32,7 @@ dependencies = [
     ('ncurses', '6.1'),
     ('bzip2', '1.0.6'),
     ('zlib', '1.2.11'),
-    ('Python', '3.7.4', '-bare'),
+    ('Python', '2.7.16', '-bare'),
     ('cURL', '7.63.0'),
 ]
 
