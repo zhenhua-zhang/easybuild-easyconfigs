@@ -25,5 +25,5 @@ sanity_check_paths = {
     'dirs': [],
 }
 
-modloadmsg = 'To execute Picard run: java -jar \\${EBROOTPICARD}/%(name)s.jar'
+modloadmsg = 'To execute Picard run: java -jar ${EBROOTPICARD}/%(name)s.jar'
 moduleclass = 'bio'
