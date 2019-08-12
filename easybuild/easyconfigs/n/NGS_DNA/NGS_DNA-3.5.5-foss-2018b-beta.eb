@@ -31,25 +31,25 @@ dependencies = [
     ('CoNVaDING', '1.2.1'),
     ('Molgenis-Compute', 'v19.01.1', '-%s-%s' % (java, javaver)),
     ('FastQC', '0.11.8', '-%s-%s' % (java, javaver)),
-    #('GATK', '3.7', '-Java-1.8.0_74'),
-    #('gavin-plus', '1.5.0', '-%s-%s' % (java, javaver)),
-    #('io_lib', '1.14.9'),
-    #('manta','1.2.1'),
-    #('snpEff', '4.3t', '-%s-%s' % (java, javaver)),
-    #('ngs-utils', '18.02.1', '', ('dummy', '')),
+    #('GATK', '3.7', '-Java-1.8.0_74'),                  -> Pieter
+    #('gavin-plus', '1.5.0', '-%s-%s' % (java, javaver)),-> Kim
+    #('io_lib', '1.14.9'),                               -> Kim
+    #('manta','1.2.1'),                                  -> Pieter
+    #('snpEff', '4.3t', '-%s-%s' % (java, javaver)),     -> Kim
+    #('ngs-utils', '18.02.1', '', ('dummy', '')),        -> Pieter
     ('PerlPlus', '5.30.0', '-v19.08.1'),
     ('pigz', '2.4'),
     ('picard', '2.20.5', '-%s-%s' % (java, javaver)),
-    #('sambamba', 'v0.6.6'),
-    #('seqtk', '1.2'),
+    #('sambamba', 'v0.6.6'),                           -> Kim
+    #('seqtk', '1.2'),                                 -> Kim
     ('SAMtools', '1.9'),
     ('HTSlib', '1.9'),
     #('xhmm', '2016-01-04-cc14e528d909'),
     #('CADD', 'v1.3', '', ('dummy', '')),
-    #('multiqc', '1.6','-Python-2.7.11'),
+    #('multiqc', '1.6','-Python-2.7.11'),              -> Kim
     #('VEP', '90.5', '', ('dummy', '')),
-    #('vcfanno', 'v0.3.1', '', ('dummy', '')),
-    #('VCFped','20180527_d1bbdf5','-Python-2.7.11'),  
+    #('vcfanno', 'v0.3.1', '', ('dummy', '')),         -> Kim
+    #('VCFped','20180527_d1bbdf5','-Python-2.7.11'),   -> Kim
 ]
 
 
