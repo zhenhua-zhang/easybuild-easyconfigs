@@ -34,7 +34,7 @@ dependencies = [
     #('GATK', '3.7', '-Java-1.8.0_74'),                  -> Pieter
     #('gavin-plus', '1.5.0', '-%s-%s' % (java, javaver)),-> Kim
     #('io_lib', '1.14.9'),                               -> Kim
-    #('manta','1.2.1'),                                  -> Pieter
+    ('manta','1.6.0'),
     #('snpEff', '4.3t', '-%s-%s' % (java, javaver)),     -> Kim
     #('ngs-utils', '18.02.1', '', ('dummy', '')),        -> Pieter
     ('PerlPlus', '5.30.0', '-v19.08.1'),
