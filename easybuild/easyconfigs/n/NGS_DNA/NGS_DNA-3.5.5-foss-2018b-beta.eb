@@ -48,7 +48,7 @@ dependencies = [
     #('CADD', 'v1.3', '', ('dummy', '')),
     #('multiqc', '1.6','-Python-2.7.11'),              -> Kim
     #('VEP', '90.5', '', ('dummy', '')),
-    ('vcfanno', 'v0.3.1', '', ('dummy', '')),
+    ('vcfanno', 'v0.3.2', '', ('dummy', '')),
     #('VCFped','20180527_d1bbdf5','-Python-2.7.11'),   -> Kim
 ]
 
