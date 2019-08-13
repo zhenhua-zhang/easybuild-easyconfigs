@@ -10,7 +10,7 @@ toolchain = {'name': 'dummy', 'version': 'dummy'}
 easyblock = 'PackedBinary'
 
 java = 'Java'
-javaver = '11.0.2'
+javaver = '11-LTS'
 versionsuffix = '-%s-%s' % (java, javaver)
 
 dependencies = [(java, javaver)]

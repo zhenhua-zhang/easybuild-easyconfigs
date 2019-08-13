@@ -11,7 +11,7 @@ description = """NGS_DNA pipeline used in the UMCG"""
 toolchain = {'name': 'foss', 'version': '2018b'}
 
 java = 'Java'
-javaver = '11.0.2'
+javaver = '11-LTS'
 versionsuffix = '-%s-%s' % (java, javaver)
 
 #

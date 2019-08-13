@@ -13,7 +13,7 @@ sources = ['%(name)s.jar']
 checksums = ['2040051927535a41540df18a80ae1beeaf05d0bd713a2b8ab1172a72eea6ff80']
 
 java = 'Java'
-javaver = '11.0.2'
+javaver = '11-LTS'
 versionsuffix = '-%s-%s' % (java, javaver)
 
 dependencies = [
