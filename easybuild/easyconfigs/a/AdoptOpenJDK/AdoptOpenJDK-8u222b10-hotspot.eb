@@ -3,7 +3,7 @@ easyblock = 'EB_Java'
 name = 'AdoptOpenJDK'
 version = '8u222b10'
 import re
-version_major = re.sub(r'u.*', '', version)
+version_major = re.sub(r"u.*", '', version)
 versionsuffix = '-hotspot' # Indicate this version uses the Hotspot JVM version as opposed to the alternative OpenJ9 JVM.
 
 homepage = 'https://adoptopenjdk.net/'
