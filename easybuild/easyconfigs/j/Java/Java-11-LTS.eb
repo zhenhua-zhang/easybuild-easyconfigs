@@ -1,4 +1,4 @@
-easyblock = 'ModuleRC'
+easyblock = 'Bundle'
 
 name = 'Java'
 version = '11'
