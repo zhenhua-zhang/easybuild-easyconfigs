@@ -2,6 +2,7 @@ easyblock = 'EB_Java'
 
 name = 'AdoptOpenJDK'
 version = '11.0.4_11'
+version_major = '11'
 versionsuffix = '-hotspot' # Indicate this version uses the Hotspot JVM version as opposed to the alternative OpenJ9 JVM.
 
 homepage = 'https://adoptopenjdk.net/'
