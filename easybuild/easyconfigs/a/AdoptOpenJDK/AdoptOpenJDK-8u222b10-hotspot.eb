@@ -2,7 +2,8 @@ easyblock = 'EB_Java'
 
 name = 'AdoptOpenJDK'
 version = '8u222b10'
-version_major = '8'
+import re
+version_major = re.sub(r'u.*', '', version)
 versionsuffix = '-hotspot' # Indicate this version uses the Hotspot JVM version as opposed to the alternative OpenJ9 JVM.
 
 homepage = 'https://adoptopenjdk.net/'
@@ -11,8 +12,10 @@ All AdoptOpenJDK binaries and scripts are Open Source licensed and available for
 
 toolchain = {'name': 'dummy', 'version': ''}
 
+line = re.sub(r"</?\[\d+>", "", line)
+
 source_urls = ['https://github.com/%s/openjdk%s-binaries/releases/download/jdk%s/' % (name, version_major, version.replace('b', '-b'))]
-sources = ['OpenJDK%(version_major)sU-jdk_x64_linux_hotspot_%(version)s.tar.gz']
+sources = ['OpenJDK%(s)U-jdk_x64_linux_hotspot_%(s).tar.gz' % (version_major, version)]
 checksums = ['37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77']
 
 moduleclass = 'lang'
