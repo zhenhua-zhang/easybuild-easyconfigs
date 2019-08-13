@@ -13,13 +13,13 @@ java = 'Java'
 javaver = '11-LTS'
 versionsuffix = '-%s-%s' % (java, javaver)
 
-dependencies = [(java, javaver)]
-
-start_dir = '%(builddir)s/%(name)s/'
-
 source_urls = [SOURCEFORGE_SOURCE]
 sources = [('%s_v%s_core.zip' % (name, version.replace('.', '_')))]
 checksums = ['1fa84a703580a423e27f1e14a945901c']
+
+dependencies = [(java, javaver)]
+
+files_to_copy = ['%(name)s/*']
 
 sanity_check_paths = {
     'files': ['snpEff.jar', 'SnpSift.jar'],
