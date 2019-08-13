@@ -11,7 +11,7 @@ All AdoptOpenJDK binaries and scripts are Open Source licensed and available for
 
 toolchain = {'name': 'dummy', 'version': ''}
 
-source_urls = ['https://github.com/%s/openjdk%s-binaries/releases/download/jdk-%s/' % (version_major, name, version.replace('_', '%2B'))]
+source_urls = ['https://github.com/%s/openjdk%s-binaries/releases/download/jdk-%s/' % (name, version_major, version.replace('_', '%2B'))]
 sources = ['OpenJDK%(version_major)sU-jdk_x64_linux_hotspot_%(version)s.tar.gz']
 checksums = ['90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8']
 
