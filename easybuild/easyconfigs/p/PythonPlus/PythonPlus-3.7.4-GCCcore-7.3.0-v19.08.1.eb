@@ -467,8 +467,8 @@ exts_list = [
     ('Pebble', '4.3.10', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pebble'],
     }),
-    ('typed-ast', '1.4.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typed-ast'],
+    ('typed_ast', '1.4.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typed_ast'],
     }),
     ('typing-extensions', '3.7.4', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing-extensions'],
