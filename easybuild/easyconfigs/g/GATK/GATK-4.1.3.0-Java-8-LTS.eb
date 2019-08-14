@@ -16,7 +16,7 @@ of any size."""
 toolchain = {'name': 'dummy', 'version': ''}
 source_urls = ['https://github.com/broadinstitute/gatk/releases/download/%(version)s/']
 sources = ['gatk-%(version)s.zip']
-checksums = ['e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855']
+checksums = ['56fd4f03b15a8a01eaa4629f62e3ab15e4d4b957c787efd2d5629b2658c3df0a']
 
 dependencies = [
     ('Java', '8', '-LTS'),
