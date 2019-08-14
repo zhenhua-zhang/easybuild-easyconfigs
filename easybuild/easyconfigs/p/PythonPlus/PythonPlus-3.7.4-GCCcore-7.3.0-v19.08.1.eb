@@ -470,9 +470,9 @@ exts_list = [
     ('typed_ast', '1.4.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/typed_ast'],
     }),
-    ('typing-extensions', '3.7.4', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing-extensions'],
-    }),
+#    ('typing-extensions', '3.7.4', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing-extensions'],
+#    }),
     ('mypy_extensions', '0.4.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy_extensions'],
     }),
