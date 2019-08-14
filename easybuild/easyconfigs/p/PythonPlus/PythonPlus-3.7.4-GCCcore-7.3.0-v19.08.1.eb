@@ -2,20 +2,24 @@ easyblock = 'Bundle'
 
 name = 'PythonPlus'
 version = '3.7.4'             # Same as the vanilla Python module on which these add-on modules depend.
-versionsuffix = '-v19.08.1'    # In format YY.MM.IncrementedReleaseNumber.
+versionsuffix = '-v19.08.1'   # In format YY.MM.IncrementedReleaseNumber.
 
 homepage = 'https://www.python.org/'
 description = """The PythonPlus bundle contains a plain vanilla Python supplemented with a selection of add-on modules."""
 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
+builddependencies = [
+    ('binutils', '2.30'),
+]
+
 dependencies = [
     ('Python', version, '-bare'),
-#    ('LZO', '2.09'),
-#    ('libxml2', '2.9.2'),
-#    ('libxslt', '1.1.28'),
-#    ('libpng', '1.6.21'),
-#    ('cairo', '1.14.6'),
+    ('LZO', '2.10'),
+    ('libxml2', '2.9.8'),
+    ('libxslt', '1.1.33'),
+    ('libpng', '1.6.37'),
+    ('cairo', '1.16.0'),
 ]
 
 #
@@ -40,7 +44,7 @@ exts_list = [
         'checksums': ['34eed507548117b2ab523ab14b2f8b55'],
     }),
     ('numpy', '1.17.0', {
-        'source_urls': ['https://pypi.io/packages/source/n/numpy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
     }),
     ('bx-python', '0.8.4', {
         'source_urls': ['https://pypi.python.org/packages/55/db/fa76af59a03c88ad80494fc0df2948740bbd58cd3b3ed5c31319624687cc/bx-python-0.7.3.tar.gz#md5=d8c50c01c9e421bae0bbdbfa00fef6e4'],
@@ -59,10 +63,10 @@ exts_list = [
         'checksums': ['da32434ebfebae2c7506e9577ac558f5'],
     }),
     ('scipy', '1.3.1', {
-        'source_urls': ['https://pypi.io/packages/source/s/scipy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/scipy'],
     }),
     ('joblib', '0.13.2', {
-        'source_urls': ['https://pypi.io/packages/source/j/joblib'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/joblib'],
     }),
     ('scikit-learn', '0.21.3', {
         'source_urls': ['https://pypi.python.org/packages/f1/dc/5fb2834511eef6f86e17b6ec41c0c7a60733f79633827e75aaa55029a9fa/scikit-learn-0.18.1.tar.gz#md5=6b0ff1eaa5010043895dd63d1e3c60c9'],
@@ -70,302 +74,302 @@ exts_list = [
         'modulename': 'sklearn',
     }),
     ('py', '1.8.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/py'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/py'],
     }),
     ('attrs', '19.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/a/attrs'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/attrs'],
     }),
     ('pyparsing', '2.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyparsing'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyparsing'],
     }),
     ('packaging', '19.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/packaging'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/packaging'],
     }),
     ('more-itertools', '7.2.0', {
-        'source_urls': ['https://pypi.io/packages/source/m/more-itertools'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/more-itertools'],
     }),
     ('atomicwrites', '1.3.0', {
-        'source_urls': ['https://pypi.io/packages/source/a/atomicwrites'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/atomicwrites'],
     }),
     ('scandir', '1.10.0', {
-        'source_urls': ['https://pypi.io/packages/source/s/scandir'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/scandir'],
     }),
     ('pathlib2', '2.3.4', {
-        'source_urls': ['https://pypi.io/packages/source/p/pathlib2'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pathlib2'],
     }),
     ('contextlib2', '0.5.5', {
-        'source_urls': ['https://pypi.io/packages/source/c/contextlib2'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/contextlib2'],
     }),
     ('unittest2', '1.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/u/unittest2'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/u/unittest2'],
     }),
     ('zipp', '0.5.2', {
-        'source_urls': ['https://pypi.io/packages/source/z/zipp'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/z/zipp'],
     }),
     ('docutils', '0.15.2', {
-        'source_urls': ['https://pypi.io/packages/source/d/docutils'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/docutils'],
     }),
     ('entrypoints', '0.3', {
-        'source_urls': ['https://pypi.io/packages/source/e/entrypoints'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/e/entrypoints'],
     }),
     ('pyflakes', '2.1.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyflakes'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyflakes'],
     }),
     ('pycodestyle', '2.5.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pycodestyle'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pycodestyle'],
     }),
     ('mccabe', '0.6.1', {
-        'source_urls': ['https://pypi.io/packages/source/m/mccabe'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mccabe'],
     }),
     ('functools32', '3.2.3-2', {
-        'source_urls': ['https://pypi.io/packages/source/f/functools32'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/functools32'],
     }),
     ('enum34', '1.1.6', {
-        'source_urls': ['https://pypi.io/packages/source/e/enum34'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/e/enum34'],
     }),
     ('typing', '3.7.4', {
-        'source_urls': ['https://pypi.io/packages/source/t/typing'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing'],
     }),
     ('flake8', '3.7.8', {
-        'source_urls': ['https://pypi.io/packages/source/f/flake8'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/flake8'],
     }),
     ('pytest-flake8', '1.0.4', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-flake8'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-flake8'],
     }),
     ('pytest-checkdocs', '1.2.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-checkdocs'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-checkdocs'],
     }),
     ('configparser', '3.8.1', {
-        'source_urls': ['https://pypi.io/packages/source/c/configparser'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/configparser'],
     }),
     ('importlib_resources', '1.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/i/importlib_resources'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/importlib_resources'],
     }),
     ('importlib-metadata', '0.19', {
-        'source_urls': ['https://pypi.io/packages/source/i/importlib-metadata'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/importlib-metadata'],
     }),
     ('pluggy', '0.12.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pluggy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pluggy'],
     }),
     ('wcwidth', '0.1.7', {
-        'source_urls': ['https://pypi.io/packages/source/w/wcwidth'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/wcwidth'],
     }),
     ('colorama', '0.4.1', {
-        'source_urls': ['https://pypi.io/packages/source/c/colorama'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/colorama'],
     }),
     ('coverage', '4.5.4', {
-        'source_urls': ['https://pypi.io/packages/source/c/coverage'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/coverage'],
     }),
     ('ptyprocess', '0.6.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/ptyprocess'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/ptyprocess'],
     }),
     ('pexpect', '4.7.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pexpect'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pexpect'],
     }),
     ('fields', '5.0.0', {
-        'source_urls': ['https://pypi.io/packages/source/f/fields'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/fields'],
     }),
     ('manhole', '1.6.0', {
-        'source_urls': ['https://pypi.io/packages/source/m/manhole'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/manhole'],
     }),
     ('hunter', '3.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/h/hunter'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/h/hunter'],
     }),
     ('process-tests', '2.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/process-tests'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/process-tests'],
     }),
     ('pytest-cov', '2.7.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-cov'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-cov'],
     }),
     ('wheel', '0.33.4', {
-        'source_urls': ['https://pypi.io/packages/source/w/wheel'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/wheel'],
     }),
     ('argcomplete', '1.10.0', {
-        'source_urls': ['https://pypi.io/packages/source/a/argcomplete'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/argcomplete'],
     }),
     ('pytz', '2019.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytz'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytz'],
     }),
     ('sqlparse', '0.3.0', {
-        'source_urls': ['https://pypi.io/packages/source/s/sqlparse'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sqlparse'],
     }),
     ('argon2-cffi', '19.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/a/argon2-cffi'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/argon2-cffi'],
     }),
     ('bcrypt', '3.1.7', {
-        'source_urls': ['https://pypi.io/packages/source/b/bcrypt'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/bcrypt'],
     }),
     ('Django', '2.2.4', {
-        'source_urls': ['https://pypi.io/packages/source/D/Django'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/D/Django'],
     }),
     ('dpcontracts', '0.6.0', {
-        'source_urls': ['https://pypi.io/packages/source/d/dpcontracts'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/dpcontracts'],
     }),
     ('lark-parser', '0.7.3', {
-        'source_urls': ['https://pypi.io/packages/source/l/lark-parser'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/l/lark-parser'],
     }),
     ('python-dateutil', '2.8.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/python-dateutil'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/python-dateutil'],
     }),
     ('apipkg', '1.5', {
-        'source_urls': ['https://pypi.io/packages/source/a/apipkg'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/apipkg'],
     }),
     ('execnet', '1.7.0', {
-        'source_urls': ['https://pypi.io/packages/source/e/execnet'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/e/execnet'],
     }),
     ('pytest-forked', '1.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-forked'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-forked'],
     }),
     ('filelock', '3.0.12', {
-        'source_urls': ['https://pypi.io/packages/source/f/filelock'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/filelock'],
     }),
     ('pytest-xdist', '1.29.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-xdist'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-xdist'],
     }),
     ('pandas', '0.25.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pandas'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pandas'],
     }),
     ('hypothesis', '4.32.3', {
-        'source_urls': ['https://pypi.io/packages/source/h/hypothesis'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/h/hypothesis'],
     }),
     ('funcsigs', '1.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/f/funcsigs'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/funcsigs'],
     }),
     ('nose', '1.3.7', {
-        'source_urls': ['https://pypi.io/packages/source/n/nose'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nose'],
     }),
     ('pkginfo', '1.5.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/pkginfo'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pkginfo'],
     }),
     ('webencodings', '0.5.1', {
-        'source_urls': ['https://pypi.io/packages/source/w/webencodings'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/webencodings'],
     }),
     ('bleach', '3.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/b/bleach'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/bleach'],
     }),
     ('Pygments', '2.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/P/Pygments'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pygments'],
     }),
     ('cmarkgfm', '0.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/c/cmarkgfm'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/cmarkgfm'],
     }),
     ('readme_renderer', '24.0', {
-        'source_urls': ['https://pypi.io/packages/source/r/readme_renderer'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/r/readme_renderer'],
     }),
     ('chardet', '3.0.4', {
-        'source_urls': ['https://pypi.io/packages/source/c/chardet'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/chardet'],
     }),
     ('idna', '2.8', {
-        'source_urls': ['https://pypi.io/packages/source/i/idna'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/idna'],
     }),
     ('brotlipy', '0.7.0', {
-        'source_urls': ['https://pypi.io/packages/source/b/brotlipy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/brotlipy'],
     }),
     ('cryptography', '2.7', {
-        'source_urls': ['https://pypi.io/packages/source/c/cryptography'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/cryptography'],
     }),
     ('flaky', '3.6.1', {
-        'source_urls': ['https://pypi.io/packages/source/f/flaky'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/flaky'],
     }),
     ('pretend', '1.0.9', {
-        'source_urls': ['https://pypi.io/packages/source/p/pretend'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pretend'],
     }),
     ('pyOpenSSL', '19.0.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyOpenSSL'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyOpenSSL'],
     }),
     ('certifi', '2019.6.16', {
-        'source_urls': ['https://pypi.io/packages/source/c/certifi'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/certifi'],
     }),
     ('ipaddress', '1.0.22', {
-        'source_urls': ['https://pypi.io/packages/source/i/ipaddress'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipaddress'],
     }),
     ('PySocks', '1.7.0', {
-        'source_urls': ['https://pypi.io/packages/source/P/PySocks'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/PySocks'],
     }),
     ('urllib3', '1.25.3', {
-        'source_urls': ['https://pypi.io/packages/source/u/urllib3'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/u/urllib3'],
     }),
     ('win-inet-pton', '1.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/w/win-inet-pton'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win-inet-pton'],
     }),
     ('requests', '2.22.0', {
-        'source_urls': ['https://pypi.io/packages/source/r/requests'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests'],
     }),
     ('requests-toolbelt', '0.9.1', {
-        'source_urls': ['https://pypi.io/packages/source/r/requests-toolbelt'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests-toolbelt'],
     }),
     ('wincertstore', '0.2', {
-        'source_urls': ['https://pypi.io/packages/source/w/wincertstore'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/wincertstore'],
     }),
     ('setuptools', '41.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/s/setuptools'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
     }),
     ('tqdm', '4.33.0', {
-        'source_urls': ['https://pypi.io/packages/source/t/tqdm'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/tqdm'],
     }),
     ('testpath', '0.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/t/testpath'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/testpath'],
     }),
     ('jeepney', '0.4.1', {
-        'source_urls': ['https://pypi.io/packages/source/j/jeepney'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jeepney'],
     }),
     ('SecretStorage', '3.1.1', {
-        'source_urls': ['https://pypi.io/packages/source/S/SecretStorage'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/S/SecretStorage'],
     }),
     ('pywin32-ctypes', '0.2.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pywin32-ctypes'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywin32-ctypes'],
     }),
     ('pytest-black', '0.3.7', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-black'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black'],
     }),
     ('pytest-black-multipy', '1.0.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-black-multipy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black-multipy'],
     }),
     ('keyring', '19.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/k/keyring'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/k/keyring'],
     }),
     ('pyblake2', '1.1.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyblake2'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyblake2'],
     }),
     ('twine', '1.13.0', {
-        'source_urls': ['https://pypi.io/packages/source/t/twine'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/twine'],
     }),
     ('blurb', '1.0.7', {
-        'source_urls': ['https://pypi.io/packages/source/b/blurb'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/blurb'],
     }),
     ('mock', '3.0.5', {
-        'source_urls': ['https://pypi.io/packages/source/m/mock'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mock'],
     }),
     ('pytest', '5.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest'],
     }),
     ('pytest-timeout', '1.3.3', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-timeout'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-timeout'],
     }),
     ('pytest-localserver', '0.5.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pytest-localserver'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-localserver'],
     }),
     ('watchdog', '0.9.0', {
-        'source_urls': ['https://pypi.io/packages/source/w/watchdog'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/watchdog'],
     }),
     ('passlib', '1.7.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/passlib'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/passlib'],
     }),
     ('pypiserver', '1.3.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pypiserver'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pypiserver'],
     }),
     ('xonsh', '0.9.10', {
-        'source_urls': ['https://pypi.io/packages/source/x/xonsh'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/x/xonsh'],
     }),
     ('virtualenv', '16.7.2', {
         'source_urls': ['https://pypi.python.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz#md5=44e19f4134906fe2d75124427dc9b716'],
         'checksums': ['44e19f4134906fe2d75124427dc9b716'],
     }),
     ('fastnumbers', '2.2.1', {
-        'source_urls': ['https://pypi.io/packages/source/f/fastnumbers'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/fastnumbers'],
     }),
     ('PyICU', '2.3.1', {
-        'source_urls': ['https://pypi.io/packages/source/P/PyICU'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/PyICU'],
     }),
     ('natsort', '6.0.0', {
         'source_urls': ['https://pypi.python.org/packages/8e/6b/a4e3031e573ef29a251984ac0a6bd26cedac6f5e67a7607c9746bd64b3fe/natsort-5.0.3.tar.gz#md5=885997c444be12030960e65203a9ac10'],
@@ -380,7 +384,7 @@ exts_list = [
         'checksums': ['5a4f9781f78466da0ea1a648f3e1f79f'],
     }),
     ('decorator', '4.4.0', {
-        'source_urls': ['https://pypi.io/packages/source/d/decorator'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/decorator'],
     }),
     ('traitlets', '4.3.2', {
         'source_urls': ['https://pypi.python.org/packages/a5/98/7f5ef2fe9e9e071813aaf9cb91d1a732e0a68b6c44a32b38cb8e14c3f069/traitlets-4.3.2.tar.gz#md5=3068663f2f38fd939a9eb3a500ccc154'],
@@ -395,218 +399,218 @@ exts_list = [
         'checksums': ['6a9e5dd8dfc023031f6b7b3f824cab12'],
     }),
     ('docopt', '0.6.2', {
-        'source_urls': ['https://pypi.io/packages/source/d/docopt'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/docopt'],
     }),
     ('parso', '0.5.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/parso'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/parso'],
     }),
     ('jedi', '0.15.1', {
         'source_urls': ['https://pypi.python.org/packages/80/b9/4e9b0b999deeec8a91cb84e567380853a842e6c387c9d39b8fc9a49953fa/jedi-0.10.2.tar.gz#md5=b2b35b4b7e508ec3a54d94cdea1205d0'],
         'checksums': ['b2b35b4b7e508ec3a54d94cdea1205d0'],
     }),
     ('backcall', '0.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/b/backcall'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/backcall'],
     }),
     ('appnope', '0.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/a/appnope'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/appnope'],
     }),
     ('win_unicode_console', '0.5', {
-        'source_urls': ['https://pypi.io/packages/source/w/win_unicode_console'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win_unicode_console'],
     }),
     ('MarkupSafe', '1.1.1', {
-        'source_urls': ['https://pypi.io/packages/source/M/MarkupSafe'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/M/MarkupSafe'],
     }),
     ('Babel', '2.7.0', {
-        'source_urls': ['https://pypi.io/packages/source/B/Babel'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/B/Babel'],
     }),
     ('Jinja2', '2.10.1', {
-        'source_urls': ['https://pypi.io/packages/source/J/Jinja2'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/J/Jinja2'],
     }),
     ('tornado', '6.0.3', {
-        'source_urls': ['https://pypi.io/packages/source/t/tornado'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/tornado'],
     }),
     ('pyzmq', '18.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyzmq'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyzmq'],
     }),
     ('jupyter-core', '4.5.0', {
-        'source_urls': ['https://pypi.io/packages/source/j/jupyter-core'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter-core'],
     }),
     ('ipykernel', '5.1.2', {
-        'source_urls': ['https://pypi.io/packages/source/i/ipykernel'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipykernel'],
     }),
     ('jupyter-client', '5.3.1', {
-        'source_urls': ['https://pypi.io/packages/source/j/jupyter-client'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter-client'],
     }),
     ('pyrsistent', '0.15.4', {
-        'source_urls': ['https://pypi.io/packages/source/p/pyrsistent'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyrsistent'],
     }),
     ('jsonpointer', '2.0', {
-        'source_urls': ['https://pypi.io/packages/source/j/jsonpointer'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jsonpointer'],
     }),
     ('rfc3987', '1.3.8', {
-        'source_urls': ['https://pypi.io/packages/source/r/rfc3987'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/r/rfc3987'],
     }),
     ('strict-rfc3339', '0.7', {
-        'source_urls': ['https://pypi.io/packages/source/s/strict-rfc3339'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/strict-rfc3339'],
     }),
     ('webcolors', '1.9.1', {
-        'source_urls': ['https://pypi.io/packages/source/w/webcolors'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/webcolors'],
     }),
     ('jsonschema', '3.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/j/jsonschema'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jsonschema'],
     }),
     ('nbformat', '4.4.0', {
-        'source_urls': ['https://pypi.io/packages/source/n/nbformat'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbformat'],
     }),
     ('mistune', '0.8.4', {
-        'source_urls': ['https://pypi.io/packages/source/m/mistune'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mistune'],
     }),
     ('pandocfilters', '1.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/p/pandocfilters'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pandocfilters'],
     }),
     ('defusedxml', '0.6.0', {
-        'source_urls': ['https://pypi.io/packages/source/d/defusedxml'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/defusedxml'],
     }),
     ('widgetsnbextension', '3.5.1', {
-        'source_urls': ['https://pypi.io/packages/source/w/widgetsnbextension'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/w/widgetsnbextension'],
     }),
     ('ipywidgets', '7.5.1', {
-        'source_urls': ['https://pypi.io/packages/source/i/ipywidgets'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipywidgets'],
     }),
     ('Pebble', '4.3.10', {
-        'source_urls': ['https://pypi.io/packages/source/P/Pebble'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pebble'],
     }),
     ('typed-ast', '1.4.0', {
-        'source_urls': ['https://pypi.io/packages/source/t/typed-ast'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typed-ast'],
     }),
     ('typing-extensions', '3.7.4', {
-        'source_urls': ['https://pypi.io/packages/source/t/typing-extensions'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing-extensions'],
     }),
     ('mypy_extensions', '0.4.1', {
-        'source_urls': ['https://pypi.io/packages/source/m/mypy_extensions'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy_extensions'],
     }),
     ('psutil', '5.6.3', {
-        'source_urls': ['https://pypi.io/packages/source/p/psutil'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/psutil'],
     }),
     ('mypy', '0.720', {
-        'source_urls': ['https://pypi.io/packages/source/m/mypy'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy'],
     }),
     ('sphinxcontrib-applehelp', '1.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-applehelp'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-applehelp'],
     }),
     ('sphinxcontrib-devhelp', '1.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-devhelp'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-devhelp'],
     }),
     ('sphinxcontrib-jsmath', '1.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-jsmath'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-jsmath'],
     }),
     ('Genshi', '0.7.3', {
-        'source_urls': ['https://pypi.io/packages/source/G/Genshi'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/G/Genshi'],
     }),
     ('datrie', '0.8', {
-        'source_urls': ['https://pypi.io/packages/source/d/datrie'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/datrie'],
     }),
     ('cssselect', '1.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/c/cssselect'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/cssselect'],
     }),
     ('collective.checkdocs', '0.2', {
-        'source_urls': ['https://pypi.io/packages/source/c/collective.checkdocs'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/collective.checkdocs'],
     }),
     ('backports.functools_lru_cache', '1.5', {
-        'source_urls': ['https://pypi.io/packages/source/b/backports.functools_lru_cache'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.functools_lru_cache'],
     }),
     ('soupsieve', '1.9.2', {
-        'source_urls': ['https://pypi.io/packages/source/s/soupsieve'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/soupsieve'],
     }),
     ('beautifulsoup4', '4.8.0', {
-        'source_urls': ['https://pypi.io/packages/source/b/beautifulsoup4'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/beautifulsoup4'],
     }),
     ('Cython', '0.29.13', {
-        'source_urls': ['https://pypi.io/packages/source/C/Cython'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/C/Cython'],
     }),
     ('lxml', '4.4.1', {
-        'source_urls': ['https://pypi.io/packages/source/l/lxml'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/l/lxml'],
     }),
     ('html5lib', '1.0.1', {
-        'source_urls': ['https://pypi.io/packages/source/h/html5lib'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/h/html5lib'],
     }),
     ('sphinxcontrib-htmlhelp', '1.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-htmlhelp'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-htmlhelp'],
     }),
     ('sphinxcontrib-serializinghtml', '1.1.3', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-serializinghtml'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-serializinghtml'],
     }),
     ('sphinxcontrib-qthelp', '1.0.2', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib-qthelp'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-qthelp'],
     }),
     ('snowballstemmer', '1.9.0', {
-        'source_urls': ['https://pypi.io/packages/source/s/snowballstemmer'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/snowballstemmer'],
     }),
     ('alabaster', '0.7.12', {
-        'source_urls': ['https://pypi.io/packages/source/a/alabaster'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/a/alabaster'],
     }),
     ('imagesize', '1.1.0', {
-        'source_urls': ['https://pypi.io/packages/source/i/imagesize'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/imagesize'],
     }),
     ('flake8-import-order', '0.18.1', {
-        'source_urls': ['https://pypi.io/packages/source/f/flake8-import-order'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/flake8-import-order'],
     }),
     ('docutils-stubs', '0.0.21', {
-        'source_urls': ['https://pypi.io/packages/source/d/docutils-stubs'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/docutils-stubs'],
     }),
     ('Sphinx', '2.1.2', {
-        'source_urls': ['https://pypi.io/packages/source/S/Sphinx'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/S/Sphinx'],
     }),
     ('sphinx-rtd-theme', '0.4.3', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinx-rtd-theme'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinx-rtd-theme'],
     }),
     ('nbsphinx', '0.4.2', {
-        'source_urls': ['https://pypi.io/packages/source/n/nbsphinx'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbsphinx'],
     }),
     ('sphinxcontrib_github_alt', '1.1', {
-        'source_urls': ['https://pypi.io/packages/source/s/sphinxcontrib_github_alt'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib_github_alt'],
     }),
     ('nbconvert', '5.6.0', {
-        'source_urls': ['https://pypi.io/packages/source/n/nbconvert'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbconvert'],
     }),
     ('Send2Trash', '1.5.0', {
-        'source_urls': ['https://pypi.io/packages/source/S/Send2Trash'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/S/Send2Trash'],
     }),
     ('backports.shutil_which', '3.5.2', {
-        'source_urls': ['https://pypi.io/packages/source/b/backports.shutil_which'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.shutil_which'],
     }),
     ('pywinpty', '0.5.5', {
-        'source_urls': ['https://pypi.io/packages/source/p/pywinpty'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywinpty'],
     }),
     ('terminado', '0.8.2', {
-        'source_urls': ['https://pypi.io/packages/source/t/terminado'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/terminado'],
     }),
     ('prometheus_client', '0.7.1', {
-        'source_urls': ['https://pypi.io/packages/source/p/prometheus_client'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/prometheus_client'],
     }),
     ('nose_warnings_filters', '0.1.5', {
-        'source_urls': ['https://pypi.io/packages/source/n/nose_warnings_filters'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nose_warnings_filters'],
     }),
     ('nbval', '0.9.2', {
-        'source_urls': ['https://pypi.io/packages/source/n/nbval'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbval'],
     }),
     ('nose-exclude', '0.5.0', {
-        'source_urls': ['https://pypi.io/packages/source/n/nose-exclude'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nose-exclude'],
     }),
     ('selenium', '3.141.0', {
-        'source_urls': ['https://pypi.io/packages/source/s/selenium'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/selenium'],
     }),
     ('notebook', '6.0.0', {
-        'source_urls': ['https://pypi.io/packages/source/n/notebook'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/notebook'],
     }),
     ('qtconsole', '4.5.2', {
-        'source_urls': ['https://pypi.io/packages/source/q/qtconsole'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/q/qtconsole'],
     }),
     ('futures', '3.3.0', {
-        'source_urls': ['https://pypi.io/packages/source/f/futures'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/futures'],
     }),
     ('ipyparallel', '6.2.4', {
-        'source_urls': ['https://pypi.io/packages/source/i/ipyparallel'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipyparallel'],
     }),
     ('ipython', '7.7.0', {
         'source_urls': ['https://pypi.python.org/packages/21/86/58d06db0c82af66c2d47faead027c3ce775cfbf9bc9d2f13f85d95f0a162/ipython-5.4.1.tar.gz#md5=1375f1503316e483d13f8997ed654828'],
@@ -628,16 +632,16 @@ exts_list = [
         'checksums': ['87bf020c25c293e8e4e1b1e02a3dc2b1'],
     }),
     ('click', '7.0', {
-        'source_urls': ['https://pypi.io/packages/source/c/click'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/c/click'],
     }),
     ('livereload', '2.6.1', {
-        'source_urls': ['https://pypi.io/packages/source/l/livereload'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/l/livereload'],
     }),
     ('PyYAML', '5.1.2', {
-        'source_urls': ['https://pypi.io/packages/source/P/PyYAML'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/PyYAML'],
     }),
     ('Markdown', '3.1.1', {
-        'source_urls': ['https://pypi.io/packages/source/M/Markdown'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/M/Markdown'],
     }),
     ('mkdocs', '1.0.4', {
         'source_urls': ['https://files.pythonhosted.org/packages/7e/58/1ff1580aab41d6247455495a9b5ff649b94cbfc22d63682dc42a5964080e/mkdocs-1.0.4.tar.gz#md5=771d52ebb4a79a8ba36fd748da72ae5c'],
