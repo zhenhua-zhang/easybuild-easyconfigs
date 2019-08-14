@@ -722,9 +722,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/biopython'],
         'checksums': ['25152c1be2c9205bf80901fc49adf2c2efff49f0dddbcf6e6b2ce31dfa6590c0'],
     }),
-    ('ete2', '2.3.10', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/e/ete2'],
-        'checksums': ['fc48a46976128c1d6610338cc8426974773796150dd99f3efd660facf32de2a1'],
+    ('ete3', '3.1.1', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/e/ete3'],
+        'checksums': ['870a3d4b496a36fbda4b13c7c6b9dfa7638384539ae93551ec7acb377fb9c385'],
     }),
     ('click', '7.0', {
         'source_tmpl': 'Click-%(version)s.tar.gz',
