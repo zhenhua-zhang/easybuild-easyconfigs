@@ -184,8 +184,9 @@ exts_list = [
     ('sqlparse', '0.3.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sqlparse'],
     }),
-    ('argon2-cffi', '19.1.0', {
+    ('argon2_cffi', '19.1.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/a/argon2-cffi'],
+        'modulename': 'argon2',
     }),
     ('bcrypt', '3.1.7', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/bcrypt'],
