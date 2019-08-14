@@ -688,10 +688,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/Send2Trash'],
         'checksums': ['60001cc07d707fe247c94f74ca6ac0d3255aabcb930529690897ca2a39db28b2'],
     }),
-    ('backports.shutil_which', '3.5.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.shutil_which'],
-        'checksums': ['fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133'],
-    }),
     ('terminado', '0.8.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/terminado'],
         'checksums': ['de08e141f83c3a0798b050ecb097ab6259c3f0331b2f7b7750c9075ced2c20c2'],
@@ -723,10 +719,6 @@ exts_list = [
     ('qtconsole', '4.5.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/q/qtconsole'],
         'checksums': ['767eb9ec3f9943bc84270198b5ff95d2d86d68d6b57792fafa4df4fc6b16cd7c'],
-    }),
-    ('futures', '3.3.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/f/futures'],
-        'checksums': ['7e033af76a5e35f58e56da7a91e687706faf4e7bdfb2cbc3f2cca6b9bcda9794'],
     }),
     ('ipyparallel', '6.2.4', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipyparallel'],
