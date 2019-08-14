@@ -502,6 +502,7 @@ exts_list = [
     }),
     ('collective.checkdocs', '0.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/c/collective.checkdocs'],
+        'source_tmpl': '%(name)s-%(version)s.zip',
     }),
     ('backports.functools_lru_cache', '1.5', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.functools_lru_cache'],
