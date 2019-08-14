@@ -292,6 +292,7 @@ exts_list = [
     }),
     ('wincertstore', '0.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/w/wincertstore'],
+        'source_tmpl': '%(name)s-%(version)s.zip',
     }),
     ('setuptools', '41.1.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
