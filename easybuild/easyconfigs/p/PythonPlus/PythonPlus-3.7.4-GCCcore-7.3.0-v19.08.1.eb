@@ -290,10 +290,10 @@ exts_list = [
     ('requests-toolbelt', '0.9.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests-toolbelt'],
     }),
-    ('wincertstore', '0.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/w/wincertstore'],
-        'source_tmpl': '%(name)s-%(version)s.zip',
-    }),
+#    ('wincertstore', '0.2', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/w/wincertstore'],
+#        'source_tmpl': '%(name)s-%(version)s.zip',
+#    }),
     ('setuptools', '41.1.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
         'source_tmpl': '%(name)s-%(version)s.zip',
@@ -310,9 +310,9 @@ exts_list = [
     ('SecretStorage', '3.1.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/SecretStorage'],
     }),
-    ('pywin32-ctypes', '0.2.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywin32-ctypes'],
-    }),
+#    ('pywin32-ctypes', '0.2.0', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywin32-ctypes'],
+#    }),
     ('pytest-black', '0.3.7', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black'],
     }),
@@ -419,14 +419,14 @@ exts_list = [
     ('pyzmq', '18.1.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyzmq'],
     }),
-    ('jupyter-core', '4.5.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter-core'],
+    ('jupyter_core', '4.5.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter_core'],
     }),
     ('ipykernel', '5.1.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipykernel'],
     }),
-    ('jupyter-client', '5.3.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter-client'],
+    ('jupyter_client', '5.3.1', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter_client'],
     }),
     ('pyrsistent', '0.15.4', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyrsistent'],
