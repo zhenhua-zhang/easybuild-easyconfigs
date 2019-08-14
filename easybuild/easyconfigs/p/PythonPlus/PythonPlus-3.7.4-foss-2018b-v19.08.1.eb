@@ -503,10 +503,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/backcall'],
         'checksums': ['38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4'],
     }),
-    ('appnope', '0.1.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/a/appnope'],
-        'checksums': ['8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71'],
-    }),
     ('MarkupSafe', '1.1.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/M/MarkupSafe'],
         'checksums': ['29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b'],
