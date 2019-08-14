@@ -712,23 +712,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/selenium'],
         'checksums': ['deaf32b60ad91a4611b98d8002757f29e6f2c2d5fcaf202e1c9ad06d6772300d'],
     }),
-    ('notebook', '6.0.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/n/notebook'],
-        'checksums': ['5c16dbf4fa824db19de43637ebfb24bcbd3b4f646e5d6a0414ed3a376d6bc951'],
-    }),
-    ('qtconsole', '4.5.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/q/qtconsole'],
-        'checksums': ['767eb9ec3f9943bc84270198b5ff95d2d86d68d6b57792fafa4df4fc6b16cd7c'],
-    }),
-    ('ipyparallel', '6.2.4', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipyparallel'],
-        'checksums': ['76c7b028962b0ba762e4e45b450ee3a4353e7221526a8af812e817d7ef6ac065'],
-    }),
-    ('ipython', '7.7.0', {
-        'modulename': 'IPython',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipython'],
-        'checksums': ['1d3a1692921e932751bc1a1f7bb96dc38671eeefdc66ed33ee4cbc57e92a410e'],
-    }),
     ('scikit-bio', '0.5.5', {
         'modulename': 'skbio',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scikit-bio'],
