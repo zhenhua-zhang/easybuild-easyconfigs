@@ -549,8 +549,8 @@ exts_list = [
     ('Sphinx', '2.1.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/Sphinx'],
     }),
-    ('sphinx-rtd-theme', '0.4.3', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinx-rtd-theme'],
+    ('sphinx_rtd_theme', '0.4.3', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme'],
     }),
     ('nbsphinx', '0.4.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbsphinx'],
