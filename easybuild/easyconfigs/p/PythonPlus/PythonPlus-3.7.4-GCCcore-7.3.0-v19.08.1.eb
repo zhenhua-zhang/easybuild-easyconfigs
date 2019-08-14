@@ -281,9 +281,9 @@ exts_list = [
     ('urllib3', '1.25.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/u/urllib3'],
     }),
-    ('win_inet_pton', '1.1.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win_inet_pton'],
-    }),
+#    ('win_inet_pton', '1.1.0', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win_inet_pton'],
+#    }),
     ('requests', '2.22.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests'],
     }),
@@ -401,9 +401,9 @@ exts_list = [
     ('appnope', '0.1.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/a/appnope'],
     }),
-    ('win_unicode_console', '0.5', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win_unicode_console'],
-    }),
+#    ('win_unicode_console', '0.5', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/w/win_unicode_console'],
+#    }),
     ('MarkupSafe', '1.1.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/M/MarkupSafe'],
     }),
@@ -566,9 +566,9 @@ exts_list = [
     ('backports.shutil_which', '3.5.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.shutil_which'],
     }),
-    ('pywinpty', '0.5.5', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywinpty'],
-    }),
+#    ('pywinpty', '0.5.5', {
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pywinpty'],
+#    }),
     ('terminado', '0.8.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/terminado'],
     }),
