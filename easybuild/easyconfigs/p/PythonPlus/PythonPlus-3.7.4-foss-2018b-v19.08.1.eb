@@ -523,18 +523,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyzmq'],
         'checksums': ['93f44739db69234c013a16990e43db1aa0af3cf5a4b8b377d028ff24515fbeb3'],
     }),
-    ('jupyter_core', '4.5.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter_core'],
-        'checksums': ['2c6e7c1e9f2ac45b5c2ceea5730bc9008d92fe59d0725eac57b04c0edfba24f7'],
-    }),
-    ('ipykernel', '5.1.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipykernel'],
-        'checksums': ['b503913e0b4cce7ed2de965457dfb2edd633e8234161a60e23f2fe2161345d12'],
-    }),
-    ('jupyter_client', '5.3.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jupyter_client'],
-        'checksums': ['98e8af5edff5d24e4d31e73bc21043130ae9d955a91aa93fc0bc3b1d0f7b5880'],
-    }),
     ('pyrsistent', '0.15.4', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyrsistent'],
         'checksums': ['34b47fa169d6006b32e99d4b3c4031f155e6e68ebcc107d6454852e8e0ee6533'],
