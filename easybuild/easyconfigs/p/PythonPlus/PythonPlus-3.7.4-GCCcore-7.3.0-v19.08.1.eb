@@ -617,6 +617,7 @@ exts_list = [
     }),
     ('click', '7.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/c/click'],
+        'source_tmpl': 'Click-%(version)s.tar.gz',
     }),
     ('livereload', '2.6.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/l/livereload'],
