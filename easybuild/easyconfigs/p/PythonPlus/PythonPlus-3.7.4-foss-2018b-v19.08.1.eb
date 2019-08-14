@@ -684,10 +684,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib_github_alt'],
         'checksums': ['50e8493c1362c9203179ab46c2265554d027f22ba71650283a517f76781a9a87'],
     }),
-    ('nbconvert', '5.6.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbconvert'],
-        'checksums': ['427a468ec26e7d68a529b95f578d5cbf018cb4c1f889e897681c2b6d11897695'],
-    }),
     ('Send2Trash', '1.5.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/Send2Trash'],
         'checksums': ['60001cc07d707fe247c94f74ca6ac0d3255aabcb930529690897ca2a39db28b2'],
