@@ -70,6 +70,10 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/j/joblib'],
         'checksums': ['315d6b19643ec4afd4c41c671f9f2d65ea9d787da093487a81ead7b0bac94524'],
     }),
+    ('Cython', '0.29.13', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/C/Cython'],
+        'checksums': ['c29d069a4a30f472482343c866f7486731ad638ef9af92bfe5fca9c7323d638e'],
+    }),
     ('scikit-learn', '0.21.3', {
         'modulename': 'sklearn',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scikit-learn'],
@@ -650,10 +654,6 @@ exts_list = [
     ('beautifulsoup4', '4.8.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/beautifulsoup4'],
         'checksums': ['25288c9e176f354bf277c0a10aa96c782a6a18a17122dba2e8cec4a97e03343b'],
-    }),
-    ('Cython', '0.29.13', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/C/Cython'],
-        'checksums': ['c29d069a4a30f472482343c866f7486731ad638ef9af92bfe5fca9c7323d638e'],
     }),
     ('lxml', '4.4.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/l/lxml'],
