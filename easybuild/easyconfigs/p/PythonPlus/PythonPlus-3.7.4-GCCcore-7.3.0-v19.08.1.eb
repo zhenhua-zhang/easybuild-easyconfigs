@@ -136,8 +136,8 @@ exts_list = [
     ('importlib_resources', '1.0.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/i/importlib_resources'],
     }),
-    ('importlib-metadata', '0.19', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/i/importlib-metadata'],
+    ('importlib_metadata', '0.19', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/importlib_metadata'],
     }),
     ('pluggy', '0.12.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pluggy'],
