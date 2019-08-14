@@ -143,10 +143,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mccabe'],
         'checksums': ['dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f'],
     }),
-    ('functools32', '3.2.3-2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/f/functools32'],
-        'checksums': ['f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d'],
-    }),
     ('enum34', '1.1.6', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/e/enum34'],
         'checksums': ['8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1'],
