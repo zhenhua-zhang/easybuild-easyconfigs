@@ -145,10 +145,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mccabe'],
         'checksums': ['dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f'],
     }),
-    ('typing', version, {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typing'],
-        'checksums': ['53765ec4f83a2b720214727e319607879fec4acde22c4fbb54fa2604e79e44ce'],
-    }),
     ('flake8', '3.7.8', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/f/flake8'],
         'checksums': ['19241c1cbc971b9962473e4438a2ca19749a7dd002dd1a946eaba171b4114548'],
