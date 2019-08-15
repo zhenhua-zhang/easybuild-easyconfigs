@@ -471,6 +471,7 @@ exts_list = [
         'checksums': ['5eef2565d9202bf32263f2f100287e97c4dc6fa28a07fb273431db7349892548'],
     }),
     ('PyICU', '2.3.1', {
+        'modulename': 'icu',
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/PyICU'],
         'checksums': ['ddb2b453853b4c25db382bc5e8c4cde09b3f4696ef1e1494f8294e174f459cf4'],
     }),
