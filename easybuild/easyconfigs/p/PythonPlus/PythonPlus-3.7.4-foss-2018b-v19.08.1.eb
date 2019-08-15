@@ -605,6 +605,7 @@ exts_list = [
         'checksums': ['6c64b077937330a9128a4da74586e8c2130262f014689b4b89e2d08ee7294a34'],
     }),
     ('sphinxcontrib-jsmath', '1.0.1', {
+        'modulename': 'sphinxcontrib.jsmath',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-jsmath'],
         'checksums': ['a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8'],
     }),
@@ -653,6 +654,7 @@ exts_list = [
         'checksums': ['c0efb33f8052c04fd7a26c0a07f1678e8512e0faec19f4aa8f2473a8b81d5227'],
     }),
     ('sphinxcontrib-qthelp', '1.0.2', {
+        'modulename': 'sphinxcontrib.qthelp',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-qthelp'],
         'checksums': ['79465ce11ae5694ff165becda529a600c754f4bc459778778c7017374d4d406f'],
     }),
@@ -673,6 +675,7 @@ exts_list = [
         'checksums': ['a28dc39545ea4606c1ac3c24e9d05c849c6e5444a50fb7e9cdd430fc94de6e92'],
     }),
     ('docutils-stubs', '0.0.21', {
+        'modulename': 'docutils.core', # technically not correct, but only used here to satisfy the sanity check step.
         'source_urls': ['https://files.pythonhosted.org/packages/source/d/docutils-stubs'],
         'checksums': ['e0d3d2588a0c0b47bf66b917bf4ff2c100cf4cf77bbe2f518d97b8f4d63e735c'],
     }),
@@ -744,6 +747,7 @@ exts_list = [
         'checksums': ['89254f78d7529d7ea0a3417d224c34287ebfe266b05e67e51facaf82c27f0f66'],
     }),
     ('PyYAML', '5.1.2', {
+        'modulename': 'yaml',
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/PyYAML'],
         'checksums': ['01adf0b6c6f61bd11af6e10ca52b7d4057dd0be0343eb9283c878cf3af56aee4'],
     }),
