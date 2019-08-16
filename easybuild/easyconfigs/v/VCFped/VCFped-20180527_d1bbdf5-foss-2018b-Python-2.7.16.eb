@@ -17,6 +17,7 @@ sources = [('d1bbdf540cf47e4050b9090f99f5910670469229.zip')]
 
 checksums = ['4a78937bdd4ee3c730a2c44a68c4fb0f']
 
+python = 'Python'
 pyver = '2.7.16'
 pyshortver = '.'.join(pyver.split('.')[:2])
 
