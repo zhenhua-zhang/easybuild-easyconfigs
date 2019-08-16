@@ -1,12 +1,13 @@
+easyblock = 'PythonPackage'
+
 name = 'VCFped'
 version = '20180527_d1bbdf5'
+versionsuffix = "-Python-%s" % (pyver)
 
-homepage = 'https://github.com/molgenis/molgenis-pipelines'
-description = """This distribution contains several pipelines/protocols/parameter files,
-which you can use 'out-of-the-box' to align and impute your NGS data using MOLGENIS Compute."""
+homepage = 'https://github.com/magnusdv/VCFped'
+description = """Quickly and confidently identify trios and close pairwise relationships in multisample VCF files."""
 
 toolchain = {'name': 'foss', 'version': '2018b'}
-easyblock = 'PythonPackage'
 
 #
 # Example URL: https://github.com/magnusdv/VCFped/archive/d1bbdf540cf47e4050b9090f99f5910670469229.zip
@@ -16,15 +17,14 @@ sources = [('d1bbdf540cf47e4050b9090f99f5910670469229.zip')]
 
 checksums = ['4a78937bdd4ee3c730a2c44a68c4fb0f']
 
-python = 'Python'
 pyver = '2.7.16'
 pyshortver = '.'.join(pyver.split('.')[:2])
 
-versionsuffix = "-%s-%s" % (python, pyver)
-
 dependencies = [
-    (python, pyver, '-bare'),
+    ('Python', pyver, '-bare'),
 ]
+
+use_pip = True
 
 sanity_check_paths = {
     'files': ['bin/vcfped'],
