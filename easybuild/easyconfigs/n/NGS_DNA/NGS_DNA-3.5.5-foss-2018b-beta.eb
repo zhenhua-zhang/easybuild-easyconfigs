@@ -36,7 +36,7 @@ dependencies = [
     ('io_lib', '1.14.11'),
     ('manta','1.6.0'),
     ('snpEff', '4.3t', '-%s-%s' % (java, javaver)),
-    #('ngs-utils', '18.02.1', '', ('dummy', '')),        -> Pieter
+    ('ngs-utils', '19.03.3', '', ('dummy', '')),
     ('PerlPlus', '5.30.0', '-v19.08.1'),
     ('pigz', '2.4'),
     ('picard', '2.20.5', '-%s-%s' % (java, javaver)),
