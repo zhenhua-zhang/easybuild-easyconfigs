@@ -1,25 +1,19 @@
-easyblock = 'Tarball'
+easyblock = 'Bundle'
 
-name = 'NGS_DNA'
-version = '4.0.1'
-versionsuffix = '-beta'
+name = 'NGS_Suite'
+version = '2019.08.1'
 namelower = name.lower()
 
-homepage = 'https://github.com/molgenis/NGS_DNA'
-description = """NGS_DNA pipeline used in the UMCG"""
+homepage = 'None.'
+description = """A collection of various tools for NGS data analysis."""
 
 toolchain = {'name': 'foss', 'version': '2018b'}
 
 javaver = '11-LTS'
 perlver = '5.30.0'
-pythonver = '3.7.4'
-
-#
-# Example URL: https://github.com/molgenis/NGS_DNA/archive/3.2.3.tar.gz
-#
-source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
-sources = [('%s.tar.gz' % (version))]
-checksums = ['adf515e12823061a11f9017cca6eb386e6a6e0ba28c9964a941ea56dcda1351a']
+py3ver = '3.7.4'
+py2ver = '2.7.16'
+rver = '3.6.1'
 
 #
 # Dependencies.
@@ -37,7 +31,6 @@ dependencies = [
     ('manta','1.6.0'),
     ('snpEff', '4.3t', '-Java-%s' % (javaver)),
     ('ngs-utils', '19.03.3'),
-    ('PerlPlus', perlver, '-v19.08.1'),
     ('pigz', '2.4'),
     ('picard', '2.20.5', '-Java-%s' % (javaver)),
     ('sambamba', 'v0.7.0'),
@@ -46,17 +39,14 @@ dependencies = [
     ('HTSlib', '1.9'),
     #('xhmm', '2016-01-04-cc14e528d909'),
     #('CADD', 'v1.3', '', ('dummy', '')),
-    ('multiqc', '1.7', '-Python-%s-bare' % (pyver)),   # To be committed by Gerben.
+    ('multiqc', '1.7', '-Python-%s-bare' % (py3ver)),
     #('VEP', '90.5', '', ('dummy', '')),
     ('vcfanno', 'v0.3.2', '', ('dummy', '')),
-    #('VCFped','20180527_d1bbdf5','-Python-2.7.11'),   -> Kim
+    ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver)),
+    ('Java', javaver, '', ('dummy', '')),
+    ('PerlPlus', perlver, '-v19.08.1'),
+    ('PythonPlus', pyver, '-v19.08.1'),
+    ('RPlus', rver, '-v19.07.1'),
 ]
 
-
-sanity_check_paths = {
-    'files': ['workflow.csv', 'parameters.csv'],
-    'dirs': []
-}
-
 moduleclass = 'bio'
-modextrapaths = {'PATH': ['scripts/']}
