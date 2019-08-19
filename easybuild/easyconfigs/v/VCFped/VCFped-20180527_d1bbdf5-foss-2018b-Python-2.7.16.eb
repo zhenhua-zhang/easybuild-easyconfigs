@@ -2,7 +2,7 @@ easyblock = 'PythonBundle'
 
 name = 'VCFped'
 version = '20180527_d1bbdf5'
-pyver = '3.7.4'
+pyver = '2.7.16'
 pyshortver = '.'.join(pyver.split('.')[:2])
 versionsuffix = "-Python-%s" % (pyver)
 
