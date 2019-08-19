@@ -15,8 +15,6 @@ dependencies = [
     ('Python', pyver, '-bare'),
 ]
 
-use_pip = True
-
 #
 # This is a bundle of extra Python packages to be used with a "bare" Python installation.
 #
