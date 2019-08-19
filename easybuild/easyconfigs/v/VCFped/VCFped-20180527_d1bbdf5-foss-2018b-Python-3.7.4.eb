@@ -11,16 +11,17 @@ description = """Quickly and confidently identify trios and close pairwise relat
 
 toolchain = {'name': 'foss', 'version': '2018b'}
 
-#
-# Example URL: https://github.com/magnusdv/VCFped/archive/d1bbdf540cf47e4050b9090f99f5910670469229.zip
-#
-
 dependencies = [
     ('Python', pyver, '-bare'),
 ]
 
 use_pip = True
 
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
 exts_list = [
     ('tabulate', '0.7.7', {
         'source_urls': ['https://pypi.python.org/packages/source/t/tabulate'],
@@ -42,3 +43,4 @@ sanity_check_paths = {
 sanity_check_commands = ['vcfped -h']
 
 moduleclass = 'bio'
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
