@@ -15,8 +15,7 @@ builddependencies = [
 ]
 
 dependencies = [
-    ('R',     '%(version)s', '-bare'),
-#    ('RPlus', '%(version)s', '-v19.07.1'),
+    ('R', '3.6.1', '-bare'),
 ]
 
 # The '.' is a silly workaround to check for whatever current dir as workaround
