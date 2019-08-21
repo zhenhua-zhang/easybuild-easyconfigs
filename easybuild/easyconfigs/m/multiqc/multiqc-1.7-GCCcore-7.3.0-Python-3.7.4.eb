@@ -1,0 +1,33 @@
+easyblock = "PythonPackage"
+
+name = 'multiqc'
+version = '1.7'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://multiqc.info/'
+description = """Create aggregate bioinformatics analysis reports across many samples and tools."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/ewels/MultiQC/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = [
+    '1a6bea211ab584164a6c7513812ede57b28712bc528bd34cc5f1a581e7410644', # multiqc-1.7.tar.gz
+]
+
+dependencies = [
+    ('libyaml', '0.2.1'),
+    ('libpng', '1.6.37'),
+    ('freetype', '2.9.1'),
+    ('cairo', '1.16.0'),
+    ('Python', '3.7.4', '-bare'),
+]
+
+binaries = ['futurize', 'multiqc', 'pasteurize']
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in binaries],
+    'dirs':  ['bin', 'lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
