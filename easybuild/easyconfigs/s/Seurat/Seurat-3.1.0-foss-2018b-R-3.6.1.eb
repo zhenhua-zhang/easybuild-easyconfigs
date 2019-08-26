@@ -40,6 +40,11 @@ exts_list = [
         'source_urls': cran_urls,
         'checksums': ['8f736cbbb4a32c80cb08ba4e81df633846d725f27867e983af2012966eac0eac'],
     }),
+    ('dqrng', '0.2.1.', {
+        'source_tmpl': package_name_tmpl,
+        'source_urls': cran_urls,
+        'checksums': ['e149c105b1db31e7f46b1aebf31d911a109e380923f3696fc56a53197fc1e866'],
+    }),
     ('uwot', '0.1.3', {
         'source_tmpl': package_name_tmpl,
         'source_urls': cran_urls,
