@@ -40,6 +40,11 @@ exts_list = [
         'source_urls': cran_urls,
         'checksums': ['8f736cbbb4a32c80cb08ba4e81df633846d725f27867e983af2012966eac0eac'],
     }),
+    ('sitmo', '2.0.1', {
+        'source_tmpl': package_name_tmpl,
+        'source_urls': cran_urls,
+        'checksums': ['0c90d357af334d5c99c8956739dc12623ddd87dda5efa59f4a43f7393c87ed2a'],
+    }),
     ('dqrng', '0.2.1', {
         'source_tmpl': package_name_tmpl,
         'source_urls': cran_urls,
