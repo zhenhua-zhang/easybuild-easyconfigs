@@ -1,12 +1,16 @@
 easyblock = 'Bundle'
+
 name = 'SAIGE'
 version = '0.35.8.7'
-versionsuffix = '-R-3.6.1'
+versionsuffix = '-R-%(rver)s'
+
 homepage = 'https://github.com/weizhouUMICH/SAIGE'
 description = """R package with Scalable and Accurate Implementation of Generalized 
 mixed model (Chen, H. et al. 2016). It accounts for sample relatedness and is feasible 
 for genetic association tests in large cohorts and biobanks (N > 400,000)."""
+
 toolchain = {'name': 'foss', 'version': '2018b'}
+
 moduleclass = 'lang'
 modextrapaths = {'R_LIBS': ['library', '']}
 
@@ -17,6 +21,9 @@ builddependencies = [
 dependencies = [
     ('R', '3.6.1', '-bare'),
     ('RPlus', '3.6.1', '-v19.07.1'),
+    ('bzip2', '1.0.6'),
+    ('XZ', '5.2.4'),
+    ('zlib', '1.2.11'),
 ]
 
 # The '.' is a silly workaround to check for whatever current dir as workaround
