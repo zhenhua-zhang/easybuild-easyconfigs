@@ -45,6 +45,11 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/six'],
         'checksums': ['d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73'],
     }),
+    ('setuptools', '41.1.0', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
+        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
+    }),
     ('numpy', '1.16.5', {
         'source_tmpl': '%(name)s-%(version)s.zip',
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
@@ -384,11 +389,11 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests-toolbelt'],
         'checksums': ['968089d4584ad4ad7c171454f0a5c6dac23971e9472521ea3b6d49d610aa6fc0'],
     }),
-    ('setuptools', '41.1.0', {
-        'source_tmpl': '%(name)s-%(version)s.zip',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
-        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
-    }),
+#    ('setuptools', '41.1.0', {
+#        'source_tmpl': '%(name)s-%(version)s.zip',
+#        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
+#        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
+#    }),
     ('pip', '19.2.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pip/'],
         'checksums': ['e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135'],
