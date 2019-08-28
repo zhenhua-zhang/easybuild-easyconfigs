@@ -147,7 +147,7 @@ exts_list = [
     }),
     ('functools32', '3.2.3-2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/f/functools32'],
-        'checksums': ['89d824aa6c358c421a234d7f9ee0bd75933a67c29588ce50aaa3acdf4d403fa0'],
+        'checksums': ['f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d'],
     }),
     ('enum34', '1.1.6', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/e/enum34'],
@@ -388,6 +388,10 @@ exts_list = [
         'source_tmpl': '%(name)s-%(version)s.zip',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
         'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
+    }),
+    ('pip', '19.2.3', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pip/'],
+        'checksums': ['e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135'],
     }),
     ('tqdm', '4.33.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/tqdm'],
