@@ -45,10 +45,10 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/six'],
         'checksums': ['d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73'],
     }),
-    ('numpy', '1.17.0', {
+    ('numpy', '1.16.5', {
         'source_tmpl': '%(name)s-%(version)s.zip',
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
-        'checksums': ['951fefe2fb73f84c620bec4e001e80a80ddaa1b84dce244ded7f1e0cbe0ed34a'],
+        'checksums': ['8bb452d94e964b312205b0de1238dd7209da452343653ab214b5d681780e7a0c'],
     }),
     ('bx-python', '0.8.4', {
         'modulename': 'bx',
