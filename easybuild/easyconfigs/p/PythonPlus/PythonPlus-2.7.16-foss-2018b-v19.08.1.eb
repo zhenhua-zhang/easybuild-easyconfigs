@@ -467,10 +467,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pypiserver'],
         'checksums': ['c0361290ee11eb267475761adc1e663ef0a56739a323cfefdf904e46f693ce0a'],
     }),
-    ('xonsh', '0.9.10', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/x/xonsh'],
-        'checksums': ['3c2d23b16eee7f8ad2ce6d02e5f81e1627ebd722b709d0788ceb5b2a9ee76822'],
-    }),
     ('virtualenv', '16.7.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/v/virtualenv'],
         'checksums': ['909fe0d3f7c9151b2df0a2cb53e55bdb7b0d61469353ff7a49fd47b0f0ab9285'],
