@@ -725,6 +725,10 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scikit-bio'],
         'checksums': ['fe33a6cd7e6eb3fd8c088491422e499cfb36fab63c38659b587230f3dd63d91a'],
     }),
+    ('ipython', '5.8.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipython'],
+        'checksums': ['4bac649857611baaaf76bc82c173aa542f7486446c335fe1a6c05d0d491c8906'],
+    }),
     ('biopython', '1.74', {
         'modulename': 'Bio',
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/biopython'],
