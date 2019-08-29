@@ -389,11 +389,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests-toolbelt'],
         'checksums': ['968089d4584ad4ad7c171454f0a5c6dac23971e9472521ea3b6d49d610aa6fc0'],
     }),
-#    ('setuptools', '41.1.0', {
-#        'source_tmpl': '%(name)s-%(version)s.zip',
-#        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
-#        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
-#    }),
     ('pip', '19.2.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pip/'],
         'checksums': ['e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135'],
@@ -584,14 +579,6 @@ exts_list = [
     ('defusedxml', '0.6.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/d/defusedxml'],
         'checksums': ['f684034d135af4c6cbb949b8a4d2ed61634515257a67299e5f940fbaa34377f5'],
-    }),
-    ('widgetsnbextension', '3.5.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/w/widgetsnbextension'],
-        'checksums': ['079f87d87270bce047512400efd70238820751a11d2d8cb137a5a5bdbaf255c7'],
-    }),
-    ('ipywidgets', '7.5.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipywidgets'],
-        'checksums': ['e945f6e02854a74994c596d9db83444a1850c01648f1574adf144fbbabe05c97'],
     }),
     ('Pebble', '4.3.10', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pebble'],
