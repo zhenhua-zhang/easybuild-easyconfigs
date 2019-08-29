@@ -31,7 +31,7 @@ modextrapaths = {
 }
 
 sanity_check_paths = {
-    'files': ['diagnostics_workflow.csv', 'diagnostics_parameters.csv'],
+    'files': ['workflow_diagnostics.csv', 'parameters_diagnostics.csv'],
     'dirs': []
 }
 
