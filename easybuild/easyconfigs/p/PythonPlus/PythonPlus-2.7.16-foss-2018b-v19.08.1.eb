@@ -584,17 +584,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pebble'],
         'checksums': ['c39a7bf99af6525fcf0783a8859fb10a4f20f4f988ddb66fd6fa7588f9c91731'],
     }),
-    ('mypy_extensions', '0.4.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy_extensions'],
-        'checksums': ['37e0e956f41369209a3d5f34580150bcacfabaa57b33a15c0b25f4b5725e0812'],
-    }),
     ('psutil', '5.6.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/psutil'],
         'checksums': ['863a85c1c0a5103a12c05a35e59d336e1d665747e531256e061213e2e90f63f3'],
-    }),
-    ('mypy', '0.720', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy'],
-        'checksums': ['49925f9da7cee47eebf3420d7c0e00ec662ec6abb2780eb0a16260a7ba25f9c4'],
     }),
     ('sphinxcontrib-devhelp', '1.0.1', {
         'modulename': 'sphinxcontrib.devhelp',
