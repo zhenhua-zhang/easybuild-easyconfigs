@@ -68,10 +68,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scipy'],
         'checksums': ['a4331e0b8dab1ff75d2c67b5158a8bb9a83c799d7140094dda936d876c7cfbb1'],
     }),
-    ('pandas27', '0.24.3', {
-        'modulename': 'pandas',
+    ('pandas', '0.24.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pandas27'],
-        'checksums': ['8c4fab3e813e3a0ac07a423782345d88657ae0cc07505d6ada2612799058a67b'],
+        'checksums': ['4f919f409c433577a501e023943e582c57355d50a724c589e78bc1d551a535a2'],
     }),
     ('statsmodels', '0.10.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/statsmodels'],
