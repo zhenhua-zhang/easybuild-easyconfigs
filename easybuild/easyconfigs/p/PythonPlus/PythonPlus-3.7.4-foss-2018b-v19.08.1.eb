@@ -45,6 +45,11 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/six'],
         'checksums': ['d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73'],
     }),
+    ('setuptools', '41.1.0', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
+        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
+    }),
     ('numpy', '1.17.0', {
         'source_tmpl': '%(name)s-%(version)s.zip',
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
@@ -59,13 +64,17 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/patsy'],
         'checksums': ['f115cec4201e1465cd58b9866b0b0e7b941caafec129869057405bfe5b5e3991'],
     }),
-    ('statsmodels', '0.10.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/statsmodels'],
-        'checksums': ['320659a80f916c2edf9dfbe83512d9004bb562b72eedb7d9374562038697fa10'],
-    }),
     ('scipy', '1.3.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scipy'],
         'checksums': ['2643cfb46d97b7797d1dbdb6f3c23fe3402904e3c90e6facfe6a9b98d808c1b5'],
+    }),
+    ('pandas', '0.25.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pandas'],
+        'checksums': ['914341ad2d5b1ea522798efa4016430b66107d05781dbfe7cf05eba8f37df995'],
+    }),
+    ('statsmodels', '0.10.1', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/statsmodels'],
+        'checksums': ['320659a80f916c2edf9dfbe83512d9004bb562b72eedb7d9374562038697fa10'],
     }),
     ('joblib', '0.13.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/j/joblib'],
@@ -277,10 +286,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-xdist'],
         'checksums': ['3489d91516d7847db5eaecff7a2e623dba68984835dbe6cedb05ae126c4fb17f'],
     }),
-    ('pandas', '0.25.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pandas'],
-        'checksums': ['914341ad2d5b1ea522798efa4016430b66107d05781dbfe7cf05eba8f37df995'],
-    }),
     ('hypothesis', '4.32.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/h/hypothesis'],
         'checksums': ['c6d4ba47bc97e4651fccd692d6cecca9c1ad673f114107e4d37419d5fc172ee2'],
@@ -371,11 +376,6 @@ exts_list = [
     ('requests-toolbelt', '0.9.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/r/requests-toolbelt'],
         'checksums': ['968089d4584ad4ad7c171454f0a5c6dac23971e9472521ea3b6d49d610aa6fc0'],
-    }),
-    ('setuptools', '41.1.0', {
-        'source_tmpl': '%(name)s-%(version)s.zip',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
-        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
     }),
     ('tqdm', '4.33.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/tqdm'],
