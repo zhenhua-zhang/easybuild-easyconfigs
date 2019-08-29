@@ -259,9 +259,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/bcrypt'],
         'checksums': ['0b0069c752ec14172c5f78208f1863d7ad6755a6fae6fe76ec2c80d13be41e42'],
     }),
-    ('Django', '2.2.4', {
+    ('Django', '1.11.23', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/D/Django'],
-        'checksums': ['16a5d54411599780ac9dfe3b9b38f90f785c51259a584e0b24b6f14a7f69aae8'],
+        'checksums': ['52a66d7f8b036d02da0a4472359e8be1727424fc1e4b4f5c684ef97de7b569e1'],
     }),
     ('dpcontracts', '0.6.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/d/dpcontracts'],
