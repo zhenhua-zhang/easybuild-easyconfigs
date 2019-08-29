@@ -720,10 +720,10 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/f/futures'],
         'checksums': ['7e033af76a5e35f58e56da7a91e687706faf4e7bdfb2cbc3f2cca6b9bcda9794'],
     }),
-    ('scikit-bio', '0.5.5', {
+    ('scikit-bio', '0.4.2', {
         'modulename': 'skbio',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scikit-bio'],
-        'checksums': ['9fa813be66e88a994f7b7a68b8ba2216e205c525caa8585386ebdeebed6428df'],
+        'checksums': ['fe33a6cd7e6eb3fd8c088491422e499cfb36fab63c38659b587230f3dd63d91a'],
     }),
     ('biopython', '1.74', {
         'modulename': 'Bio',
