@@ -106,7 +106,7 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/packaging'],
         'checksums': ['c491ca87294da7cc01902edbe30a5bc6c4c28172b5138ab4e4aa1b9d7bfaeafe'],
     }),
-    ('more-itertools', '5.5.0', {
+    ('more-itertools', '5.0.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/more-itertools'],
         'checksums': ['38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4'],
     }),
