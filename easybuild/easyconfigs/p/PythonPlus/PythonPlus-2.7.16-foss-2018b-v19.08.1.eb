@@ -263,9 +263,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/D/Django'],
         'checksums': ['52a66d7f8b036d02da0a4472359e8be1727424fc1e4b4f5c684ef97de7b569e1'],
     }),
-    ('dpcontracts', '0.6.0', {
+    ('dpcontracts', '0.5.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/d/dpcontracts'],
-        'checksums': ['6cf9df1f16beaa48523b798b41170dabf7a536a6133328731665cdb29c42234a'],
+        'checksums': ['557fe79202e58695aab1a059549300e5e2a3496e6b40b79cbc34a7f1588b5a5c'],
     }),
     ('lark-parser', '0.7.3', {
         'modulename': 'lark',
