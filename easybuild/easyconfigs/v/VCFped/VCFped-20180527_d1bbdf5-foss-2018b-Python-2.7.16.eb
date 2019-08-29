@@ -12,7 +12,7 @@ description = """Quickly and confidently identify trios and close pairwise relat
 toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
-    ('Python', pyver, '-bare'),
+    ('PythonPlus', pyver, '-v19.08.1'),
 ]
 
 #
@@ -20,6 +20,10 @@ dependencies = [
 #
 exts_defaultclass = 'PythonPackage'
 exts_filter = ('python -c "import %(ext_name)s"', "")
+exts_default_options = {
+    'download_dep_fail': True,
+    'use_pip': True,
+}
 exts_list = [
     ('tabulate', '0.7.7', {
         'source_urls': ['https://pypi.python.org/packages/source/t/tabulate'],
