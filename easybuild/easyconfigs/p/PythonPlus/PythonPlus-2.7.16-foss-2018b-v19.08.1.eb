@@ -106,9 +106,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/packaging'],
         'checksums': ['c491ca87294da7cc01902edbe30a5bc6c4c28172b5138ab4e4aa1b9d7bfaeafe'],
     }),
-    ('more-itertools', '7.2.0', {
+    ('more-itertools', '5.5.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/more-itertools'],
-        'checksums': ['409cd48d4db7052af495b09dec721011634af3753ae1ef92d2b32f73a745f832'],
+        'checksums': ['38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4'],
     }),
     ('atomicwrites', '1.3.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/a/atomicwrites'],
@@ -159,6 +159,7 @@ exts_list = [
         'checksums': ['f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d'],
     }),
     ('enum34', '1.1.6', {
+        'modulename': 'enum',
         'source_urls': ['https://files.pythonhosted.org/packages/source/e/enum34'],
         'checksums': ['8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1'],
     }),
@@ -401,13 +402,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/testpath'],
         'checksums': ['b694b3d9288dbd81685c5d2e7140b81365d46c29f5db4bc659de5aa6b98780f8'],
     }),
-    ('jeepney', '0.4.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/j/jeepney'],
-        'checksums': ['13806f91a96e9b2623fd2a81b950d763ee471454aafd9eb6d75dbe7afce428fb'],
-    }),
-    ('SecretStorage', '3.1.1', {
+    ('SecretStorage', '2.3.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/SecretStorage'],
-        'checksums': ['20c797ae48a4419f66f8d28fc221623f11fc45b6828f96bdb1ad9990acb59f92'],
+        'checksums': ['3af65c87765323e6f64c83575b05393f9e003431959c9395d1791d51497f29b6'],
     }),
     ('pytest-black', '0.3.7', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black'],
@@ -417,9 +414,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black-multipy'],
         'checksums': ['cd6bf8d9e60af4d97771f848d5efae8eef30c9c77d4bb6f57a767ceb52523cb2'],
     }),
-    ('keyring', '19.0.2', {
+    ('keyring', '18.0.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/k/keyring'],
-        'checksums': ['1b74595f7439e4581a11d4f9a12790ac34addce64ca389c86272ff465f5e0b90'],
+        'checksums': ['67d6cc0132bd77922725fae9f18366bb314fd8f95ff4d323a4df41890a96a838'],
     }),
     ('pyblake2', '1.1.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyblake2'],
@@ -428,10 +425,6 @@ exts_list = [
     ('twine', '1.13.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/twine'],
         'checksums': ['d6c29c933ecfc74e9b1d9fa13aa1f87c5d5770e119f5a4ce032092f0ff5b14dc'],
-    }),
-    ('blurb', '1.0.7', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/b/blurb'],
-        'checksums': ['1849eb2c9ceb74928d24eab847d344a8602e8ee822aeba2e930c4e6c7543e9e4'],
     }),
     ('mock', '3.0.5', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mock'],
@@ -495,9 +488,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/traitlets'],
         'checksums': ['9c4bd2d267b7153df9152698efb1050a5d84982d3384a37b2c1f7723ba3e7835'],
     }),
-    ('prompt_toolkit', '2.0.9', {
+    ('prompt_toolkit', '1.0.16', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/prompt_toolkit'],
-        'checksums': ['2519ad1d8038fd5fc8e770362237ad0364d16a7650fb5724af6997ed5515e3c1'],
+        'checksums': ['c1cedd626e08b8ee830ee65897de754113ff3f3035880030c08b01674d85c5b4'],
     }),
     ('pickleshare', '0.7.5', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pickleshare'],
@@ -680,10 +673,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme'],
         'checksums': ['728607e34d60456d736cc7991fd236afb828b21b82f956c5ea75f94c8414040a'],
     }),
-    ('nbsphinx', '0.4.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbsphinx'],
-        'checksums': ['b794219e465b3aab500b800884ff40fd152bb19d8b6f87580de1f3a07170aef8'],
-    }),
     ('sphinxcontrib_github_alt', '1.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib_github_alt'],
         'checksums': ['50e8493c1362c9203179ab46c2265554d027f22ba71650283a517f76781a9a87'],
@@ -717,10 +706,12 @@ exts_list = [
         'checksums': ['deaf32b60ad91a4611b98d8002757f29e6f2c2d5fcaf202e1c9ad06d6772300d'],
     }),
     ('futures', '3.3.0', {
+        'modulename': 'concurrent.futures',
         'source_urls': ['https://files.pythonhosted.org/packages/source/f/futures'],
         'checksums': ['7e033af76a5e35f58e56da7a91e687706faf4e7bdfb2cbc3f2cca6b9bcda9794'],
     }),
     ('ipython', '5.8.0', {
+        'modulename': 'IPython',
         'source_urls': ['https://files.pythonhosted.org/packages/source/i/ipython'],
         'checksums': ['4bac649857611baaaf76bc82c173aa542f7486446c335fe1a6c05d0d491c8906'],
     }),
