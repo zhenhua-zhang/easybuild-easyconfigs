@@ -708,10 +708,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/nose_warnings_filters'],
         'checksums': ['456c5b2ccca24e1d00a7b558274ebf9318305813dcb9585951a73ae11d76bb9d'],
     }),
-    ('nbval', '0.9.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/n/nbval'],
-        'checksums': ['e26ea0af4b46bc8200075fc665bf8e645aaeae1467ce6c7d84fe595402a11d3d'],
-    }),
     ('nose-exclude', '0.5.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/nose-exclude'],
         'checksums': ['f78fa8b41eeb815f0486414f710f1eea0949e346cfb11d59ba6295ed69e84304'],
