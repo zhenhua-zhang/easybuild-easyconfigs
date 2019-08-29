@@ -84,10 +84,10 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/C/Cython'],
         'checksums': ['c29d069a4a30f472482343c866f7486731ad638ef9af92bfe5fca9c7323d638e'],
     }),
-    ('scikit-learn', '0.21.3', {
+    ('scikit-learn', '0.20.4', {
         'modulename': 'sklearn',
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/scikit-learn'],
-        'checksums': ['eb9b8ebf59eddd8b96366428238ab27d05a19e89c5516ce294abc35cea75d003'],
+        'checksums': ['dfa8a3f33907614030cdfbc8b6f553dacbecaf09f922244f128af3060a137cfc'],
     }),
     ('py', '1.8.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/py'],
