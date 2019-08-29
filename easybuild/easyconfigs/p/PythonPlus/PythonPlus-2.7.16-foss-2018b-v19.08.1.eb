@@ -584,10 +584,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/P/Pebble'],
         'checksums': ['c39a7bf99af6525fcf0783a8859fb10a4f20f4f988ddb66fd6fa7588f9c91731'],
     }),
-    ('typed_ast', '1.4.0', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/t/typed_ast'],
-        'checksums': ['66480f95b8167c9c5c5c87f32cf437d585937970f3fc24386f313a4c97b44e34'],
-    }),
     ('mypy_extensions', '0.4.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mypy_extensions'],
         'checksums': ['37e0e956f41369209a3d5f34580150bcacfabaa57b33a15c0b25f4b5725e0812'],
