@@ -22,7 +22,7 @@ versionsuffix = '-%s-%s' % (java, javaver)
 
 dependencies = [(java, javaver)]
 
-modloadmsg = "To execute Exomiser run: java -jar $EBROOTEXOMISER/exomiser-cli-11.0.0.jar\n"
+modloadmsg = "To execute Exomiser run: java -jar $EBROOTEXOMISERMINCLI/exomiser-cli-11.0.0.jar --spring.config.location=$EBROOTEXOMISERMINCLI/application.properties --help\n"
 
 sanity_check_paths = {
         'files' : ['README.md'],
