@@ -665,7 +665,7 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.shutil_which'],
         'checksums': ['fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133'],
     }),
-    ('terminado', '0.7.0', {
+    ('terminado', '0.7', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/terminado'],
         'checksums': ['8c73bb515ca2dca9d5958877cfe0b418a2c59b0b7eef4a79a0c3e990eab1a318'],
     }),
