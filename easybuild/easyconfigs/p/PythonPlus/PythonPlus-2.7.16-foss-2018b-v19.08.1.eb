@@ -402,6 +402,11 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/testpath'],
         'checksums': ['b694b3d9288dbd81685c5d2e7140b81365d46c29f5db4bc659de5aa6b98780f8'],
     }),
+    ('dbus-python', '1.2.8', {
+        'modulename': 'dbus',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/d/dbus-python'],
+        'checksums': ['abf12bbb765e300bf8e2a1b2f32f85949eab06998dbda127952c31cb63957b6f'],
+    }),
     ('SecretStorage', '2.3.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/S/SecretStorage'],
         'checksums': ['3af65c87765323e6f64c83575b05393f9e003431959c9395d1791d51497f29b6'],
@@ -430,9 +435,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/m/mock'],
         'checksums': ['83657d894c90d5681d62155c82bda9c1187827525880eda8ff5df4ec813437c3'],
     }),
-    ('pytest', '5.0.1', {
+    ('pytest', '4.6.5', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest'],
-        'checksums': ['6ef6d06de77ce2961156013e9dff62f1b2688aa04d0dc244299fe7d67e09370d'],
+        'checksums': ['8fc39199bdda3d9d025d3b1f4eb99a192c20828030ea7c9a0d2840721de7d347'],
     }),
     ('pytest-timeout', '1.3.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-timeout'],
@@ -581,16 +586,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/psutil'],
         'checksums': ['863a85c1c0a5103a12c05a35e59d336e1d665747e531256e061213e2e90f63f3'],
     }),
-    ('sphinxcontrib-devhelp', '1.0.1', {
-        'modulename': 'sphinxcontrib.devhelp',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-devhelp'],
-        'checksums': ['6c64b077937330a9128a4da74586e8c2130262f014689b4b89e2d08ee7294a34'],
-    }),
-    ('sphinxcontrib-jsmath', '1.0.1', {
-        'modulename': 'sphinxcontrib.jsmath',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-jsmath'],
-        'checksums': ['a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8'],
-    }),
     ('Genshi', '0.7.3', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/G/Genshi'],
         'checksums': ['7933c95151d7dd2124a2b4c8dd85bb6aec881ca17c0556da0b40e56434b313a0'],
@@ -628,21 +623,6 @@ exts_list = [
     ('html5lib', '1.0.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/h/html5lib'],
         'checksums': ['66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736'],
-    }),
-    ('sphinxcontrib-htmlhelp', '1.0.2', {
-        'modulename': 'sphinxcontrib.htmlhelp',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-htmlhelp'],
-        'checksums': ['4670f99f8951bd78cd4ad2ab962f798f5618b17675c35c5ac3b2132a14ea8422'],
-    }),
-    ('sphinxcontrib-serializinghtml', '1.1.3', {
-        'modulename': 'sphinxcontrib.serializinghtml',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-serializinghtml'],
-        'checksums': ['c0efb33f8052c04fd7a26c0a07f1678e8512e0faec19f4aa8f2473a8b81d5227'],
-    }),
-    ('sphinxcontrib-qthelp', '1.0.2', {
-        'modulename': 'sphinxcontrib.qthelp',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/s/sphinxcontrib-qthelp'],
-        'checksums': ['79465ce11ae5694ff165becda529a600c754f4bc459778778c7017374d4d406f'],
     }),
     ('snowballstemmer', '1.9.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/s/snowballstemmer'],
@@ -685,9 +665,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/b/backports.shutil_which'],
         'checksums': ['fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133'],
     }),
-    ('terminado', '0.8.2', {
+    ('terminado', '0.7.0', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/terminado'],
-        'checksums': ['de08e141f83c3a0798b050ecb097ab6259c3f0331b2f7b7750c9075ced2c20c2'],
+        'checksums': ['8c73bb515ca2dca9d5958877cfe0b418a2c59b0b7eef4a79a0c3e990eab1a318'],
     }),
     ('prometheus_client', '0.7.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/prometheus_client'],
@@ -734,9 +714,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/c/click'],
         'checksums': ['5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7'],
     }),
-    ('livereload', '2.6.1', {
+    ('livereload', '2.5.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/l/livereload'],
-        'checksums': ['89254f78d7529d7ea0a3417d224c34287ebfe266b05e67e51facaf82c27f0f66'],
+        'checksums': ['dd4469a8f5a6833576e9f5433f1439c306de15dbbfeceabd32479b1123380fa5'],
     }),
     ('PyYAML', '5.1.2', {
         'modulename': 'yaml',
