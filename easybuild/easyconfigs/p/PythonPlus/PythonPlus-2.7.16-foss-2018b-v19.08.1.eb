@@ -520,9 +520,9 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/J/Jinja2'],
         'checksums': ['065c4f02ebe7f7cf559e49ee5a95fb800a9e4528727aec6f24402a5374c65013'],
     }),
-    ('tornado', '6.0.3', {
+    ('tornado', '5.1.1', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/tornado'],
-        'checksums': ['c845db36ba616912074c5b1ee897f8e0124df269468f25e4fe21fe72f6edd7a9'],
+        'checksums': ['4e5158d97583502a7e2739951553cbd88a72076f152b4b11b64b9a10c4c49409'],
     }),
     ('pyzmq', '18.1.0', {
         'modulename': 'zmq',
