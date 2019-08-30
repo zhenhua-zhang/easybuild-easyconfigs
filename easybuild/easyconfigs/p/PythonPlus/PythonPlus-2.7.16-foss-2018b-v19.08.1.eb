@@ -402,15 +402,6 @@ exts_list = [
         'source_urls': ['https://files.pythonhosted.org/packages/source/t/testpath'],
         'checksums': ['b694b3d9288dbd81685c5d2e7140b81365d46c29f5db4bc659de5aa6b98780f8'],
     }),
-    ('dbus-python', '1.2.8', {
-        'modulename': 'dbus',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/d/dbus-python'],
-        'checksums': ['abf12bbb765e300bf8e2a1b2f32f85949eab06998dbda127952c31cb63957b6f'],
-    }),
-    ('SecretStorage', '2.3.1', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/S/SecretStorage'],
-        'checksums': ['3af65c87765323e6f64c83575b05393f9e003431959c9395d1791d51497f29b6'],
-    }),
     ('pytest-black', '0.3.7', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytest-black'],
         'checksums': ['75bbeccfe23442a190164c0bf202d7498df25451fa4177b781cee20183e7fc0d'],
