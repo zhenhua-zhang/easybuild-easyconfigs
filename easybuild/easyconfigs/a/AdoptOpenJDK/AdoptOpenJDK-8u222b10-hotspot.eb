@@ -1,0 +1,19 @@
+easyblock = 'EB_Java'
+
+name = 'AdoptOpenJDK'
+version = '8u222b10'
+major_java_version = '8'
+versionsuffix = '-hotspot' # Indicate this version uses the Hotspot JVM version as opposed to the alternative OpenJ9 JVM.
+
+homepage = 'https://adoptopenjdk.net/'
+description = """AdoptOpenJDK produces prebuilt binaries from the OpenJDK source code.
+All AdoptOpenJDK binaries and scripts are Open Source licensed and available for free."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+
+source_urls = ['https://github.com/%s/openjdk%s-binaries/releases/download/jdk%s/' % (name, major_java_version, version.replace('b', '-b'))]
+sources = ['OpenJDK8U-jdk_x64_linux_hotspot_%(version)s.tar.gz']
+
+checksums = ['37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77']
+
+moduleclass = 'lang'

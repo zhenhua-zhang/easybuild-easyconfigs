@@ -1,0 +1,19 @@
+name = 'Perl'
+version = '5.30.0'
+versionsuffix = '-bare'
+
+homepage = 'https://www.perl.org/'
+description = """Larry Wall's Practical Extraction and Report Language"""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'pic': True}
+
+source_urls = ['http://www.cpan.org/src/%(version_major)s.0']
+sources = [SOURCELOWER_TAR_GZ]
+checksums = ['851213c754d98ccff042caa40ba7a796b2cee88c5325f121be5cbb61bbf975f2']
+
+builddependencies = [('binutils', '2.30')]
+
+exts_list = [] # bare -> no extensions.
+
+moduleclass = 'lang'

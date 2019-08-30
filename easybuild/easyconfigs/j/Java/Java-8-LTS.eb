@@ -1,0 +1,15 @@
+easyblock = 'Bundle'
+
+name = 'Java'
+version = '8'
+versionsuffix = '-LTS'
+
+homepage = 'http://java.com/'
+description = """Java Platform, Standard Edition (Java SE) lets you develop and deploy
+ Java applications on desktops and servers."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+
+dependencies = [('AdoptOpenJDK', '%(version)su222b10', '-hotspot')]
+
+moduleclass = 'lang'

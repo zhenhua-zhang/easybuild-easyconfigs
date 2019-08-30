@@ -1,0 +1,30 @@
+name = 'sambamba'
+version = '0.7.0'
+namelower = name.lower()
+
+homepage = 'http://lomereiter.github.io/sambamba/'
+description = """Sambamba is a high performance modern robust and fast tool (and library), 
+written in the D programming language, for working with SAM and BAM files. 
+Current parallelised functionality is an important subset of samtools functionality, 
+including view, index, sort, markdup, and depth."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+easyblock = 'BinariesTarball'
+
+#
+# Example URL:
+# https://github.com/lomereiter/sambamba/releases/download/v0.6.6/sambamba_v0.6.6_linux.tar.bz2
+# https://github.com/biod/sambamba/releases/download/v0.7.0/sambamba-0.7.0-linux-static.gz
+#
+source_urls = [('https://github.com/biod/%s/releases/download/v%s/' % (namelower, version))]
+sources = [('%s-%s-linux-static.gz' % (namelower, version))]
+checksums = ['5a739ea53ef296639825831e110e359eab6ff421e108c7e3f4df0d67859e3024']
+
+postinstallcmds = ['cd %(installdir)s/bin/ && ln -s sambamba-%(version)s-linux-static  sambamba']
+
+sanity_check_paths = {
+    'files': ['bin/sambamba-%(version)s-linux-static', 'bin/sambamba'],
+    'dirs': []
+}
+
+moduleclass = 'bio'

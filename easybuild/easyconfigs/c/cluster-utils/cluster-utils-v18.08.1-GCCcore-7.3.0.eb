@@ -4,7 +4,7 @@ version = 'v18.08.1'
 homepage = 'https://github.com/molgenis/cluster-utils/'
 description = """Utilities for cluster users."""
 
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 easyblock = 'CmdCp'
 
 #
@@ -18,18 +18,17 @@ checksums = ['884960da6c1322c32572a7c5b97ce693683c384142b5ea88fe0a7dbd53dc9e1b']
 #
 # Deps.
 #
-# * Technically htop is not a dependency, but we'd like to have it as part of the cluster-utils module.
-# * Technically nano is not a dependency, but we'd like to have it as part of the cluster-utils module.
-#
 dependencies = [
-    ('htop', '2.2.0', '-pbp'),
-    ('nano', '4.2', ''),
+    ('htop', '2.2.0', '-pbp'),         # Technically not a dependency, but we'd like to have it as part of the cluster-utils module.
+    ('nano', '4.2'),                   # Technically not a dependency, but we'd like to have it as part of the cluster-utils module.
+    ('ncurses', '6.1'),                # For ctop.
+    ('Curses', '1.36', '-Perl-5.30.0') # For ctop.
 ]
 
 keepsymlinks = True
 
 #
-# Install 'apps' and README..
+# Install 'apps' and README.md.
 #
 files_to_copy = [
     'README.md',

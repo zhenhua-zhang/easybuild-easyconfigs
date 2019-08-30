@@ -1,0 +1,48 @@
+easyblock = 'PythonBundle'
+
+name = 'VCFped'
+version = '20180527_d1bbdf5'
+pyver = '2.7.16'
+versionsuffix = "-Python-%s" % (pyver)
+
+homepage = 'https://github.com/magnusdv/VCFped'
+description = """Quickly and confidently identify trios and close pairwise relationships in multisample VCF files."""
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+dependencies = [
+    ('Python', pyver, '-bare'),
+    ('PythonPlus', pyver, '-v19.08.1'),
+]
+
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
+exts_default_options = {
+    'download_dep_fail': True,
+    'use_pip': True,
+}
+exts_list = [
+    ('tabulate', '0.7.7', {
+        'source_urls': ['https://pypi.python.org/packages/source/t/tabulate'],
+        'checksums': ['83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6'],
+    }),
+    ('VCFped', version, {
+        'modulename': 'vcfped',
+        'source_urls': ['https://github.com/magnusdv/VCFped/archive/'],
+        'source_tmpl': 'd1bbdf540cf47e4050b9090f99f5910670469229.zip',
+        'checksums': ['e7d1be986300e0c83d812eae970129852181ba4970a8c9e8ca4f864c4580e78a'],
+    }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/vcfped'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = ['vcfped -h']
+
+moduleclass = 'bio'
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}

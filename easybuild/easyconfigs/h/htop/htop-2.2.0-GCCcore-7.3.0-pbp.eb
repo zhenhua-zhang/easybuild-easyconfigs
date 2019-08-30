@@ -6,7 +6,7 @@ homepage = 'https://github.com/hishamhm/htop'
 description = """An interactive, ncursus-based process viewer by Hisham Muhammad."""
 
 easyblock = 'ConfigureMake'
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 #
 # Complete example URL: 
@@ -25,12 +25,12 @@ checksums = [
     'fdc6902ede034bee2a9ba097c355acf4a308d5365be660a1436863c43998ac6e',  # htop-2.2.0.patch
 ]
 
-dependencies = [
-    ('ncurses', '6.1'),
+builddependencies = [
+    ('Autotools', '20180311')
 ]
 
-builddependencies = [
-    ('Autotools', '20180311', '', ('GCCcore', '7.3.0'))
+dependencies = [
+    ('ncurses', '6.1'),
 ]
 
 #

@@ -1,0 +1,32 @@
+name = 'exomiser-cli'
+version = '11.0.0'
+
+homepage = 'https://github.com/exomiser/Exomiser/'
+description = """The Exomiser - A Tool to Annotate and Prioritize Exome Variants"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'PackedBinary'
+
+source_urls = [('https://data.monarchinitiative.org/exomiser/latest/')]
+sources = [('%s-%s-distribution.zip' % (name,version))]
+patches = ['%(name)s-%(version)s.patch']
+
+checksums = [
+        '2115d05ae51af792fab212efe9f13a60', #exomiser-cli-11.0.0-distribution.zip
+        'fec845028d2ec0d843eadc6f40ab605f', #exomiser-cli-11.0.0.patch
+]
+
+java = 'Java'
+javaver = '11-LTS'
+versionsuffix = '-%s-%s' % (java, javaver)
+
+dependencies = [(java, javaver)]
+
+modloadmsg = "To execute Exomiser run: java -Djava.io.tmpdir="/path/to/my/tmp/folder" -XX:ParallelGCThreads=4 -jar $EBROOTEXOMISERMINCLI/exomiser-cli-11.0.0.jar --spring.config.location=$EBROOTEXOMISERMINCLI/application.properties --help\n"
+
+sanity_check_paths = {
+        'files' : ['README.md'],
+        'dirs' : ['examples','lib']
+}
+
+moduleclass = 'bio'
