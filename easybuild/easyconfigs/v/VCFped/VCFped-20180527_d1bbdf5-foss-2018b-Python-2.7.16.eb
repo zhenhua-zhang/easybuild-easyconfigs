@@ -3,7 +3,6 @@ easyblock = 'PythonBundle'
 name = 'VCFped'
 version = '20180527_d1bbdf5'
 pyver = '2.7.16'
-pyshortver = '.'.join(pyver.split('.')[:2])
 versionsuffix = "-Python-%s" % (pyver)
 
 homepage = 'https://github.com/magnusdv/VCFped'
@@ -12,6 +11,7 @@ description = """Quickly and confidently identify trios and close pairwise relat
 toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
+    ('Python', pyver, '-bare'),
     ('PythonPlus', pyver, '-v19.08.1'),
 ]
 
