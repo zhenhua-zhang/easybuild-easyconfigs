@@ -33,7 +33,7 @@ dependencies = [
     ('ngs-utils', '19.03.3'),
     ('pigz', '2.4'),
     ('picard', '2.20.5', '-Java-%s' % (javaver), ('dummy', '')),
-    ('sambamba', 'v0.7.0', '', ('dummy', '')),
+    ('sambamba', '0.7.0', '', ('dummy', '')),
     ('seqtk', '1.3'),
     ('SAMtools', '1.9'),
     ('HTSlib', '1.9'),
