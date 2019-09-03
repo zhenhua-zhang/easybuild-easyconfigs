@@ -20,6 +20,7 @@ builddependencies = [
 
 dependencies = [
     ('zlib', '1.2.11'),
+    ('bzip2', '1.0.6'),
 ]
 
 buildopts = 'CXX="$CXX"'
