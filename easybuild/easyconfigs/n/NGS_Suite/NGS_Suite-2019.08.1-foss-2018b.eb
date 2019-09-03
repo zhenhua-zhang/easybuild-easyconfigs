@@ -44,7 +44,7 @@ dependencies = [
     ('exomiser-cli', '11.0.0', '-Java-%s' % (javaver)),
     ('Java', javaver, '', ('dummy', '')),
     ('PerlPlus', perlver, '-v19.08.1'),
-    ('PythonPlus', pyver, '-v19.08.1'),
+    ('PythonPlus', py3ver, '-v19.08.1'),
     ('RPlus', rver, '-v19.07.1'),
 ]
 
