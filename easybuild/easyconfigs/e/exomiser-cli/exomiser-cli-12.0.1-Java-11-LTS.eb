@@ -1,5 +1,5 @@
 name = 'exomiser-cli'
-version = '11.0.0'
+version = '12.0.1'
 
 homepage = 'https://github.com/exomiser/Exomiser/'
 description = """The Exomiser - A Tool to Annotate and Prioritize Exome Variants"""
@@ -9,11 +9,9 @@ easyblock = 'PackedBinary'
 
 source_urls = [('https://data.monarchinitiative.org/exomiser/latest/')]
 sources = [('%s-%s-distribution.zip' % (name,version))]
-patches = ['%(name)s-%(version)s.patch']
 
 checksums = [
-        'a3f0b663a92b5a864adac1e13b34e12124628ae54ef78038aea0614baf795c11', #exomiser-cli-11.0.0-distribution.zip
-        'a74ada0d4f2578efffdfbe846edcf83122eddcd23c92d29c8a7b345d6639ad23', #exomiser-cli-11.0.0.patch
+        'e20c06d205d42701c8e3c33dbedf6cd4c29e90773a2b9e043bc9da280fa4a69a', #exomiser-cli-12.0.1-distribution.zip
 ]
 
 java = 'Java'
@@ -30,7 +28,7 @@ sanity_check_paths = {
 moduleclass = 'bio'
 modloadmsg = """
 #
-# To run Exomiser execute something like this:
+# To run Exomiser execute:
 #
 java -Djava.io.tmpdir="/path/to/my/tmp/folder" \\
      -XX:ParallelGCThreads=4 \\
