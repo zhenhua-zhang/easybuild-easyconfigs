@@ -28,7 +28,7 @@ sanity_check_paths = {
 moduleclass = 'bio'
 modloadmsg = """
 #
-# To run Exomiser execute:
+# To run Exomiser execute something like this:
 #
 java -Djava.io.tmpdir="/path/to/my/tmp/folder" \\
      -XX:ParallelGCThreads=4 \\
