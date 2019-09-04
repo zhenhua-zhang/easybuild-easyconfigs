@@ -16,7 +16,7 @@ checksums = ['fe0049728b946b58b94cc6db89b34e2d050c62325d16316a534d2bedd78cd5e7']
 
 files_to_copy = [
     (['%(name)s'], 'bin/'),
-    (['lib%(name)s.a', 'lib%(name)s.so'], 'lib/'),
+    (['lib%(name)s.a', 'lib%(name)s.so*'], 'lib/'),
     (['man/%(name)s.1'], 'share/man/man1/'),
     'include',
     'argon2-specs.pdf',
