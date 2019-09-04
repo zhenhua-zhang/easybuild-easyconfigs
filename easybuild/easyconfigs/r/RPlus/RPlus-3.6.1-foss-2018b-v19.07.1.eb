@@ -105,7 +105,7 @@ exts_list = [
     ('nlme', '3.1-140', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': ['http://cran.r-project.org/src/contrib/', 'http://cran.r-project.org/src/contrib/Archive/%(name)s'],
-        'checksums': ['1da12f04052549b7673da2ba7af9a20184b186b749b521801a097447862c3d4d'],
+        'checksums': ['b15046fb0b3e3c689a3b565461b7bd6e74b46f0c7cce7444b43f1bc5400dc409'],
     }),
     ('Matrix', '1.2-17', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
