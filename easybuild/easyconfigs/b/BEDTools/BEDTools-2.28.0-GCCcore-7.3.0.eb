@@ -15,11 +15,12 @@ sources = ['bedtools-%(version)s.tar.gz']
 checksums = ['15af6d10ed28fb3113cd3edce742fd4275f224bc06ecb98d70d869940220bc32']
 
 builddependencies = [
-    ('binutils', '2.28'),
+    ('binutils', '2.30'),
 ]
 
 dependencies = [
     ('zlib', '1.2.11'),
+    ('bzip2', '1.0.6'),
 ]
 
 buildopts = 'CXX="$CXX"'
