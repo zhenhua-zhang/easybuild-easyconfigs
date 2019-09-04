@@ -12,7 +12,7 @@ toolchain = {'name': 'foss', 'version': '2015b'}
 
 source_urls = ['https://github.com/P-H-C/phc-winner-argon2/archive/']
 sources = ['%(version)s.tar.gz']
-checksums = ['bd3476cb8eac9d521a4e0e04d653f5a8']
+checksums = ['fe0049728b946b58b94cc6db89b34e2d050c62325d16316a534d2bedd78cd5e7']
 
 files_to_copy = [
     (['%(name)s'], 'bin/'),
