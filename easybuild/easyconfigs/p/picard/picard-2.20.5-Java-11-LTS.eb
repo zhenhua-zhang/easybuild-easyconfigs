@@ -9,7 +9,10 @@ description = """A set of tools (in Java) for working with next generation seque
 toolchain = {'name': 'dummy', 'version': ''}
 
 source_urls = ['https://github.com/broadinstitute/%(name)s/releases/download/%(version)s/']
-sources = ['%(name)s.jar']
+sources = [{
+    'filename': '%(name)s-%(version)s.jar',
+    'download_filename': '%(name)s.jar',
+}]
 checksums = ['2040051927535a41540df18a80ae1beeaf05d0bd713a2b8ab1172a72eea6ff80']
 
 java = 'Java'

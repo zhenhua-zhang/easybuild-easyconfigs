@@ -105,7 +105,7 @@ exts_list = [
     ('nlme', '3.1-140', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': ['http://cran.r-project.org/src/contrib/', 'http://cran.r-project.org/src/contrib/Archive/%(name)s'],
-        'checksums': ['1da12f04052549b7673da2ba7af9a20184b186b749b521801a097447862c3d4d'],
+        'checksums': ['b15046fb0b3e3c689a3b565461b7bd6e74b46f0c7cce7444b43f1bc5400dc409'],
     }),
     ('Matrix', '1.2-17', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
@@ -180,7 +180,7 @@ exts_list = [
     ('foreign', '0.8-71', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': ['http://cran.r-project.org/src/contrib/', 'http://cran.r-project.org/src/contrib/Archive/%(name)s'],
-        'checksums': ['3bd2392fbcd9dd4f385ac1418a5e454b9769e6414a21fbb5ae1e7ce6072760d7'],
+        'checksums': ['2f6d387f25bf4796ff00b6c678acacfca13292fb3ec2c0409161940bf0d8bef1'],
     }),
     ('maptools', '0.9-5', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
