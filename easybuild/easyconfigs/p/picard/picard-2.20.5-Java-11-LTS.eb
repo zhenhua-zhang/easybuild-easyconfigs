@@ -23,6 +23,11 @@ dependencies = [
     (java, javaver, '', True),
 ]
 
+postinstallcmds = [
+    ('chmod -R g+rwX,o+rX,o-w %(installdir)s/*'),
+    ('cd %(installdir)s/ && ln -s %(name)s-%(version)s.jar  %(name)s.jar'),
+]
+
 sanity_check_paths = {
     'files': ['%(name)s.jar'],
     'dirs': [],
