@@ -22,7 +22,7 @@ files_to_copy = ['%(name)s-%(version)s_linux64']
 
 postinstallcmds = [
     ('chmod -R g+rwX,o+rX,o-w %(installdir)s/*'),
-    ('cd %(installdir)s/ && ln -s %(name)s_linux64  %(name)s'),
+    ('cd %(installdir)s/ && ln -s %(name)s-%(version)s_linux64  %(name)s'),
 ]
 
 sanity_check_paths = {
