@@ -16,14 +16,14 @@ checksums = [
 ]
 
 files_to_copy = [
-    (['plink', 'prettify'], 'bin'),
-    (['toy.map', 'toy.ped'], 'example_data'),
+    (['plink', 'prettify'], 'bin/'),
+    (['toy.map', 'toy.ped'], 'example_data/'),
     'LICENSE',
 ]
 
 sanity_check_paths = {
     'files': ['bin/plink', 'bin/prettify', 'example_data/toy.map', 'example_data/toy.ped', 'LICENSE'],
-    'dirs': [],
+    'dirs': ['bin', 'example_data'],
 }
 
 moduleclass = 'bio'
