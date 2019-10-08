@@ -1,4 +1,4 @@
-easyblock = 'BinariesTarball'
+easyblock = 'CmdCp'
 
 name = 'PLINK'
 version = '1.9-beta6'
@@ -20,6 +20,12 @@ files_to_copy = [
     (['toy.map', 'toy.ped'], 'example_data/'),
     'LICENSE',
 ]
+
+#
+# We don't really need a command to install, 
+# but as we have to have one in order to recycle the CmdCp easyblock... just ls.
+#
+cmds_map = [('.*', "ls -ahl %(source)s")]
 
 sanity_check_paths = {
     'files': ['bin/plink', 'bin/prettify', 'example_data/toy.map', 'example_data/toy.ped', 'LICENSE'],
