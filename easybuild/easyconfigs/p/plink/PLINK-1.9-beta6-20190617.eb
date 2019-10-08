@@ -1,4 +1,4 @@
-easyblock = 'PackedBinary'
+easyblock = 'BinariesTarball'
 
 name = 'PLINK'
 version = '1.9-beta6'
