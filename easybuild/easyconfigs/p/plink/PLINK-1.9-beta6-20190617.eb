@@ -1,0 +1,29 @@
+easyblock = 'PackedBinary'
+
+name = 'PLINK'
+version = '1.9-beta6'
+version_suffix = '-20190617'
+
+homepage = 'https://www.cog-genomics.org/plink/1.9/'
+description = 'Whole-genome association analysis toolset.'
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+source_urls = [('http://s3.amazonaws.com/plink1-assets/')]
+sources = [('%s_linux_x86_64%s.zip' % (namelower, version_suffix.replace('-', '_')))]
+checksums = [
+    'f8438656996c55a5edd95c223cce96277de6efaab1b9b1d457bfee0c272058d8', #  plink_linux_x86_64_20190617.zip
+]
+
+files_to_copy = [
+    (['plink', 'prettify'], 'bin'),
+    (['toy.map', 'toy.ped'], 'example_data'),
+    'LICENSE',
+]
+
+sanity_check_paths = {
+    'files': ['bin/plink', 'bin/prettify', 'example_data/toy.map', 'example_data/toy.ped', 'LICENSE'],
+    'dirs': [],
+}
+
+moduleclass = 'bio'
