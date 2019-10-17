@@ -1,0 +1,33 @@
+easyblock = 'CmdCp'
+
+name = 'PLINK'
+version = '2.0-alpha2'
+versionsuffix = '-20191006'
+
+homepage = 'https://www.cog-genomics.org/plink/2.0/'
+description = 'Whole-genome association analysis toolset.'
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+source_urls = [('http://s3.amazonaws.com/plink2-assets/')]
+sources = [('%s2_linux_avx2%s.zip' % (name.lower(), versionsuffix.replace('-', '_')))]
+checksums = [
+    '1a208e90fba432ef77f487900cf7eedbcd68fa6b4285b84a13362b1556b05af2', #  plink2_linux_avx2_20191006.zip
+]
+
+files_to_copy = [
+    (['plink2'], 'bin/'),
+]
+
+#
+# We don't really need a command to install, 
+# but as we have to have one in order to recycle the CmdCp easyblock... just ls.
+#
+cmds_map = [('.*', "ls -ahl %(source)s")]
+
+sanity_check_paths = {
+    'files': ['bin/plink2', ],
+    'dirs': ['bin'],
+}
+
+moduleclass = 'bio'
