@@ -19,7 +19,7 @@ sources = [{
     'download_filename': 'auth?package=GATK-archive&version=3.8-1-0-gf15c1c3ef',
     'filename': '%(name)s-%(version)s.tar.bz2',
 }]
-checksums = ['d1017b851f0cc6442b75ac88dd438e58203fa3ef1d1c38eb280071ae3803b9f1']
+checksums = ['a0829534d2d0ca3ebfbd3b524a9b50427ff238e0db400d6e9e479242d98cbe5c']
 
 dependencies = [
     ('Java', '8', '-LTS'),
