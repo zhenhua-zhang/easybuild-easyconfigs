@@ -1,0 +1,26 @@
+easyblock = 'PythonPackage'
+
+name = 'cutadapt'
+version = '2.6'
+versionsuffix = '-Python-%(pyver)s-bare'
+
+homepage = 'http://opensource.scilifelab.se/projects/cutadapt/'
+description = """Cutadapt finds and removes adapter sequences, primers, poly-A tails and
+ other types of unwanted sequence from your high-throughput sequencing reads."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = [PYPI_SOURCE]
+sources = [SOURCELOWER_TAR_GZ]
+checksums = ['8086cf56aad815c0f8379cfeb75ac12fe54a36c3f07f2b26dddef0c172029cfc']
+
+dependencies = [
+    ('Python', '3.7.4', '-bare'),
+]
+
+sanity_check_paths = {
+    'files': ['bin/cutadapt'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'bio'
