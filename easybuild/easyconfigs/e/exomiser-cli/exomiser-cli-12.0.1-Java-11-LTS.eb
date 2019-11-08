@@ -1,0 +1,41 @@
+name = 'exomiser-cli'
+version = '12.0.1'
+
+homepage = 'https://github.com/exomiser/Exomiser/'
+description = """The Exomiser - A Tool to Annotate and Prioritize Exome Variants"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'PackedBinary'
+
+source_urls = [('https://github.com/exomiser/Exomiser/releases/download/%(version)s/')]
+sources = [('%s-%s-distribution.zip' % (name,version))]
+
+checksums = [
+        'e20c06d205d42701c8e3c33dbedf6cd4c29e90773a2b9e043bc9da280fa4a69a', #exomiser-cli-12.0.1-distribution.zip
+]
+
+java = 'Java'
+javaver = '11-LTS'
+versionsuffix = '-%s-%s' % (java, javaver)
+
+dependencies = [(java, javaver)]
+
+sanity_check_paths = {
+        'files' : ['README.md'],
+        'dirs' : ['examples','lib']
+}
+
+moduleclass = 'bio'
+modloadmsg = """
+#
+# To run Exomiser execute something like this:
+#
+java -Djava.io.tmpdir="/path/to/my/tmp/folder" \\
+     -XX:ParallelGCThreads=4 \\
+     -jar "${EBROOTEXOMISERMINCLI}/exomiser-cli-%(version)s.jar" \\
+     --spring.config.location="/path/to/my/application.properties" \\
+#
+# For an example application.properties see: ${EBROOTEXOMISERMINCLI}/application.properties
+# Reference data sets are deployed in:       /apps/data/
+#
+\n"""

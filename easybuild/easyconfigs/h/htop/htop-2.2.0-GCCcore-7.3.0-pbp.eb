@@ -1,0 +1,47 @@
+name = 'htop'
+version = '2.2.0'
+versionsuffix = '-pbp' # Patched By Pieter
+
+homepage = 'https://github.com/hishamhm/htop'
+description = """An interactive, ncursus-based process viewer by Hisham Muhammad."""
+
+easyblock = 'ConfigureMake'
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+#
+# Complete example URL: 
+# https://github.com/hishamhm/htop/archive/2.2.0.tar.gz
+##
+# Apply patch for:
+#  * Improved formatting of CPU, Mem and User fields.
+#  * Add missing tinfo dependency in configure.ac
+#
+source_urls = ['https://github.com/hishamhm/%(name)s/archive/']
+sources = ['%(version)s.tar.gz']
+patches = ['%(name)s-%(version)s%(versionsuffix)s.patch']
+
+checksums = [
+    'fb23275090ee5fb19266384c39c69519c8b3844b8f6444730094949c621197c0',  # htop-2.2.0.tar.gz
+    'fdc6902ede034bee2a9ba097c355acf4a308d5365be660a1436863c43998ac6e',  # htop-2.2.0.patch
+]
+
+builddependencies = [
+    ('Autotools', '20180311')
+]
+
+dependencies = [
+    ('ncurses', '6.1'),
+]
+
+#
+# The source distro does not contain a configure script out of the box:
+# Execute autogen.sh, which calls various tools from the Autotools module to create the configure script.
+#
+preconfigopts = './autogen.sh && chmod a+x configure && '
+
+sanity_check_paths = {
+    'files': ['bin/htop', 'share/man/man1/htop.1'],
+    'dirs': [''],
+}
+
+moduleclass = 'tools'

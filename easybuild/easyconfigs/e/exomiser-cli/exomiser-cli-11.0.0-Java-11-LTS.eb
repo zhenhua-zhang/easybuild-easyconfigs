@@ -1,0 +1,43 @@
+name = 'exomiser-cli'
+version = '11.0.0'
+
+homepage = 'https://github.com/exomiser/Exomiser/'
+description = """The Exomiser - A Tool to Annotate and Prioritize Exome Variants"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'PackedBinary'
+
+source_urls = [('https://data.monarchinitiative.org/exomiser/latest/')]
+sources = [('%s-%s-distribution.zip' % (name,version))]
+patches = ['%(name)s-%(version)s.patch']
+
+checksums = [
+        'a3f0b663a92b5a864adac1e13b34e12124628ae54ef78038aea0614baf795c11', #exomiser-cli-11.0.0-distribution.zip
+        'a74ada0d4f2578efffdfbe846edcf83122eddcd23c92d29c8a7b345d6639ad23', #exomiser-cli-11.0.0.patch
+]
+
+java = 'Java'
+javaver = '11-LTS'
+versionsuffix = '-%s-%s' % (java, javaver)
+
+dependencies = [(java, javaver)]
+
+sanity_check_paths = {
+        'files' : ['README.md'],
+        'dirs' : ['examples','lib']
+}
+
+moduleclass = 'bio'
+modloadmsg = """
+#
+# To run Exomiser execute something like this:
+#
+java -Djava.io.tmpdir="/path/to/my/tmp/folder" \\
+     -XX:ParallelGCThreads=4 \\
+     -jar "${EBROOTEXOMISERMINCLI}/exomiser-cli-%(version)s.jar" \\
+     --spring.config.location="/path/to/my/application.properties" \\
+#
+# For an example application.properties see: ${EBROOTEXOMISERMINCLI}/application.properties
+# Reference data sets are deployed in:       /apps/data/
+#
+\n"""

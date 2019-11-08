@@ -1,0 +1,39 @@
+easyblock = 'ConfigureMake'
+
+name = 'UDUNITS'
+version = '2.2.27.6'
+
+homepage = 'http://www.unidata.ucar.edu/software/udunits/'
+description = """UDUNITS supports conversion of unit specifications between formatted and binary forms,
+ arithmetic manipulation of units, and conversion of values between compatible scales of measurement."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'pic': True}
+
+source_urls = ['https://github.com/Unidata/%(name)s-2/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = ['74fd7fb3764ce2821870fa93e66671b7069a0c971513bf1904c6b053a4a55ed1']
+
+builddependencies = [
+    ('binutils', '2.30'),
+    ('Autotools', '20180311'),
+]
+
+dependencies = [('expat', '2.2.7')]
+
+#
+# Unfortunately there is no proper configure option to disable building info pages 
+# and the build will fail if the texinfo command is not installed.
+# Therefore we use a silly hack for the generated Makefiles: to silly to write a patch.
+# 
+preconfigopts  = "perl -pi -e 's|info_TEXINFOS|#info_TEXINFOS|' lib/Makefile.am prog/Makefile.am Makefile.am && "
+preconfigopts += "autoreconf -ivf  && "
+parallel = 1
+
+sanity_check_paths = {
+    'files': ['bin/udunits2', 'include/converter.h', 'include/udunits2.h', 'include/udunits.h',
+              'lib/libudunits2.a', 'lib/libudunits2.%s' % SHLIB_EXT],
+    'dirs': ['share'],
+}
+
+moduleclass = 'phys'

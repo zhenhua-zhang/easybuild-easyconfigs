@@ -1,0 +1,31 @@
+easyblock = 'PackedBinary'
+
+name = 'CoNVaDING'
+version = '1.2.1'
+
+homepage = 'https://github.com/molgenis/CoNVaDING/'
+description = """CNV detection in targeted gene panels."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = [('https://github.com/molgenis/CoNVaDING/archive/')]
+sources = [('%(version)s.tar.gz')]
+checksums = ['d86943da5ea0127a9be115944bc86506c1afe82d5a9d4f16a23b64cc31bb523a']
+
+dependencies = [ 
+    ('SAMtools', '1.9'),
+    ('PerlPlus', '5.30.0', '-v19.08.1')
+]
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/*.pl', 
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*'
+]
+
+sanity_check_paths = {
+    'files': ['CoNVaDING.pl'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': ['']}

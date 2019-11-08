@@ -17,7 +17,7 @@ dependencies = [
     ('Perl', version, '-bare'),
     ('libgd', '2.1.1'),
     ('LibTIFF', '4.0.4'),
-    ('ncurses', '5.9'),
+    ('ncurses', '6.0'),
 ]
 
 exts_defaultclass = 'PerlModule'

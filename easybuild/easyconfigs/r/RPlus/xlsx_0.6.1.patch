@@ -1,0 +1,12 @@
+diff -W 308 -ru xlsx.original/R/utilities.R xlsx.patched/R/utilities.R
+--- xlsx.original/R/utilities.R	2018-06-08 03:39:57.000000000 +0200
++++ xlsx.patched/R/utilities.R	2019-08-05 15:29:26.000000000 +0200
+@@ -43,7 +43,7 @@
+   
+   # what's your java  version?  Need > 1.5.0.
+   jversion <- .jcall('java.lang.System','S','getProperty','java.version')
+-  if (jversion < "1.5.0")
++  if (utils::compareVersion(jversion,"1.5.0")<0)
+     stop(paste("Your java version is ", jversion,
+                  ".  Need 1.5.0 or higher.", sep=""))
+   

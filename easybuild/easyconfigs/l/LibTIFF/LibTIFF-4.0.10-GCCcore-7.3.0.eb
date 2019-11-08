@@ -1,0 +1,27 @@
+easyblock = 'ConfigureMake'
+
+name = 'LibTIFF'
+version = '4.0.10'
+
+homepage = 'http://www.libtiff.org'
+description = "Library and tools for reading and writing TIFF image files."
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = [
+    'http://download.osgeo.org/libtiff/',
+    'ftp://ftp.remotesensing.org/pub/libtiff/',
+]
+sources = ['tiff-%(version)s.tar.gz']
+checksums = ['2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4']
+
+builddependencies = [('binutils', '2.30')]
+
+configopts = " --enable-ld-version-script "
+
+sanity_check_paths = {
+    'files': ['bin/tiffinfo'],
+    'dirs': [],
+}
+
+moduleclass = 'lib'
