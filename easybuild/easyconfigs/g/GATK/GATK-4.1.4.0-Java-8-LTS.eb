@@ -1,0 +1,35 @@
+easyblock = 'Tarball'
+
+name = 'GATK'
+version = '4.1.4.0'
+versionsuffix = '-Java-%(javaver)s-LTS'
+
+homepage = 'http://www.broadinstitute.org/gatk/'
+description = """The Genome Analysis Toolkit or GATK is a software package
+developed at the Broad Institute to analyse next-generation resequencing
+data. The toolkit offers a wide variety of tools, with a primary focus on
+variant discovery and genotyping as well as strong emphasis on data quality
+assurance. Its robust architecture, powerful processing engine and
+high-performance computing features make it capable of taking on projects
+of any size."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+source_urls = ['https://github.com/broadinstitute/gatk/releases/download/%(version)s/']
+sources = ['gatk-%(version)s.zip']
+checksums = ['ae54a2b938f704e15ea03d1822b4ce80d9a02108dc3a2b482d80b93edae3d492']
+
+dependencies = [
+    ('Java', '8', '-LTS'),
+    ('Python', '3.7.4', '-bare', ('GCCcore', '7.3.0')),
+]
+
+modextrapaths = {'PATH': ''}
+
+sanity_check_paths = {
+    'files': ['gatk'],
+    'dirs': []
+}
+
+sanity_check_commands = ["gatk --help"]
+
+moduleclass = 'bio'
