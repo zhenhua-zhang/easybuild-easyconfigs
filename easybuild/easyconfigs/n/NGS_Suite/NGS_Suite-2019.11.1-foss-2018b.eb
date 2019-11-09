@@ -45,6 +45,7 @@ dependencies = [
     ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver)),
     ('Seurat', '3.1.0', '-R-%s' %(rver)),
     ('exomiser-cli', '11.0.0', '-Java-%s' % (javaver), ('dummy', '')),
+    ('STAR', '2.7.3a'),
     ('Java', javaver, '', ('dummy', '')),
     ('PerlPlus', perlver, '-v19.08.1'),
     ('PythonPlus', py3ver, '-v19.08.1'),
