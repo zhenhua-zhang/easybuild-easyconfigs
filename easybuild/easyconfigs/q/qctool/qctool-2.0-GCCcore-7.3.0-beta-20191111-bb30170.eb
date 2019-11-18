@@ -34,13 +34,14 @@ configure_and_build_cmd += 'chmod +x waf-1.5.18 && '
 configure_and_build_cmd += './waf-1.5.18 configure && '
 configure_and_build_cmd += './waf-1.5.18 && '
 configure_and_build_cmd += 'mkdir %s/bin/ && ' % ('%(installdir)s/')
-configure_and_build_cmd += 'cp  %s/gavinband-qctool-%s/build/default/qctool_v2.0.1 %s/bin/qctool' % ('%(builddir)s', commit_hash_long, '%(installdir)s/')
+configure_and_build_cmd += 'cp  %s/gavinband-qctool-%s/build/default/*_v2.1-dev %s/bin/ && ' % ('%(builddir)s', commit_hash_long, '%(installdir)s/')
+configure_and_build_cmd += 'rename "_v2.1-dev" "" "%s/bin/*"'  % ('%(installdir)s')
 
 install_cmd = '%s' % (configure_and_build_cmd)
 
 sanity_check_paths = {
-    'files': ['bin/qctool'],
-    'dirs': []
+    'files': ['bin/hptest', 'bin/inthinnerator', 'bin/ldbird', 'bin/multifinemap', 'bin/qctool', 'bin/selfmap'],
+    'dirs': ['bin']
 }
 
 moduleclass = 'bio'
