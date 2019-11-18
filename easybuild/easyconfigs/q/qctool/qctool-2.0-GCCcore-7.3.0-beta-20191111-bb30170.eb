@@ -29,13 +29,13 @@ checksums = [
 #    ('Boost', '1.60.0', '-Python-2.7.16'),
 #]
 
-configure_and_build_cmd  = 'cd %s/gavinband-%s-%s/ && ' % ('%(builddir)s', '%(name)s', commit_hash_long)
+configure_and_build_cmd  = 'cd "%s/gavinband-%s-%s/" && ' % ('%(builddir)s', '%(name)s', commit_hash_long)
 configure_and_build_cmd += 'chmod +x waf-1.5.18 && '
 configure_and_build_cmd += './waf-1.5.18 configure && '
 configure_and_build_cmd += './waf-1.5.18 && '
-configure_and_build_cmd += 'mkdir %s/bin/ && ' % ('%(installdir)s/')
-configure_and_build_cmd += 'cp  %s/gavinband-qctool-%s/build/default/*_v2.1-dev %s/bin/ && ' % ('%(builddir)s', commit_hash_long, '%(installdir)s/')
-configure_and_build_cmd += 'rename "_v2.1-dev" "" "%s/bin/*"'  % ('%(installdir)s')
+configure_and_build_cmd += 'mkdir "%s/bin/" && ' % ('%(installdir)s/')
+configure_and_build_cmd += 'cp "%s/gavinband-qctool-%s/build/default/"*_v2.1-dev "%s/bin/" && ' % ('%(builddir)s', commit_hash_long, '%(installdir)s/')
+configure_and_build_cmd += 'rename "_v2.1-dev" "" "%s/bin/"*' % ('%(installdir)s')
 
 install_cmd = '%s' % (configure_and_build_cmd)
 
