@@ -17,12 +17,12 @@ sources = [('iaap-%s.tar.gz' % (version))]
 
 checksums = ['be649ccdaad665b597d31d2d960f8ad302c889fd0641c96dfb1db1566a5f2838']
 
-postinstallcmds = ["cd %(installdir)s ; mkdir netcoredeps ; cd netcoredeps ; wget https://sourceforge.net/projects/icu/files/ICU4C/57.1/icu4c-57_1-RHEL6-x64.tgz ; tar -xz --strip-components=3 -f icu4c-57_1-RHEL6-x64.tgz"]
+postinstallcmds = ["cd %(installdir)s/iaap-cli/ ; mkdir netcoredeps ; cd netcoredeps ; wget https://sourceforge.net/projects/icu/files/ICU4C/57.1/icu4c-57_1-RHEL6-x64.tgz ; tar -xz --strip-components=3 -f icu4c-57_1-RHEL6-x64.tgz"]
 
 
 sanity_check_paths = {
     'files': ['licenses.txt', 'README.pdf'],
-    'dirs': ['iaap-cli', 'netcoredeps']
+    'dirs': ['iaap-cli']
 }
 
 moduleclass = 'bio'
