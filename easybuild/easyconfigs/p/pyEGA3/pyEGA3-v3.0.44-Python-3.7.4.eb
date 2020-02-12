@@ -1,0 +1,28 @@
+easyblock = 'PythonPackage'
+
+name = 'pyEGA3'
+version = 'v3.0.44'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/Illumina/BeadArrayFiles'
+description = """Library to parse file formats related to Illumina bead arrays."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+
+source_urls = ['https://github.com/EGA-archive/ega-download-client/archive/']
+sources = ['%(version)s.tar.gz']
+checksums = [
+    '809bfe39d4c54e4bf19ce91d613ffa2b4c4ba759c9af0f2d7117451af4371ce2',
+]
+
+dependencies = [
+    ('Python', '3.7.4', '-bare', ('GCCcore', '7.3.0')),
+]
+
+
+sanity_check_paths = {
+    'files': ['bin/pyega3'],
+    'dirs': ['bin'],
+}
+
+moduleclass = 'bio'
