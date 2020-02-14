@@ -14,7 +14,11 @@ toolchainopts = {'pic': True}
 #
 source_urls = [('http://github.com/imgag/ngs-bits/releases/download/%s/' % (version))]
 sources = [('%s-%s.tgz' % (name, version))]
-checksums = ['953b6828283e8a01e60a464608a0de8e26de6cf1bf6713f38aeb7167877f9a6c']
+patches = [('%s-%s.patch' % (name, version))]
+checksums = [
+    '953b6828283e8a01e60a464608a0de8e26de6cf1bf6713f38aeb7167877f9a6c', #  ngs-bits-2019_11.tgz
+    'b89da731889056139cafcb9f8ad394ded5cb0bd6a2fda9a29ac9e74f1fee9912', #  ngs-bits-2019_11.patch
+]
 
 osdependencies = [
     ('qt5-qtbase'),
@@ -26,20 +30,24 @@ builddependencies = [
 ]
 
 dependencies = [
-    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
-    ('cURL', '7.63.0'),
+    ('PCRE', '8.43'),
+    ('zlib', '1.2.11'),
+    ('bzip2', '1.0.6'),
+    ('XZ', '5.2.4'),
+    ('cURL', '7.63.0'), # For S3 support.
+    ('HTSlib', '1.9'),
 ]
 
 #
 # build according to README.md
 #
-buildopts = ' build_3rdparty && make build_tools_release'
+buildopts = ' build_tools_release'
 
-files_to_copy = ['tools' , 'bin' , 'doc' , 'htslib' , 'LICENSE' , 'README.md' ] 
+files_to_copy = ['bin', 'doc', 'LICENSE', 'README.md']
 
 sanity_check_paths = {
-    'files': ['QtCreatorCodingStyle.xml'],
-    'dirs': ['bin', 'tools'],
+    'files': ['README.md', 'bin/CnvHunter'],
+    'dirs': ['bin', 'doc'],
 }
 
 moduleclass = 'bio'
