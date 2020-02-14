@@ -1,0 +1,45 @@
+easyblock = 'MakeCp'
+
+name = 'ngs-bits'
+version = '2019_11'
+
+homepage = 'https://github.com/imgag/ngs-bits'
+description = """ Short read sequencing tools. """
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchainopts = {'pic': True}
+
+#
+# Example URL: https://github.com/imgag/ngs-bits/releases/download/2019_11/ngs-bits-2019_11.tgz
+#
+source_urls = [('http://github.com/imgag/ngs-bits/releases/download/%s/' % (version))]
+sources = [('%s-%s.tgz' % (name, version))]
+checksums = ['953b6828283e8a01e60a464608a0de8e26de6cf1bf6713f38aeb7167877f9a6c']
+
+osdependencies = [
+    ('qt5-qtbase'),
+    ('qt5-qtbase-devel'),
+]
+
+builddependencies = [
+    ('binutils', '2.30'),
+]
+
+dependencies = [
+    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
+    ('cURL', '7.63.0'),
+]
+
+#
+# build according to README.md
+#
+buildopts = ' build_3rdparty && make build_tools_release'
+
+files_to_copy = ['tools' , 'bin' , 'doc' , 'htslib' , 'LICENSE' , 'README.md' ] 
+
+sanity_check_paths = {
+    'files': ['QtCreatorCodingStyle.xml'],
+    'dirs': ['bin', 'tools'],
+}
+
+moduleclass = 'bio'
