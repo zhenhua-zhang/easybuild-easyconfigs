@@ -1,0 +1,62 @@
+diff -ru ngs-bits.original/Makefile ngs-bits.patched/Makefile
+--- ngs-bits.original/Makefile	2019-11-25 15:12:58.000000000 +0000
++++ ngs-bits.patched/Makefile	2020-02-14 21:47:41.006301633 +0000
+@@ -17,7 +17,7 @@
+ build_libs_debug_noclean:
+ 	mkdir -p build-libs-Linux-Debug;
+ 	cd build-libs-Linux-Debug; \
+-		qmake ../src/libs.pro "CONFIG+=debug" "CONFIG-=release"; \
++		qmake-qt5 ../src/libs.pro "CONFIG+=debug" "CONFIG-=release"; \
+ 		make;
+ 
+ clean_libs_debug:
+@@ -28,7 +28,7 @@
+ build_tools_debug_noclean:
+ 	mkdir -p build-tools-Linux-Debug;
+ 	cd build-tools-Linux-Debug; \
+-		qmake ../src/tools.pro "CONFIG+=debug" "CONFIG-=release"; \
++		qmake-qt5 ../src/tools.pro "CONFIG+=debug" "CONFIG-=release"; \
+ 		make;
+ 
+ clean_tools_debug:
+@@ -42,34 +42,34 @@
+ 	rm -rf build-libs-Linux-Release;
+ 	mkdir -p build-libs-Linux-Release;
+ 	cd build-libs-Linux-Release; \
+-		qmake ../src/libs.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/libs.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 
+ build_tools_release:
+ 	rm -rf build-tools-Linux-Release;
+ 	mkdir -p build-tools-Linux-Release;
+ 	cd build-tools-Linux-Release; \
+-		qmake ../src/tools.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/tools.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 
+ build_gui_release:
+ 	rm -rf build-tools_gui-Linux-Release;
+ 	mkdir -p build-tools_gui-Linux-Release;
+ 	cd build-tools_gui-Linux-Release; \
+-		qmake ../src/tools_gui.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/tools_gui.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 
+ build_release_noclean:
+ 	cd build-libs-Linux-Release; \
+-		qmake ../src/libs.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/libs.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 	cd ..
+ 	cd build-tools-Linux-Release; \
+-		qmake ../src/tools.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/tools.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 	cd ..
+ 	cd build-tools_gui-Linux-Release; \
+-		qmake ../src/tools_gui.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
++		qmake-qt5 ../src/tools_gui.pro "CONFIG-=debug" "CONFIG+=release" "DEFINES+=QT_NO_DEBUG_OUTPUT"; \
+ 		make;
+ 	
+ #################################### other targets ##################################

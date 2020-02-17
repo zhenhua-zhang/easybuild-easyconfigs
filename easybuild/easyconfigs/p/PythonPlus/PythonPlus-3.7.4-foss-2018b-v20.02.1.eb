@@ -764,7 +764,7 @@ exts_list = [
     }),
     ('PyVCF', '0.6.8', {
         'modulename': 'vcf',
-        'source_urls': ['https://files.pythonhosted.org/packages/source/p/PyVCF'],
+        'source_urls': ['https://files.pythonhosted.org/packages/source/P/PyVCF'],
         'checksums': ['e9d872513d179d229ab61da47a33f42726e9613784d1cb2bac3f8e2642f6f9d9'],
     }),
     ('xgboost', '0.90', {
