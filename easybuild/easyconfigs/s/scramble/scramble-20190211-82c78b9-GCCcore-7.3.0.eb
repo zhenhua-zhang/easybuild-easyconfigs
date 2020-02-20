@@ -1,0 +1,41 @@
+easyblock = 'MakeCp'
+
+name = 'scramble'
+version = '20190211-82c78b9'
+
+homepage = "https://github.com/GeneDx/scramble"
+description = """SCRAMble runs as a two-step process. 
+ First cluster_identifier is used to generate soft-clipped read cluster consensus sequences. 
+ Second, SCRAMble-MEIs.R analyzes the cluster file for likely MEIs."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/GeneDx/%(name)s/archive/']
+sources = ['82c78b9010475697cda80adedbae865cba872004.tar.gz']
+patches = [('%s-%s.patch' % (name,version))]
+
+checksums = [
+    '706d302130bf9de52556b9ec854e9011010aa342e27336a522c7a9b517ea9274', # 82c78b9010475697cda80adedbae865cba872004.tar.gz
+    '80820f27e42e4b29f0649a9dc197cb089da5d22193c88adb956fd13e5bda1dce', # scramble-20190211-82c78b9.patch
+]
+
+start_dir = 'cluster_identifier/src'
+files_to_copy = [(['cluster_analysis/resources/MEI_consensus_seqs.R', 'cluster_identifier/src/build/cluster_identifier'], 'bin'), 'LICENSE', 'README.md']
+# validation and analysis files are located in /apps/data/
+
+dependencies = [
+    ('Autoconf', '2.69', '', ('GCCcore','7.3.0')),
+    ('bzip2', '1.0.6', '', ('GCCcore','7.3.0')),
+    ('R', '3.6.1', '', ('foss-2018b','bare')),
+    ('RPlus', '3.6.1', '', ('foss-2018b','v20.02.1')),
+    ('HTSlib', '1.9', '', ('GCCcore','7.3.0')),
+    ('cURL', '7.63.0', '', ('GCCcore','7.3.0')),
+    ('zlib', '1.2.11', '', ('GCCcore','7.3.0')),
+    ('XZ', '5.2.4', '', ('GCCcore','7.3.0')),]
+
+sanity_check_paths = {
+    'files': ['bin/cluster_identifier', 'bin/MEI_consensus_seqs.R', 'README.md'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
