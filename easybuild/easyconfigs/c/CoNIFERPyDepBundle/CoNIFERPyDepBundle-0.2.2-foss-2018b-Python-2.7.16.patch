@@ -1,0 +1,13 @@
+diff -ru tables-2.4.0.old/setup.py tables-2.4.0.new/setup.py
+--- tables-2.4.0.old/setup.py	2020-02-18 12:24:59.076613535 +0000
++++ tables-2.4.0.new/setup.py	2020-02-18 12:27:51.880342950 +0000
+@@ -355,6 +355,9 @@
+ # is not a good idea.
+ CFLAGS = os.environ.get('CFLAGS', '').split()
+ LIBS = os.environ.get('LIBS', '').split()
++for idx, lib in enumerate(LIBS):
++    if lib.startswith("-l"):
++        LIBS[idx] = lib.replace("-l", "")
+ 
+ # ...then the command line.
+ # Handle --hdf5=[PATH] --lzo=[PATH] --bzip2=[PATH]

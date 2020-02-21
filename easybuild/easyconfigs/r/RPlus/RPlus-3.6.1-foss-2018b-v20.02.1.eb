@@ -1,0 +1,3768 @@
+#
+# This EasyBuild config file for RPlus was generated with generateEasyConfig.R
+#
+easyblock = 'Bundle'
+name = 'RPlus'
+version = '3.6.1'
+versionsuffix = '-v20.02.1'
+homepage = 'http://www.r-project.org/'
+description = """R is a free software environment for statistical computing and graphics."""
+moduleclass = 'lang'
+modextrapaths = {'R_LIBS': ['library', '']}
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+#
+# You may need to include a more recent Python to download R packages from HTTPS based URLs
+# when the Python that comes with your OS is too old and you encounter:
+#     SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure
+# In that case make sure to include a Python as builddependency. 
+# This Python should not be too new either: it's dependencies like for example on ncursus should be compatible with R's dependencies.
+# The alternative is to replace the https URLs with http URLs in the generated EasyConfig.
+#
+#builddependencies = [
+#    ('Python', '3.7.4')
+#]
+
+dependencies = [
+    ('R', '%(version)s', '-bare'),
+    ('GMP', '6.1.2'),
+    ('UDUNITS', '2.2.27.6'),
+    ('ImageMagick', '7.0.8-56'),
+    ('MariaDB-connector-c', '3.1.2'),
+    ('NLopt', '2.6.1'),
+]
+
+#
+# The '.' is a silly workaround to check for whatever current dir as workaround
+# until an updated RPackage is available, which installs extension R packages in a library subdir.
+#
+sanity_check_paths = {
+    'files': [],
+    'dirs': [('library', '.')],
+}
+
+package_name_tmpl = '%(name)s_%(version)s.tar.gz'
+exts_defaultclass = 'RPackage'
+exts_filter = ('R -q --no-save', 'library(%(ext_name)s)')
+
+cran_options = {
+    'source_urls': [
+        'http://cran.r-project.org/src/contrib/',
+        'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+    ],
+    'source_tmpl': package_name_tmpl,
+}
+bioconductor_options = {
+    'source_urls': [
+        'http://www.bioconductor.org/packages/release/bioc/src/contrib/',
+        'http://www.bioconductor.org/packages/release/data/annotation/src/contrib/',
+        'http://www.bioconductor.org/packages/release/data/experiment/src/contrib/',
+        'http://www.bioconductor.org/packages/release/extra/src/contrib/',
+        'http://bioconductor.org/packages/3.10/bioc/src/contrib/',
+        'http://bioconductor.org/packages/3.10/data/annotation/src/contrib/',
+        'http://bioconductor.org/packages/3.10/data/experiment/src/contrib/',
+        'http://bioconductor.org/packages/3.10/workflows/src/contrib/',
+        'http://bioconductor.org/packages/3.10/bioc/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.10/data/annotation/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.10/data/experiment/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.10/workflows/src/contrib/Archive/%(name)s/',
+    ],
+    'source_tmpl': package_name_tmpl,
+}
+
+#
+# R package list.
+#   * Order of packages is important!
+#   * Packages should be specified with fixed versions!
+#
+exts_list = [
+    ('carData', '3.0-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3b5c4eff1cc1e456a5331084774503eaa06cf61fb7acf6b9e8a6bfabd5735494'],
+    }),
+    ('abind', '1.4-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3a3ace5afbcb86e56889efcebf3bf5c3bb042a282ba7cc4412d450bb246a3f2c'],
+    }),
+    ('MASS', '7.3-51.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9911d546a8d29dc906b46cb53ef8aad76d23566f4fc3b52778a1201f8a9b2c74'],
+    }),
+    ('lattice', '0.20-38', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fdeb5e3e50dbbd9d3c5e2fa3eef865132b3eef30fbe53a10c24c7b7dfe5c0a2d'],
+    }),
+    ('nlme', '3.1-142', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dd82f470d72fb10b960aaa88d307c901e821cebd35dffbe19c0e0a11c3722f3a'],
+    }),
+    ('Matrix', '1.2-17', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['db43e6f0196fd5dfd05a7e88cac193877352c60d771d4ec8772763e645723fcc'],
+    }),
+    ('mgcv', '1.8-31', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['736de462a0ac43a6ed38cd57dfb0ba2942c941dfbb538128782727ab7125c3c5'],
+    }),
+    ('nnet', '7.3-12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2723523e8581cc0e2215435ac773033577a16087a3f41d111757dd96b8c5559d'],
+    }),
+    ('boot', '1.3-23', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['30c89e19dd6490b943233e87dfe422bfef92cfbb7a7dfb5c17dfd9b2d63fa02f'],
+    }),
+    ('Rcpp', '1.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2b3500dd3aca16f7b3cb5442625e76dcf4f7c974b4249d33041e9184a5ff030e'],
+    }),
+    ('minqa', '1.2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cfa193a4a9c55cb08f3faf4ab09c11b70412523767f19894e4eafc6e94cccd0c'],
+    }),
+    ('nloptr', '1.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1f86e33ecde6c3b0d2098c47591a9cd0fa41fb973ebf5145859677492730df97'],
+    }),
+    ('RcppEigen', '0.3.3.5.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e5c6af17770c5f57b7cf2fba04ad1a519901b446e8138bfff221952458207f05'],
+    }),
+    ('lme4', '1.1-21', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7f5554b69ff8ce9bac21e8842131ea940fb7a7dfa2de03684f236d3e3114b20c'],
+    }),
+    ('pbkrtest', '0.4-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5cbb03ad2b2468720a5a610a0ebda48ac08119a34fca77810a85f554225c23ea'],
+    }),
+    ('SparseM', '1.77', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a9329fef14ae4fc646df1f4f6e57efb0211811599d015f7bc04c04285495d45c'],
+    }),
+    ('MatrixModels', '0.4-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fe878e401e697992a480cd146421c3a10fa331f6b37a51bac83b5c1119dcce33'],
+    }),
+    ('quantreg', '5.52', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9eb5535693bf37a97d31c032f731bf8b5d3bdfc0adc2142b0de4471e86560967'],
+    }),
+    ('sp', '1.3-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['940a22add254fbb5ebd80a380f4777fcd1af282975ebad400d177f3a20d6f24e'],
+    }),
+    ('foreign', '0.8-72', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['439c17c9cd387e180b1bb640efff3ed1696b1016d0f7b3b3b884e89884488c88'],
+    }),
+    ('maptools', '0.9-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5dd89def29fa598cbdc11d5518049334e1e2874d19446e916486034ece63a3c7'],
+    }),
+    ('rlang', '0.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['13845846f27085279bfbb13986d56ff505486a38fe8c59e5e428e6760f835088'],
+    }),
+    ('ellipsis', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0bf814cb7a1f0ee1f2949bdc98752a0d535f2a9489280dd4d8fcdb10067ee907'],
+    }),
+    ('magrittr', '1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['05c45943ada9443134caa0ab24db4a962b629f00b755ccf039a2a2a7b2c92ae8'],
+    }),
+    ('assertthat', '0.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['85cf7fcc4753a8c86da9a6f454e46c2a58ffc70c4f47cac4d3e3bcefda2a9e9f'],
+    }),
+    ('crayon', '1.3.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fc6e9bf990e9532c4fcf1a3d2ce22d8cf12d25a95e4779adfa17713ed836fa68'],
+    }),
+    ('cli', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4fc00fcdf4fdbdf9b5792faee8c7cf1ed5c4f45b1221d961332cda82dbe60d0a'],
+    }),
+    ('fansi', '0.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e104e9d01c7ff8a847f6b332ef544c0ef912859f9c6a514fe2e6f3b34fcfc209'],
+    }),
+    ('utf8', '1.1.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f6da9cadfc683057d45f54b43312a359cf96ec2731c0dda18a8eae31d1e31e54'],
+    }),
+    ('backports', '1.1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['63ec38adf383b70b4cd2b661ad353afacff9c4388353578bf4302ab190e1294c'],
+    }),
+    ('digest', '0.6.22', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['10dfab268c793a2acceaa5d096b4031a72b996a1b922f2844c6f561cbc285be1'],
+    }),
+    ('glue', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4fc1f2899d71a634e1f0adb7942772feb5ac73223891abe30ea9bd91d3633ea8'],
+    }),
+    ('zeallot', '0.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['439f1213c97c8ddef9a1e1499bdf81c2940859f78b76bc86ba476cebd88ba1e9'],
+    }),
+    ('vctrs', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5bce8f228182ecaa51230d00ad8a018de9cf2579703e82244e0931fe31f20016'],
+    }),
+    ('pillar', '1.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bababb76b6db06dc32ccd947dbad6c164a1749ff5b558c6783ad03570f010825'],
+    }),
+    ('pkgconfig', '2.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['330fef440ffeb842a7dcfffc8303743f1feae83e8d6131078b5a44ff11bc3850'],
+    }),
+    ('tibble', '2.1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9a8cea9e6b5d24a7e9bf5f67ab38c40b2b6489eddb0d0edb8a48a21ba3574e1a'],
+    }),
+    ('forcats', '0.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7c83cb576aa6fe1379d7506dcc332f7560068b2025f9e3ab5cd0a5f28780d2b2'],
+    }),
+    ('hms', '0.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d445c98c36b224e73c76dd4fc2a700e0b1abf0ade3d8ac8ac96c12fb946e4440'],
+    }),
+    ('R6', '2.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['26b0fd64827655c28c903f7ff623e839447387f3ad9b04939a02f41ac82faa3e'],
+    }),
+    ('clipr', '0.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['03a4e4b72ec63bd08b53fe62673ffc19a004cc846957a335be2b30d046b8c2e2'],
+    }),
+    ('BH', '1.69.0-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a0fd4364b7e368f09c56dec030823f52c16da0787580af7e4615eddeb99baca2'],
+    }),
+    ('readr', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['33f94de39bb7f2a342fbb2bd4e5afcfec08798eac39672ee18042ac0b349e4f3'],
+    }),
+    ('purrr', '0.3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0f31a89a424e12e35bd6e0581dee1d160f1f8be1f0a883a7d33ccbde8ef69e9e'],
+    }),
+    ('tidyselect', '0.2.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5ce2e86230fa35cfc09aa71dcdd6e05e1554a5739c863ca354d241bfccb86c74'],
+    }),
+    ('haven', '2.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['199ee9b14e1ff70a0b0c3b9ce33dfdec8ed3b5e857a2a36bfb82e78a7b352d3d'],
+    }),
+    ('curl', '4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['97e61c932fc49869f47e31e47c34c321865f4a71ab777923e5a680b5df110276'],
+    }),
+    ('data.table', '1.12.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c2363b679f98b5382f3e1ea9d7551091099f353effe6882c3e5d9dfd4ab5ebcd'],
+    }),
+    ('rematch', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a409dec978cd02914cdddfedc974d9b45bd2975a124d8870d52cfd7d37d47578'],
+    }),
+    ('cellranger', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5d38f288c752bbb9cea6ff830b8388bdd65a8571fd82d8d96064586bd588cf99'],
+    }),
+    ('prettyunits', '1.0.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['35a4980586c20650538ae1e4fed4d80fdde3f212b98546fc3c7d9469a1207f5c'],
+    }),
+    ('progress', '1.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b4a4d8ed55db99394b036a29a0fb20b5dd2a91c211a1d651c52a1023cc58ff35'],
+    }),
+    ('readxl', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['24b441713e2f46a3e7c6813230ad6ea4d4ddf7e0816ad76614f33094fbaaaa96'],
+    }),
+    ('stringi', '1.4.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['13cecb396b700f81af38746e97b550a1d9fda377ca70c78f6cdfc770d33379ed'],
+    }),
+    ('zip', '2.0.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ab5dd0c63bd30b478d0f878735e7baf36e2e76e4d12d2b4b8eddd03b665502b0'],
+    }),
+    ('openxlsx', '4.1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dd576bd6d38f785f0095c0d9c73fd500775181f6c744f6d19c01b69ee08eff20'],
+    }),
+    ('rio', '0.5.16', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d3eb8d5a11e0a3d26169bb9d08f834a51a6516a349854250629072d59c29d465'],
+    }),
+    ('car', '3.0-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6e503be0632c2849383108cc1456d10b5b08d345c31267c65756796156ee0ed6'],
+    }),
+    ('zoo', '1.8-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2217a4f362f2201443b5fdbfd9a77d9a6caeecb05f02d703ee8b3b9bf2af37cc'],
+    }),
+    ('lmtest', '0.9-37', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ddc929f94bf055974832fa4a20fdd0c1eb3a84ee11f716c287936f2141d5ca0a'],
+    }),
+    ('sandwich', '2.5-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dbef6f4d12b83e166f9a2508b7c732b04493641685d6758d29f3609e564166d6'],
+    }),
+    ('survival', '3.1-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['17e9451984d82169e3a431edff2bbbf42d4fb60693add2674fa24be6de3a47c6'],
+    }),
+    ('Formula', '1.2-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1411349b20bd09611a9fd0ee6d15f780c758ad2b0e490e908facb49433823872'],
+    }),
+    ('AER', '1.2-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['09be1286a3bbe6ff840bde092017ea021862f0fa187cad5dc985326dc6c60e13'],
+    }),
+    ('BiocGenerics', '0.32.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['360399fc2431328a185c395a2dff68dcb0a771e0cbc6db15a953f92f08f1e8da'],
+    }),
+    ('Biobase', '2.46.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['f4e1ad15ffc281c7f4b049b58a880ca987e12d61bb37cc772a95e2361008a4bf'],
+    }),
+    ('S4Vectors', '0.24.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['7a6b2de0e1b6b84781c609a45c7a83b4b50511d8dd3b0f69ff455a3f069a83a9'],
+    }),
+    ('IRanges', '2.20.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['2f77985fb7dc824567389d1c4812be138cc381c77a493e6a16a012c90c002d50'],
+    }),
+    ('DBI', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ff16f118eb3f759183441835e932b87358dd80ab9800ce576a8f3df1b6f01cf5'],
+    }),
+    ('bit', '1.1-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5cbaace1fb643a665a6ca69b90f7a6d624270de82420ca7a44f306753fcef254'],
+    }),
+    ('bit64', '0.9-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7b9aaa7f971198728c3629f9ba1a1b24d53db5c7e459498b0fdf86bbd3dff61f'],
+    }),
+    ('blob', '1.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1af1cfa28607bc0e2f1f01598a00a7d5d1385ef160a9e79e568f30f56538e023'],
+    }),
+    ('memoise', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b276f9452a26aeb79e12dd7227fcc8712832781a42f92d70e86040da0573980c'],
+    }),
+    ('plogr', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0e63ba2e1f624005fe25c67cdd403636a912e063d682eca07f2f1d65e9870d29'],
+    }),
+    ('RSQLite', '2.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['66dad425d22b09651c510bf84b7fc36375ce537782f02585cf1c6856ae82d9c6'],
+    }),
+    ('AnnotationDbi', '1.48.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['1a7192e1a80653c2048de54c0ee111363b6afca291f4a9ab226bdd0e5cf8f126'],
+    }),
+    ('XML', '3.98-1.20', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['46af86376ea9a0fb1b440cf0acdf9b89178686a05c4b77728fcff1f023aa4858'],
+    }),
+    ('xtable', '1.8-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5abec0e8c27865ef0880f1d19c9f9ca7cc0fd24eadaa72bcd270c3fb4075fd1c'],
+    }),
+    ('bitops', '1.0-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9b731397b7166dd54941fb0d2eac6df60c7a483b2e790f7eb15b4d7b79c9d69c'],
+    }),
+    ('RCurl', '1.95-4.12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['393779efafdf40823dac942a1e028905d65c34f3d41cfd21bcd225e411385ff4'],
+    }),
+    ('annotate', '1.64.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['9ef78ba0055617b0d8c2a50497aa166ee9061760a2c4d7b969a41a0d8d6f9565'],
+    }),
+    ('dplyr', '0.8.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['68b4aac65a69ea6390e90991d9c7ce7a011a07e5db439d60cce911a078424c0c'],
+    }),
+    ('dbplyr', '1.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b783f0da2c09a1e63f41168b02c0715b08820f02a351f7ab0aaa688432754de0'],
+    }),
+    ('rappdirs', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2fd891ec16d28862f65bb57e4a78f77a597930abb59380e757afd8b6c6d3264a'],
+    }),
+    ('jsonlite', '1.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['88c5b425229966b7409145a6cabc72db9ed04f8c37ee95901af0146bb285db53'],
+    }),
+    ('mime', '0.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['11083ee44c92569aadbb9baf60a2e079ab7a721c849b74d102694975cc8d778b'],
+    }),
+    ('sys', '3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a6217c2a7240ed68614006f392c6d062247dab8b9b0d498f95e947110df19b93'],
+    }),
+    ('askpass', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['db40827d1bdbb90c0aa2846a2961d3bf9d76ad1b392302f9dd84cc2fd18c001f'],
+    }),
+    ('openssl', '1.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f7fbecc75254fc43297a95a4338c674ab9ba2ec056b59e027d16d23122161fc6'],
+    }),
+    ('httr', '1.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['675c7e07bbe82c48284ee1ab929bb14a6e653abae2860d854dc41a3c028de156'],
+    }),
+    ('BiocFileCache', '1.10.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['4649b00d391c275a1315664862f0d4d4224a9ab766e2aa7c2efb1b5f92853b4a'],
+    }),
+    ('BiocManager', '1.30.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5d1b1199bb613d836643f50fbcf626df34104f1a23b5c9c3dc17da9472152bd1'],
+    }),
+    ('formatR', '1.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a366621b3ff5f8e86a499b6f87858ad47eefdace138341b1377ecc307a5e5ddb'],
+    }),
+    ('lambda.r', '1.2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d252fee39065326c6d9f45ad798076522cec05e73b8905c1b30f95a61f7801d6'],
+    }),
+    ('futile.options', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7a9cc974e09598077b242a1069f7fbf4fa7f85ffe25067f6c4c32314ef532570'],
+    }),
+    ('futile.logger', '1.4.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5e8b32d65f77a86d17d90fd8690fc085aa0612df8018e4d6d6c1a60fa65776e4'],
+    }),
+    ('snow', '0.4-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8512537daf334ea2b8074dbb80cf5e959a403a78d68bc1e97664e8a4f64576d8'],
+    }),
+    ('BiocParallel', '1.20.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['9aff5449e966c6301288edbcee17e37a0ff8f2eda7d544bb47b627044853f6f1'],
+    }),
+    ('BiocVersion', '3.10.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['ae406aff4b6e3b26a8ed6e5901f6e7763858585cf6bc811ba58ff3bc1d96d855'],
+    }),
+    ('stringr', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['87604d2d3a9ad8fd68444ce0865b59e2ffbdb548a38d6634796bbd83eeb931dd'],
+    }),
+    ('biomaRt', '2.42.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['5a1b34b5c9d8b068b5a5ccb4474c48d5a3049b125eaa3ddd855f32a61b812e36'],
+    }),
+    ('plyr', '1.8.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['60b522d75961007658c9806f8394db27989f1154727cb0bb970062c96ec9eac5'],
+    }),
+    ('Rhdf5lib', '1.8.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['a77ddced7f0e6de77e1a5edc840651c3cc2cf701155cbe275e5be39caae5909e'],
+    }),
+    ('rhdf5', '2.30.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['cf5c2db944afd614130b02a58c42b9f46d53a0b8949bb1f3d2de2c9b0d873042'],
+    }),
+    ('biomformat', '1.14.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['f9f30f90c398c6f5adde9b9f9c20435a822fe37da80add1656c847a70d164329'],
+    }),
+    ('zlibbioc', '1.32.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['b2c583788196b883a78c5d2d15f887ae3d6f24dba92fabaafe55180eacc207f6'],
+    }),
+    ('XVector', '0.26.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['675be1d93136a360dd84c525143e486d87292580f35873ff74aed0ef097a4f68'],
+    }),
+    ('Biostrings', '2.54.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['d7d799f0c8c9e5451171bd81e28ba3bb5b9838d3d5c8c62f954c74eaa078075f'],
+    }),
+    ('htmltools', '0.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5b18552e1183b1b90b5cca8e7f95b57e8124c9d517b22aa64783b829513b811a'],
+    }),
+    ('evaluate', '0.14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a8c88bdbe4e60046d95ddf7e181ee15a6f41cdf92127c9678f6f3d328a3c5e28'],
+    }),
+    ('highr', '0.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4bd01fba995f68c947a99bdf9aca15327a5320151e10bd0326fad50a6d8bc657'],
+    }),
+    ('xfun', '0.11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3cc24b5a67a11204255b71e5fadbb4c303dfb34a32e79c95b787aa8997e1cc36'],
+    }),
+    ('markdown', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8d8cd47472a37362e615dbb8865c3780d7b7db694d59050e19312f126e5efc1b'],
+    }),
+    ('yaml', '2.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['55bcac87eca360ab5904914fcff473a6981a1f5e6d2215d2634344d0ac30c546'],
+    }),
+    ('knitr', '1.26', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['38db354bec68f25cf8a05e5162ebbac45811309c75a7bcfc8bcb5a565a5bc321'],
+    }),
+    ('base64enc', '0.1-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6d856d8a364bcdc499a0bf38bfd283b7c743d08f0b288174fba7dbf0a04b688d'],
+    }),
+    ('tinytex', '0.17', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1ce4126630e36e54933c54d480e47bd2e90d04c2d688e9fa7ea2aa47e4cafd55'],
+    }),
+    ('rmarkdown', '1.16', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7fe304c6a9c12692ebae7690c25a5634a4db3b8e79fb0d73b3041855697a21dc'],
+    }),
+    ('bookdown', '0.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5709af6fe94e0ee2696ca5cf13f6f7529c702541ea531b3efa6a328dd552f35d'],
+    }),
+    ('GenomeInfoDbData', '1.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['6853c968d79f033050a6d2aee6370c491e6512d28031cecac3bd14e7834af711'],
+    }),
+    ('GenomeInfoDb', '1.22.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['a0a701ea3aee552b71ead95167573fe61c27f6206e80f4c2701945578596f41f'],
+    }),
+    ('GenomicRanges', '1.38.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['a0aca57e4a893f4e669380dfea626dfdce413cc460d5d189774dcaa3b9d1ad75'],
+    }),
+    ('Rhtslib', '1.18.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['355fa4bf9ea0b66c6b44e5169a136b4c62ade055afd75036ae9e774a089e3612'],
+    }),
+    ('Rsamtools', '2.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['94a15839aaf954b85eaa73cd8c8728013dd66cd0c526a4247b01df7c1162ed42'],
+    }),
+    ('matrixStats', '0.55.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['16d6bd90eee4cee8df4c15687de0f9b72730c03e56603c2998007d4533e8db19'],
+    }),
+    ('DelayedArray', '0.12.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['18306a109ef097b7a4539cbdcc32fb8d95f3a67a18bb0ee5167889b75eb0490c'],
+    }),
+    ('SummarizedExperiment', '1.16.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['1529b1e87fc62175b76caedc89d64e6a086f724f1b87b36586fa359f08779212'],
+    }),
+    ('GenomicAlignments', '1.22.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['26e16fae9ddd2605a4361ffaf1841c6bb7d2b29f63b1a172dc7c1f41471a20e5'],
+    }),
+    ('rtracklayer', '1.46.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['c60277afb8fa9374f9a5f91104feb21e9b1f36c30a1fc91fbf2fe389aaeee952'],
+    }),
+    ('BSgenome', '1.54.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['bed9effa012c13ae41e6190d86a4afc4b1dcbaafbf32e1202fdd5648e058c15a'],
+    }),
+    ('codetools', '0.2-16', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f67a66175cb5d8882457d1e9b91ea2f16813d554fa74f80c1fd6e17cf1877501'],
+    }),
+    ('iterators', '1.0.12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['96bf31d60ebd23aefae105d9b7790715e63327eec0deb2ddfb3d543994ea9f4b'],
+    }),
+    ('foreach', '1.4.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['95632c0b1182fc01490718d82fa3b2bce864f2a011ae53282431c7c2a3f5f160'],
+    }),
+    ('locfit', '1.5-9.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f524148fdb29aac3a178618f88718d3d4ac91283014091aa11a01f1c70cd4e51'],
+    }),
+    ('limma', '3.42.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['966b5e5371108c408f32ed878e797a018dd6daa605ca7d682e59d985cdb6de31'],
+    }),
+    ('registry', '0.5-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dfea36edb0a703ec57e111016789b47a1ba21d9c8ff30672555c81327a3372cc'],
+    }),
+    ('withr', '2.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['41366f777d8adb83d0bdbac1392a1ab118b36217ca648d3bb9db763aa7ff4686'],
+    }),
+    ('bibtex', '0.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1f06ab3660c940405230ad16ff6e4ba38d4418a59cd9b16d78a4349f8b488372'],
+    }),
+    ('pkgmaker', '0.27', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['17a289d8f596ba5637b07077b3bff22411a2c2263c0b7de59fe848666555ec6a'],
+    }),
+    ('rngtools', '1.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3aa92366e5d0500537964302f5754a750aff6b169a27611725e7d84552913bce'],
+    }),
+    ('doRNG', '1.7.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['27533d54464889d1c21301594137fc0f536574e3a413d61d7df9463ab12a67e9'],
+    }),
+    ('GenomicFeatures', '1.38.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['e5f332f00aa1047ec684754d7a1e4973a385243b8941c796558b791635cda975'],
+    }),
+    ('bumphunter', '1.28.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['5b5afde81e8aa741dc9c73249a7ba462be6d3bbdf3f11b5a30da7e52d2e26fdc'],
+    }),
+    ('ps', '1.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['289193d0ccd2db0b6fe8702e8c5711e935219b17f90f01a6e9684982413e98d1'],
+    }),
+    ('processx', '3.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f1abddb48fa78f2b176552e2ec5d808d4d87d79ce72e9b3d25c9a7d715bbd1bc'],
+    }),
+    ('callr', '3.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d0e6066d111a8642aa1412efd0377beaa2ee3c5d017bc07dc3caaf67e5c7ab89'],
+    }),
+    ('chron', '2.3-54', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0df3ac3e96e0469a8fd727ef65a1edfada90c088cd74f535ff5882ce716f876d'],
+    }),
+    ('class', '7.3-15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f6bf33d610c726d58622b6cea78a808c7d6a317d02409d27c17741dfd1c730f4'],
+    }),
+    ('e1071', '1.7-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['721c299ce83047312acfa3e0c4b3d4c223d84a4c53400c73465cca2c92913752'],
+    }),
+    ('KernSmooth', '2.23-16', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b8c251fea1483a8ade005faf31dff9d85d2b6da08dcd661bf1e4a861db9a99a9'],
+    }),
+    ('classInt', '0.4-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bb0da1e7db779831cf5cea80722ade90bf83a9aa51b7d2bc6bee69c433042871'],
+    }),
+    ('bdsmatrix', '1.3-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['70ea81708c97dedd483a5d3866d2e906fa0e9098ff854c41cf0746fbc8dfad9d'],
+    }),
+    ('miscTools', '0.6-24', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['49976120fb68c60ade6b93d259f1e7fd153461646d287142585338cb95eb116b'],
+    }),
+    ('maxLik', '1.3-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['95e92124776d70c5aaf5af99f184b0fac0ec726a98537d32518a8d7acf43924a'],
+    }),
+    ('gbRd', '0.4-11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0251f6dd6ca987a74acc4765838b858f1edb08b71dbad9e563669b58783ea91b'],
+    }),
+    ('Rdpack', '0.11-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8fb449c80fbe931cdce51f728fb03a1978009ccce66fd6b9edacdc6ff4118d85'],
+    }),
+    ('plm', '2.2-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7f038532c387d417ea0c86322d873e6a3959a061a490bc506241a95edc50c86a'],
+    }),
+    ('statmod', '1.4.32', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2f67a1cfa66126e6345f8a40564a3077d08f1748f17cb8c8fb05c94ed0f57e20'],
+    }),
+    ('mlogit', '1.0-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b452b71d4e256c2bd982aebcf6d8d1db7d4115a9cfd3ab79f9fe6f0f680350b2'],
+    }),
+    ('clusterSEs', '2.6.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['40785e629640a08f49e5a1ee5f96883204d297e435244ccb26c683f390854995'],
+    }),
+    ('cmprsk', '2.2-9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['295917ad78d3572905bf90dc1c70d17895f79c9aff9ddbd59c3a45b2ca730f76'],
+    }),
+    ('BSgenome.Hsapiens.UCSC.hg19', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['88f515e5c27dd11d10654250e3a0a9389e4dfeb0b1c2d43419aa7086e6c516f8'],
+    }),
+    ('CODEX', '1.18.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['ee9282c47d2c674d70793d7b80c368300085169521e7a1256f0170381881f7ae'],
+    }),
+    ('mvtnorm', '1.0-11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0321612de99aa9bc75a45c7e029d3372736014223cbdefb80d8cae600cbc7252'],
+    }),
+    ('libcoin', '1.0-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0a744164e00557d2f3e888d14cfd6108d17c14e983db620f74c7a5475be8a9b2'],
+    }),
+    ('modeltools', '0.2-22', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['256a088fc80b0d9182f984f9bd3d6207fb7c1e743f72e2ecb480e6c1d4ac34e9'],
+    }),
+    ('TH.data', '1.0-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['618a1c67a30536d54b1e48ba3af46a6edcd6c2abef17935b5d4ba526a43aff55'],
+    }),
+    ('multcomp', '1.4-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['29bcc635c0262e304551b139cd9ee655ab25a908d9693e1cacabfc2a936df5cf'],
+    }),
+    ('coin', '1.3-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5de2519a6e2b059bba9d74c58085cccaff1aaaa0454586ed164a108ebd1b2062'],
+    }),
+    ('lazyeval', '0.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d6904112a21056222cfcd5eb8175a78aa063afe648a562d9c42c6b960a8820d4'],
+    }),
+    ('rex', '1.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bd3c74ceaf335336f5dd04314d0a791f6311e421a2158f321f5aab275f539a2a'],
+    }),
+    ('covr', '3.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['aee800734bf2d020d6a07731cb7b29bde734e0bdf494ac1a6a6d1ad044051c98'],
+    }),
+    ('rprojroot', '1.3-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['df5665834941d8b0e377a8810a04f98552201678300f168de5f58a587b73238b'],
+    }),
+    ('desc', '1.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e66fb5d4fc7974bc558abcdc107a1f258c9177a29dcfcf9164bc6b33dd08dae8'],
+    }),
+    ('remotes', '2.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8944c8f6fc9f0cd0ca04d6cf1221b716eee08facef9f4b4c4d91d0346d6d68a7'],
+    }),
+    ('cyclocomp', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cdbf65f87bccac53c1527a2f1269ec7840820c18503a7bb854910b30b71e7e3e'],
+    }),
+    ('DEoptimR', '1.0-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['846911c1b2561a9fae73a8c60a21a5680963ebb0050af3c1f1147ae9a121e5ef'],
+    }),
+    ('robustbase', '0.93-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bde564dbd52f04ab32f9f2f9dd09b9578f3ccd2541cf5f8ff430da42a55e7f56'],
+    }),
+    ('sfsmisc', '1.1-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['44b6a9c859922e86b7182e54eb781d3264f3819f310343518ebc66f54f305c7d'],
+    }),
+    ('magic', '1.5-9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fa1d5ef2d39e880f262d31b77006a2a7e76ea38e306aae4356e682b90d6cd56a'],
+    }),
+    ('lpSolve', '5.6.13.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e64165428c40d730f7686d233c22936bf4b3b91a618a600bdf87acaa905f5ff5'],
+    }),
+    ('linprog', '0.9-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8937b2e30692e38de1713f1513b78f505f73da6f5b4a576d151ad60bac2221ce'],
+    }),
+    ('RcppProgress', '0.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['11764105922f763d4c75c502599ec7dcc2fd629a029964caf53f98b41d0c607a'],
+    }),
+    ('geometry', '0.4.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e855405f8b5ae663086485df18a07544535a8b094967662c91d10ec36bb1a5d7'],
+    }),
+    ('ddalpha', '1.3.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5f52e0aae9917476078daf031f2213b0b6b83d225530394bdb759e86fc79c480'],
+    }),
+    ('HDF5Array', '1.14.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['f85d9dcb01966708b4509a858bc8296bfe783f3b5cfbce87850df3fc4624ccf8'],
+    }),
+    ('DelayedMatrixStats', '1.8.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['1e2f0e72f0264308c82e4ec27e4d003a2ba3c3ef5fb1a5e2258050a30ccd6257'],
+    }),
+    ('deldir', '0.1-23', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e0112bce9fc94daf73596a0fff9b3958b80872e3bbb487be73e157b13a6f201d'],
+    }),
+    ('genefilter', '1.68.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['6c329466240bc570c8d71c016216f7cfa130e3e3e40c6f1a9757370ab10059f6'],
+    }),
+    ('RColorBrewer', '1.1-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd'],
+    }),
+    ('geneplotter', '1.64.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['dda681db0f6c7da06da20edbba860a840461b8d710e61bea856fce601d40c7cc'],
+    }),
+    ('gtable', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fd386cc4610b1cc7627dac34dba8367f7efe114b968503027fb2e1265c67d6d3'],
+    }),
+    ('reshape2', '1.4.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8aff94c935e75032344b52407593392ddd4e16a88bb206984340c816d42c710e'],
+    }),
+    ('labeling', '0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0d8069eb48e91f6f6d6a9148f4e2dc5026cabead15dd15fc343eff9cf33f538f'],
+    }),
+    ('colorspace', '1.4-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['693d713a050f8bfecdb7322739f04b40d99b55aed168803686e43401d5f0d673'],
+    }),
+    ('munsell', '0.5.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d0f3a9fb30e2b5d411fa61db56d4be5733a2621c0edf017d090bdfa5e377e199'],
+    }),
+    ('viridisLite', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['780ea12e7c4024d5ba9029f3a107321c74b8d6d9165262f6e64b79e00aa0c2af'],
+    }),
+    ('scales', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0c1f4a14edd336a404da34a3cc71a6a9d0ca2040ba19360c41a79f36e06ca30c'],
+    }),
+    ('ggplot2', '3.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e39114a90af69041645b0751ac469d8919c5a7e8cb044a3b56a0728623e65a56'],
+    }),
+    ('latticeExtra', '0.6-28', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['780695323dfadac108fb27000011c734e2927b1e0f069f247d65d27994c67ec2'],
+    }),
+    ('cluster', '2.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eaf955bef8f616ea563351ec7f597c445aec43e65991ca975e382ef1fd70aa14'],
+    }),
+    ('rpart', '4.1-15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2b8ebe0e9e11592debff893f93f5a44a6765abd0bd956b0eb1f70e9394cfae5c'],
+    }),
+    ('acepack', '1.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['82750507926f02a696f6cc03693e8d4a5ee7e92500c8c15a16a9c12addcd28b9'],
+    }),
+    ('gridExtra', '2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['81b60ce6f237ec308555471ae0119158b115463df696d2eca9b177ded8988e3b'],
+    }),
+    ('checkmate', '1.9.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['faa25754b757fe483b876f5d07b73f76f69a1baa971420892fadec4af4bbad21'],
+    }),
+    ('htmlwidgets', '1.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d42e59144552d9b4131f11ddd6169dfb9bd538c7996669a09acbdb400d18d781'],
+    }),
+    ('rstudioapi', '0.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['80c5aa3063bcab649904cb92f0b164edffa2f6b0e6a8f7ea28ae317b80e1ab96'],
+    }),
+    ('htmlTable', '1.13.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['70578c3c286460c220c89bf9e953f5ec2ada931d0c9cd530fe2d740a19d5d240'],
+    }),
+    ('viridis', '0.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ddf267515838c6eb092938133035cee62ab6a78760413bfc28b8256165701918'],
+    }),
+    ('Hmisc', '4.3-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7ff2f9adcfd67f2e70345e73db3608ed46f8e07e2f696d0d591f533482a96165'],
+    }),
+    ('RcppArmadillo', '0.9.800.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5fd12ac50fb4bcbc42cd9a313c24e2bb5bd0cb617386db9293e194e5863f2fbb'],
+    }),
+    ('DESeq2', '1.26.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['502b87a45a5569ba3395a670af42ff1c77be3963e48fd26e4cbf21edec87abd2'],
+    }),
+    ('clisymbols', '1.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0649f2ce39541820daee3ed408d765eddf83db5db639b493561f4e5fbf88efe0'],
+    }),
+    ('fs', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d6934dca8f835d8173e3fb9fd4d5e2740c8c04348dd2bcc57df1b711facb46bc'],
+    }),
+    ('ini', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7b191a54019c8c52d6c2211c14878c95564154ec4865f57007953742868cd813'],
+    }),
+    ('gh', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f3c02b16637ae390c3599265852d94b3de3ef585818b260d00e7812595b391d2'],
+    }),
+    ('git2r', '0.26.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['13d609286a0af4ef75ba76f2c2f856593603b8014e311b88896243a50b417435'],
+    }),
+    ('whisker', '0.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7a86595be4f1029ec5d7152472d11b16175737e2777134e296ae97341bf8fba8'],
+    }),
+    ('usethis', '1.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9e3920a04b0df82adf59eef2c1b2b4d835c4a757a51b3c163b8fc619172f561d'],
+    }),
+    ('later', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['277b9848ef2e5e1ac7257aefeb58f6b20cca17693460e7c4eee0477de456b287'],
+    }),
+    ('promises', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c8ea0f3e3256cf3010439b3a6111966db419c3dcff9a561e73caf8bd65f38006'],
+    }),
+    ('httpuv', '1.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['93b32be974e0f531a3cb343685165c0caadf30cfea07683f8d69302a34045d8d'],
+    }),
+    ('sourcetools', '0.1.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['47984406efb3b3face133979ccbae9fefb7360b9a6ca1a1c11473681418ed2ca'],
+    }),
+    ('fastmap', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4778b05dfebd356f8df980dfeff3b973a72bca14898f870e5c40c1d84db9faec'],
+    }),
+    ('shiny', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0c070459387cea98ca7c6df7318370116df42afb5f76a8625eb4f5b681ee6c4b'],
+    }),
+    ('crosstalk', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b31eada24cac26f24c9763d9a8cbe0adfd87b264cf57f8725027fe0c7742ca51'],
+    }),
+    ('DT', '0.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3cc6dfc9697b52aef21d30dcfd355831c6216edcc6dd6bfb9a106cce6ab0906f'],
+    }),
+    ('pkgbuild', '1.0.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bd736cadcb9938df9fafddd362f9f032934a93b9853b981eb3754db8a3f9d476'],
+    }),
+    ('pkgload', '1.0.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3186564e690fb05eabe76e1ac0bfd4312562c3ac8794b29f8850399515dcf27c'],
+    }),
+    ('sessioninfo', '1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['166b04678448a7decd50f24afabe5e2ad613e3c55b180ef6e8dd7a870a1dae48'],
+    }),
+    ('xopen', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e207603844d69c226142be95281ba2f4a056b9d8cbfae7791ba60535637b3bef'],
+    }),
+    ('rcmdcheck', '1.3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1ab679eb1976d74cd3be5bcad0af7fcc673dbdfd4406bbce32591c8fddfb93b4'],
+    }),
+    ('brew', '1.0-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d70d1a9a01cf4a923b4f11e4374ffd887ad3ff964f35c6f9dc0f29c8d657f0ed'],
+    }),
+    ('commonmark', '1.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d14a767a3ea9778d6165f44f980dd257423ca6043926e3cd8f664f7171f89108'],
+    }),
+    ('xml2', '1.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3050f147c4335be2925a576557bbda36bd52a5bba3110d47b740a2dd811a78f4'],
+    }),
+    ('roxygen2', '7.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4549fc989720be1f300bda8ac2aa8e17e1a5f995ee2225373385e2e447b44a8f'],
+    }),
+    ('rversions', '2.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b50c321d9e973284ae6b1d0c89bd46a40f5174de51fb28e3c77cd12ef34f6f56'],
+    }),
+    ('praise', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5c035e74fd05dfa59b03afe0d5f4c53fbf34144e175e90c53d09c6baedf5debd'],
+    }),
+    ('testthat', '2.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['49fc5dbda1ffbc4b0f174a2bf17f1844dc8ff8efa032de14ad59fe519f938a62'],
+    }),
+    ('devtools', '2.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2e988fb56b068ba958ea471224d2462427868ce7706e157a90c0ce0e13294e44'],
+    }),
+    ('scatterplot3d', '0.3-41', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4c8326b70a3b2d37126ca806771d71e5e9fe1201cfbe5b0d5a0a83c3d2c75d94'],
+    }),
+    ('igraph', '1.2.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['891acc763b5a4a4a245358a95dee69280f4013c342f14dd6a438e7bb2bf2e480'],
+    }),
+    ('diffusionMap', '1.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['523847592fbc3a29252bc92b5821e17564ce6b188c483c930e95e6950c3873e7'],
+    }),
+    ('DNAcopy', '1.60.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['dca77a9a274087c4105aa9de154b617cb83ec3ec6b37a2cdbb377108312d3f85'],
+    }),
+    ('doParallel', '1.0.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['71ad7ea69616468996aefdd8d02a4a234759a21ddde9ed1657e3c537145cd86e'],
+    }),
+    ('sitmo', '2.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0c90d357af334d5c99c8956739dc12623ddd87dda5efa59f4a43f7393c87ed2a'],
+    }),
+    ('dqrng', '0.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e149c105b1db31e7f46b1aebf31d911a109e380923f3696fc56a53197fc1e866'],
+    }),
+    ('dtplyr', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['87253a89eb527428c9316bff5bd5a31e203ebee8af48100308f2e6c11c02ab84'],
+    }),
+    ('proxy', '0.4-23', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9dd4eb0978f40e4fcb55c8a8a26266d32eff9c63ac9dfe70cf1f664ca9c3669d'],
+    }),
+    ('dtw', '1.21-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1aa46b285b7a31ba19759e83562671ed9076140abec79fe0df0316af43871e0a'],
+    }),
+    ('fda', '2.4.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['425b9ce2f145e258e9d9118177d5c3a80c61215bf5e750ecbf118607d7cf6958'],
+    }),
+    ('gtools', '3.8.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['051484459bd8ad1b03425b8843d24f6828fea18f7357cfa1c192198cc3f4ba38'],
+    }),
+    ('gdata', '2.18.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4b287f59f5bbf5fcbf18db16477852faac4a605b10c5284c46b93fa6e9918d7f'],
+    }),
+    ('tis', '1.37.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['96761f437c1b0b8a8a4940baeddebc8106b4e8660cee381882c4dbbd1573e075'],
+    }),
+    ('jpeg', '0.1-8.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1db0a4976fd9b2ae27a37d3e856cca35bc2909323c7a40724846a5d3c18915a9'],
+    }),
+    ('TeachingDemos', '2.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2ef4c2e36ba13e32f66000e84281a3616584c86b255bca8643ff3fe4f78ed704'],
+    }),
+    ('Ecfun', '0.2-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a47e92d38444510cd23a0aac8f1705e4fdbc47b00f5f8dff81b052d278e59db2'],
+    }),
+    ('Ecdat', '0.3-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eb32c6828ae89083e73c25ec5215aed38e53fa03792b956240e77cdbd066861d'],
+    }),
+    ('edgeR', '3.28.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['036ea5bf3b4fe2b6a0ea8f081e7d9071eb34d4ad132708763a2bcce89733f4d4'],
+    }),
+    ('numDeriv', '2016.8-1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d8c4d19ff9aeb31b0c628bd4a16378e51c1c9a3813b525469a31fe89af00b345'],
+    }),
+    ('mitools', '2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f204f3774e29d79810f579f128de892539518f2cbe6ed237e08c8e7283155d30'],
+    }),
+    ('survey', '3.36', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['90f32e9d2b52eacf881e6717a4b5edfc5a3beb5da516f8372293549589d79475'],
+    }),
+    ('estimability', '1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a33179c5fbd6a1a623d90cb6f1743148f92c09429fac466867f3ea70946a2e32'],
+    }),
+    ('effects', '4.1-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b4de1464a86661450586a39767b04a0a3f9306accaefbe13c4c2dac4d53a0d3b'],
+    }),
+    ('eha', '2.7.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['90388a573a6d4b509af86ca8aefd281dd3381be4c95ca3dce2df803cec2a0707'],
+    }),
+    ('emmeans', '1.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e187ef5a09bfdfad086a040704c6c79a09c54cc248ed7764865a54af0d5cbceb'],
+    }),
+    ('uuid', '0.1-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dd71704dc336b0857981b92a75ed9877d4ca47780b1682def28839304cd3b1be'],
+    }),
+    ('officer', '0.3.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['047e605a52f3e7ba583508a903076cc19fdbeb8f702ae33c06ed9d3e97add2c4'],
+    }),
+    ('systemfonts', '0.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1fdc77ed721dee10b67b43a1c1d4b5a4fbb0bf98a793e04455ac0f645a941454'],
+    }),
+    ('gdtools', '0.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['417123ac5c8fdc187cfcba8263c55257935b39a2870877bf1983e8ec39285da9'],
+    }),
+    ('flextable', '0.5.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dc987e0dbd019af7c9814398a707e636d88cf462fdf4e88d837f62d7844b06b9'],
+    }),
+    ('fracdiff', '1.4-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['983781cedc2b4e3ba9fa020213957d5133ae9cd6710bc61d6225728e2f6e850e'],
+    }),
+    ('timeDate', '3043.102', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['377cba03cddab8c6992e31d0683c1db3a73afa9834eee3e95b3b0723f02d7473'],
+    }),
+    ('quadprog', '1.5-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1af41e57df6f2d08ee8b72a1a5ada137beadb36c7ec9ab9bdb7c05226e8ae76d'],
+    }),
+    ('xts', '0.11-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['12772f6a66aab5b84b0665c470f11a3d8d8a992955c027261cfe8e6077ee13b8'],
+    }),
+    ('TTR', '0.23-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e6e5229083d3e810d1d61ec62cab6e84a71e8e6669e6aa18b1a57cd5bdbdb13b'],
+    }),
+    ('quantmod', '0.4-15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7ef2e798d4d8e4d2af0a5b2b9fecebec30568087afbd24bfd923cdeb8b53df53'],
+    }),
+    ('tseries', '0.10-47', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['202377df56806fe611c2e12c4d9732c71b71220726e2defa7e568d2b5b62fb7b'],
+    }),
+    ('urca', '1.3-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['621cc82398e25b58b4a16edf000ed0a1484d9a0bc458f734e97b6f371cc76aaa'],
+    }),
+    ('forecast', '8.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ade3ec37f16c374b85f605780337a7a6349bfc8352caef319f927d36e4b57d04'],
+    }),
+    ('globals', '0.12.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7985356ad75afa1f795f8267a20dee847020c0207252dc075c614cef55d8fe6b'],
+    }),
+    ('listenv', '0.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6126020b111870baea08b36afa82777cd578e88c17db5435cd137f11b3964555'],
+    }),
+    ('future', '1.15.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['670d4d18805c07db35dc73657ebccc902804e1f5a1f603759737d2b49e3a77b1'],
+    }),
+    ('gamlss.data', '5.1-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0d3777d8c3cd76cef273aa6bde40a91688719be401195ed9bfd1e85bd7d5eeb5'],
+    }),
+    ('gamlss.dist', '5.1-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1c6f42d17e32eae848217bc5115bc440ff8f95869d7fef0756fbf6f2da8787e6'],
+    }),
+    ('gamlss', '5.1-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6ca1297418e514a7b89f59789908d040e3160cb32e7cf024cc623630997b963d'],
+    }),
+    ('gargle', '0.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fd7db5839ab8a9e407050200ba26f8e35defd5484cd812cbe0820caac574f023'],
+    }),
+    ('gdsfmt', '1.22.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['e9532998434f334bda15b3f15965c48578808951fd8201c99f1eb41a85d9897d'],
+    }),
+    ('gee', '4.13-20', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['53014cee059bd87dc22f9679dfbf18fe6813b9ab41dfe90361921159edfbf798'],
+    }),
+    ('lifecycle', '0.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['961c28c016d54beee496572a88602fe94d8456ee6455ac88cb2e0fc3273c3387'],
+    }),
+    ('tidyr', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['92a1a30b5636c3c1c68acbff0c1f5b301df64bf3198d23f1c9808ed43a900390'],
+    }),
+    ('GEOquery', '2.54.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['22ca0bd07259b012a782d40f5e98ccdc7aac5a575812609f2f7458561b712d2b'],
+    }),
+    ('miniUI', '0.1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['452b41133289f630d8026507263744e385908ca025e9a7976925c1539816b0c0'],
+    }),
+    ('shinyjs', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['286b11136bc999738592d01f980e7db86930fb3216effc680688829865bc7f84'],
+    }),
+    ('colourpicker', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f1dacbafb05c09f61b9bdd0fdcee5344409759b042a71ec46d7c9e3710107b7c'],
+    }),
+    ('ggExtra', '0.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f22db92d6e3e610901998348acbcaa6652fa6c62a285a622d3b962ba9e89aba2'],
+    }),
+    ('farver', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2086f309135f37705280fe2df851ad91dc886ad8f2a6eb1f3983aa20427f94b6'],
+    }),
+    ('tweenr', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['efd68162cd6d5a4f6d833dbf785a2bbce1cb7b9f90ba3fb060931a4bd705096b'],
+    }),
+    ('polyclip', '1.10-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['74dabc0dfe5a527114f0bb8f3d22f5d1ae694e6ea9345912909bae885525d34b'],
+    }),
+    ('ggforce', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a05271da9b226c12ae5fe6bc6eddb9ad7bfe19e1737e2bfcd6d7a89631332211'],
+    }),
+    ('ggfortify', '0.4.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c38130aa7e7102699f3f1a21830612fc59b99e8442772ab93e9b50c0cf1738a4'],
+    }),
+    ('ggrepel', '0.8.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d5d03a77ab6d8c831934bc46e840cc4e3df487272ab591fa72767ad42bcb7283'],
+    }),
+    ('ggsci', '2.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4af14e6f3657134c115d5ac5e65a2ed74596f9a8437c03255447cd959fe9e33c'],
+    }),
+    ('cowplot', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['70f9a7c46d10f409d1599f1afc9fd3c947051cf2b430f01d903c64ef1e6c98a5'],
+    }),
+    ('ggsignif', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6fe13efda31386483e64d466ba2f5a53a2a235ae04f5c17bba3ccc63d283499e'],
+    }),
+    ('polynom', '1.4-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c5b788b26f7118a18d5d8e7ba93a0abf3efa6603fa48603c70ed63c038d3d4dd'],
+    }),
+    ('ggpubr', '0.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['36a39a07a15421a623206b30512775b435d2339bb019e51efb3e594c7ead0145'],
+    }),
+    ('shape', '1.4.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f4cb1b7d7c84cf08d2fa97f712ea7eb53ed5fa16e5c7293b820bceabea984d41'],
+    }),
+    ('glmnet', '3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['671bc2b9f74fb77e1d2dafb225e5d6472edd1106b4b18f60f1f274bdfabc9abb'],
+    }),
+    ('rematch2', '2.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['78677071bd44b40e562df1da6f0c6bdeae44caf973f97ff8286b8c994db59f01'],
+    }),
+    ('gmailr', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2542d852a28bbfd60077e076ba6e61353f4f94bfb5a7cd66cfc6f28c9120f071'],
+    }),
+    ('GO.db', '3.10.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['24efb2ad70e1f29a9473c1c43ffbef16c8f96c5a2323afd159d8ac1561b27c9f'],
+    }),
+    ('gridSVG', '1.7-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0f8a4ef642f4da92c908acdb98f1c4b80ea9142a66b2da776efe814a81402a0f'],
+    }),
+    ('hexbin', '1.28.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cda0d4b637ddd63eaaed70eb7b3ced09216dbf63e7803d6dfe3c8d3fc392a82c'],
+    }),
+    ('base64', '2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8e259c2b12446197d1152b83a81bab84ccb5a5b77021a9b5645dd4c63c804bd1'],
+    }),
+    ('illuminaio', '0.28.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['5083b49907eda940dbe34c650f100dd252f9da31508554b3d80e418325525fdf'],
+    }),
+    ('insight', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cd1dedc4c8e97c55831f4cf802c32112d06c22d0ef18f55811d3ff072481f8c7'],
+    }),
+    ('ucminf', '1.1-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a2eb382f9b24e949d982e311578518710f8242070b3aa3314a331c1e1e7f6f07'],
+    }),
+    ('ordinal', '2019.4-25', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2812ad7a123cae5dbe053d1fe5f2d9935afc799314077eac185c844e3c9d79df'],
+    }),
+    ('jomo', '2.6-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4063d48e259e936dc0bd9dc616a09043f695703848cb1bf8faa08c07922034cd'],
+    }),
+    ('JuliaCall', '0.17.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0aff26cf82d2ee779a1c758ff3ca39e79db38c11fd8039902e82315f5baa6a2b'],
+    }),
+    ('png', '0.1-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e269ff968f04384fc9421d17cfc7c10cf7756b11c2d6d126e9776f5aca65553c'],
+    }),
+    ('KEGGREST', '1.26.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['87884dd8b773452d2983c84b2888951b012a3e82d594110454c32364d3def2b1'],
+    }),
+    ('kernlab', '0.9-29', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c3da693a0041dd34f869e7b63a8d8cf7d4bc588ac601bcdddcf7d44f68b3106f'],
+    }),
+    ('FNN', '1.1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['de763a25c9cfbd19d144586b9ed158135ec49cf7b812938954be54eb2dc59432'],
+    }),
+    ('mclust', '5.4.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['75f2963082669485953e4306ffa93db98335ee6afdc1318b95d605d56cb30a72'],
+    }),
+    ('multicool', '0.1-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5bb0cb0d9eb64420c862877247a79bb0afadacfe23262ec8c3fa26e5e34d6ff9'],
+    }),
+    ('ks', '1.11.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d8f1ccb99281eed092b8f950cfbf422330e88f2a0ce1ef6c9dbd7d8b9d648c41'],
+    }),
+    ('SQUAREM', '2017.10-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9b89905b436f1cf3faa9e3dabc585a76299e729e85ca659bfddb4b7cba11b283'],
+    }),
+    ('lava', '1.6.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7abc84dd99cce450a45ac4f232812cde3a322e432da3472f43b057fb5c59ca59'],
+    }),
+    ('reticulate', '1.13', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['adbe41d556b667c4419d563680f8608a56b0f792b8bc427b3bf4c584ff819de3'],
+    }),
+    ('leiden', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['17fa1e49667fdd30ef5166506181c8514ae406f68f0878a026ee111bff11f8a5'],
+    }),
+    ('RSpectra', '0.15-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1ad5698201007044a0420cb10b7c48e94312a8a1d22b9d946d5de1c6743969a9'],
+    }),
+    ('rARPACK', '0.11-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c33401e2e31d272d485ce2ed22e7fe43ac641fd7c0a45a9b848d3ad60df1028a'],
+    }),
+    ('lfda', '1.1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['636380e538f8fa41041fd4312bc6c3edf29b1ecd87bb0b3f171a32d26502646a'],
+    }),
+    ('stringdist', '0.9.5.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['11cf12f57052dde7872bdfa5b0598282627659c695c37a3a3ac8a94fd9540eb7'],
+    }),
+    ('xmlparsedata', '1.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['505350f8ff238de78dc96bd32a9a2972e6a055224664c8a839e2b6f20b1d593e'],
+    }),
+    ('lintr', '2.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8b33a905e8cd3710d4dd7ece105b57ee7027c6409eda58bfd38fd8b24964eb25'],
+    }),
+    ('listviewer', '3.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['197588374f1f4c12895e728edee96bdbdefa18b60622e3840183405464eb397e'],
+    }),
+    ('logspline', '2.1.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dfe0c89a2ae219d121ea7af788dd994097f42d2ff39f4f86f5c4288a4ec0f71e'],
+    }),
+    ('magick', '2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['05d13050be37d158e66fd895ef03a34184ed96a5a3258d790c930f3d15ac05f6'],
+    }),
+    ('mediation', '4.5.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['210206618787c395a67689be268283df044deec7199d9860ed95218ef1e60845'],
+    }),
+    ('microbenchmark', '1.4-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['268f13c6323dd28cc2dff7e991bb78b814a8873b4a73f4a3645f40423da984f6'],
+    }),
+    ('beanplot', '1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['49da299139a47171c5b4ccdea79ffbbc152894e05d552e676f135147c0c9b372'],
+    }),
+    ('nor1mix', '1.3-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9ce4ee92f889a4a4041b5ea1ff09396780785a9f12ac46f40647f74a37e327a0'],
+    }),
+    ('multtest', '2.42.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['312b5e1103876803e085b8bd509390d3e1ea0985b517879177ba51733a4dca62'],
+    }),
+    ('scrime', '1.3.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5d97d3e57d8eb30709340fe572746029fd139456d7a955421c4e3aa75d825578'],
+    }),
+    ('siggenes', '1.60.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['6489a3e427aa4c9ac2a2e457bc8ba68aec1131dc825a1f2bd197e78be1c0950e'],
+    }),
+    ('preprocessCore', '1.48.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['15979032c6b913c632629322d9802b18da00c66a9fc57cc19bf76e603a4c2b7f'],
+    }),
+    ('reshape', '0.8.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4d5597fde8511e8fe4e4d1fd7adfc7ab37ff41ac68c76a746f7487d7b106d168'],
+    }),
+    ('minfi', '1.32.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['83ee96ae4a9d7253c2356bc037d9b7456a1c423f70b9bd7c378708cc76d3f19c'],
+    }),
+    ('mockery', '0.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['988e249c366ee7faf277de004084cf5ca24b5c8a8c6e3842f1b1362ce2f7ea9b'],
+    }),
+    ('generics', '0.0.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['71b3d1b719ce89e71dd396ac8bc6aa5f1cd99bbbf03faff61dfbbee32fec6176'],
+    }),
+    ('broom', '0.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['16af7b446b24bc14461efbda9bea1521cf738c778c5e48fcc7bad45660a4ac62'],
+    }),
+    ('modelr', '0.1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['45bbee387c6ba154f9f8642e9f03ea333cce0863c324ff15d23096f33f85ce5a'],
+    }),
+    ('msigdbr', '7.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4d8fd7f1e86c4d0c061e358a333220c9e92a74580f077b1445be8e7a82f9e8a6'],
+    }),
+    ('nycflights13', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d201e8ddb9ea82f32a938da9c0d2f7500258851a9372b1ca95fbe282c9fb9240'],
+    }),
+    ('lubridate', '1.7.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['510ca87bd91631c395655ee5029b291e948b33df09e56f6be5839f43e3104891'],
+    }),
+    ('maps', '3.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['199afe19a4edcef966ae79ef802f5dcc15a022f9c357fcb8cae8925fe8bd2216'],
+    }),
+    ('mapproj', '1.2.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['62a5aa97837ae95ef9f973d95fe45fe43dbbf482dfa922e9df60f3c510e7efe5'],
+    }),
+    ('openair', '2.6-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d4faa7b505ce0c90c14cd76422fbed621d812e84b62fdd71d8584332801b7346'],
+    }),
+    ('getopt', '1.20.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['531f5fdfdcd6b96a73df2b39928418de342160ac1b0043861e9ea844f9fbf57f'],
+    }),
+    ('optparse', '1.6.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cd7855ebc2303da4ab0615282667c7eeef5329faf51bd2bf2e4b0d250561d973'],
+    }),
+    ('gmp', '0.5-13.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f681ab2ff3d1e379ba8ac44a8abddd08d08170723e885abc0b469b6fa8fe5510'],
+    }),
+    ('sets', '1.0-18', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['74d1e057e5b84197edb120665831d7b0565e2945e903be56c6701e724131679b'],
+    }),
+    ('partitions', '1.9-22', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['da020f447e669f273207fdc0f56dde90ca7082cc5f89531ec0c473245c231ee3'],
+    }),
+    ('pbapply', '1.4-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ac19f209f36f4fa3d0f5b14b6cc5b0c279996fb9d3e86c848c0f6d03c025b3f6'],
+    }),
+    ('pder', '1.0-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a5ae123109d24f47582b0e45fea584f0b844b7bd6fe031cfcb18c0ca7561ee90'],
+    }),
+    ('pinp', '0.0.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7ad78a4f4373b9ade8f0245b1c5f227281f0deb2f317a8a5a11c82cf7105b2c1'],
+    }),
+    ('pkgKitten', '0.1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a41a83184bd0c1ebb68d841077b64b624b02e4d32ff6006e5a42bcb41f58d15a'],
+    }),
+    ('plotly', '4.9.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['85a08c64d1bf839786951b3574986eacce78dacd589f2bef4b38208e49554d3d'],
+    }),
+    ('plotrix', '3.7-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['83d5f7574592953288b4fe39c4c0dd7670d097598ad7f6bddbb0687a32954e46'],
+    }),
+    ('plotmo', '3.5.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['78f08dc897136d21fa8ade2acb6290351b569d29eb0592c7074c0be3cf2aa594'],
+    }),
+    ('pls', '2.7-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['67e91e36dbebeb2f2d9c9b88f310dc00f70de275e5f382f392e72dd36af42b88'],
+    }),
+    ('polspline', '1.1.17', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d67b269d01105d4a6ea774737e921e66e065a859d1931ae38a70f88b6fb7ee30'],
+    }),
+    ('polyester', '1.22.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['9557e06885b086bd942558d8cb3f13b61eb5b9fa375ad781f85ccb90294e38cb'],
+    }),
+    ('prodlim', '2019.10.13', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e604f0c2028958f4d813e7c209c8c888b75c5118740c5c6564c51f63fe755e67'],
+    }),
+    ('quantsmooth', '1.52.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['8c4c52e23755d70190d68476947a1d524281910812e8c1054b8e3ec5b752a08b'],
+    }),
+    ('qvcalc', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f3548a34ba953a28b7cad0e850fe941d3075292dccd7c4e1cf4c736777fc25f3'],
+    }),
+    ('raster', '3.0-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['764f1c3d66ad2d1242c9fad6cff30291f351bfdb41df11d7a66b760ac3d95d39'],
+    }),
+    ('RcppAnnoy', '0.0.14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c4c2da6d8c2fd00ecb78a280c13c55846d9d835ec60de6a991089df24a7f31f2'],
+    }),
+    ('RcppCCTZ', '0.2.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0e9a76055d29da24cd4c4069c78c1f44998f3461be60c7a6c3e7a35059fb79ae'],
+    }),
+    ('RcppParallel', '4.4.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2ab21d3e776ab71d0217fce64ef25e21fb729127312337757d274beeab70235c'],
+    }),
+    ('reactome.db', '1.70.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['2f6b106271bbbb6765ae21601f865683007da3758ae782e780062b07ae238c17'],
+    }),
+    ('gower', '0.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['af3fbe91cf818c0841b2c0ec4ddf282c182a588031228c8d88f7291b2cdff100'],
+    }),
+    ('ipred', '0.9-9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0da87a70730d5a60b97e46b2421088765e7d6a7cc2695757eba0f9d31d86416f'],
+    }),
+    ('recipes', '0.1.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['28e96953355749dd1deb6786b22ec825a6fdb9f336e2785d45611e89f7e988bf'],
+    }),
+    ('RJSONIO', '1.3-1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bc5e97dac4d6e935ba530f60be9364ea5f2aebaf5b9a907135e8d7c0d56d22b9'],
+    }),
+    ('R.methodsS3', '1.7.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['44b840399266cd27f8f9157777b4d9d85ab7bd31bfdc143b3fc45079a2d8e687'],
+    }),
+    ('R.oo', '1.23.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f5124ce3dbb0a62e8ef1bfce2de2d1dc2f776e8c48fd8cac358f7f5feb592ea1'],
+    }),
+    ('R.utils', '2.9.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b2aacc5a55d3ea86c41ac576d2583e446af145f4cb1103ad7b6f95b09ab09ff0'],
+    }),
+    ('R.cache', '0.13.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d3d4a99a676734ea53e96747d87857fa69615e59858804e92f8ad9ddcf62c5c1'],
+    }),
+    ('R.rsp', '0.43.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f291a78ce9955943e0ebad1291f729dc4d9a8091f04b83fc4b1526bcb6c71f89'],
+    }),
+    ('rticles', '0.12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0fe8fe049f98d567fe6536c8dc4bb1c2e16127a6ac04c52d4e2a0833ea6588fd'],
+    }),
+    ('selectr', '0.4-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8bd42f167629344e485e586f9b05fed342746132489079084d82133d7b3ee2ca'],
+    }),
+    ('rvest', '0.3.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0e7f41be4ce6501d7af50575a2532d4bfd9153ca57900ee62dbc27c0a22c0a64'],
+    }),
+    ('SeqArray', '1.26.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['a8d9dda94031392a6d0ff9837aa9bd4a33239d6ddc0219c637af743cc20e8ce0'],
+    }),
+    ('SPAtest', '3.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3ead98ce9aefc1f4f69dab70e2e0331de618f78bddabd7361d94f402e4aa085f'],
+    }),
+    ('SAIGEgds', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['5a24391da0169ac331cdc89ff398a76b82ab3f09a225382f7672ca996d56c6ea'],
+    }),
+    ('ape', '5.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['08b0df134c523feb00a86896d1aa2a43f0f0dab20a53bc6b5d6268d867988b23'],
+    }),
+    ('lsei', '1.2-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4781ebd9ef93880260d5d5f23066580ac06061e95c1048fb25e4e838963380f6'],
+    }),
+    ('npsurv', '0.4-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['404cf7135dc40a04e9b81224a543307057a8278e11109ba1fcaa28e87c6204f3'],
+    }),
+    ('fitdistrplus', '1.0-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['85082590f62aa08d99048ea3414c5cc1e5b780d97b3779d2397c6cb435470083'],
+    }),
+    ('future.apply', '1.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6374eca49bb81e05c013509c8e324cf9c5d023f9f8217b29ce7b7e12025ca371'],
+    }),
+    ('ggridges', '0.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['01f87cdcdf2052ed9c078d9352465cdeda920a41e2ca55bc154c1574fc651c36'],
+    }),
+    ('ica', '1.0-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e721596fc6175d3270a60d5e0b5b98be103a8fd0dd93ef16680af21fe0b54179'],
+    }),
+    ('irlba', '2.3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6ee233697bcd579813bd0af5e1f4e6dd1eea971e8919c748408130d970fef5c0'],
+    }),
+    ('metap', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['20120428672d39dc15829c7e66850fc4350a34df290d48cef0b1cc78d13f7b82'],
+    }),
+    ('RANN', '2.6.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b299c3dfb7be17aa41e66eff5674fddd2992fb6dd3b10bc59ffbf0c401697182'],
+    }),
+    ('caTools', '1.17.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['69cc542fab5677462b1a768709d0c4a0a0790f5db53e1fe9ae7123787c18726b'],
+    }),
+    ('gplots', '3.0.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7db103f903a25d174cddcdfc7b946039b61e236c95084b90ad17f1a41da3770c'],
+    }),
+    ('ROCR', '1.0-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e7ef710f847e441a48b20fdc781dbc1377f5a060a5ee635234053f7a2a435ec9'],
+    }),
+    ('rsvd', '1.0.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c8fe5c18bf7bcfe32604a897e3a7caae39b49e47e93edad9e4d07657fc392a3a'],
+    }),
+    ('Rtsne', '0.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['56376e4f0a382fad3d3d40e2cb0562224be5265b827622bcd235e8fc63df276c'],
+    }),
+    ('sctransform', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d7f4c7958693823454f1426b23b0e1e9c207ad61a7a228602a1885a1318eb3e4'],
+    }),
+    ('SDMTools', '1.1-221.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3825856263bdb648ca018b27dc6ab8ceaef24691215c197f8d5cd17718b54fbb'],
+    }),
+    ('tsne', '0.1-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['66fdf5d73e69594af529a9c4f261d972872b9b7bffd19f85c1adcd66afd80c69'],
+    }),
+    ('uwot', '0.1.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['36216b08cd931997c117a4c8333a877e52441af7ee4557baa02e3491f4bf3cf9'],
+    }),
+    ('Seurat', '3.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c00cbbdf525627a4b36c51733d0fad35a961df1288f3b0ab865acf269dc89420'],
+    }),
+    ('mratios', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f8374a74ac1ed2c0b8f474052daad48134fb228f1f3f3ebde777fa3f3ae64c5e'],
+    }),
+    ('SimComp', '3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2542f02e314841a03491ef081981077ef14bb173f65bb297201fcc0f848e1313'],
+    }),
+    ('sjlabelled', '1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7f4a4921a1a74eb8158bd96993bd34f4818a4f5c1d0d23769e4b8bac1ff03c31'],
+    }),
+    ('sjmisc', '2.8.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['62d942e6258ba293ed7d1b0cedb773a34fde00750800ff5a6f84f190665d8066'],
+    }),
+    ('dotCall64', '1.0-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['69318dc6b8aecc54d4f789c8105e672198363b395f1a764ebaeb54c0473d17ad'],
+    }),
+    ('spam', '2.4-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['20fcdde88de5cddc5377dcaa027b1d1abdfae94d15859265fc73a4183a506775'],
+    }),
+    ('spatstat.utils', '1.13-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['81a26d2e1542b8de241512b4c0d267d039847415415c2d9c2e7fd7eac48a3272'],
+    }),
+    ('spatstat.data', '1.4-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['121e5bb92beb7ccac920f921e760f429fd71bcfe11cb9b07a7e7326c7a72ec8c'],
+    }),
+    ('tensor', '1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e1dec23e3913a82e2c79e76313911db9050fb82711a0da227f94fc6df2d3aea6'],
+    }),
+    ('goftest', '1.1-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['db6cb1ff6e18520b172e93fca5d7d953bd2d06f4af73bf90aa0a09df8cad71a0'],
+    }),
+    ('spatstat', '1.61-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['051d6a5ad018d86c46ddd277c806c227949b3a1981d809610d01b21ff34c5906'],
+    }),
+    ('spData', '0.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7c7d93e7b722e67695f89e1961592733393298229359768fe846087b73d615a4'],
+    }),
+    ('strucchange', '1.5-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7d247c5ae6f5a63c80e478799d009c57fb8803943aa4286d05f71235cc1002f8'],
+    }),
+    ('testit', '0.11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['12fb24f0c7b032ae0d146d22161efc676ef4cdf604b81f6345e8d9dfd125388e'],
+    }),
+    ('filehash', '2.4-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b6d056f75d45e315943a4618f5f62802612cd8931ba3f9f474b595140a3cfb93'],
+    }),
+    ('tikzDevice', '0.12.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['597c6f4117c84805ed94982643b51fa44e3ba3af45b0601829dbd5acc7ea0cb5'],
+    }),
+    ('units', '0.6-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['50b759fe0c91f7e098cabb348f3d14067f3dbeb26574a2259d27870c2ad2d40a'],
+    }),
+    ('permute', '0.9-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d2885384a07497e8df273689d6713fc7c57a7c161f6935f3572015e16ab94865'],
+    }),
+    ('vegan', '2.5-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b3c00aceb3db38101960515658e2b9ec1552439c3ed4e26e72989f18eccbc03c'],
+    }),
+    ('webutils', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['412f6ea0ae5572fa7872880832f8849b5d31f1937a412db55d927d28b3db1b4e'],
+    }),
+    ('WES.1KG.WUGSC', '1.18.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['42e8212da3e1fa5e49769b12746886f6994f42738906bb403de3d3d43403a220'],
+    }),
+    ('ade4', '1.7-13', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f5d0a7356ae63f82d3adb481a39007e7b0d70211b8724aa686af0c89c994e99b'],
+    }),
+    ('akima', '0.6-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['61da3e556553eea6d1f8db7c92218254441da31e365bdef82dfe5da188cc97ce'],
+    }),
+    ('AlgDesign', '1.1-7.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['df0d56111401474b7f06eaf9ce7145a1cb73b3c5ec4817bad06f56db48af872e'],
+    }),
+    ('animation', '2.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['90293638920ac436e7e4de76ebfd92e1643ccdb0259b62128f16dd0b13245b0a'],
+    }),
+    ('findpython', '1.0.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3e9a21988cb78833769b02680d128a0cc01bcb41aa9c9725ab1742f349759145'],
+    }),
+    ('argparse', '2.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['949843920d14fc7c162aedab331a936499541736e7dafbb103fbfd79be8147ab'],
+    }),
+    ('argparser', '0.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a9d73a81cc1dc580219dd257ef32ae0c7983c7499d79d81d4f664ad2a1ee3c68'],
+    }),
+    ('coda', '0.19-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d3df1fc848bcf1af8fae13d61eeab60e99a3d4b4db384bec4326f909f502c5d6'],
+    }),
+    ('arm', '1.10-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6f1158c9295e65bd649139224497d3356189b931ff143f9b374daae72548776f'],
+    }),
+    ('AUC', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e705f2c63d336249d19187f3401120d738d42d323fce905f3e157c2c56643766'],
+    }),
+    ('bayesplot', '1.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fcecd318ecd73b37d3ba14b9637fb46a07d878540543b7f78d0c0a6fddd24340'],
+    }),
+    ('bbmle', '1.0.20', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6c0fe8df7243f8a039e62d14014065df2002b9329c0e8a3c2df4e7ccf591f1f7'],
+    }),
+    ('beeswarm', '0.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0115425e210dced05da8e162c8455526a47314f72e441ad2a33dcab3f94ac843'],
+    }),
+    ('flexmix', '2.3-15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ba444c0bfe33ab87d440ab590c06b03605710acd75811c1622253171bb123f43'],
+    }),
+    ('betareg', '3.1-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['690827102571a7f218f996b4de364b3dba7d6adf032b44d9ce20e4f6781a2f4d'],
+    }),
+    ('biglm', '0.9-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e189554913a3b162c8be04e7d0d8143eb4da0fcec56113cb1ce99f42fc22f0fc'],
+    }),
+    ('bigmemory.sri', '0.1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['55403252d8bae9627476d1f553236ea5dc7aa6e54da6980526a6cdc66924e155'],
+    }),
+    ('bigmemory', '4.5.33', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7237d9785d8ce3eab4e36ad3ce2c95cbae926326031661b4f237b7517f4b9479'],
+    }),
+    ('bindr', '0.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7c785ca77ceb3ab9282148bcecf64d1857d35f5b800531d49483622fe67505d0'],
+    }),
+    ('bindrcpp', '0.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['48130709eba9d133679a0e959e49a7b14acbce4f47c1e15c4ab46bd9e48ae467'],
+    }),
+    ('binGroup', '2.2-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d7b914fb7b727dc15e727c8fac87cb604f1033e7ea98147635c50f0d96916731'],
+    }),
+    ('semver', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['becfaa6c422970298916f5157539bf8510ba26c4000b1bf51a3d32a1ab9f9783'],
+    }),
+    ('binman', '0.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5f8961c6c2836f242ff32a1645dd7575071d9c101a798933a469935b9080a042'],
+    }),
+    ('profileModel', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a829ceec29c817d6d15947b818e28f9cf5a188a231b9b5d0a75018388887087b'],
+    }),
+    ('brglm', '0.6.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c2af432a43ccf37e9de50317f770b9703a4c80b4ef79ec40aa8e7ec3987e3631'],
+    }),
+    ('BradleyTerry2', '1.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['afc3415ae1fb211172a3a039d8a32b18ce2f855dd8aa3b0267497aebb3d1908e'],
+    }),
+    ('mvnfast', '0.2.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['21b9fa72d1e3843513908aaacd6c4d876cc7a9339782d0151b24910df2975f88'],
+    }),
+    ('Brobdingnag', '1.2-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['19eccaed830ce9d93b70642f6f126ac66722a98bbd48586899cc613dd9966ad4'],
+    }),
+    ('bridgesampling', '0.7-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['64a44e92ccc2828261a71e2298901a8064b36df1bc2b8796d47a1bf26fb9a44d'],
+    }),
+    ('ca', '0.71', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['021e653b373d311818a8a6d0f78c27bf03448df3097452a33f5a279681dc98fb'],
+    }),
+    ('Cairo', '1.5-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7837f0c384cd49bb3342cb39a916d7a80b02fffbf123913a58014e597f69b5d5'],
+    }),
+    ('shapefiles', '0.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eeb18ea4165119519a978d4a2ba1ecbb47649deb96a7f617f5b3100d63b3f021'],
+    }),
+    ('CARBayesdata', '2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1a3a42a0ed63191b345990ee14792183f32a43825d8697f63315dbbb72eb3227'],
+    }),
+    ('ModelMetrics', '1.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['66d6fc75658287fdbae4d437b51d26781e138b8baa558345fb9e5a2df86a0d95'],
+    }),
+    ('caret', '6.0-84', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a1831c086a9c71b469f7405649ba04517683cdf229e119c005189cf57244090d'],
+    }),
+    ('cba', '0.2-21', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a61e787458e2df5049bea797bb442d6c86ebc9aa9b4dfbf043e23adac15d5048'],
+    }),
+    ('changepoint', '2.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['727edd88f1e39885654d319688bf088942984e240b28db2fbc204c764b8a73c9'],
+    }),
+    ('pcaPP', '1.9-73', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ca4566b0babfbe83ef9418283b08a12b3420dc362f93c6562f265df7926b53fc'],
+    }),
+    ('som', '0.3-5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a6f4c0e5b36656b7a8ea144b057e3d7642a8b71972da387a7133f3dd65507fb9'],
+    }),
+    ('lars', '1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['64745b568f20b2cfdae3dad02fba92ebf78ffee466a71aaaafd4f48c3921922e'],
+    }),
+    ('chemometrics', '1.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b705832fa167dc24b52b642f571ed1efd24c5f53ba60d02c7797986481b6186a'],
+    }),
+    ('CircStats', '0.2-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8efed93b75b314577341effea214e3dd6e0a515cfe1212eb051047a1f3276f1d'],
+    }),
+    ('circular', '0.4-93', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['76cee2393757390ad91d3db3e5aeb2c2d34c0a46822b7941498571a473417142'],
+    }),
+    ('clubSandwich', '0.3.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8950c55ddbd3e11b42ef26b0008de9d72ae53e87097f7e747cf11128e076bd0e'],
+    }),
+    ('combinat', '0.0-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1513cf6b6ed74865bfdd9f8ca58feae12b62f38965d1a32c6130bef810ca30c1'],
+    }),
+    ('corpcor', '1.6.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2e4fabd1d3936fecea67fa365233590147ca50bb45cf80efb53a10345a8a23c2'],
+    }),
+    ('cubature', '2.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['79bf03ebdb64b0de1ef19d24051b9d922df9310254bee459bb47764522407a73'],
+    }),
+    ('Cubist', '0.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cd3e152cc72ab33f720a8fb6b8b6787171e1c037cfda48f1735ab692ed6d85d4'],
+    }),
+    ('CVST', '0.2-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['854b8c983427ecf9f2f7798c4fd1c1d06762b5b0bcb1045502baadece6f78316'],
+    }),
+    ('debugme', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4dae0e2450d6689a6eab560e36f8a7c63853abbab64994028220b8fd4b793ab1'],
+    }),
+    ('dendextend', '1.12.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b487fed8c1878a23b9e28394ee11f16a1831b76c90793eb486e6963c7162fa55'],
+    }),
+    ('deSolve', '1.24', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3aa52c822abb0348a904d5bbe738fcea2b2ba858caab9f2831125d07f0d57b42'],
+    }),
+    ('diagram', '1.6.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7c2bc5d5d634c3b8ca7fea79fb463e412962d88f47a77a74c811cc62f375ce38'],
+    }),
+    ('dichromat', '2.0-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['31151eaf36f70bdc1172da5ff5088ee51cc0a3db4ead59c7c38c25316d580dd1'],
+    }),
+    ('diffobj', '0.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fc77e93f687dff190c661d472fb356b0982b24444cf41e3c2b1d4521151c989f'],
+    }),
+    ('DRR', '0.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7493389c1fb9ddc4d4261e15bf2d4198603227275688b1d3e3994d47e976a1f9'],
+    }),
+    ('dimRed', '0.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e6e56e3f6999ebdc326e64ead5269f3aaf61dd587beefafb7536ac3890370d84'],
+    }),
+    ('diptest', '0.75-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['462900100ca598ef21dbe566bf1ab2ce7c49cdeab6b7a600a50489b05f61b61b'],
+    }),
+    ('dlm', '1.1-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9940724c34b69ba27605844a4ec8a9021fa6e22b92e8d70bbdf128a78da97aaa'],
+    }),
+    ('doMC', '1.3.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2977fc9e2dc54d85d45b4a36cd286dff72834fbc73f38b6ee45a6eb8557fc9b2'],
+    }),
+    ('doSNOW', '1.0.18', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['70e7bd82186e477e3d1610676d4c6a75258ac08f104ecf0dcc971550ca174766'],
+    }),
+    ('downloader', '0.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1890e75b028775154023f2135cafb3e3eed0fe908138ab4f7eff1fc1b47dafab'],
+    }),
+    ('dygraphs', '1.1.1.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c3d331f30012e721a048e04639f60ea738cd7e54e4f930ac9849b95f0f005208'],
+    }),
+    ('dynlm', '0.3-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f88fd2e8eceebe00199f8b9e36e574f82ebbf6490d6a507519d62753cbd218bd'],
+    }),
+    ('ellipse', '0.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1a9a9c52195b26c2b4d51ad159ab98aff7aa8ca25fdc6b2198818d1a0adb023d'],
+    }),
+    ('emdbook', '1.3.11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f848d4c0a2da50dc8a5af76429d8f9d4960dee3fad1e98f7b507bdfd9b2ca128'],
+    }),
+    ('nortest', '1.0-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a3850a048181d5d059c1e74903437569873b430c915b709808237d71fee5209f'],
+    }),
+    ('EnvStats', '2.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d753d42b42ff28c1cd25c63916fb2aa9e325941672fb16f7dfd97e218416cf2a'],
+    }),
+    ('epitools', '0.5-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7504d0f76cb3117906e547c475336dd389f93ca7e60933df9a75c851d5140ae3'],
+    }),
+    ('network', '1.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5cbe5c0369e5f8363e33a86f14fd33ce8727166106381627ecd13b7452e14cb3'],
+    }),
+    ('trust', '0.1-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e3d15aa84a71becd2824253d4a8156bdf1ab9ac3b72ced0cd53f3bb370ac6f04'],
+    }),
+    ('statnet.common', '4.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['834a3359eac967df0420eee416ae4983e3b502a3de56bb24f494a7ca4104e959'],
+    }),
+    ('ergm', '3.10.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['885f0b1a23c5a2c1947962350cfab66683dfdfd1db173c115e90396d00831f22'],
+    }),
+    ('ergm.count', '3.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7c24c79d0901c18991cce907306a1531cca676ae277c6b0a0e4962ad27c36baf'],
+    }),
+    ('expm', '0.999-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['58d06427a08c9442462b00a5531e2575800be13ed450c5a1546261251e536096'],
+    }),
+    ('expsmooth', '2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ac7da36347f983d6ec71715daefd2797fe2fc505c019f4965cff9f77ce79982a'],
+    }),
+    ('fastcluster', '1.1.25', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f3661def975802f3dd3cec5b2a1379f3707eacff945cf448e33aec0da1ed4205'],
+    }),
+    ('fastICA', '1.2-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['32223593374102bf54c8fdca7b57231e4f4d0dd0be02d9f3500ad41b1996f1fe'],
+    }),
+    ('fastmatch', '1.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['20b51aa4838dbe829e11e951444a9c77257dcaf85130807508f6d7e76797007d'],
+    }),
+    ('timeSeries', '3042.102', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fa153c60da7ab085fe72ac32e3a0348bdf79156379f52a4234aa45084eabb0a0'],
+    }),
+    ('spatial', '7.3-11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['624448d2ac22e1798097d09fc5dc4605908a33f490b8ec971fc6ea318a445c11'],
+    }),
+    ('gss', '2.1-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['26c47ecae6a9b7854a1b531c09f869cf8b813462bd8093e3618e1091ace61ee2'],
+    }),
+    ('stabledist', '0.7-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['06c5704d3a3c179fa389675c537c39a006867bc6e4f23dd7e406476ed2c88a69'],
+    }),
+    ('fBasics', '3042.89', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b8b8d2362cbcfae3282b35fb59258cc956e2e60a5d19e3c7cee06b51b434da74'],
+    }),
+    ('ff', '2.2-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1c6307847275b1b8ad9e2ffdce3f4df3c9d955dc2e8a45e3fd7bfd2b0926e2f0'],
+    }),
+    ('ffbase', '0.12.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['dc16a4faf8abb778c353a5ddaf1a10a2b10b7ae867dd6d0b1be400379ce87d12'],
+    }),
+    ('fGarch', '3042.83.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2db021ffcfb0645bd0872180492e9ce6a9d89afd92871d8f034dc5140897ad32'],
+    }),
+    ('fit.models', '0.5-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['93b9d119e97b36c648a19c891fc5e69f5306eb5b9bac16bf377555057afd4b6e'],
+    }),
+    ('mstate', '0.2.11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7ec0a7e7dfda00feb254a25bd4351b3e42cac53884b109cb042e3871830d7c8e'],
+    }),
+    ('muhaz', '1.2.6.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['73ce8b6cf23a90613d19075cff6ec7b5b9ba1dbc7d0b4c885f7e40d3ff201023'],
+    }),
+    ('flexsurv', '1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d926ec371b3c0501f284c30ce0cf8bd5948f96d6c33cf6bd77f4de50760ef774'],
+    }),
+    ('FMStable', '0.1-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['93392247fa7841698252386324a6927a0a87f96291b3443d240c2f87ef8b7103'],
+    }),
+    ('fontBitstreamVera', '0.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3298b3dd95605bdda0c5fce5594c9bedde6aa63d89b216d5c83c6c092b6d375a'],
+    }),
+    ('fontLiberation', '0.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['acdea423e005873aa509e280074a3cef4796e4f7e9d77b3945d77b451ea039f0'],
+    }),
+    ('fontquiver', '0.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['95871814c2d55c03ee15a54e29aadfb840c791e1430f94127d9e1dc8608a6363'],
+    }),
+    ('prabclus', '2.3-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ef3294767d43bc3f72478fdaf0d1f13c8de18881bf9040c9f1add68af808b3c0'],
+    }),
+    ('fpc', '2.2-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8100a74e6ff96b1cd65fd22494f2d200e54ea5ea533cfca321fa494914bdc3b7'],
+    }),
+    ('freetypeharfbuzz', '0.2.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2cccb088dd0e9b62b5d51f85aca40798fb5739920c1024a614c36b731bae4f85'],
+    }),
+    ('fTrading', '3042.79', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3e99963eb59891b14a1531f8b30692c59ae0e2a97a6d63c3ad3b37772d79ce76'],
+    }),
+    ('gam', '1.16.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['80d04102c6152143e8ed364f91eb312e413f73b8fcab7cf15d677867a16e74b9'],
+    }),
+    ('gamm4', '0.2-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6c15c7051d1366533e1abf543614478e7ed0a6d860c422fea8037721a0a58b87'],
+    }),
+    ('gapminder', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fb5227cd0c0d3ee3fda70f50c578884e5fc6bfbfc98786bae4cf12c582caec18'],
+    }),
+    ('gbm', '2.1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['06fbde10639dfa886554379b40a7402d1f1236a9152eca517e97738895a4466f'],
+    }),
+    ('geepack', '1.2-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7effe67381129a48154c445704490ea3b5f2e1adedb66cb65f61369dd1f8d38d'],
+    }),
+    ('genetics', '1.3.8.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['30cb67de2e901578fd802deb7fbfea6c93024c9fb6ea66cad88430a3a2a51eec'],
+    }),
+    ('geosphere', '1.5-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['56cd4f787101e2e18f19ddb83794154b58697e63cad81168f0936f60ab7eb497'],
+    }),
+    ('slackr', '1.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bc208e55ab2ad156fb8d0b4426a0d18099bd3347a65bab42ef436bf65d81a2ee'],
+    }),
+    ('matrixcalc', '1.0-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['17e6caeeecd596b850a6caaa257984398de9ec5d2b41ce83c428f112614b9cb0'],
+    }),
+    ('GERGM', '0.13.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['53aeea91e597c3d89ec2413f020d0a3aaaa6d37cb4eeca60df6b94c2defc6ec0'],
+    }),
+    ('getPass', '0.2-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8cfdc7e8cabeae5dd325015d735b139d9828bd54ea8e7c2dcb636a00a153cd0f'],
+    }),
+    ('GGally', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9a47cdf004c41f5e4024327b94227707f4dad3a0ac5556d8f1fba9bf0a6355fe'],
+    }),
+    ('vipor', '0.4.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7d19251ac37639d6a0fed2d30f1af4e578785677df5e53dcdb2a22771a604f84'],
+    }),
+    ('ggbeeswarm', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bbac8552f67ff1945180fbcda83f7f1c47908f27ba4e84921a39c45d6e123333'],
+    }),
+    ('ggplot2movies', '0.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['186da1d21c3ac58699eb7bf5602bdf19944fee0d4c647076a4ebb22e9b69f418'],
+    }),
+    ('ggthemes', '4.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5bb3fe94819fe2cce7865f07a6e6ea5c59d3996f78d1c0836ad406f69efb3367'],
+    }),
+    ('gmm', '1.6-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b12f888276c2d480f17ae2711e4915bb253574e3fc36531349f1c2f2c8ad715d'],
+    }),
+    ('gmodels', '2.18.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['626140a34eb8c53dd0a06511a76c71bc61c48777fa76fcc5e6934c9c276a1369'],
+    }),
+    ('relimp', '1.0-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['acac7cf72ea39916761b51c825db0ffcb2bb1640e0a04086831fb78e9e40b679'],
+    }),
+    ('gnm', '1.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b43a91fbe51848a414858ece413d2886d2fbbed4c2d88da0243c350275e7a705'],
+    }),
+    ('googleVis', '0.6.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7dcaf0e9d5e5598c17e8bd474141708de37eeb2578b09788431b9d871edb7eb8'],
+    }),
+    ('gridBase', '0.4-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['be8718d24cd10f6e323dce91b15fc40ed88bccaa26acf3192d5e38fe33e15f26'],
+    }),
+    ('grImport', '0.9-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['265c7dbfbe8aa0148b2627fa464a7b95924099f174f197fd761168e47f337e58'],
+    }),
+    ('grr', '0.9.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['292606de2983ac5840c90d3e0977441b482c9e73c1674b662f8b4fb8f3632b2b'],
+    }),
+    ('gsalib', '2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e1b23b986c18b89a94c58d9db45e552d1bce484300461803740dacdf7c937fcc'],
+    }),
+    ('gWidgets', '0.0-54.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c2b28b146de38c7ecb86046f5876080a439c34632cc9c1dde0ff2d4ae2959cef'],
+    }),
+    ('rms', '5.1-3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0946d9547a4e3ff020a61ab3fce38f88aa9545729683e2bfefeb960edec82b37'],
+    }),
+    ('haplo.stats', '1.7.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bd0adec41cc0ab45eb2674f6f7c40ffe0011e5198883dedb071f178c99567da6'],
+    }),
+    ('heatmap3', '1.1.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5d5a3d574e9e3699490c93a523ce242006257e5be110935d58c74c135a4e4a8d'],
+    }),
+    ('hglm.data', '1.0-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a27f66a10c02961a0de7d6b6fa6f3d8dae7d5cf14efb3e7995096aa826d08157'],
+    }),
+    ('hglm', '2.2-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cc8ea4be27a2cd6a03dbc4af34fa30b5010c674c750a567ec68152f7f19eddd3'],
+    }),
+    ('HSAUR', '1.3-9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1fa7344491f984a19c00dba1f6a0b32b573c22ad47327790aa57649a8af5502c'],
+    }),
+    ('HSAUR3', '1.0-9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['642509bf3eb2cd8539387683717ff8856a4603fe65b4b5d756737730155dfbe6'],
+    }),
+    ('hunspell', '3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['01fb9c87f7cf094aaad3b7098378134f2e503286224351e91d08c00b6ee19857'],
+    }),
+    ('hwriter', '1.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6b3531d2e7a239be9d6e3a1aa3256b2745eb68aa0bdffd2076d36552d0d7322b'],
+    }),
+    ('ibdreg', '0.2.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4fc0d98e6f9abdc9f1cd3c24c7d9cfb76b1d36139cf00af2e76044bf022e4acd'],
+    }),
+    ('igraphdata', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7466426fdc1fdda90dd26d495409864e3c08ab3d997692362980a145d4b585a7'],
+    }),
+    ('IlluminaHumanMethylationEPICanno.ilm10b2.hg19', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['4decdbc78a6a8d02bf8aecb0d6e1d81134ae9dbc2375add52574f07829e8cd69'],
+    }),
+    ('IlluminaHumanMethylationEPICanno.ilm10b4.hg19', '0.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['2c8128126b63e7fa805a5f3b02449367dca9c3be3eb5f6300acc718826590719'],
+    }),
+    ('IlluminaHumanMethylationEPICmanifest', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['e39a69d98486cec981e97c56f45bbe47d2ccb5bbb66a1b16fa0685575493902a'],
+    }),
+    ('inline', '0.3.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ff043fe13c1991a3b285bed256ff4a9c0ba10bee764225a34b285875b7d69c68'],
+    }),
+    ('intervals', '0.15.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9a8b3854300f2055e1492c71932cc808b02feac8c4d3dbf6cba1c7dbd09f4ae4'],
+    }),
+    ('repr', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ecde22c17fd800e1ff5c2b2962689119aa486fba40fbc6f2c50e8d4cc61bc44b'],
+    }),
+    ('IRdisplay', '0.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['91eac9acdb92ed0fdc58e5da284aa4bb957ada5eef504fd89bec136747999089'],
+    }),
+    ('Iso', '0.0-18', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2d7e8c4452653364ee086d95cea620c50378e30acfcff129b7261e1756a99504'],
+    }),
+    ('ISwR', '2.0-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cf1ebf207e62b835c73ec1a09fc4e5496e671f39b3595a94478c724477e6a1e5'],
+    }),
+    ('plotfunctions', '1.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e3bfdc8dd55e443a99832348136f960acad85f004e8344e441a19027dde4d532'],
+    }),
+    ('itsadug', '2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['356db55c1b9a9b721b073e4098b4e244fc8d922c9ca0cc922546140005f2ed73'],
+    }),
+    ('jose', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4e8aa81fd3abd551d71165332e20cf6b84e183b5059888db10768308491fcafa'],
+    }),
+    ('KEGG.db', '3.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': bioconductor_options['source_urls'],
+        'checksums': ['02ea4630a3ec06a8d9a6151627c96d3f71dfc7e8857800bb5c0cdb6a838d6963'],
+    }),
+    ('KFAS', '1.3.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b3f72e0783864e1ea6fbf07c0c867c4bef293527902c7e1bbfbdb8c43982b7ae'],
+    }),
+    ('labelled', '2.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['51851d8a50acadb144e0d2300f65d0962d617aa963b2a3051fb56495bdd237d7'],
+    }),
+    ('questionr', '0.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c4566880a1ca8f01faad396e20d907d913f4a252acaf83a0cb508a3738874cb3'],
+    }),
+    ('klaR', '0.6-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['51e9d9149ba77874ccecc816a2a75619e2f9615c091f6e8969da20615c2b29bd'],
+    }),
+    ('Lahman', '7.0-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['09be24165b853f1a6d084c58ebbffd1c3f9f25609c9221c3c86e746d0520c409'],
+    }),
+    ('leaflet', '2.0.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['fa448d20940e01e953e0706fc5064b0fa347e69fa967792599eb03c52b2e3114'],
+    }),
+    ('LearnBayes', '2.15.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9b110858456523ca0b2a63f22013c4e1fbda6674b9d84dc1f4de8bffc5260532'],
+    }),
+    ('lfe', '2.8-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c46fb85b2d4deaf07c270c40bdd3f685c39e6ea2bb0b00c2b987e00e2698ef42'],
+    }),
+    ('lmerTest', '3.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2bdd4e8c1b9f88653dd39e5ee919878bb45bac857515130946cb17d52b437fda'],
+    }),
+    ('lmodel2', '1.7-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cb425276ab20cc1fa98b11e53c931cb622f768e2b547a4c387713937adb031ba'],
+    }),
+    ('logging', '0.10-108', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['85c91aa5a313f5f9fbb0394cda3f924a2495cca3cc5cd68dde0695fe3c20ed8d'],
+    }),
+    ('longmemo', '1.1-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0dd88e84a8376141d117bba39fe44f7d3c29d46fc103557fe98357f06e17d657'],
+    }),
+    ('loo', '2.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1bf4a1ef85d151577ff96d4cf2a29c9ef24370b0b1eb08c70dcf45884350e87d'],
+    }),
+    ('lsmeans', '2.30-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['aef4c2fe4cb292edac79e83f50feac83429f6d7d50fe1780980eacf8dc6f65fc'],
+    }),
+    ('mail', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['86bf7c794f21e1600eaf385f5366924f9bb61772433671e7418da855f86609d5'],
+    }),
+    ('webshot', '0.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b9750d206c6fa0f1f16cc212b0a34f4f4bfa916962d2c877f0ee9a33620f4b23'],
+    }),
+    ('manipulateWidget', '0.10.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3d61a3d0cedf5c8a850a3e62ed6af38c600dc3f25b44c4ff07a5093bf9ca4ffd'],
+    }),
+    ('mapdata', '2.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1edc180990387b6b1cd4e43a9505ebeb98e6115e4205c4f32f05b397c781dd76'],
+    }),
+    ('Matrix.utils', '0.9.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6a9fbc9f7117e1a3978948739cbdd57860996498d96b2fe56fc1bf2115c9c4f4'],
+    }),
+    ('mcmc', '0.9-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['443a189fff907830627029dd55d925db9a70562d8bda7bfae97414ab955186b9'],
+    }),
+    ('tensorA', '0.36.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c7ffe12b99867675b5e9c9f31798f9521f14305c9d9f9485b171bcbd8697d09c'],
+    }),
+    ('MCMCglmm', '2.29', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['13ba7837ea2049e892c04e7ec5c83d5b599a7e4820b9d875f55ec40fc2cc67b4'],
+    }),
+    ('MCMCpack', '1.4-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['97e193d628f7161e59288ed594a313af3a520bf30d5a95f1ede0cb2a567cf9f7'],
+    }),
+    ('mda', '0.4-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7036bc622a8fea5b2de94fc19e6b64f5f0c27e5d743ae7646e116af08c9de6a5'],
+    }),
+    ('measurements', '1.4.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e62fb4619906e4b2b34dd69ed7d0d68eb33a9f95f2879faac4bcbf9df45630ce'],
+    }),
+    ('memisc', '0.99.17.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5bd5cf4ee55ea7dc65a7e4dbc0ae650b9ca566829941a1367b46e47ddc937770'],
+    }),
+    ('MetABEL', '0.2-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['238e37fafb190d7814caac964a93779b815f1b3337a285ee5a99eb570bda1267'],
+    }),
+    ('pan', '1.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['adc0df816ae38bc188bce0aef3aeb71d19c0fc26e063107eeee71a81a49463b6'],
+    }),
+    ('mitml', '0.3-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c6f796d0059f1b093b599a89d955982fa257de9c45763ecc2cbbce10fdec1e7b'],
+    }),
+    ('mice', '3.6.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7bc72bdb631bc9f67d8f76ffb48a7bb275228d861075e20c24c09c736bebec5d'],
+    }),
+    ('misc3d', '0.8-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['75de3d2237f67f9e58a36e80a6bbf7e796d43eb46789f2dd1311270007bf5f62'],
+    }),
+    ('mix', '1.0-10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0f71b4a14dc352fa45f636b4641161ef5a859a1630d0454cec78a603576b267c'],
+    }),
+    ('segmented', '1.0-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eeadc89b4bb4744bbd1e4e6c3b6536ff96fc7ee09016228dfdc0a8ebdc74fac5'],
+    }),
+    ('mixtools', '1.1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['543fd8d8dc8d4b6079ebf491cf97f27d6225e1a6e65d8fd48553ada23ba88d8f'],
+    }),
+    ('mlbench', '2.1-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['748141d56531a39dc4d37cf0a5165a40b653a04c507e916854053ed77119e0e6'],
+    }),
+    ('MLmetrics', '1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['777f1b76b16837387b830e2b65304ede234b9299d17efd09c7fd403356122118'],
+    }),
+    ('mnormt', '1.5-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ff78d5f935278935f1814a69e5a913d93d6dd2ac1b5681ba86b30c6773ef64ac'],
+    }),
+    ('mockr', '0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['df48acb487fcc9de1dce3d3457400fc54cb18783fe4c1ef3ff74c78482d9800c'],
+    }),
+    ('moonBook', '0.2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['46276d0a3493a6b3bf9241e7a4a38a3819e73f4771c5769c33e7d4c5ab29da43'],
+    }),
+    ('msm', '1.6.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7503c0f61916033ed0efad54727368bce629ff2d370f302b71bc1cb924d2e23a'],
+    }),
+    ('MSwM', '1.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f43c1cd542e594e3f5cc78a119214acd8842548293baa0e523151e2d40560efe'],
+    }),
+    ('multcompView', '0.1-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f1dc100d602a82694e97bf4329af7220b8395b17340d4047d0f2bbd7dbb0eea1'],
+    }),
+    ('nanotime', '0.2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2dfb7e7435fec59634b87563a215467e7793e2711e302749c0533901c74eb184'],
+    }),
+    ('networkDynamic', '0.10.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eb31d72c73a06a145d231ad3489d450d63b9fecc069aeb19331d7417241df3b5'],
+    }),
+    ('NISTunits', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eaccd68db5c73d6a089ce5b323cdd51bc6a6a58ce467987158ba8c9be6a0a94e'],
+    }),
+    ('nleqslv', '3.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f54956cf67f9970bb3c6803684c84a27ac78165055745e444efc45cfecb63fed'],
+    }),
+    ('NMF', '0.21.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3b30c81c66066fab4a63c5611a0313418b840d8b63414db31ef0e932872d02e3'],
+    }),
+    ('nws', '1.7.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['260c268838dfbca8279633259a8165a2c3cb4210a72bb82f4410cabc8c15c9ba'],
+    }),
+    ('ontologyIndex', '2.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3e5b19041941e894d6ff8620cbae134d9c6becb608a64bb07dabbaf281a3f088'],
+    }),
+    ('orcutt', '2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d3db0a3fa11c177e3dea800b0ae46bc9f4ca95df6a7c6dcbb88f3cb63ebe475e'],
+    }),
+    ('orientlib', '0.10.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7bd7b975d00b3f8f5b6839d9eecf98b4f980f5e6860ff68538688df3273424e2'],
+    }),
+    ('osmar', '1.1-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['79c4c149a44c4220ca02e97f9675e2bf90de04124c5663ba5d009576b845cd60'],
+    }),
+    ('outliers', '0.14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b6ce8f1db6442481546131def8253cabdf4472116d193daea7cb935d2b76986d'],
+    }),
+    ('oz', '1.0-21', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['7be1a03690c16b2884650206229dbfe94c3ada05a400929ada069f7d1746995c'],
+    }),
+    ('packrat', '0.5.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d6a09290fbe037a6c740921c5dcd70b500e5b36e4713eae4010adf0c456bc5f7'],
+    }),
+    ('pamr', '1.56.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d0e527f2336ee4beee91eefb2a8f0dfa96413d9b5a5841d6fc7ff821e67c9779'],
+    }),
+    ('pander', '0.6.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d1dbd75e5d02d58239a45920c6894b58c70de278ae4c149cabf76a0a5fd3a9ad'],
+    }),
+    ('party', '1.3-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9f72eea02d43a4cee105790ae7185b0478deb6011ab049cc9d31a0df3abf7ce9'],
+    }),
+    ('PBSmapping', '2.72.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3eb2afca6d3022a51944024a3315349982441509068d2a1a3e3c0c936c443177'],
+    }),
+    ('pcse', '1.9.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c8a19f898d0395a92e9215c270b1b9f338a7ebf4d98d5dd836c34db90d0969e5'],
+    }),
+    ('pdfCluster', '1.0-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f4c0d08d614689706eecca76d0cb12d2024e402652fb85fd46c5ed1db958a78e'],
+    }),
+    ('penalized', '0.9-51', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['eaa80dca99981fb9eb576261f30046cfe492d014cc2bf286c447b03a92e299fd'],
+    }),
+    ('PerformanceAnalytics', '1.5.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0d635a9be83014efda968f667445c21b9ec9a40cbeccfa0f5107f3ee79a3124a'],
+    }),
+    ('pglm', '0.2-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a2e3f9fc3605b48e8f429037a605924a4a48ec09f3303990637f0ae35aa41692'],
+    }),
+    ('pheatmap', '1.0.12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['579d96ee0417203b85417780eca921969cda3acc210c859bf9dfeff11539b0c1'],
+    }),
+    ('pixmap', '0.4-11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6fa010749a59cdf56aad9f81271473b7d55697036203f2cd5d81372bcded7412'],
+    }),
+    ('PKI', '0.1-5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d2f76d17388aae17695073e97693174941ce64805e70cfceb57dc2cf569743f7'],
+    }),
+    ('plot3D', '1.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f6fe4a001387132626fc553ed1d5720d448b8064eb5a6917458a798e1d381632'],
+    }),
+    ('poLCA', '1.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2e69975b5e7da8c36641bfa9453afdb4861523866b8799bec1d4eace9ab5762e'],
+    }),
+    ('pROC', '1.15.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b010988a646a642657ec72d908c2e0ca2f9df0898c05b9f1f5ab6b739353a8cb'],
+    }),
+    ('proto', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9294d9a3b2b680bb6fac17000bfc97453d77c87ef68cfd609b4c4eb6d11d04d1'],
+    }),
+    ('pryr', '0.1.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d39834316504c49ecd4936cbbcaf3ee3dae6ded287af42475bf38c9e682f721b'],
+    }),
+    ('pscl', '1.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2c9fe648485c6b54c6f95a54b6e00ffe3cf06fa8c5c68f1d669664a7b91a0ede'],
+    }),
+    ('psy', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['93361e80a3c98070d237d1b728ac35b4a9cad3741bf4e390bbc570704c86fc08'],
+    }),
+    ('psych', '1.8.12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6e175e049bc1ee5b79a9e51ccafb22b962b4e6c839ce5c9cfa1ad83967037743'],
+    }),
+    ('randomForest', '4.6-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f4b88920419eb0a89d0bc5744af0416d92d112988702dc726882394128a8754d'],
+    }),
+    ('ranger', '0.11.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['13ac8a9433fdd92f62f66de44abc52477dcbb436b2045c1947951a266bffbeeb'],
+    }),
+    ('rasterVis', '0.46', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bedd788ad558cea2ca4889322ef7503d7598c84a336d69dfafcc6121eac4f253'],
+    }),
+    ('RcppRoll', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cbff2096443a8a38a6f1dabf8c90b9e14a43d2196b412b5bfe5390393f743f6b'],
+    }),
+    ('readstata13', '0.9.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8db78caa6fa26de34027a97cc77df4b31fc21cdda1d91dbbc477d863ffe5b80a'],
+    }),
+    ('rem', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['516590aeb07e06ccdfa1f76b13ea2fc3f8f06ce569370fd8a6814298a31197e0'],
+    }),
+    ('reprex', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['203c2ae6343f6ff887e7a5a3f5d20bae465f6e8d9745c982479f5385f4effb6c'],
+    }),
+    ('RGraphics', '2.0-14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['05b49e9739193bdeafc7e8fce260413341fb5583772a10a51df8ee7bc22b692f'],
+    }),
+    ('rJava', '0.9-11', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c28ae131456a98f4d3498aa8f6eac9d4df48727008dacff1aa561fc883972c69'],
+    }),
+    ('rjson', '0.2.20', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3a287c1e5ee7c333ed8385913c0a307daf99335fbdf803e9dcca6e3d5adb3f6c'],
+    }),
+    ('rlecuyer', '0.3-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c7378f1134e99abc9dfbde7906da430b34333e11aa98a03f87b638637f63b534'],
+    }),
+    ('rmeta', '3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b9f9d405935cffcd7a5697ff13b033f9725de45f4dc7b059fd68a7536eb76b6e'],
+    }),
+    ('Rmisc', '1.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c817ff391136735a267183f133b6a262b1d90a9b399fd3e2d52ea43dbc8352c6'],
+    }),
+    ('RMySQL', '0.10.17', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['754df4fce159078c1682ef34fc96aa5ae30981dc91f4f2bada8d1018537255f5'],
+    }),
+    ('rrcov', '1.4-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['cbd08ccce8b583a2f88946a3267c8fc494ee2b44ba749b9296a6e3d818f6f293'],
+    }),
+    ('robust', '0.4-18.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['de31901882873ef89748bb6863caf55734431df5b3eb3c6663ed17ee2e4a4077'],
+    }),
+    ('rphast', '1.6.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2fc5fdd4dcf26ddf44427318925a69a743e97cb88ccc4964c314fcf389403584'],
+    }),
+    ('RSclient', '0.7-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['d04c50b027b4c2a0ab3ed8c47ae54e3d8014afe0cc8f309ede31d9c8aae1ab1e'],
+    }),
+    ('rsconnect', '0.8.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['31e715b4dff765ef4a0d73ddadd8330d50e8d1dfbb63b03fbf782fdad96a0c05'],
+    }),
+    ('subprocess', '0.8.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['09f1938ce21566abd7edef0eccbbed5e16ab733638552ce14e8414642404e200'],
+    }),
+    ('wdman', '0.2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4085650a2619cdec9f221c3d175b566152c4b39dfd2299da92eefc87d1c40903'],
+    }),
+    ('RSelenium', '1.7.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ac680313afbba50c187154eb3b662f17ff4552a4d569b9601bc7dc70c71702c6'],
+    }),
+    ('Rserve', '1.7-3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3ba1e919706e16a8632def5f45d666b6e44eafa6c14b57064d6ddf3415038f99'],
+    }),
+    ('rsm', '2.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['8c565b870d13801554582fc1ca72889c7dceed155be2172d05a4290c56eecb28'],
+    }),
+    ('RUnit', '0.4.32', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['23a393059989000734898685d0d5509ece219879713eb09083f7707f167f81f1'],
+    }),
+    ('satellite', '1.0.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['20fa9bda1fd063f0eaaf68dba1f86ca5fbbb9ee4251e78a5a0a6acdd34fd1fbd'],
+    }),
+    ('shinycssloaders', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e4890ceeea49c9186cf2edc98c4ca55bbc562ab9cde240a53666b0534fd5ffae'],
+    }),
+    ('shinythemes', '1.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2e13d4d5317fc61082e8f3128b15e0b10ed9736ce81e152dd7ae7f6109f9b18a'],
+    }),
+    ('sysfonts', '0.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['837c03e6ed0743bf300ba9893543f94c85d0e5a8671ee65013ce677a0548cf72'],
+    }),
+    ('showtextdb', '2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['50af818a7c5dddf2a19a4a3d2d31f427f6c4529ae540602cdf4d6d297a929ce3'],
+    }),
+    ('showtext', '0.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e34c1de0add82d084e01ff07d869d0bb778e120f3710a59205cb0c15ddc70fc6'],
+    }),
+    ('sn', '1.5-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['46677ebc109263a68f62b5cf53ec59916cda490e5bc5bbb08276757a677f8674'],
+    }),
+    ('sna', '2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['2292b3190e8d879e494527ae9d9d1174c31cb4183749ecb455aedd8d534048cf'],
+    }),
+    ('speedglm', '0.3-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['5fcaf18324dc754152f528a44894944063303f780d33e58569ea7c306bfc45ac'],
+    }),
+    ('spelling', '2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['570e3803a7cc97dc43068fed16cad842794044afb00f71426c43fd24705e22c9'],
+    }),
+    ('spls', '2.2-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['bbd693da80487eef2939c37aba199f6d811ec289828c763d9416a05fa202ab2e'],
+    }),
+    ('stargazer', '5.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['70eb4a13a6ac1bfb35af07cb8a63d501ad38dfd9817fc3fba6724260b23932de'],
+    }),
+    ('tergm', version, {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['21de2eca943d89ba63af14951655d626f241bafccc4b2709fa39aa130625cd0f'],
+    }),
+    ('tsna', '0.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['29f599d3e774289614608b0fa49e05a09e76e6b15dd1d46988785eaacf2e1a35'],
+    }),
+    ('statnet', '2019.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0903e1a81ed1b6289359cefd12da1424c92456d19e062c3f74197b69e536b29d'],
+    }),
+    ('subselect', '0.14', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3461795eedb5c267a1168e12c4043fda7801d728e90b2692aa40a520e4b54e0f'],
+    }),
+    ('superpc', '1.09', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['3f991a5ac577c8fd72255d993b4f82729767b3cb8e70f148b1a7dc63c5a37ddc'],
+    }),
+    ('svglite', '1.2.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['24bcbd891a1398ae92371ed944b23b474b5b0c8e7aab979ca8ef9a8b79289bbf'],
+    }),
+    ('svGUI', '1.0.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ccf5167cc2423ba90003e5744bde7c7ac217e691150a20df0018654f2e58eae4'],
+    }),
+    ('svUnit', '0.7-12', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['c565fd238bc1a889f874a2749c5da0eaa8af2e18af801ea65d9f8c3da4cf319a'],
+    }),
+    ('symbols', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['298c9737fa268a1bb3a9e620b44c75a1581c7708f603082e300feed846cf6488'],
+    }),
+    ('synchronicity', '1.3.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['1d2673bfc70e5128edc20cc42ff0f54b857ed41e5e80205d1d55baa88899facd'],
+    }),
+    ('tables', '0.8.8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a216ae2e9ee3c078ef59163c89f3ddb09c15c1ae282439d38632c4576de6eeb1'],
+    }),
+    ('tclust', '1.4-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['4b0be612c8ecd7b4eb19a44ab6ac8f5d40515600ae1144c55989b6b41335ad9e'],
+    }),
+    ('texreg', '1.36.23', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['db7424277215931daab3f54bff8b5b403f5a42c5d61915afcbceb3d36ac4aa7b'],
+    }),
+    ('threejs', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['71750b741672a435ecf749b69c72f0681aa8bb795e317f4e3056d5e33f6d79e8'],
+    }),
+    ('tidyverse', '1.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['ad67a27bb4e89417a15338fe1a40251a7b5dedba60e9b72637963d3de574c37b'],
+    }),
+    ('xergm.common', '1.7.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['92edfef306e8803fc2edad548dfdb869e5ec341e09039eb394b6da1914d2d459'],
+    }),
+    ('tnam', '1.6.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a64c8c2f2bf9cadabc91daf1f3b483e5a0bc1788c21b58f3f5e52063adb67c49'],
+    }),
+    ('trimcluster', '0.1-2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['b64a872a6c2ad677dfeecc776c9fe5aff3e8bab6bc6a8c86957b5683fd5d2300'],
+    }),
+    ('tripack', '1.3-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['6bb340292a9629a41a0e0664335ddd97be3ad46bca225034db5dfb6efe01c75d'],
+    }),
+    ('truncnorm', '1.0-8', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['49564e8d87063cf9610201fbc833859ed01935cc0581b9e21c42a0d21a47c87e'],
+    }),
+    ('tufte', '0.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['72cb935e13ec8229182b5660079745ca828169165e239b1445d89399adad7134'],
+    }),
+    ('vars', '1.5-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['86afa75dff18f6b0d4c044d6fafde6f817e3e4732a0c8b10b029507a04da867d'],
+    }),
+    ('vcd', '1.4-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['a561adf120b5ce41b66e0c0c321542fcddc772eb12b3d7020d86e9cd014ce9d2'],
+    }),
+    ('vcdExtra', '0.7-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0cac977f412e84c5f2625a14e381df7a98498108ebbcc816ceb53db8214c7d98'],
+    }),
+    ('vdiffr', '0.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['0af0cd6a284ac2e0b87885c08d6fab44f9082ac9b6470b302326736b0ffc1bd0'],
+    }),
+    ('venneuler', '1.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['275cd999733b6912f710a4ebb324158ebe2e57a2c24753719dffe49d368edb81'],
+    }),
+    ('VGAM', '1.1-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['de192bd65a7e8818728008de8e60e6dd3b61a13616c887a43e0ccc8147c7da52'],
+    }),
+    ('VGAMdata', '1.0-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['765e0156a2727c89d1068046328e33b1728e6a85c4dcf9d60ada57ac64532cca'],
+    }),
+    ('vrmlgen', '1.4.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['141d4258d0a8e910d9e276321ab892c83e4902d57a5e3ed024b4fa401c842e52'],
+    }),
+    ('xhmmScripts', '1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['e95cc75e50544dd4cbb740cb1af631ffcb5e79bf1d76ade29227da78bb1f6b7b'],
+    }),
+    ('xlsxjars', '0.6.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['37c1517f95f8bca6e3514429394d2457b9e62383305eba288416fb53ab2e6ae6'],
+    }),
+    ('xlsx', '0.6.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'patches': ['%(name)s_%(version)s.patch'],
+        'checksums': [
+            'a580bd16b5477c1c185bf681c12c1ffff4088089f97b6a37997913d93ec5a8b4', #  xlsx_0.6.1.tar.gz
+            'd763b274088ca8a0e93b4c270c18dfe727af8d6a6e277ca2a90ca3f7730848e5', #  xlsx_0.6.1.patch
+        ],
+    }),
+    ('zipcode', '1.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['f6ab23d32ac4d540ef0d24435b6a1b23c5e9087452eb765b14816c57607074d3'],
+    }),
+    ('ztable', '0.2.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['9e4b196b934e6f32200f9661b3efef1f065b0b1590531ec64db06917cb84f33c'],
+    }),
+    ('aod', '1.3.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['052d8802500fcfdb3b37a8e3e6f3fbd5c3a54e48c3f68122402d2ea3a15403bc'],
+    }),
+    ('ExomeDepth', '1.1.15', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': cran_options['source_urls'],
+        'checksums': ['112bcb536f5766d9d0b55e064feedd6727ccab14cb1edfdba1f0d7b890e55ad2'],
+    }),
+]
