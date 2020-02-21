@@ -1,0 +1,43 @@
+easyblock = 'PackedBinary'
+
+name = 'CoNIFER'
+version = '0.2.2'
+
+homepage = 'https://github.com/nkrumm/CoNIFER'
+
+description = """
+CoNIFER (Copy Number Inference From Exome Reads) can discover CNVs from exome read-depth data.
+"""
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+source_urls = [('http://github.com/nkrumm/CoNIFER/archive/%s/' % (version))]
+sources = [('%s.tar.gz' % (version))]
+
+
+checksums = ['239dc79f67454418ff63a0cfdfa134bd8b272fe84c04a1f5fdb37094df26f131']
+
+dependencies = [
+    ('CoNIFERPyDepBundle', '0.2.2','-Python-2.7.16',('foss','2018b'))
+]
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/*.py',
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*'
+]
+
+sanity_check_paths = {
+    'files': ['conifer_functions.py', 'conifer.py'],
+    'dirs': []
+}
+
+modloadmsg = """
+To test CoNIFER run: \n python $EBROOTCONIFER/conifer.py analyze \\ 
+        --probes /apps/data/conifer/v0.2/sampledata/probes.txt \\
+        --rpkm_dir /apps/data/conifer/v0.2/sampledata/RPKM_data/ \\
+        --output analysis.hdf5 \\
+        --svd 6 \\
+        --write_svals singular_values.txt
+"""
+
+moduleclass = 'bio'
