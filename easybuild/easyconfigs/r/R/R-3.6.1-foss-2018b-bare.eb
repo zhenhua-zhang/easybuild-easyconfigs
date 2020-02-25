@@ -60,11 +60,24 @@ configopts = '--with-pic --enable-threads --enable-R-shlib'
 #
 configopts += ' --with-recommended-packages=no'
 #
-# Disable X11: prevent picking this up automagically:
+# Force disable X11: prevent picking this up automagically:
 # it may be present on the build server, but don't rely on X11 related stuff being available on compute nodes!
 # Compiling with X11 support may result in an R that crashes on compute nodes.
 #
 configopts += ' --with-x=no --with-tcltk=no'
+#
+# Force enable graphics capabilities for plotting.
+# Don't rely on automatic detection of graphics capabilities by the R EasyBlock
+# as that may result in a successful installation that lacks graphics support.
+# Make the build fail instead if when the grpahics support cannot be build.
+#
+configopts += ' --with-cairo --with-libpng --with-jpeglib --with-libtiff'
+
+#
+# Dynamic patch to remove unnecessary dependency on X11 when using Cairo.
+# Makes the configure flag combination "--with-x=no --with-cairo" work.
+#
+configure_cmd_prefix = "perl -pi -e 's/cairo-xlib.h/cairo.h/' configure m4/cairo.m4 && "
 
 #
 # R package list.
