@@ -1,0 +1,106 @@
+easyblock = 'Bundle'
+
+name = 'CoNIFERPyDepBundle'
+version = '0.2.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/nkrumm/CoNIFER'
+
+description = """
+Dependency bundle for CoNIFER (Copy Number Inference From Exome Reads) can discover CNVs from exome read-depth data.
+"""
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+use_pip = True
+
+# this is a bundle of Python packages
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
+
+dependencies = [
+    ('Python', '2.7.16', '-bare'),
+    ('libpng', '1.6.37'),
+    ('freetype', '2.10.1'),
+    ('HDF5', '1.10.6'),
+    ('LZO', '2.10'),
+    ('libxml2', '2.9.8'),
+    ('libxslt', '1.1.33'),
+    ('cairo', '1.16.0'),
+    ('ICU', '64.2'),
+    ('bzip2', '1.0.6'),
+    ('zlib', '1.2.11')
+]
+
+
+exts_list = [
+    ('numpy', '1.7.2', {
+        'source_tmpl': '%(name)s-%(version)s.tar.gz',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
+        'checksums': ['f963f6a5e21438dede6b4412cf9aaa230c145038a6d234aefdd70d20152f8d53'],
+    }),
+    ('Cython', '0.29.15', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/C/Cython'],
+        'checksums': ['60d859e1efa5cc80436d58aecd3718ff2e74b987db0518376046adedba97ac30'],
+    }),
+    ('setuptools', '41.1.0', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/setuptools'],
+        'checksums': ['c519b84c299911fd94ef47e3de4fe678c254aefc5cdf8a9b12e4cdc8cc3744a8'],
+    }),
+    ('python-dateutil', '2.8.0', {
+        'modulename': 'dateutil',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/python-dateutil'],
+        'checksums': ['c89805f6f4d64db21ed966fda138f8a5ed7a4fdbc1a8ee329ce1b74e3c74da9e'],
+    }),
+    ('pyparsing', '2.4.2', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyparsing'],
+        'checksums': ['6f98a7b9397e206d78cc01df10131398f1c8b8510a2f4d97d9abd82e1aacdd80'],
+    }),
+    ('pytz', '2019.2', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pytz'],
+        'checksums': ['26c0b32e437e54a18161324a2fca3c4b9846b74a8dccddd843113109e1116b32'],
+    }),
+    ('six', '1.12.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/s/six'],
+        'checksums': ['d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73'],
+    }),
+    ('functools32', '3.2.3-2', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/functools32'],
+        'checksums': ['f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d'],
+    }),
+    ('freetype-py', '0.4.1', {
+        'modulename': 'freetype',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/f/freetype-py'],
+        'checksums': ['e9fab64bcc64bd4d4479d4effb735d62971203b6d19f0640f267a823f272b01c'],
+    }),
+    ('python-lzo', '1.12', {
+        'modulename': 'lzo',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/python-lzo'],
+        'checksums': ['97a8e46825e8f1abd84c2a3372bc09adae9745a5be5d3af2692cd850dac35345'],
+    }),
+    ('numexpr', '2.0.1', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/n/numexpr'],
+        'checksums': ['29492a08d5137c9a3a369527a899680ef7c1908cd4851ad2827b6c1d3767b092'],
+    }),
+    ('tables', '2.4.0', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/t/tables'],
+        'patches': ['CoNIFERPyDepBundle-0.2.2-foss-2018b-Python-2.7.16.patch'],
+        'checksums': [
+            '2bda3b1ffbe20ee35d5337d97071ff4177a7742b15e7837324ae7c5720e82678', # source
+            '49dfe6b95d2f6807c296bd7f0408a81b7afdaf03716488b389086b1a3cc32d1d', # patch
+        ],
+    }),
+    ('matplotlib', '2.2.4', {
+        'source_urls': ['https://files.pythonhosted.org/packages/source/m/matplotlib'],
+        'checksums': ['029620799e581802961ac1dcff5cb5d3ee2f602e0db9c0f202a90495b37d2126'],
+    }),
+]    
+
+sanity_check_paths = {
+    'files': ['bin/easy_install'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+
+moduleclass = 'bio'
