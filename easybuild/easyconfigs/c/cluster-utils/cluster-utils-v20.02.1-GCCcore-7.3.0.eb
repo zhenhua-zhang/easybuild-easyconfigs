@@ -58,16 +58,16 @@ postinstallcmds = [
 #
 executables = [
     'caccounts',
-    'cfinger.bash', 'cfinger',
+    'cfinger',
     'cnodes',
     'cqos',
     'cqueue',
     'ctop-slurm', 'ctop',
-    'colleagues.bash', 'colleagues',
-    'hpc-environment-quota.bash', 'quota',
-    'hpc-environment-quota-report-for-PFS.bash',
-    'hpc-environment-slurm-report.bash',
-    'sjeff.bash', 'sjeff',
+    'colleagues',
+    'quota',
+    'hpc-environment-quota-report-for-PFS',
+    'hpc-environment-slurm-report',
+    'sjeff',
 ]
 sanity_check_paths = {
     'files': ['README.md'] + ['bin/%s' % x for x in executables],
