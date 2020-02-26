@@ -73,6 +73,6 @@ sanity_check_paths = {
     'files': ['README.md'] + ['bin/%s' % x for x in executables],
     'dirs': ['bin']
 }
-sanity_check_commands = [('hpc-environment-quota.bash', '-h')]
+sanity_check_commands = [('quota', '-h')]
 
 moduleclass = 'tools'
