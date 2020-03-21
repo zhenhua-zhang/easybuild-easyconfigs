@@ -1,0 +1,41 @@
+name = 'NGS_Automated'
+version = '3.0.2'
+namelower = name.lower()
+versionsuffix='-bare'
+homepage = 'https://github.com/molgenis/NGS_Automated'
+description = """Various scripts to automate the NGS pipelines implemented in the MOLGENIS Compute framework."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+easyblock = 'Tarball'
+
+#
+# Example URL: https://github.com/molgenis/NGS_Automated/archive/1.0.1.tar.gz
+# 
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['0e4785e2520650b8247885616b15797d3bb015feee2d6cdce646c46602aaa12c']
+
+sanity_check_paths = {
+    'files': [
+        'bin/ConcordanceCheck.sh',
+        'bin/ConcordanceMakeSamplesheet.sh',
+        'bin/calculateProjectMd5s.sh',
+        'bin/copyProjectDataToPrm.sh',
+        'bin/copyRawDataToPrm.sh',
+        'bin/demultiplexing.sh',
+        'bin/notifications.sh',
+        'bin/startPipeline.sh',
+        'bin/processGsRawData.sh',
+        'bin/demultiplexingTiming.sh',
+        'bin/createInhouseSamplesheetFromGS.py',
+        'etc/sharedConfig.cfg',
+        'etc/chaperone.cfg',
+        'lib/sharedFunctions.bash',
+    ],
+    'dirs': [
+        'etc/cron.d',
+    ]
+}
+
+moduleclass = 'bio'
