@@ -24,9 +24,7 @@ dependencies = [
     ('IAAP', 'cli-rhel.6-x64-1.1.0'),
 ]
 modextrapaths = {
-
     'PATH': ["scripts"],
-
 }
 
 sanity_check_paths = {
