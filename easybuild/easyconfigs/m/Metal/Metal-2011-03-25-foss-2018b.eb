@@ -11,8 +11,8 @@ sources = ['generic-%(namelower)s-%(version)s.tar.gz']
 source_urls = ['http://csg.sph.umich.edu/abecasis/Metal/download/']
 patches = ['Metal-%(version)s_Makefile.patch']
 checksums = [
-    'c301456c85a613980c522b47ef2669b81c3afd426bd5a52ac0f5a90e180460ae',  generic-metal-2011-03-25.tar.gz
-    '560c8480970b0870645590600667ccd8e1c5401dffe10b7161ef14b92d60e81d',  Metal-2011-03-25_Makefile.patch
+    'c301456c85a613980c522b47ef2669b81c3afd426bd5a52ac0f5a90e180460ae',  # generic-metal-2011-03-25.tar.gz
+    '560c8480970b0870645590600667ccd8e1c5401dffe10b7161ef14b92d60e81d',  # Metal-2011-03-25_Makefile.patch
 ]
 
 toolchain = {'name': 'foss', 'version': '2018b'}
