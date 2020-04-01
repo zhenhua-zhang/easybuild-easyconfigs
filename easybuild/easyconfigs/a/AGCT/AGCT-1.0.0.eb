@@ -20,7 +20,7 @@ checksums = ['bebaa6a8a469b55450d280763cca8b1cb646b52e1584720887bc17e6984ce41d']
 # Dependencies.
 #
 dependencies = [
-    ('Molgenis-Compute', 'v19.01.1', '-Java-11.0.2'),
+    ('Molgenis-Compute', 'v19.01.1', '-Java-11-LTS'),
     ('IAAP', 'cli-rhel.6-x64-1.1.0'),
 ]
 modextrapaths = {
