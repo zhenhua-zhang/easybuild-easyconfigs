@@ -1,0 +1,37 @@
+name = 'AGCT'
+version = '1.0.0'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/AGCT'
+description = """Array Genotyping Conversion Tool"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'Tarball'
+
+#
+# Example URL: https://github.com/molgenis/AGCT/archive/1.0.0.tar.gz
+#
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['bebaa6a8a469b55450d280763cca8b1cb646b52e1584720887bc17e6984ce41d']
+
+#
+# Dependencies.
+#
+dependencies = [
+    ('Molgenis-Compute', 'v19.01.1', '-Java-11.0.2'),
+    ('IAAP', 'cli-rhel.6-x64-1.1.0'),
+]
+modextrapaths = {
+
+    'PATH': ["scripts"],
+
+}
+
+sanity_check_paths = {
+    'files': ['workflow.csv', 'parameters.csv'],
+    'dirs': ['protocols']
+}
+
+moduleclass = 'bio'
