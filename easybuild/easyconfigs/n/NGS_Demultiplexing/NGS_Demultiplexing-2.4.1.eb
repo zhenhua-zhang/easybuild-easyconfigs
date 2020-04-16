@@ -1,5 +1,5 @@
 name = 'NGS_Demultiplexing'
-version = '2.4.0'
+version = '2.4.1'
 namelower = name.lower()
 
 homepage = 'https://github.com/molgenis/molgenis-pipelines'
@@ -22,7 +22,7 @@ dependencies = [
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['059b19ad674b36ee9c2d158e4022d316c4e3a3f3aa269e6eb1e7c01d3f621947']
+checksums = ['a93aed7999ee7068b32447a9cd29a07950e449f973028fc5c4632959c8a70db4']
 
 sanity_check_paths = {
     'files': ['workflow.csv', 'parameters.csv'],
