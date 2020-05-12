@@ -1,13 +1,8 @@
-# 0.4.2 modified by:
-# Adam Huffman
-# The Francis Crick Institute
-# TODO: deal with the hardcoding of /usr/bin/perl
-
-easyblock = 'Tarball'
-
 name = 'TrimGalore'
 version = '0.4.5'
 versionsuffix = '-Python-%(pyver)s-bare'
+
+easyblock = 'Tarball'
 
 homepage = 'http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/'
 description = """A wrapper tool around Cutadapt and FastQC to consistently apply 
