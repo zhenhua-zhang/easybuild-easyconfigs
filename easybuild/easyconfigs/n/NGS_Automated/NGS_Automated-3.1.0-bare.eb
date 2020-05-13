@@ -18,8 +18,7 @@ checksums = ['e671df047ac4815087181ad68fa6190cf341dd3f114e1a0bffb1406e971d5e74']
 
 sanity_check_paths = {
     'files': [
-        'bin/ConcordanceCheck.sh',
-        'bin/ConcordanceMakeSamplesheet.sh',
+        'bin/arrayConversion.sh',
         'bin/calculateProjectMd5s.sh',
         'bin/copyProjectDataToPrm.sh',
         'bin/copyRawDataToPrm.sh',
