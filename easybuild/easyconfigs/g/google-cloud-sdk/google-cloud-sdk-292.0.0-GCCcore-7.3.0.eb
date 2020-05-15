@@ -46,6 +46,6 @@ INFO: For initial setup of gcloud and to create new configurations use:
 """
 modluafooter = """
 -- Enable Bash autocompletion
-local source_ac_file_command = 'source ' .. pathJoin(root, 'completion.bash.inc')
-execute {cmd=source_ac_file_command, modeA={“load”}}
+local source_ac_file_command = "source " .. pathJoin(root, "completion.bash.inc")
+execute {cmd=source_ac_file_command, modeA={"load"}}
 """
