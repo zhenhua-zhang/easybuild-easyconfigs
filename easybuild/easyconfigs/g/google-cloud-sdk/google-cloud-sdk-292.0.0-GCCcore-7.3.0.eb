@@ -9,7 +9,7 @@ description = """Tools and libraries for interacting with Google Cloud products 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 dependencies = [
-    ('Python', '3.7.4', '-bare),
+    ('Python', '3.7.4', '-bare'),
 ]
 
 source_urls = [
