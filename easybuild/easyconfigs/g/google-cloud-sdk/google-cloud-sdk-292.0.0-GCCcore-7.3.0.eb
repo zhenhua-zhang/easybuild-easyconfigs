@@ -23,7 +23,6 @@ checksums = [
 
 postinstallcmds = [
     'rm -f %(installdir)s/install.bat',
-    'rm -f %(installdir)s/install.sh',
 ]
 
 google_binaries = ['gcloud', 'gsutil']
@@ -35,10 +34,10 @@ sanity_check_paths = {
 }
 
 moduleclass = 'devel'
-#modextrapaths = {'PATH': 'bin'}
+modextravars = {'CLOUDSDK_ROOT_DIR': '%(installdir)s'}
 modloadmsg = """
 ==================================================================================================
-INFO: For initial setup of gcloud and to create new configurations use:
+INFO: For initial setup of gcloud and to create a new or modify an existing configuration use:
 
          gcloud init --console-only
 
