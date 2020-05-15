@@ -29,7 +29,7 @@ postinstallcmds = [
 google_binaries = ['gcloud', 'gsutil']
 not_binaries = ['completion.bash.inc', 'properties', 'README', 'RELEASE_NOTES']
 sanity_check_paths = {
-    'files': ['bin/%s' % x for x in gbinaries]
+    'files': ['bin/%s' % x for x in google_binaries]
              + ['%s' % x for x in not_scripts],
     'dirs': ['bin', 'data', 'lib', 'platform'],
 }
