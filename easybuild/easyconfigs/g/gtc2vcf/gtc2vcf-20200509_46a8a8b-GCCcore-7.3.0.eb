@@ -33,9 +33,6 @@ dependencies = [
     ('BCFtools', '%s' % (_local_bcftools_version)), # Make sure runtime BCFtools version is in sync with the one fetched from GitHub to compile gtc2vcf.
 ]
 
-#configopts = '--with-zlib'
-# configopts += '--with-ssl=$EBROOTOPENSSL'
-
 #
 # Copy compiled shared libs to plugins dir that can be used with existing BCFtoools module.
 #
