@@ -20,8 +20,6 @@ sources = [{
     'filename': '%(name)s-%(version)s.tar.gz',
     'extract_cmd': 'tar -xvzf %s && mv gtc2vcf-*/{gtc2vcf.{c,h},affy2vcf.c} bcftools-*/plugins/',
 }]
-
-
 checksums = [
     'f57301869d0055ce3b8e26d8ad880c0c1989bf25eaec8ea5db99b60e31354e2c', #  bcftools-1.10.2.tar.bz2
     '6926e3920423b3c8a4f192fddce4eea01f2b3df76bdbd33c9343d29d8e67e81b', #  gtc2vcf-46a8a8bd37226aa8ea872d180ccd746dce964ebd.tar.gz
@@ -43,7 +41,7 @@ dependencies = [
 #
 install_cmd  = "mkdir -p %(installdir)s/libexec/bcftools/ && "
 install_cmd += "mkdir -p %(installdir)s/bin/ && "
-install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{gtc,affy}2vcf.so} %(installdir)s/libexec/bcftools/ && "
+install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{gtc,affy}2vcf.so %(installdir)s/libexec/bcftools/ && "
 install_cmd += "cp -a %(builddir)s/gtc2vcf-*/gtc2vcf_plot.R %(installdir)s/bin/ && "
 install_cmd += "cp -a %(builddir)s/gtc2vcf-*/{LICENSE,README.md} %(installdir)s/"
 
