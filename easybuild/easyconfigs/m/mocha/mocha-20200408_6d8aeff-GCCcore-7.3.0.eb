@@ -40,8 +40,8 @@ dependencies = [
 install_cmd  = "mkdir -p %(installdir)s/libexec/bcftools/ && "
 install_cmd += "mkdir -p %(installdir)s/bin/ && "
 install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{fill-tags,fixploidy,mocha,trio-phase,mochatools,importFMT,extendFMT}.so %(installdir)s/libexec/bcftools/ && "
-install_cmd += "cp -a %(builddir)s/gtc2vcf-*/*_plot.R %(installdir)s/bin/ && "
-install_cmd += "cp -a %(builddir)s/gtc2vcf-*/{LICENSE,README.md} %(installdir)s/"
+install_cmd += "cp -a %(builddir)s/mocha-*/*_plot.R %(installdir)s/bin/ && "
+install_cmd += "cp -a %(builddir)s/mocha-*/{LICENSE,README.md} %(installdir)s/"
 
 sanity_check_paths = {
     'files': ['LICENSE', 'bin/mocha_plot.R', 'bin/summary_plot.R']
