@@ -11,22 +11,20 @@ description = """Plugins for BCFtools to convert Illumina GTC or Affymetrix CHP 
 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
-source_urls = [
-    'https://github.com/samtools/bcftools/releases/download/%s/' %(_local_bcftools_version),
-    'https://github.com/freeseek/gtc2vcf/archive/',
-]
-sources = [
-    'bcftools-%s.tar.bz2' % (_local_bcftools_version) ,
-    #
-    # Custom command to extract the gtc2vcf source code files and move them into the plugins folder of BCFtools.
-    # The gtc2vcf source code lacks configuration of the build system and requires the "configure" comaand and
-    # and Makefile from BCFtools in order to build the plugins.
-    #
-    ('46a8a8bd37226aa8ea872d180ccd746dce964ebd.tar.gz', 'tar -xzf %s && mv gtc2vcf-*/{gtc2vcf.{c,h},affy2vcf.c} bcftools-*/plugins/'),
-]
+sources = [{
+    'source_urls': ['https://github.com/samtools/bcftools/releases/download/%s/' %(_local_bcftools_version)],
+    'filename': 'bcftools-%s.tar.bz2' % (_local_bcftools_version),
+},{
+    'source_urls': ['https://github.com/freeseek/gtc2vcf/archive/'],
+    'download_filename': '46a8a8bd37226aa8ea872d180ccd746dce964ebd.tar.gz',
+    'filename': '%(name)s-%(version)s.tar.gz',
+    'extract_cmd': 'tar -xvzf %s && mv gtc2vcf-*/{gtc2vcf.{c,h},affy2vcf.c} bcftools-*/plugins/',
+}]
+
+
 checksums = [
     'f57301869d0055ce3b8e26d8ad880c0c1989bf25eaec8ea5db99b60e31354e2c', #  bcftools-1.10.2.tar.bz2
-    '8c877c9f181de4d8b43454f91585079545f4d6cb1671e6db3236f0e1e30c19f7', #  gtc2vcf-46a8a8bd37226aa8ea872d180ccd746dce964ebd.zip
+    '6926e3920423b3c8a4f192fddce4eea01f2b3df76bdbd33c9343d29d8e67e81b', #  gtc2vcf-46a8a8bd37226aa8ea872d180ccd746dce964ebd.tar.gz
 ]
 
 builddependencies = [
