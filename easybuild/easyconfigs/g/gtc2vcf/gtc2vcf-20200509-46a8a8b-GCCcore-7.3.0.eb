@@ -52,7 +52,7 @@ install_cmd += "cp -a %(builddir)s/gtc2vcf-*/{LICENSE,README.md} %(installdir)s/
 sanity_check_paths = {
     'files': ['LICENSE', 'bin/gtc2vcf_plot.R']
              + ['libexec/bcftools/affy2vcf.%s' % SHLIB_EXT]
-             + ['libexec/bcftools/gtc2vcf.%s' % SHLIB_EXT]
+             + ['libexec/bcftools/gtc2vcf.%s' % SHLIB_EXT],
     'dirs': ['bin', 'libexec/bcftools'],
 }
 
