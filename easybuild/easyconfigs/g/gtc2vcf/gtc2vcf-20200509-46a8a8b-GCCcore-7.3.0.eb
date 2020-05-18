@@ -2,7 +2,6 @@ easyblock = 'ConfigureMake'
 
 name = 'gtc2vcf'
 version = '20200509_46a8a8b'
-_local_bcftools_version = '1.10.2'
 
 homepage = 'https://github.com/freeseek/gtc2vcf'
 
@@ -12,7 +11,7 @@ description = """Plugins for BCFtools to convert Illumina GTC or Affymetrix CHP 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 source_urls = [
-    'https://github.com/samtools/bcftools/releases/download/%(_local_bcftools_version)s',
+    'https://github.com/samtools/bcftools/releases/download/1.10.2/',
     'https://github.com/freeseek/gtc2vcf/archive/',
 ]
 sources = [
@@ -34,7 +33,7 @@ builddependencies = [
 ]
 
 dependencies = [
-    ('BCFtools', '%(_local_bcftools_version)s'),
+    ('BCFtools', '1.10.2'), # Make sure runtime BCFtools version is in sync with the one fetched from GitHub to compile gtc2vcf.
 ]
 
 #configopts = '--with-zlib'
