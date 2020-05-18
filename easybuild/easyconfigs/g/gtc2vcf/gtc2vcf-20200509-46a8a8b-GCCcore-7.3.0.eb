@@ -1,0 +1,62 @@
+easyblock = 'ConfigureMake'
+
+name = 'gtc2vcf'
+version = '20200509_46a8a8b'
+_local_bcftools_version = '1.10.2'
+
+homepage = 'https://github.com/freeseek/gtc2vcf'
+
+description = """Plugins for BCFtools to convert Illumina GTC or Affymetrix CHP files to VCF.
+"""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = [
+    'https://github.com/samtools/bcftools/releases/download/%(_local_bcftools_version)s',
+    'https://github.com/freeseek/gtc2vcf/archive/',
+]
+sources = [
+    SOURCELOWER_TAR_BZ2, # for BCFtools
+    #
+    # Custom command to extract the gtc2vcf source code files and move them into the plugins folder of BCFtools.
+    # The gtc2vcf source code lacks configuration of the build system and requires the "configure" comaand and
+    # and Makefile from BCFtools in order to build the plugins.
+    #
+    ('46a8a8bd37226aa8ea872d180ccd746dce964ebd.tar.gz', 'tar -xzf %s && mv gtc2vcf-*/{gtc2vcf.{c,h},affy2vcf.c} bcftools-*/plugins/'),
+]
+checksums = [
+    'f57301869d0055ce3b8e26d8ad880c0c1989bf25eaec8ea5db99b60e31354e2c', #  bcftools-1.10.2.tar.bz2
+    '8c877c9f181de4d8b43454f91585079545f4d6cb1671e6db3236f0e1e30c19f7', #  gtc2vcf-46a8a8bd37226aa8ea872d180ccd746dce964ebd.zip
+]
+
+builddependencies = [
+    ('binutils', '2.30'),
+]
+
+dependencies = [
+    ('BCFtools', '%(_local_bcftools_version)s'),
+]
+
+#configopts = '--with-zlib'
+# configopts += '--with-ssl=$EBROOTOPENSSL'
+
+#
+# Copy compiled shared libs to plugins dir that can be used with existing BCFtoools module.
+#
+install_cmd  = "mkdir -p %(installdir)s/libexec/bcftools/ && "
+install_cmd += "mkdir -p %(installdir)s/bin/ && "
+install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{gtc,affy}2vcf.so} %(installdir)s/libexec/bcftools/ && "
+install_cmd += "cp -a %(builddir)s/gtc2vcf-*/gtc2vcf_plot.R %(installdir)s/bin/ && "
+install_cmd += "cp -a %(builddir)s/gtc2vcf-*/{LICENSE,README.md} %(installdir)s/"
+
+sanity_check_paths = {
+    'files': [
+        'LICENSE', 'bin/gtc2vcf_plot.R',
+        'libexec/bcftools/affy2vcf.%s' % SHLIB_EXT],
+        'libexec/bcftools/gtc2vcf.%s' % SHLIB_EXT],
+    'dirs': ['bin', 'libexec/bcftools'],
+}
+
+modextrapaths = {'BCFTOOLS_PLUGINS': ['libexec/bcftools/']}
+moduleclass = 'bio'
+
