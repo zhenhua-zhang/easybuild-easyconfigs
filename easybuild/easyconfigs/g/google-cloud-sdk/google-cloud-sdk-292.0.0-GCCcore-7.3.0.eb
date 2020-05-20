@@ -1,0 +1,50 @@
+easyblock = 'Tarball'
+
+name = 'google-cloud-sdk'
+version = '292.0.0'
+
+homepage = 'https://cloud.google.com/sdk/'
+description = """Tools and libraries for interacting with Google Cloud products and services."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+dependencies = [
+    ('Python', '3.7.4', '-bare'),
+]
+
+source_urls = [
+    'https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/', # latest stable
+    'https://storage.googleapis.com/cloud-sdk-release/',           # archive
+]
+sources = ['%(name)s-%(version)s-linux-x86_64.tar.gz']
+checksums = [
+    '0c37817928d27781029cbee303aac58beb09e8b5951a39235eddd384bf5e91a4', # google-cloud-sdk-292.0.0-linux-x86_64.tar.gz
+]
+
+postinstallcmds = [
+    'rm -f %(installdir)s/install.bat',
+]
+
+google_binaries = ['gcloud', 'gsutil']
+not_binaries = ['completion.bash.inc', 'properties', 'README', 'RELEASE_NOTES']
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in google_binaries]
+             + ['%s' % x for x in not_binaries],
+    'dirs': ['bin', 'data', 'lib', 'platform'],
+}
+
+moduleclass = 'devel'
+modextravars = {'CLOUDSDK_ROOT_DIR': '%(installdir)s'}
+modloadmsg = """
+==================================================================================================
+INFO: For initial setup of gcloud and to create a new or modify an existing configuration use:
+
+         gcloud init --console-only
+
+==================================================================================================
+"""
+modluafooter = """
+-- Enable Bash autocompletion
+local source_ac_file_command = "source " .. pathJoin(root, "completion.bash.inc")
+execute {cmd=source_ac_file_command, modeA={"load"}}
+"""
