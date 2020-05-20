@@ -1,0 +1,56 @@
+easyblock = 'PythonBundle'
+
+name = 'RSeQC'
+version = '3.0.1'
+pyver = '3.7.4'
+versionsuffix = '-Python-%s' % (pyver)
+
+homepage = 'https://files.pythonhosted.org'
+description = """RSeQC provides a number of useful modules that can 
+ comprehensively evaluate high throughput sequence data especially RNA-seq 
+ data. Some basic modules quickly inspect sequence quality, nucleotide 
+ composition bias, PCR bias and GC bias, while RNA-seq specific modules 
+ evaluate sequencing saturation, mapped reads distribution, coverage 
+ uniformity, strand specificity, transcript level RNA integrity etc."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+builddependencies = [('binutils', '2.30')]
+
+dependencies = [
+    ('Python', pyver, '-bare'),
+    ('PythonPlus', pyver, '-v20.02.1', ('foss', '2018b')),
+    ('cURL', '7.63.0', '', ('GCCcore', '7.3.0')),
+]
+
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
+exts_default_options = {
+    'download_dep_fail': True,
+    'use_pip': True,
+}
+
+exts_list = [
+    ('pyBigWig', '0.3.17', {
+        'modulename': 'pyBigWig',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/p/pyBigWig/'],
+        'checksums': ['41f64f802689ed72e15296a21a4b7abd3904780b2e4f8146fd29098fc836fd94'],
+    }),
+    ('RSeQC', version, {
+        'modulename': 'qcmodule',
+        'source_urls': ['https://files.pythonhosted.org/packages/source/r/RSeQC/'],
+        'checksums': ['d5f4cb2c24a7348929f5c4947d84c5869e8cd2cba5ba5248d991ebb37c4c6b3d'],
+    }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/bam_stat.py', 'bin/overlay_bigwig.py', 'bin/split_paired_bam.py'],
+    'dirs': ['bin', 'lib/python%(pyshortver)s/site-packages']
+}
+
+sanity_check_commands = ['bam_stat.py --help']
+
+moduleclass = 'bio'
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
