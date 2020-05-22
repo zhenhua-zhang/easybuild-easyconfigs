@@ -1,4 +1,4 @@
-easyblock = 'ConfigureMake'
+easyblock = 'MakeCp'
 
 name = 'stress-ng'
 version = 'V0.11.10'
