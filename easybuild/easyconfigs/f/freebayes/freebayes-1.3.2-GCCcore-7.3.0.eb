@@ -46,6 +46,8 @@ prebuildopts += '     && mkdir build && cd build && cmake ../ && make)'
 prebuildopts += ' && (cd SeqLib/ && ./configure && make) && (cd intervaltree/ && make )'
 prebuildopts += ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
 
+parallel = 1
+
 files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python']
 
 sanity_check_paths = {
