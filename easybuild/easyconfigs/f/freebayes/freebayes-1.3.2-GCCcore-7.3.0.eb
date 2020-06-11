@@ -36,15 +36,15 @@ dependencies = [
 #   4. Patch 2 submodules: the versions of vcflib and bamtools linked in this version of freebayes are broken and won't compile :(
 #
 prebuildopts = 'cd ../ && rm -vrf free* && '
-+ ' git clone --recursive git://github.com/ekg/' + name + '.git ' + name + '-' + version
-+ ' && cd ' + name + '-' + version
-+ ' && git checkout ' + 'v' + version
-+ ' && git submodule update --init --recursive'
-+ ' && (rm -rf vcflib/ && git clone --recursive https://github.com/vcflib/vcflib.git && cd vcflib && git checkout v1.0.1 && git submodule update --init --recursive && make)'
-+ ' && (rm -rf bamtools/ && git clone --recursive https://github.com/pezmaster31/bamtools.git && cd bamtools && git checkout v2.5.1 && git submodule update --init --recursive '
-+ '     && mkdir build && cd build && cmake ../ && make)'
-+ ' && (cd SeqLib/ && ./configure && make) && (cd intervaltree/ && make ) && '
-+ ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
+prebuildopts += ' git clone --recursive git://github.com/ekg/' + name + '.git ' + name + '-' + version
+prebuildopts += ' && cd ' + name + '-' + version
+prebuildopts += ' && git checkout ' + 'v' + version
+prebuildopts += ' && git submodule update --init --recursive'
+prebuildopts += ' && (rm -rf vcflib/ && git clone --recursive https://github.com/vcflib/vcflib.git && cd vcflib && git checkout v1.0.1 && git submodule update --init --recursive && make)'
+prebuildopts += ' && (rm -rf bamtools/ && git clone --recursive https://github.com/pezmaster31/bamtools.git && cd bamtools && git checkout v2.5.1 && git submodule update --init --recursive '
+prebuildopts += '     && mkdir build && cd build && cmake ../ && make)'
+prebuildopts += ' && (cd SeqLib/ && ./configure && make) && (cd intervaltree/ && make ) && '
+prebuildopts += ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
 
 files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python']
 
