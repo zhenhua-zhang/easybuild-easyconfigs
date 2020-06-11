@@ -14,6 +14,8 @@ checksums = ['06481ac8b8c2a2fae470ce8806a4d4a7af7b2a81076d092eb6bacb4de2c1ac2f']
 
 builddependencies = [
     ('binutils', '2.30'),
+    # Must include git to clone sub repos if git is not available from OS.
+    #('git','xyz'),
 ]
 
 dependencies = [
@@ -24,15 +26,33 @@ dependencies = [
     ('Python','3.7.4', '-bare'),
 ]
 
-files_to_copy = ["bin", "README.md", "examples", "scripts", "python"]
+#
+# Git submodules are lost when a tarball for a release is created,
+# so the 'v%(version)s.tar.gz' source code downloaded from GitHub is useless.
+# The hacks below are required to:
+#   1. clone the repo which preserves the links to the submodules.
+#   2. checkout the required version as opposed to using the bleeding edge.
+#   3. Initialize the submodules recursively.
+#   4. Patch 2 submodules: the versions of vcflib and bamtools linked in this version of freebayes are broken and won't compile :(
+#
+prebuildopts = 'cd ../ && rm -vrf free* && ' 
+    + ' git clone --recursive git://github.com/ekg/' + name + '.git ' + name + '-' + version
+    + ' && cd ' + name + '-' + version
+    + ' && git checkout ' + 'v' + version
+    + ' && git submodule update --init --recursive'
+    + ' && (rm -rf vcflib/ && git clone --recursive https://github.com/vcflib/vcflib.git && cd vcflib && git checkout v1.0.1 && git submodule update --init --recursive && make)'
+    + ' && (rm -rf bamtools/ && git clone --recursive https://github.com/pezmaster31/bamtools.git && cd bamtools && git checkout v2.5.1 && git submodule update --init --recursive '
+    + '     && mkdir build && cd build && cmake ../ && make)'
+    + ' && (cd SeqLib/ && ./configure && make) && (cd intervaltree/ && make ) && '
+    + ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
+
+files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python']
 
 sanity_check_paths = {
     'files': ['bin/freebayes', 'bin/bamleftalign'],
-    'dirs': ['bin', 'scripts']
+    'dirs': ['bin', 'examples', 'scripts', 'python']
 }
 
-modextrapaths = { 
-    'PATH': 'scripts',
-}
+modextrapaths = {'PATH': 'scripts'}
 
 moduleclass = 'bio'
