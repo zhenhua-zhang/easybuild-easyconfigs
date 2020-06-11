@@ -19,7 +19,7 @@ sanity_check_paths = {
     'files': [
         'bin/ConcordanceCheck.sh',
         'bin/ConcordanceMakeSamplesheet.sh',
-	'bin/copyConcordanceCheckData.sh',
+        'bin/copyConcordanceCheckData.sh',
         'bin/notifications.sh',
         'etc/sharedConfig.cfg',
         'lib/sharedFunctions.bash',
