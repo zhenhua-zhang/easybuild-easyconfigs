@@ -16,6 +16,7 @@ builddependencies = [
 dependencies = [
     ('libyaml', '0.2.1'),
     ('cairo', '1.16.0'),
+    ('libjpeg-turbo', '2.0.2'),
     ('Python', '3.7.4', '-bare'),
 ]
 
