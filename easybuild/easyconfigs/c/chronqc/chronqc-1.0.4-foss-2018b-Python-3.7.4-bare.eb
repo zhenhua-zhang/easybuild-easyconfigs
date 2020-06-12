@@ -109,7 +109,7 @@ exts_list = [
 full_sanity_check = True
 
 sanity_check_paths = {
-    'files': [],
+    'files': ['bin/chronqc'],
     'dirs':  ['lib/python%(pyshortver)s/site-packages'],
 }
 
