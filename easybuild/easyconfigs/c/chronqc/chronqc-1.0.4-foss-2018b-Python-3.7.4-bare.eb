@@ -7,7 +7,7 @@ versionsuffix = '-Python-%(pyver)s-bare'
 homepage = 'https://github.com/nilesh-tawari/ChronQC'
 description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
 
-toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchain = {'name': 'foss', 'version': '2018b'}
 
 builddependencies = [
    ('binutils', '2.30'),
@@ -33,6 +33,13 @@ exts_default_options = {
 exts_list = [
     ('Cython', '0.29.20', {
         'checksums': ['22d91af5fc2253f717a1b80b8bb45acb655f643611983fd6f782b9423f8171c7'],
+    }),
+    ('setuptools', '47.1.1', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'checksums': ['145fa62b9d7bb544fce16e9b5a9bf4ab2032d2f758b7cd674af09a92736aff74'],
+    }),
+    ('wheel', '0.34.2', {
+        'checksums': ['8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96'],
     }),
     ('numpy', '1.18.5', {
         'source_tmpl': '%(name)s-%(version)s.zip',
