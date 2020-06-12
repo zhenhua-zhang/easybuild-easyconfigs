@@ -4,16 +4,18 @@ name = 'chronqc'
 version = '1.0.4'
 versionsuffix = '-Python-%(pyver)s-bare'
 
-homepage = 'https://github.com/nilesh-tawari/ChronQC''
+homepage = 'https://github.com/nilesh-tawari/ChronQC'
 description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
 
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+builddependencies = [
+   ('binutils', '2.30'),
+]
 
 dependencies = [
-    ('libyaml', '0.1.6'),
-    ('libpng', '1.6.29'),
-    ('freetype', '2.8'),
-    ('cairo', '1.14.6'),
+    ('libyaml', '0.2.1'),
+    ('cairo', '1.16.0'),
     ('Python', '3.7.4', '-bare'),
 ]
 
@@ -81,10 +83,10 @@ exts_list = [
     }),
     ('chronqc', version, {
         'source_urls': ['https://github.com/nilesh-tawari/ChronQC/archive/%(version)s.tar.gz'],
-        'patches': ['%(name)s-%(version)s.patch'],
+        #'patches': ['%(name)s-%(version)s.patch'],
         'checksums': [
             '174dd35fc6a4718188999d4b79305b4c', # chronqc-1.0.4.tar.gz
-            '18b74bf36486edcbd5ff630ab47c1f71', # chronqc-1.0.4.patch
+        #    '18b74bf36486edcbd5ff630ab47c1f71', # chronqc-1.0.4.patch
         ],
     }),
 ]
