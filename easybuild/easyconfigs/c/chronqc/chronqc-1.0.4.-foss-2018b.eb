@@ -1,15 +1,8 @@
-# This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild
-# Adam Huffman
-# The Francis Crick Institute
-# Elements derived from work by Pablo Escobar
-# sciCORE - University of Basel
-# SIB Swiss Institute of Bioinformatics 
-
 easyblock = 'Bundle'
 
 name = 'chronqc'
 version = '1.0.4'
-versionsuffix = '-Python-%(pyver)s'
+versionsuffix = '-Python-%(pyver)s-bare'
 
 homepage = 'https://github.com/nilesh-tawari/ChronQC''
 description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
@@ -21,7 +14,7 @@ dependencies = [
     ('libpng', '1.6.29'),
     ('freetype', '2.8'),
     ('cairo', '1.14.6'),
-    ('Python', '3.7.4'),
+    ('Python', '3.7.4', '-bare'),
 ]
 
 exts_defaultclass = 'PythonPackage'
