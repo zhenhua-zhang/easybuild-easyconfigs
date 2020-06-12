@@ -48,13 +48,15 @@ prebuildopts += ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
 
 parallel = 1
 
-files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python']
+files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python', 'LICENSE', 'CONTRIBUTORS', 'test']
+
+postinstallcmds = ['chmod a+rx %(installdir)s/python/*.py']
 
 sanity_check_paths = {
-    'files': ['bin/freebayes', 'bin/bamleftalign'],
+    'files': ['bin/freebayes', 'bin/bamleftalign', ],
     'dirs': ['bin', 'examples', 'scripts', 'python']
 }
 
-modextrapaths = {'PATH': 'scripts'}
+modextrapaths = {'PATH': ['python', 'scripts']}
 
 moduleclass = 'bio'
