@@ -1,0 +1,62 @@
+easyblock = 'MakeCp'
+
+name = 'freebayes'
+version = '1.3.2'
+
+homepage = 'https://github.com/ekg/freebayes'
+description = """ Bayesian haplotype-based polymorphism discovery and genotyping."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/ekg/%(name)s/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = ['06481ac8b8c2a2fae470ce8806a4d4a7af7b2a81076d092eb6bacb4de2c1ac2f']
+
+builddependencies = [
+    ('binutils', '2.30'),
+    # Must include git to clone sub repos if git is not available from OS.
+    #('git','xyz'),
+]
+
+dependencies = [
+    ('bzip2', '1.0.6'),
+    ('XZ', '5.2.4'),
+    ('CMake', '3.12.1'),
+    ('SAMtools','1.9'),
+    ('Python','3.7.4', '-bare'),
+]
+
+#
+# Git submodules are lost when a tarball for a release is created,
+# so the 'v%(version)s.tar.gz' source code downloaded from GitHub is useless.
+# The hacks below are required to:
+#   1. clone the repo which preserves the links to the submodules.
+#   2. checkout the required version as opposed to using the bleeding edge.
+#   3. Initialize the submodules recursively.
+#   4. Patch 2 submodules: the versions of vcflib and bamtools linked in this version of freebayes are broken and won't compile :(
+#
+prebuildopts = 'cd ../ && rm -vrf free* && '
+prebuildopts += ' git clone --recursive git://github.com/ekg/' + name + '.git ' + name + '-' + str(version)
+prebuildopts += ' && cd ' + name + '-' + str(version)
+prebuildopts += ' && git checkout ' + 'v' + str(version)
+prebuildopts += ' && git submodule update --init --recursive'
+prebuildopts += ' && (rm -rf vcflib/ && git clone --recursive https://github.com/vcflib/vcflib.git && cd vcflib && git checkout v1.0.1 && git submodule update --init --recursive && make)'
+prebuildopts += ' && (rm -rf bamtools/ && git clone --recursive https://github.com/pezmaster31/bamtools.git && cd bamtools && git checkout v2.5.1 && git submodule update --init --recursive '
+prebuildopts += '     && mkdir build && cd build && cmake ../ && make)'
+prebuildopts += ' && (cd SeqLib/ && ./configure && make) && (cd intervaltree/ && make )'
+prebuildopts += ' && (cd src && ln -sv ../vcflib/tabixpp/tabix.hpp) && '
+
+parallel = 1
+
+files_to_copy = ['bin', 'README.md', 'examples', 'scripts', 'python', 'LICENSE', 'CONTRIBUTORS', 'test']
+
+postinstallcmds = ['chmod a+rx %(installdir)s/python/*.py']
+
+sanity_check_paths = {
+    'files': ['bin/freebayes', 'bin/bamleftalign', ],
+    'dirs': ['bin', 'examples', 'scripts', 'python']
+}
+
+modextrapaths = {'PATH': ['python', 'scripts']}
+
+moduleclass = 'bio'
