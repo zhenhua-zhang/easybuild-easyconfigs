@@ -48,9 +48,6 @@ exts_list = [
     ('pandas', '1.0.4', {
         'checksums': ['b35d625282baa7b51e82e52622c300a1ca9f786711b2af7cbe64f1e6831f4126'],
     }),
-    ('matplotlib', '3.2.1', {
-        'checksums': ['ffe2f9cdcea1086fc414e82f42271ecf1976700b8edd16ca9d376189c6d93aee'],
-    }),
     ('bottle', '0.12.18', {
         'checksums': ['0819b74b145a7def225c0e83b16a4d5711fde751cd92bae467a69efce720f69e'],
     }),
@@ -69,6 +66,15 @@ exts_list = [
     ('python-dateutil', '2.8.1', {
         'modulename': 'dateutil',
         'checksums': ['73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c'],
+    }),
+    ('kiwisolver', '1.2.0', {
+        'checksums': ['247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f'],
+    }),
+    ('pillow', '7.1.2', {
+        'checksums': ['a0b49960110bc6ff5fead46013bcb8825d101026d466f3a4de3476defe0fb0dd'],
+    }),
+    ('matplotlib', '3.2.1', {
+        'checksums': ['ffe2f9cdcea1086fc414e82f42271ecf1976700b8edd16ca9d376189c6d93aee'],
     }),
     ('MarkupSafe', '1.1.1', {
         'checksums': ['29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b'],
