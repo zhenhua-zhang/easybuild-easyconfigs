@@ -19,16 +19,21 @@ dependencies = [
     ('Python', '3.7.4', '-bare'),
 ]
 
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
 exts_defaultclass = 'PythonPackage'
-
+exts_filter = ('python -c "import %(ext_name)s"', "")
 exts_default_options = {
     'download_dep_fail': True,
     'sanity_pip_check': True,
     'source_urls': [PYPI_SOURCE],
     'use_pip': True,
 }
-
 exts_list = [
+    ('Cython', '0.29.20', {
+        'checksums': ['22d91af5fc2253f717a1b80b8bb45acb655f643611983fd6f782b9423f8171c7'],
+    }),
     ('numpy', '1.18.5', {
         'source_tmpl': '%(name)s-%(version)s.zip',
         'checksums': ['34e96e9dae65c4839bd80012023aadd6ee2ccb73ce7fdf3074c62f301e63120b'],
@@ -84,3 +89,16 @@ exts_list = [
         ],
     }),
 ]
+
+#
+# Run a full sanity check as opposed to just trying to load the Python package.
+#
+full_sanity_check = True
+
+sanity_check_paths = {
+    'files': [],
+    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+}
+
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+moduleclass = 'vis'
