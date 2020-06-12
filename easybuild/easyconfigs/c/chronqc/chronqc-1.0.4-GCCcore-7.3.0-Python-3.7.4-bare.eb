@@ -31,7 +31,7 @@ exts_default_options = {
 exts_list = [
     ('numpy', '1.18.5', {
         'source_tmpl': '%(name)s-%(version)s.zip',
-        'checksums': ['bbcc85aaf4cd84ba057decaead058f43191cc0e30d6bc5d44fe336dc3d3f4509'],
+        'checksums': ['34e96e9dae65c4839bd80012023aadd6ee2ccb73ce7fdf3074c62f301e63120b'],
     }),
     ('pandas', '1.0.4', {
         'checksums': ['b35d625282baa7b51e82e52622c300a1ca9f786711b2af7cbe64f1e6831f4126'],
