@@ -97,10 +97,8 @@ exts_list = [
     ('chronqc', version, {
         'source_urls': ['https://github.com/nilesh-tawari/ChronQC/archive/'],
         'source_tmpl': '%(version)s.tar.gz',
-        #'patches': ['%(name)s-%(version)s.patch'],
         'checksums': [
             '174dd35fc6a4718188999d4b79305b4c', # chronqc-1.0.4.tar.gz
-        #    '18b74bf36486edcbd5ff630ab47c1f71', # chronqc-1.0.4.patch
         ],
     }),
 ]
