@@ -72,6 +72,7 @@ exts_list = [
         'checksums': ['247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f'],
     }),
     ('Pillow', '7.1.2', {
+        'modulename': 'PIL',
         'checksums': ['a0b49960110bc6ff5fead46013bcb8825d101026d466f3a4de3476defe0fb0dd'],
     }),
     ('matplotlib', '3.2.1', {
