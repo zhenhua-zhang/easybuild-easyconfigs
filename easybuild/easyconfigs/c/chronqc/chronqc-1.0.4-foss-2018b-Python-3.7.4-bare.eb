@@ -1,0 +1,117 @@
+easyblock = 'Bundle'
+
+name = 'chronqc'
+version = '1.0.4'
+versionsuffix = '-Python-%(pyver)s-bare'
+
+homepage = 'https://github.com/nilesh-tawari/ChronQC'
+description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+builddependencies = [
+   ('binutils', '2.30'),
+]
+
+dependencies = [
+    ('libyaml', '0.2.1'),
+    ('cairo', '1.16.0'),
+    ('libjpeg-turbo', '2.0.2'),
+    ('Python', '3.7.4', '-bare'),
+]
+
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check': True,
+    'source_urls': [PYPI_SOURCE],
+    'use_pip': True,
+}
+exts_list = [
+    ('Cython', '0.29.20', {
+        'checksums': ['22d91af5fc2253f717a1b80b8bb45acb655f643611983fd6f782b9423f8171c7'],
+    }),
+    ('setuptools', '47.1.1', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'checksums': ['145fa62b9d7bb544fce16e9b5a9bf4ab2032d2f758b7cd674af09a92736aff74'],
+    }),
+    ('wheel', '0.34.2', {
+        'checksums': ['8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96'],
+    }),
+    ('numpy', '1.18.5', {
+        'source_tmpl': '%(name)s-%(version)s.zip',
+        'checksums': ['34e96e9dae65c4839bd80012023aadd6ee2ccb73ce7fdf3074c62f301e63120b'],
+    }),
+    ('pandas', '1.0.4', {
+        'checksums': ['b35d625282baa7b51e82e52622c300a1ca9f786711b2af7cbe64f1e6831f4126'],
+    }),
+    ('bottle', '0.12.18', {
+        'checksums': ['0819b74b145a7def225c0e83b16a4d5711fde751cd92bae467a69efce720f69e'],
+    }),
+    ('six', '1.15.0', {
+        'checksums': ['30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259'],
+    }),
+    ('pyparsing', '2.4.7', {
+        'checksums': ['c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1'],
+    }),
+    ('pytz', '2020.1', {
+        'checksums': ['c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048'],
+    }),
+    ('cycler', '0.10.0', {
+        'checksums': ['cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8'],
+    }),
+    ('python-dateutil', '2.8.1', {
+        'modulename': 'dateutil',
+        'checksums': ['73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c'],
+    }),
+    ('kiwisolver', '1.2.0', {
+        'checksums': ['247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f'],
+    }),
+    ('Pillow', '7.1.2', {
+        'modulename': 'PIL',
+        'checksums': ['a0b49960110bc6ff5fead46013bcb8825d101026d466f3a4de3476defe0fb0dd'],
+    }),
+    ('matplotlib', '3.2.1', {
+        'checksums': ['ffe2f9cdcea1086fc414e82f42271ecf1976700b8edd16ca9d376189c6d93aee'],
+    }),
+    ('MarkupSafe', '1.1.1', {
+        'checksums': ['29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b'],
+    }),
+    ('click', '7.1.2', {
+        'checksums': ['d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a'],
+    }),
+    ('PyYAML', '5.3.1', {
+        'modulename': 'yaml',
+        'checksums': ['b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d'],
+    }),
+    ('simplejson', '3.17.0', {
+        'checksums': ['2b4b2b738b3b99819a17feaf118265d0753d5536049ea570b3c43b51c4701e81'],
+    }),
+    ('Jinja2', '2.11.2', {
+        'checksums': ['89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0'],
+    }),
+    ('chronqc', version, {
+        'source_urls': ['https://github.com/nilesh-tawari/ChronQC/archive/'],
+        'source_tmpl': '%(version)s.tar.gz',
+        'checksums': [
+            '174dd35fc6a4718188999d4b79305b4c', # chronqc-1.0.4.tar.gz
+        ],
+    }),
+]
+
+#
+# Run a full sanity check as opposed to just trying to load the Python package.
+#
+full_sanity_check = True
+
+sanity_check_paths = {
+    'files': ['bin/chronqc'],
+    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+}
+
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+moduleclass = 'vis'
