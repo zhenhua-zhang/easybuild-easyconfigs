@@ -1,4 +1,4 @@
-easyblock = 'Binary'
+easyblock = 'PackedBinary'
 
 name = "SMRT-Link"
 version = "9.0.0.92188"
@@ -17,9 +17,6 @@ sources = [('smrtlink_%s.zip' % (version))]
 checksums = ['b0e45388c5e2a873cef8bd440bdcc65e2b38e32b35cdd62a3d7cdf23eaec6e7a']
 
 install_cmd = "%(builddir)s/smrtlink_%(version)s.run --rootdir %(installdir)s --smrttools-only"
-
-cleanupoldinstall = True
-dontcreateinstalldir = True
 
 sanity_check_paths = {
     'files': ['smrtcmds/bin/pbcromwell'],
