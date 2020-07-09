@@ -24,6 +24,8 @@ extract_sources = True
 dontcreateinstalldir = True
 install_cmd = "%(builddir)s/smrtlink_%(version)s.run --rootdir %(installdir)s --smrttools-only"
 
+postinstallcmds = ['chmod -R g+rwX,o+rX,o-w %(installdir)s/']
+
 sanity_check_paths = {
     'files': ['smrtcmds/bin/pbcromwell'],
     'dirs': ['install', 'smrtcmds/bin', 'smrtcmds/developer']
