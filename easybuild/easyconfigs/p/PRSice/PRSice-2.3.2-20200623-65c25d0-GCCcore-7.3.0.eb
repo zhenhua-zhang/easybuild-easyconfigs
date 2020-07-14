@@ -2,7 +2,7 @@ easyblock = 'CMakeMakeCp'
 
 name = 'PRSice'
 version = '2.3.2'
-version_suffix = '-20200623-65c25d0'
+versionsuffix = '-20200623-65c25d0'
 
 homepage = 'https://www.prsice.info/'
 description = """PRSice (pronounced 'precise') is a Polygenic Risk 
