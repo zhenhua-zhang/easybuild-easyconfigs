@@ -19,20 +19,29 @@ checksums = [
     '80820f27e42e4b29f0649a9dc197cb089da5d22193c88adb956fd13e5bda1dce', # scramble-20190211-82c78b9.patch
 ]
 
-start_dir = 'cluster_identifier/src'
-files_to_copy = [(['cluster_analysis/resources/MEI_consensus_seqs.R', 'cluster_identifier/src/build/cluster_identifier'], 'bin'), 'LICENSE', 'README.md']
-# validation and analysis files are located in /apps/data/
+builddependencies = [
+    ('binutils', '2.30'),
+]
 
 dependencies = [
-    ('Autoconf', '2.69', '', ('GCCcore','7.3.0')),
-    ('bzip2', '1.0.6', '', ('GCCcore','7.3.0')),
-    ('R', '3.6.1', '', ('foss-2018b','bare')),
-    ('RPlus', '3.6.1', '', ('foss-2018b','v20.02.1')),
-    ('HTSlib', '1.9', '', ('GCCcore','7.3.0')),
-    ('cURL', '7.63.0', '', ('GCCcore','7.3.0')),
-    ('zlib', '1.2.11', '', ('GCCcore','7.3.0')),
-    ('XZ', '5.2.4', '', ('GCCcore','7.3.0')),]
+    ('Autoconf', '2.69'),
+    ('bzip2', '1.0.6'),
+    ('RPlus', '3.6.1', '-v20.02.1', ('foss', '2018b')),
+    ('HTSlib', '1.9'),
+    ('cURL', '7.63.0'),
+    ('zlib', '1.2.11'),
+    ('XZ', '5.2.4'),
+]
 
+start_dir = 'cluster_identifier/src'
+
+files_to_copy = [
+    (['cluster_analysis/resources/MEI_consensus_seqs.R', 'cluster_identifier/src/build/cluster_identifier'], 'bin'),
+    'LICENSE',
+    'README.md'
+]
+
+# validation and analysis files are located in /apps/data/
 sanity_check_paths = {
     'files': ['bin/cluster_identifier', 'bin/MEI_consensus_seqs.R', 'README.md'],
     'dirs': []
