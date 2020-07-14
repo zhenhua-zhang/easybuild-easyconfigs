@@ -28,7 +28,7 @@ builddependencies = [
 ]
 
 dependencies = [
-    ('RPlus', '3.6.1', '-v20.02.1'),
+    ('RPlus', '3.6.1', '-v20.02.1', ('foss', '2018b')),
 ]
 
 files_to_copy = [(['bin/PRSice', 'PRSice.R'], 'bin'), "README.md", "LICENSE"]
