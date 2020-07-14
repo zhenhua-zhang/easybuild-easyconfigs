@@ -23,7 +23,7 @@ checksums = [
 
 dependencies = [
     ('GSL', '2.5'),
-    ('Perl', '5.28.1'),
+    ('Perl', '5.30.0', '-bare'),
 ]
 
 start_dir = 'src'
