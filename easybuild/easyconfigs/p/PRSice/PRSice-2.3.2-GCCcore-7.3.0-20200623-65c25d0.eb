@@ -1,0 +1,43 @@
+easyblock = 'CMakeMakeCp'
+
+name = 'PRSice'
+version = '2.3.2'
+versionsuffix = '-20200623-65c25d0'
+
+homepage = 'https://www.prsice.info/'
+description = """PRSice (pronounced 'precise') is a Polygenic Risk 
+Score software for calculating, applying, evaluating and 
+plotting the results of polygenic risk scores (PRS) analyses."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/choishingwan/PRSice/archive/']
+#
+# Releases are messy and unusable as they get patched without re-releasing and updating the tag/version number.
+# Therefore we have to inspect the source code for the correct version number and fetch the sources using the
+# corresponding commit hash :o
+#
+#sources = ['%(version)s.tar.gz']
+sources = ['65c25d0b16ac2cbf4d094f2dee71a63992ee770d.tar.gz']
+checksums = ['d1653942776a81a27e93dd79697b8f92382844fd96f828de7ba6a7fdedbfd093']
+
+builddependencies = [
+    ('CMake', '3.12.1'),
+    ('binutils', '2.30'),
+    ('Eigen', '3.3.7'),
+]
+
+dependencies = [
+    ('RPlus', '3.6.1', '-v20.02.1', ('foss', '2018b')),
+]
+
+files_to_copy = [(['bin/PRSice', 'PRSice.R'], 'bin'), "README.md", "LICENSE"]
+
+sanity_check_paths = {
+    'files': ['bin/PRSice', 'bin/PRSice.R'],
+    'dirs': [],
+}
+
+sanity_check_commands = ["PRSice --help"]
+
+moduleclass = 'bio'
