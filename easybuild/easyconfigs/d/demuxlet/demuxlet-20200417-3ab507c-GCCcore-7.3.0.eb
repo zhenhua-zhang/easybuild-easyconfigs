@@ -1,0 +1,30 @@
+easyblock = 'ConfigureMake'
+configure_cmd_prefix = "autoreconf -vfi && "
+
+name = 'demuxlet'
+version = '20200417-3ab507c'
+
+homepage = "https://github.com/statgen/demuxlet"
+description = """Genetic multiplexing of barcoded single cell RNA-seq."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/statgen/%(name)s/archive/']
+sources = ['3ab507cf7c0489f983fe69b2c6c3ccdd6d853729.tar.gz']
+patches = [('%s-%s.patch' % (name,version))]
+
+checksums = [
+    '0ada8200c0fab603c0deadcd8ebece1497eb18ecdbc4611db25033cda49e05b7', # demuxlet-3ab507cf7c0489f983fe69b2c6c3ccdd6d853729.tar.gz,
+    '565e26a4d30cfa550439a97e827ebadd4d88ee0b30bc586b0102d3e66de47073', # demuxlet-20200417-3ab507c.patch
+]
+
+dependencies = [
+    ('HTSlib', '1.9', '', ('GCCcore','7.3.0'))
+]
+
+sanity_check_paths = {
+    'files': ['bin/demuxlet'],
+    'dirs': ['bin']
+}
+
+moduleclass = 'bio'

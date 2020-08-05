@@ -18,8 +18,7 @@ sources = [('%s.tar.gz' % (version))]
 checksums = ['7b18be6c367f78d84c90527f79dde55cd21fbde4f027f3e2ba6f9c8b8158147c']
 
 dependencies = [ 
-    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
-    ('CADD', 'v1.4', '', ('dummy', '')),
+    ('CADD', 'v1.4', '', ('foss', '2018b')),
 ]
 
 postinstallcmds = [
