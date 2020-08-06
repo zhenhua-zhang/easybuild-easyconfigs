@@ -22,6 +22,10 @@ dependencies = [
 exts_defaultclass = 'PerlModule'
 exts_filter = ("perldoc -lm %(ext_name)s ", "")
 
+modextrapaths = {
+    'PERL5LIB': 'lib/perl5/site_perl/%(perlver)s/'
+}
+
 exts_list = [
     ('Bio::EnsEMBL::XS', '2.3.2', {
         'source_tmpl': '%(version)s.tar.gz',
