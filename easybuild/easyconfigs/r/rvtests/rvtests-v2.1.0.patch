@@ -1,6 +1,18 @@
+diff -ru rvtests-2.1.0.original/bgenUtils/Makefile rvtests-2.1.0.patched/bgenUtils/Makefile
+--- rvtests-2.1.0.original/bgenUtils/Makefile	2019-02-06 07:15:40.000000000 +0000
++++ rvtests-2.1.0.patched/bgenUtils/Makefile	2020-08-10 12:08:52.111604032 +0000
+@@ -29,7 +29,7 @@
+ # build utils
+ ##################################################
+ util: $(addprefix $(DIR_EXEC)/,$(UTIL_EXEC))
+-release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS) $(STATIC_FLAG)
++release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS)
+ define BUILD_util
+   TAR := $(DIR_EXEC)/$(notdir $(basename $(1)))
+   SRC := $(addprefix ./, $(1).cpp)
 diff -ru rvtests-2.1.0.original/src/Makefile rvtests-2.1.0.patched/src/Makefile
 --- rvtests-2.1.0.original/src/Makefile	2019-02-06 07:15:40.000000000 +0000
-+++ rvtests-2.1.0.patched/src/Makefile	2020-08-10 10:53:30.161763883 +0000
++++ rvtests-2.1.0.patched/src/Makefile	2020-08-10 12:08:17.878147010 +0000
 @@ -42,7 +42,7 @@
  # enable read over HTTP and FTP
  DEFAULT_CXXFLAGS += -D_USE_KNETFILE
@@ -10,3 +22,15 @@ diff -ru rvtests-2.1.0.original/src/Makefile rvtests-2.1.0.patched/src/Makefile
  release: $(DIR_EXEC)/$(EXEC)
  debug: CXX_FLAGS = -ggdb -O0 $(DEFAULT_CXXFLAGS)
  debug: $(DIR_EXEC_DBG)/$(EXEC) 
+diff -ru rvtests-2.1.0.original/vcfUtils/Makefile rvtests-2.1.0.patched/vcfUtils/Makefile
+--- rvtests-2.1.0.original/vcfUtils/Makefile	2019-02-06 07:15:40.000000000 +0000
++++ rvtests-2.1.0.patched/vcfUtils/Makefile	2020-08-10 12:08:35.026273651 +0000
+@@ -46,7 +46,7 @@
+ # build utils
+ ##################################################
+ util: $(addprefix $(DIR_EXEC)/,$(UTIL_EXEC))
+-release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS) $(STATIC_FLAG)
++release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS)
+ define BUILD_util
+   TAR := $(DIR_EXEC)/$(notdir $(basename $(1)))
+   SRC := $(addprefix ./, $(1).cpp)
