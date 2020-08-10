@@ -19,7 +19,7 @@ sources = [{
 patches = ['%(name)s-%(version)s.patch']
 checksums = [
     'bc05cd1ab1cbeda62bd79fd3ba0f46b8e304a1bc1bea556316baa2c38ef1fcf3', #  rvtests-v2.1.0.tar.gz
-    'fdd1ad717017ca4130c668575564961d663089edd1e607a18cf42d565f0273fc', #  rvtests-v2.1.0.patch
+    'c03225361236f4ad9d7518b7f28c9581795dd9c837333644a9e992995ddec5a2', #  rvtests-v2.1.0.patch
 ]
 
 builddependencies = [

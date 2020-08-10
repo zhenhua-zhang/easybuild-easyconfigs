@@ -22,6 +22,40 @@ diff -ru rvtests-2.1.0.original/src/Makefile rvtests-2.1.0.patched/src/Makefile
  release: $(DIR_EXEC)/$(EXEC)
  debug: CXX_FLAGS = -ggdb -O0 $(DEFAULT_CXXFLAGS)
  debug: $(DIR_EXEC_DBG)/$(EXEC) 
+diff -ru rvtests-2.1.0.original/third/Makefile rvtests-2.1.0.patched/third/Makefile
+--- rvtests-2.1.0.original/third/Makefile	2019-02-06 07:15:40.000000000 +0000
++++ rvtests-2.1.0.patched/third/Makefile	2020-08-10 16:56:14.800977677 +0000
+@@ -54,9 +54,9 @@
+ 	tar zxf $<
+ 	-(DIR=`pwd`; cd sqlite-autoconf-3200100; ./configure --prefix="$${DIR}"/sqlite --enable-dynamic-extensions=no; make -j; make install)
+ 
+-zstd: zstd-1.3.1.tar.gz
++zstd: zstd-1.3.5.tar.gz
+ 	tar zxf $<
+-	ln -s -f zstd-1.3.1 zstd
++	ln -s -f zstd-1.3.5 zstd
+ 	(cd zstd; make)
+ 
+ cnpy: cnpy.zip
+@@ -107,9 +107,9 @@
+ 	echo "obtain sqlite"
+ 	$(call DOWNLOAD,https://sqlite.org/2017/sqlite-autoconf-3200100.tar.gz)
+ 
+-zstd-1.3.1.tar.gz:
++zstd-1.3.5.tar.gz:
+ 	echo "obtain zstd"
+-	$(call DOWNLOAD_RENAME,https://github.com/facebook/zstd/archive/v1.3.1.tar.gz,$@)
++	$(call DOWNLOAD_RENAME,https://github.com/facebook/zstd/archive/v1.3.5.tar.gz,$@)
+ 
+ cnpy.zip:
+ 	echo "obtain cnpy"
+@@ -129,5 +129,5 @@
+ 	-rm -rf nlopt-2.4.2
+ 	-rm -rf zlib-1.2.8
+ 	-rm -rf sqlite-autoconf-3200100
+-	-rm -rf zstd-1.3.1
++	-rm -rf zstd-1.3.5
+ 	-rm -rf cnpy
 diff -ru rvtests-2.1.0.original/vcfUtils/Makefile rvtests-2.1.0.patched/vcfUtils/Makefile
 --- rvtests-2.1.0.original/vcfUtils/Makefile	2019-02-06 07:15:40.000000000 +0000
 +++ rvtests-2.1.0.patched/vcfUtils/Makefile	2020-08-10 12:08:35.026273651 +0000
