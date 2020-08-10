@@ -1,0 +1,12 @@
+diff -ru rvtests-2.1.0.original/src/Makefile rvtests-2.1.0.patched/src/Makefile
+--- rvtests-2.1.0.original/src/Makefile	2019-02-06 07:15:40.000000000 +0000
++++ rvtests-2.1.0.patched/src/Makefile	2020-08-10 10:53:30.161763883 +0000
+@@ -42,7 +42,7 @@
+ # enable read over HTTP and FTP
+ DEFAULT_CXXFLAGS += -D_USE_KNETFILE
+ 
+-release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS) $(STATIC_FLAG)
++release: CXX_FLAGS = -O2 -DNDEBUG $(DEFAULT_CXXFLAGS)
+ release: $(DIR_EXEC)/$(EXEC)
+ debug: CXX_FLAGS = -ggdb -O0 $(DEFAULT_CXXFLAGS)
+ debug: $(DIR_EXEC_DBG)/$(EXEC) 
