@@ -1,3 +1,15 @@
+diff -ru rvtests-2.1.0.original/base/CommonFunction.h rvtests-2.1.0.patched/base/CommonFunction.h
+--- rvtests-2.1.0.original/base/CommonFunction.h	2019-02-06 07:15:40.000000000 +0000
++++ rvtests-2.1.0.patched/base/CommonFunction.h	2020-08-11 13:48:59.294265896 +0000
+@@ -6,7 +6,7 @@
+ #include <set>
+ #include "base/Indexer.h"
+ #include "base/Utils.h"
+-#include "third/gsl/include/gsl/gsl_cdf.h"
++#include "../third/gsl/include/gsl/gsl_cdf.h"
+ 
+ extern int stringTokenize(const std::string& str, const char delim,
+                           std::vector<std::string>* result);
 diff -ru rvtests-2.1.0.original/bgenUtils/Makefile rvtests-2.1.0.patched/bgenUtils/Makefile
 --- rvtests-2.1.0.original/bgenUtils/Makefile	2019-02-06 07:15:40.000000000 +0000
 +++ rvtests-2.1.0.patched/bgenUtils/Makefile	2020-08-10 12:08:52.111604032 +0000
