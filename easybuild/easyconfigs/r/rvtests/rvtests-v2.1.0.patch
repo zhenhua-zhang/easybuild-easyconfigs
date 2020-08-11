@@ -1,12 +1,12 @@
 diff -ru rvtests-2.1.0.original/base/CommonFunction.h rvtests-2.1.0.patched/base/CommonFunction.h
 --- rvtests-2.1.0.original/base/CommonFunction.h	2019-02-06 07:15:40.000000000 +0000
-+++ rvtests-2.1.0.patched/base/CommonFunction.h	2020-08-11 13:48:59.294265896 +0000
++++ rvtests-2.1.0.patched/base/CommonFunction.h	2020-08-11 14:01:12.576400140 +0000
 @@ -6,7 +6,7 @@
  #include <set>
  #include "base/Indexer.h"
  #include "base/Utils.h"
 -#include "third/gsl/include/gsl/gsl_cdf.h"
-+#include "../third/gsl/include/gsl/gsl_cdf.h"
++#include "gsl_cdf.h"
  
  extern int stringTokenize(const std::string& str, const char delim,
                            std::vector<std::string>* result);
