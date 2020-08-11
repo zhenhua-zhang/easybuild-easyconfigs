@@ -26,6 +26,7 @@ builddependencies = [
     ('binutils', '2.30')
 ]
 
+prebuildopts = 'make deepclean && '
 parallel = 1
 
 files_to_copy = [(['executables/*'], 'bin'), 'examples']
