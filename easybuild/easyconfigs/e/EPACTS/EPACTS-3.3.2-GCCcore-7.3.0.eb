@@ -13,7 +13,11 @@ sources = [{
     'download_filename': 'v%(version)s.tar.gz',
     'filename': '%(name)s-%(version)s.tar.gz',
 }]
-checksums = ['e389a33cbb82aaab39fef07c2fb14477f90600e46180148df7ebaa4495e8cbe7']
+patches = ['%(name)s-%(version)s.patch']
+checksums = [
+    'e389a33cbb82aaab39fef07c2fb14477f90600e46180148df7ebaa4495e8cbe7', # EPACTS-3.3.2.tar.gz
+    '7c044cd0dabd28195bc956092d8e802a455f1d4a06f0300b5ffab0c38ae90352', # EPACTS-3.3.2.patch
+]
 
 builddependencies = [
     ('binutils', '2.30'),
@@ -27,9 +31,11 @@ dependencies = [
    ('gnuplot', '5.2.8'),
 ]
 
+preconfigopts = 'autoreconf -f -i && '
+
 sanity_check_paths = {
     'files': ['bin/epacts'],
-    'dirs': ['bin', 'examples']
+    'dirs': ['bin', 'lib', 'share']
 }
 
 moduleclass = 'bio'
