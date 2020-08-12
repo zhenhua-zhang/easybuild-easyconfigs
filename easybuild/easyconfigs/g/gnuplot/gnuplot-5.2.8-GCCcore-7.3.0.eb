@@ -10,7 +10,7 @@ toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 source_urls = [('https://sourceforge.net/projects/gnuplot/files/gnuplot/%(version)s', 'download')]
 sources = [SOURCE_TAR_GZ]
-patches = ['%(name)-%(version).patch']
+patches = ['%(name)s-%(version)s.patch']
 checksums = [
     '60a6764ccf404a1668c140f11cc1f699290ab70daa1151bb58fed6139a28ac37', # gnuplot-5.2.8.tar.gz
     'bd224d6ce4520259a83b3d1bd7eb43dc3e0af72c786af30114a89594c83d7f30', # gnuplot-5.2.8.patchy
