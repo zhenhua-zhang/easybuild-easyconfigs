@@ -8,9 +8,6 @@ description = """Rare Variant tests, a package for genetic association analysis 
 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
-source_urls = []
-sources = []
-
 sources = [{
     'source_urls': ['https://github.com/zhanxw/%(name)s/archive/'],
     'download_filename': '%(version)s.tar.gz',
@@ -43,7 +40,7 @@ files_to_copy = [
 
 sanity_check_paths = {
     'files': ['bin/%s' % x for x in _binaries],
-    'dirs': ['bin', 'examples']
+    'dirs': ['bin', 'example']
 }
 
 moduleclass = 'bio'
