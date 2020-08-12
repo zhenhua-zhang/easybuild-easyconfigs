@@ -9,7 +9,7 @@ description = """Rare Variant tests, a package for genetic association analysis 
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 sources = [{
-    'source_urls': ['https://github.com/statgen/EPACTS/archive/v3.3.2.tar.gz'],
+    'source_urls': ['https://github.com/statgen/EPACTS/archive/'],
     'download_filename': 'v%(version)s.tar.gz',
     'filename': '%(name)s-%(version)s.tar.gz',
 }]
