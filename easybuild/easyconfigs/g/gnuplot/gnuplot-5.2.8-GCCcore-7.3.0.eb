@@ -20,6 +20,7 @@ builddependencies = [
 
 dependencies = [
     ('ncurses', '6.1'),
+    ('GObject-Introspection', '1.60.1'),
     ('cairo', '1.16.0'),
     ('libjpeg-turbo', '2.0.2'),
     ('libpng', '1.6.37'),
@@ -31,7 +32,7 @@ dependencies = [
 
 preconfigopts = 'autoreconf && '
 
-configopts = '--without-qt  --without-x '
+configopts = '--with-cairo --without-qt --without-x --without-wx --disable-wxwidgets '
 
 sanity_check_paths = {
     'files': ['bin/gnuplot'],
