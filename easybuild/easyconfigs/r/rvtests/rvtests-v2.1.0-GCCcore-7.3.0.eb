@@ -29,10 +29,20 @@ builddependencies = [
 prebuildopts = 'unset LIBS && make deepclean && '
 parallel = 1
 
-files_to_copy = [(['executables/*'], 'bin'), 'examples']
+_binaries = [
+    'bgen2vcf', 'bgenFileInfo', 'combineKinship', 'explainCSI1', 'explainCSI2',
+    'explainTabix', 'kinshipDecompose', 'plink2vcf', 'rvtest', 'vcf2geno',
+    'vcf2kinship', 'vcf2plink', 'vcfAnnoSummaryLite', 'vcfExtractSite', 'vcfPair',
+    'vcfPeek', 'vcfSummary', 'vcfSummaryLite', 'vcfVariantSummaryLite'
+]
+
+files_to_copy = [
+    (['executable/%s' % x for x in _binaries], 'bin'),
+    'example'
+]
 
 sanity_check_paths = {
-    'files': ['bin/rvtests'],
+    'files': ['bin/%s' % x for x in _binaries],
     'dirs': ['bin', 'examples']
 }
 
