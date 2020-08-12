@@ -27,4 +27,4 @@ sanity_check_paths = {
     'dirs': ['bin', 'lib', 'share'],
 }
 
-moduleclass = 'graphics'
+moduleclass = 'vis'
