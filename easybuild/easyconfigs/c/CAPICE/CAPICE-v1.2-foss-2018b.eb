@@ -15,7 +15,7 @@ toolchain = {'name': 'foss', 'version': '2018b'}
 source_urls = [('https://github.com/molgenis/capice/archive/%s/' % (version))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['8684a6355df69ba046f0dcd9fc92b196c13ed53090bc8994aefeab92cf669a35']
+checksums = ['9a3e776fdb4ebc4b7783ee0b74e6911e719161aea67caa34d328be48828028c2']
 
 dependencies = [
     ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
