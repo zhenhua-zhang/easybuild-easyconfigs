@@ -1,7 +1,7 @@
 easyblock = 'PackedBinary'
 
 name = 'CAPICE'
-version = 'v1.1'
+version = 'v1.2'
 
 homepage = 'https://github.com/molgenis/capice'
 description = """CAPICE : a computational method for Consequence-Agnostic 
