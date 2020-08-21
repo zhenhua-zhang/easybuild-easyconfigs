@@ -1,0 +1,30 @@
+easyblock = 'ConfigureMake'
+
+name = 'groff'
+version = '1.22.4'
+
+homepage = "https://www.gnu.org/software/groff/"
+description = """Groff (GNU troff) is a typesetting system that 
+reads plain text mixed with formatting commands and produces formatted output. 
+Output may be PostScript or PDF, html, or ASCII/UTF8 for display at the terminal."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['http://ftp.gnu.org/gnu/groff/']
+sources = ['%(name)s-%(version)s.tar.gz']
+
+checksums = ['e78e7b4cb7dec310849004fa88847c44701e8d133b5d4c13057d876c1bad0293']
+
+builddependencies = [
+    ('binutils', '2.30'),
+]
+
+configopts = ' --with-doc=no --with-urw-fonts-dir=/usr/share/fonts/urw-base35/ '
+
+sanity_check_paths = {
+    'files': ['bin/groff', 'bin/pfbtops', 'bin/grog', 'bin/roff2pdf',
+              'bin/chem',  'bin/grn', 'bin/troff', 'bin/gropdf', 'bin/tbl'],
+    'dirs': ['bin', 'lib', 'share'],
+}
+
+moduleclass = 'vis'

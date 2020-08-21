@@ -1,0 +1,41 @@
+easyblock = 'ConfigureMake'
+
+name = 'EPACTS'
+version = '3.3.2'
+
+homepage = 'http://genome.sph.umich.edu/wiki/EPACTS'
+description = """Rare Variant tests, a package for genetic association analysis for sequence datasets."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+sources = [{
+    'source_urls': ['https://github.com/statgen/EPACTS/archive/'],
+    'download_filename': 'v%(version)s.tar.gz',
+    'filename': '%(name)s-%(version)s.tar.gz',
+}]
+patches = ['%(name)s-%(version)s.patch']
+checksums = [
+    'e389a33cbb82aaab39fef07c2fb14477f90600e46180148df7ebaa4495e8cbe7', # EPACTS-3.3.2.tar.gz
+    '7c044cd0dabd28195bc956092d8e802a455f1d4a06f0300b5ffab0c38ae90352', # EPACTS-3.3.2.patch
+]
+
+builddependencies = [
+    ('binutils', '2.30'),
+    ('Autotools', '20180311'),
+]
+
+dependencies = [
+   ('R', '3.6.1', '-bare', ('foss', '2018b')),
+   ('Ghostscript', '9.27'),
+   ('groff', '1.22.4'),
+   ('gnuplot', '5.2.8'),
+]
+
+preconfigopts = 'autoreconf -f -i && '
+
+sanity_check_paths = {
+    'files': ['bin/epacts'],
+    'dirs': ['bin', 'lib', 'share']
+}
+
+moduleclass = 'bio'

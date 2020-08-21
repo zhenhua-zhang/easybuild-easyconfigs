@@ -1,7 +1,7 @@
 easyblock = 'PackedBinary'
 
 name = 'CAPICE'
-version = 'v1.0'
+version = 'v1.2'
 
 homepage = 'https://github.com/molgenis/capice'
 description = """CAPICE : a computational method for Consequence-Agnostic 
@@ -15,10 +15,10 @@ toolchain = {'name': 'foss', 'version': '2018b'}
 source_urls = [('https://github.com/molgenis/capice/archive/%s/' % (version))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['7b18be6c367f78d84c90527f79dde55cd21fbde4f027f3e2ba6f9c8b8158147c']
+checksums = ['9a3e776fdb4ebc4b7783ee0b74e6911e719161aea67caa34d328be48828028c2']
 
-dependencies = [ 
-    ('CADD', 'v1.4', '', ('foss', '2018b')),
+dependencies = [
+    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
 ]
 
 postinstallcmds = [
