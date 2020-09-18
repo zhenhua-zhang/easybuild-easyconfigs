@@ -1,0 +1,33 @@
+name = 'vcf-decision-tree'
+version = 'v0.0.1'
+versionsuffix = '-Java-%(javaver)s-LTS'
+
+homepage = 'https://github.com/molgenis/vip-decision-tree/'
+description = """Command-line application to classify variants in any VCF (Variant Call Format) file based on a decision tree."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'Binary'
+
+#
+# Example URL:
+# https://github.com/molgenis/vip-decision-tree/
+#
+source_urls = [('http://github.com/molgenis/vip-decision-tree/releases/download/%s' % (version))]
+sources = [('vcf-decision-tree.jar' )]
+
+checksums = ['cec839dfa89c82675fbc93342b828556adfa0d93befb540e68f86fbfe732b994']
+
+dependencies = [
+    ('Java', '11', '-LTS')
+]
+
+#
+# Sanity checking.
+#
+sanity_check_paths = {
+    'files': ['vcf-decision-tree.jar'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
+
