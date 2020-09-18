@@ -22,11 +22,6 @@ dependencies = [
 ]
 
 #
-# We don't really need a command to install depad-utils, 
-# but as we have to have one in order to reycle the CmdCp easyblock... just ls.
-#
-
-#
 # Sanity checking.
 #
 sanity_check_paths = {
