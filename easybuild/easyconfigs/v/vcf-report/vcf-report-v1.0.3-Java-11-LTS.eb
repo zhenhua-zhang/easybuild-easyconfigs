@@ -1,0 +1,33 @@
+name = 'vcf-report'
+version = 'v1.0.3'
+versionsuffix = '-Java-%(javaver)s-LTS'
+
+homepage = 'https://github.com/molgenis/vip-report/'
+description = """Command-line application to generate a report for any VCF (Variant Call Format) file based on a report template"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'Binary'
+
+#
+# Example URL:
+# https://github.com/molgenis/vip-report/
+#
+source_urls = [('http://github.com/molgenis/vip-report/releases/download/%s' % (version))]
+sources = [('vcf-report.jar' )]
+
+checksums = ['08dc64179baccbe7db828a6e23d9d3946265b6a4045db1486e9e78bd4ef4e463']
+
+dependencies = [
+    ('Java', '11', '-LTS')
+]
+
+#
+# Sanity checking.
+#
+sanity_check_paths = {
+    'files': ['vcf-report.jar'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
+
