@@ -16,9 +16,15 @@ sources = [{
 
 checksums = ['07971b36a05f7b0fb355bb959c747c8889930532020493b39eb0bea6e044d9a4']
 
+builddependencies = [
+    ('binutils', '2.30'),
+]
+
 dependencies = [
-    ('zlib', '1.2.8'),
-    ('bzip2', '1.0.6'),
+    ('Tcl', '8.6.9'),
+    ('BEDTools', '2.28.0'),
+    ('BCFtools', '1.10.2'),
+    ('Java', '11', '-LTS', true),
 ]
 
 skipsteps = ['configure']
