@@ -28,7 +28,10 @@ dependencies = [
 ]
 
 skipsteps = ['configure']
+
 buildopts = 'PREFIX=%(installdir)s'
+parallel = 1
+
 installopts = 'PREFIX=%(installdir)s'
 
 postinstallcmds = ['make PREFIX=%(installdir)s/ install-human-annotation']
