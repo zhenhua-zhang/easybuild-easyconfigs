@@ -1,0 +1,37 @@
+easyblock = 'ConfigureMake'
+
+name = 'AnnotSV'
+version = 'v2.5'
+
+homepage = 'https://github.com/lgmgeo/AnnotSV/'
+description = """An integrated tool for annotation and ranking of Structural Variations."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+sources = [{
+    'source_urls': ['https://github.com/lgmgeo/AnnotSV/archive/'],
+    'filename': '%(name)s-%(version)s.tar.gz',
+    'download_filename': '%(version)s.tar.gz',
+}]
+
+checksums = ['07971b36a05f7b0fb355bb959c747c8889930532020493b39eb0bea6e044d9a4']
+
+dependencies = [
+    ('zlib', '1.2.8'),
+    ('bzip2', '1.0.6'),
+]
+
+skipsteps = ['configure']
+buildopts = 'PREFIX=%(installdir)s'
+installopts = 'PREFIX=%(installdir)s'
+
+postinstallcmds = ['make PREFIX=%(installdir)s/ install-human-annotation']
+
+sanity_check_paths = {
+    'files': ['bin/AnnotSV'],
+    'dirs': [],
+}
+
+moduleclass = 'bio'
+#modextrapaths = {'PATH': ['']}
+modextravars = {'ANNOTSV': '%(installdir)s'}
