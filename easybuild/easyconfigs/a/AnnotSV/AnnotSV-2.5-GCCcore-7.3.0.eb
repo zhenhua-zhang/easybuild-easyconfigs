@@ -24,7 +24,7 @@ dependencies = [
     ('Tcl', '8.6.9'),
     ('BEDTools', '2.28.0'),
     ('BCFtools', '1.10.2'),
-    ('Java', '11', '-LTS', true),
+    ('Java', '11', '-LTS', True),
 ]
 
 skipsteps = ['configure']
