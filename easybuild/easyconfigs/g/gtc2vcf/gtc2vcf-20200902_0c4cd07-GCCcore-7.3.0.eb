@@ -3,7 +3,7 @@ easyblock = 'ConfigureMake'
 name = 'gtc2vcf'
 _local_bcftools_version = '1.11'
 _local_gtc2vcf_hash = '0c4cd0701068b5620e4761339e42e5c6f9380793'
-version = '20200903_' + _local_gtc2vcf_hash[0:7]
+version = '20200902_' + _local_gtc2vcf_hash[0:7]
 
 homepage = 'https://github.com/freeseek/gtc2vcf'
 
