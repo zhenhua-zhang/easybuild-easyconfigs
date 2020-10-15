@@ -40,7 +40,7 @@ dependencies = [
 #
 install_cmd  = "mkdir -p %(installdir)s/libexec/bcftools/ && "
 install_cmd += "mkdir -p %(installdir)s/bin/ && "
-install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{fill-tags,fixploidy,mocha,trio-phase,mochatools,importFMT,extendFMT}.so %(installdir)s/libexec/bcftools/ && "
+install_cmd += "cp -a %(builddir)s/bcftools-*/plugins/{fill-tags,fixploidy,mocha,trio-phase,mochatools,extendFMT}.so %(installdir)s/libexec/bcftools/ && "
 install_cmd += "cp -a %(builddir)s/mocha-*/*_plot.R %(installdir)s/bin/ && "
 install_cmd += "cp -a %(builddir)s/mocha-*/{LICENSE,README.md} %(installdir)s/"
 
@@ -49,7 +49,6 @@ sanity_check_paths = {
              + ['libexec/bcftools/extendFMT.%s' % SHLIB_EXT]
              + ['libexec/bcftools/fill-tags.%s' % SHLIB_EXT]
              + ['libexec/bcftools/fixploidy.%s' % SHLIB_EXT]
-             + ['libexec/bcftools/importFMT.%s' % SHLIB_EXT]
              + ['libexec/bcftools/mocha.%s' % SHLIB_EXT]
              + ['libexec/bcftools/mochatools.%s' % SHLIB_EXT]
              + ['libexec/bcftools/trio-phase.%s' % SHLIB_EXT],
