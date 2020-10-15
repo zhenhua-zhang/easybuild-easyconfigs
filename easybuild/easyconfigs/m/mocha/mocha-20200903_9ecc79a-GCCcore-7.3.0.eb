@@ -1,8 +1,9 @@
 easyblock = 'ConfigureMake'
 
 name = 'mocha'
-version = '20200903_9ecc79a'
 _local_bcftools_version = '1.11'
+_local_mocha_hash='9ecc79aa64bdc5b9b4e44c54be42bb38aa55dfc8'
+version = '20200903_' + _local_mocha_hash[0:7]
 
 homepage = 'https://github.com/freeseek/mocha'
 
@@ -17,13 +18,13 @@ sources = [{
     'filename': 'bcftools-%s.tar.bz2' % (_local_bcftools_version),
 },{
     'source_urls': ['https://github.com/freeseek/mocha/archive/'],
-    'download_filename': '6d8aeff8f9d1dbe779382be763497d34968fa4ba.tar.gz',
+    'download_filename': '%(_local_mocha_hash)s.tar.gz',
     'filename': '%(name)s-%(version)s.tar.gz',
     'extract_cmd': 'tar -xvzf %s && mv mocha-*/*.{c,h} bcftools-*/plugins/',
 }]
 checksums = [
     '3ceee47456ec481f34fa6c34beb6fe892b5b365933191132721fdf126e45a064', #  bcftools-1.11.tar.bz2
-    '5ae206875d5fbed2dbc076eff11a11fc80b413f1bc99c74475927835c8331834', #  mocha-9ecc79aa64bdc5b9b4e44c54be42bb38aa55dfc8.tar.gz
+    '5ae206875d5fbed2dbc076eff11a11fc80b413f1bc99c74475927835c8331834', #  mocha-%(_local_mocha_hash)s.tar.gz
 ]
 
 builddependencies = [
