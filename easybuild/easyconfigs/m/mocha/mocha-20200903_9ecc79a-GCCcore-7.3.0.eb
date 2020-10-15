@@ -14,11 +14,11 @@ with either B Allele Frequency (BAF) and Log R Ratio (LRR) or allelic depth (AD)
 toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
 
 sources = [{
-    'source_urls': ['https://github.com/samtools/bcftools/releases/download/%s/' %(_local_bcftools_version)],
+    'source_urls': ['https://github.com/samtools/bcftools/releases/download/%s/' % (_local_bcftools_version)],
     'filename': 'bcftools-%s.tar.bz2' % (_local_bcftools_version),
 },{
     'source_urls': ['https://github.com/freeseek/mocha/archive/'],
-    'download_filename': _local_mocha_hash + '.tar.gz',
+    'download_filename': '%s.tar.gz' % (_local_mocha_hash),
     'filename': '%(name)s-%(version)s.tar.gz',
     'extract_cmd': 'tar -xvzf %s && mv mocha-*/*.{c,h} bcftools-*/plugins/',
 }]
