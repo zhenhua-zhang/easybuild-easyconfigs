@@ -2,7 +2,7 @@ easyblock = 'ConfigureMake'
 
 name = 'mocha'
 _local_bcftools_version = '1.11'
-_local_mocha_hash='9ecc79aa64bdc5b9b4e44c54be42bb38aa55dfc8'
+_local_mocha_hash = '9ecc79aa64bdc5b9b4e44c54be42bb38aa55dfc8'
 version = '20200903_' + _local_mocha_hash[0:7]
 
 homepage = 'https://github.com/freeseek/mocha'
@@ -18,7 +18,7 @@ sources = [{
     'filename': 'bcftools-%s.tar.bz2' % (_local_bcftools_version),
 },{
     'source_urls': ['https://github.com/freeseek/mocha/archive/'],
-    'download_filename': '%(_local_mocha_hash)s.tar.gz',
+    'download_filename': _local_mocha_hash + '.tar.gz',
     'filename': '%(name)s-%(version)s.tar.gz',
     'extract_cmd': 'tar -xvzf %s && mv mocha-*/*.{c,h} bcftools-*/plugins/',
 }]
