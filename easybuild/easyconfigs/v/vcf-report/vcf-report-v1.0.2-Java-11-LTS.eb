@@ -8,14 +8,15 @@ description = """Command-line application to generate a report for any VCF (Vari
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 easyblock = 'Binary'
 
-#
-# Example URL:
-# https://github.com/molgenis/vip-report/
-#
-source_urls = [('http://github.com/molgenis/vip-report/releases/download/%s' % (version))]
-sources = [('vcf-report.jar' )]
+sources = [{
+    'source_urls': ['https://github.com/molgenis/vip-report/releases/download/%(version)s/'],
+    'filename': 'vcf-report-%(version)s.jar',
+    'download_filename': 'vcf-report.jar',
+}]
 
 checksums = ['0255bd51fc2ecfbf04aaed4c87cbfaaa37413af51b101d607027fc8716429bd7']
+
+postinstallcmds = ['cd %(installdir)s && ln -s vcf-report-%(version)s.jar vcf-report.jar']
 
 dependencies = [
     ('Java', '11', '-LTS')
@@ -25,7 +26,7 @@ dependencies = [
 # Sanity checking.
 #
 sanity_check_paths = {
-    'files': ['vcf-report.jar'],
+    'files': ['vcf-report-%(version)s.jar', 'vcf-report.jar'],
     'dirs': []
 }
 
