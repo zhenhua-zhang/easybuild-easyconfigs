@@ -8,14 +8,15 @@ description = """Command-line application to classify variants in any VCF (Varia
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 easyblock = 'Binary'
 
-#
-# Example URL:
-# https://github.com/molgenis/vip-decision-tree/
-#
-source_urls = [('http://github.com/molgenis/vip-decision-tree/releases/download/%s' % (version))]
-sources = [('vcf-decision-tree.jar' )]
+sources = [{
+    'source_urls': ['https://github.com/molgenis/vip-decision-tree/releases/download/%(version)s/'],
+    'filename': 'vcf-decision-tree-%(version)s.jar',
+    'download_filename': 'vcf-decision-tree.jar',
+}]
 
 checksums = ['cec839dfa89c82675fbc93342b828556adfa0d93befb540e68f86fbfe732b994']
+
+postinstallcmds = ['cd %(installdir)s && ln -s vcf-decision-tree-%(version)s.jar vcf-decision-tree.jar']
 
 dependencies = [
     ('Java', '11', '-LTS')
@@ -25,7 +26,7 @@ dependencies = [
 # Sanity checking.
 #
 sanity_check_paths = {
-    'files': ['vcf-decision-tree.jar'],
+    'files': ['vcf-decision-tree-%(version)s.jar', 'vcf-decision-tree.jar'],
     'dirs': []
 }
 
