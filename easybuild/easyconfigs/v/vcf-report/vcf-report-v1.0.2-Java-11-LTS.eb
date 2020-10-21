@@ -1,5 +1,5 @@
 name = 'vcf-report'
-version = 'v1.0.1'
+version = 'v1.0.2'
 versionsuffix = '-Java-%(javaver)s-LTS'
 
 homepage = 'https://github.com/molgenis/vip-report/'
@@ -14,7 +14,7 @@ sources = [{
     'download_filename': 'vcf-report.jar',
 }]
 
-checksums = ['aba1a3580564e697c002e09afac6c9168adead019c674b7d65c30985dab93ec1']
+checksums = ['0255bd51fc2ecfbf04aaed4c87cbfaaa37413af51b101d607027fc8716429bd7']
 
 postinstallcmds = ['cd %(installdir)s && ln -s vcf-report-%(version)s.jar vcf-report.jar']
 
