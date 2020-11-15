@@ -1,0 +1,35 @@
+# This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild
+
+easyblock = 'PythonPackage'
+
+name = 'HTSeq'
+version = '0.11.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://www-huber.embl.de/users/anders/HTSeq/'
+description = """A framework to process and analyze data from high-throughput sequencing (HTS) assays"""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+sources = ['release_%(version)s.tar.gz']
+source_urls = ['https://github.com/htseq/htseq/archive/']
+checksums = ['4daedcac0fb05219d4b37004d86cbb98a56c82b45cc5c0c6b72c3785b27f828c']
+
+dependencies = [
+    ('Python', '3.7.4', '-bare'),
+    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
+]
+
+sanity_check_paths = {
+    'files': ['bin/htseq-count', 'bin/htseq-qa'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages/'],
+}
+
+sanity_check_commands = [('htseq-count --help')]
+
+options = {'modulename': '%(name)s'}
+
+modloadmsg = """To execute HTSeq: htseq-count --help"""
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': ''}

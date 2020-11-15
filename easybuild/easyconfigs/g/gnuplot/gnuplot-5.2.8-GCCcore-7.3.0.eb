@@ -1,0 +1,48 @@
+easyblock = 'ConfigureMake'
+
+name = 'gnuplot'
+version = '5.2.8'
+
+homepage = 'https://gnuplot.sourceforge.net/'
+description = """Portable interactive, function plotting utility"""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = [('https://sourceforge.net/projects/gnuplot/files/gnuplot/%(version)s', 'download')]
+sources = [SOURCE_TAR_GZ]
+patches = ['%(name)s-%(version)s.patch']
+checksums = [
+    '60a6764ccf404a1668c140f11cc1f699290ab70daa1151bb58fed6139a28ac37', # gnuplot-5.2.8.tar.gz
+    'bd224d6ce4520259a83b3d1bd7eb43dc3e0af72c786af30114a89594c83d7f30', # gnuplot-5.2.8.patch
+]
+
+builddependencies = [
+    ('binutils', '2.30'),
+    ('pkg-config', '0.29.2'),
+    ('Autotools', '20180311'),
+]
+
+dependencies = [
+    ('ncurses', '6.1'),
+    ('GLib', '2.61.1'),
+    ('cairo', '1.16.0'),
+    ('libjpeg-turbo', '2.0.2'),
+    ('libpng', '1.6.37'),
+    ('libgd', '2.2.5', '-lor'),
+    ('Pango', '1.43.0'),
+    ('libcerf', '1.13'),
+#    ('X11', '20200222'),
+]
+
+preconfigopts = 'autoreconf && '
+
+configopts = '--with-cairo --without-qt --without-x --without-wx --disable-wxwidgets '
+
+sanity_check_paths = {
+    'files': ['bin/gnuplot'],
+    'dirs': []
+}
+# make sure that pdf terminal type is available
+sanity_check_commands = ["gnuplot -e 'set terminal pdf'"]
+
+moduleclass = 'vis'

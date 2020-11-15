@@ -1,0 +1,34 @@
+easyblock = 'PackedBinary'
+
+name = 'CAPICE'
+version = 'v1.2'
+
+homepage = 'https://github.com/molgenis/capice'
+description = """CAPICE : a computational method for Consequence-Agnostic 
+Pathogenicity Interpretation of Clinical Exome variations """
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+#
+# Example URL: https://github.com/molgenis/capice/archive/v1.0.tar.gz
+#
+source_urls = [('https://github.com/molgenis/capice/archive/%s/' % (version))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['9a3e776fdb4ebc4b7783ee0b74e6911e719161aea67caa34d328be48828028c2']
+
+dependencies = [
+    ('PythonPlus', '3.7.4', '-v20.02.1', ('foss', '2018b')),
+]
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/*.sh',
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*'
+]
+
+sanity_check_paths = {
+    'files': ['predict.sh'],
+    'dirs': ['CAPICE_model', 'CAPICE_scripts','CAPICE_example']
+}
+
+moduleclass = 'bio'

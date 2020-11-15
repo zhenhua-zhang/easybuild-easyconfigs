@@ -1,0 +1,34 @@
+easyblock = 'MakeCp'
+
+name = 'stress-ng'
+version = 'V0.11.10'
+
+homepage = 'https://kernel.ubuntu.com/~cking/stress-ng/'
+description = """Next gen stress test app to generate a configurable amount of CPU, memory, I/O, and disk load."""
+
+toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+
+source_urls = ['https://github.com/ColinIanKing/%(name)s/archive/']
+sources = ['%(version)s.tar.gz']
+checksums = ['e6fd2c03b143d68ba73b076810f3a13eb4833705e9fae2432864862b5a2dbf69']
+
+builddependencies = [
+    ('binutils', '2.30')
+]
+dependencies = [
+    ('zlib', '1.2.11'),
+]
+
+files_to_copy = [(['%(name)s'], 'bin'), 'bash-completion', 'example-jobs']
+
+sanity_check_paths = {
+    'files': ['bin/stress-ng'],
+    'dirs': ['bash-completion', 'example-jobs']
+}
+
+moduleclass = 'tools'
+modluafooter = """
+-- Enable Bash autocompletion
+local source_ac_file_command = "source " .. pathJoin(root, "bash-completion/%(name)s")
+execute {cmd=source_ac_file_command, modeA={"load"}}
+"""

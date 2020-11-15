@@ -1,0 +1,14 @@
+diff -ru scramble-82c78b9010475697cda80adedbae865cba872004.original/cluster_identifier/src/Makefile scramble-82c78b9010475697cda80adedbae865cba872004.patched/cluster_identifier/src/Makefile
+--- scramble-82c78b9010475697cda80adedbae865cba872004.original/cluster_identifier/src/Makefile	2019-02-11 20:52:53.000000000 +0000
++++ scramble-82c78b9010475697cda80adedbae865cba872004.patched/cluster_identifier/src/Makefile	2020-02-18 12:21:35.675768886 +0000
+@@ -1,8 +1,8 @@
+ ## Compilation options/libs
+ CC = gcc 
+ CFLAGS = -Wall -O2
+-INCLUDES = -I/usr/local/include/htslib
+-LIBS = /usr/local/lib/libhts.a -lz -lpthread -llzma -lbz2 -lcurl -lcrypto
++INCLUDES = -I/apps/software/HTSlib/1.9-GCCcore-7.3.0/include/htslib
++LIBS = /apps/software/HTSlib/1.9-GCCcore-7.3.0/lib/libhts.a -lz -lpthread -llzma -lbz2 -lcurl -lcrypto
+ 
+ ## source and exe names
+ VERSION = 0.1.0

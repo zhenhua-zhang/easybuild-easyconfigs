@@ -1,0 +1,28 @@
+name = 'NGS_Automated'
+version = '3.2.0'
+namelower = name.lower()
+versionsuffix='-bare'
+homepage = 'https://github.com/molgenis/NGS_Automated'
+description = """Various scripts to automate the NGS pipelines implemented in the MOLGENIS Compute framework."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+easyblock = 'Tarball'
+
+#
+# Example URL: https://github.com/molgenis/NGS_Automated/archive/1.0.1.tar.gz
+# 
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['ab69f2149a57748429154e051843b59497513c9c33773b2c644e4a99714ce1b0']
+
+sanity_check_paths = {
+    'files': [
+        'etc/umcg-gst.cfg',
+    ],
+    'dirs': [
+        'etc/cron.d',
+    ]
+}
+
+moduleclass = 'bio'
